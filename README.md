@@ -168,6 +168,12 @@ The full table, including partial-eclipse cities, is in [`results/local_circumst
 | **35. Kom Ombo**<br>[![Kom Ombo](maps/35_egypt_city_kom_ombo.png)](maps/35_egypt_city_kom_ombo.png) | **36. Esna**<br>[![Esna](maps/36_egypt_city_esna.png)](maps/36_egypt_city_esna.png) | **37. Abu Simbel**<br>[![Abu Simbel](maps/37_egypt_city_abu_simbel.png)](maps/37_egypt_city_abu_simbel.png) |
 | **38. Sharm El Sheikh**<br>[![Sharm El Sheikh](maps/38_egypt_city_sharm_el_sheikh.png)](maps/38_egypt_city_sharm_el_sheikh.png) | **39. Siwa**<br>[![Siwa](maps/39_egypt_city_siwa.png)](maps/39_egypt_city_siwa.png) | **40. Berenice**<br>[![Berenice](maps/40_egypt_city_berenice.png)](maps/40_egypt_city_berenice.png) |
 
+## Arabic edition and book graphics
+
+- **[`maps_ar/`](maps_ar/)**: the same 40 maps with every label in Arabic. Run `ECLIPSE_LANG=ar python -m eclipse2027.maps`. Matplotlib ≥ 3.11 shapes Arabic and applies the bidi algorithm itself, so strings are passed through unchanged. The maps use Eastern Arabic digits and Arabic city, governorate and country names.
+- **[`book/`](book/)**: 201 Arabic figures for a book about the eclipse, in seven chapters: the science, eclipses in Egypt's history, the 2027 event, safe observing, photography, extra maps and the Arabic atlas. Open [`book/index.html`](book/index.html) to browse them, and see [`book/README.md`](book/README.md) for details.
+- Historical eclipses before 1900 (Ibn Yunus 977/978, Sohag 1882) are computed with ERFA's Moon98/EPV00 and the Espenak–Meeus ΔT polynomials (`eclipse2027/engine.py`). Results are cached in `results/historic_egypt_1000_1900.json` and `results/solar_eclipses_1901_2050.json`.
+
 ## How it is computed
 
 1. **Ephemeris → Besselian elements** (`eclipse2027/besselian.py`). Skyfield gives apparent geocentric positions of the Sun and Moon from JPL **DE421**. The shadow axis, the fundamental-plane coordinates *x, y*, the declination *d*, the hour angle *μ* and the penumbral/umbral radii *l₁, l₂* are computed every 3 minutes over ±3.5 h and fitted with cubic polynomials in UT (residual < 10⁻⁷ Earth radii). The fitted elements are in [`results/besselian_elements.txt`](results/besselian_elements.txt).

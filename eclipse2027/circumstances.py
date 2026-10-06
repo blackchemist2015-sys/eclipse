@@ -78,7 +78,7 @@ def local_circumstances(B, lat, lon, height_m=0.0, iterations=6):
     mag = np.where(partial & sun_up, mag, 0.0)
     obsc = obscuration(mag, ratio)
     dur = np.where(total & sun_up, (c3 - c2) * 3600.0, 0.0)
-    off = T0_UT_HOURS
+    off = getattr(B, "t0_hours", T0_UT_HOURS)
     return dict(tmax=tmax + off, c1=c1 + off, c2=c2 + off, c3=c3 + off, c4=c4 + off,
                 magnitude=mag, obscuration=obsc, ratio=ratio, duration_s=dur,
                 sun_alt_deg=np.degrees(np.arcsin(np.clip(zeta, -1, 1))),
@@ -172,3 +172,18 @@ def path_limits(B, t_hours, max_km=250.0, iterations=30):
         lo = lon_c + np.degrees(lo_s * pe / (6371.0 * np.cos(np.radians(lat_c))))
         out += [la, lo]
     return (lat_c, lon_c, *out)
+
+
+def instant(B, t_hours, lat, lon, height_m=0.0):
+    """Eclipse state at one instant t (hours from B's T0) for arrays of observers."""
+    lat = np.asarray(lat, float)
+    lon = np.asarray(lon, float)
+    rho_sin, rho_cos = observer_geocentric(lat, height_m)
+    u, v, a, b, L1, L2, zeta = _state(B, np.full(np.broadcast(lat, lon).shape, float(t_hours)), rho_sin, rho_cos,
+                                      np.radians(lon))
+    m = np.hypot(u, v)
+    up = zeta > 0
+    mag = np.where((m < L1) & up, (L1 - m) / (L1 + L2), 0.0)
+    ratio = (L1 - L2) / (L1 + L2)
+    return dict(magnitude=mag, obscuration=obscuration(mag, ratio), umbra=(m < np.abs(L2)) & up, sun_up=up,
+                sun_alt_deg=np.degrees(np.arcsin(np.clip(zeta, -1, 1))))

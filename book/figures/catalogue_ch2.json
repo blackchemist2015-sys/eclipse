@@ -1,0 +1,154 @@
+[
+ {
+  "chapter": 2,
+  "number": "2-1",
+  "number_ar": "١-٢",
+  "file": "figures/ch2/fig_2_01_timeline.png",
+  "caption": "خط زمني لمحطات الكسوف في تاريخ مصر.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 2,
+  "number": "2-2",
+  "number_ar": "٢-٢",
+  "file": "figures/ch2/fig_2_02_myth_ra_apophis.png",
+  "caption": "أسطورة رع وأبوفيس وعلاقتها المحتملة بالظواهر التي تحجب الشمس.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 2,
+  "number": "2-3",
+  "number_ar": "٣-٢",
+  "file": "figures/ch2/fig_2_03_ancient_egyptian_astronomy.png",
+  "caption": "ملامح من علم الفلك في مصر القديمة.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 2,
+  "number": "2-4",
+  "number_ar": "٤-٢",
+  "file": "figures/ch2/fig_2_04_ibn_al_haytham_camera.png",
+  "caption": "مبدأ الحجرة المظلمة الذي درسه ابن الهيثم لرصد صورة الكسوف.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 2,
+  "number": "2-5",
+  "number_ar": "٥-٢",
+  "file": "figures/ch2/fig_2_05_ibn_yunus.png",
+  "caption": "ابن يونس وأرصاده لكسوفي ٩٧٧ و٩٧٨م في القاهرة.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 2,
+  "number": "2-6",
+  "number_ar": "٦-٢",
+  "file": "figures/ch2/fig_2_06_eclipse_977.png",
+  "caption": "خريطة كسوف ٩٧٧م الذي رصده ابن يونس من القاهرة (محسوبة تقريبيًا).",
+  "kind": "map"
+ },
+ {
+  "chapter": 2,
+  "number": "2-7",
+  "number_ar": "٧-٢",
+  "file": "figures/ch2/fig_2_07_eclipse_978.png",
+  "caption": "خريطة الكسوف الحلقي سنة ٩٧٨م (محسوبة تقريبيًا).",
+  "kind": "map"
+ },
+ {
+  "chapter": 2,
+  "number": "2-8",
+  "number_ar": "٨-٢",
+  "file": "figures/ch2/fig_2_08_eclipse_1882_sohag.png",
+  "caption": "خريطة كسوف ١٨٨٢ الكلي فوق سوهاج (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 2,
+  "number": "2-9",
+  "number_ar": "٩-٢",
+  "file": "figures/ch2/fig_2_09_eclipse_1882_comet_tewfik.png",
+  "caption": "كسوف ١٨٨٢ في سوهاج واكتشاف مذنب توفيق.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 2,
+  "number": "2-10",
+  "number_ar": "١٠-٢",
+  "file": "figures/ch2/fig_2_10_eclipse_1905.png",
+  "caption": "خريطة كسوف ١٩٠٥ الكلي فوق جنوب مصر (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 2,
+  "number": "2-11",
+  "number_ar": "١١-٢",
+  "file": "figures/ch2/fig_2_11_eclipse_2006_salloum.png",
+  "caption": "خريطة كسوف ٢٠٠٦ الكلي فوق السلوم وشمال غرب مصر (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 2,
+  "number": "2-12",
+  "number_ar": "١٢-٢",
+  "file": "figures/ch2/fig_2_12_eclipse_2006_story.png",
+  "caption": "كسوف السلوم ٢٠٠٦ مقارنة بكسوف ٢٠٢٧.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 2,
+  "number": "2-13",
+  "number_ar": "١٣-٢",
+  "file": "figures/ch2/fig_2_13_central_paths_egypt_1901_2050.png",
+  "caption": "مسارات الكسوفات الكلية والحلقية التي عبرت مصر ١٩٠١–٢٠٥٠ (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 2,
+  "number": "2-14",
+  "number_ar": "١٤-٢",
+  "file": "figures/ch2/fig_2_14_central_eclipses_egypt_table.png",
+  "caption": "جدول الكسوفات المركزية فوق مصر ١٩٠١–٢٠٥٠ (محسوب).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 2,
+  "number": "2-15",
+  "number_ar": "١٥-٢",
+  "file": "figures/ch2/fig_2_15_cairo_luxor_all_eclipses.png",
+  "caption": "نسبة الاحتجاب في القاهرة والأقصر لكل كسوف ١٩٠١–٢٠٥٠ (محسوبة).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 2,
+  "number": "2-16",
+  "number_ar": "١٦-٢",
+  "file": "figures/ch2/fig_2_16_central_eclipses_four_cities_1000_2050.png",
+  "caption": "الكسوفات الكلية والحلقية فوق القاهرة والإسكندرية والأقصر وأسوان منذ ١٠٠٠م (محسوبة).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 2,
+  "number": "2-17",
+  "number_ar": "١٧-٢",
+  "file": "figures/ch2/fig_2_17_last_total_eclipse_cities.png",
+  "caption": "آخر كسوف كلي شهدته القاهرة والإسكندرية والأقصر وأسوان (محسوب).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 2,
+  "number": "2-18",
+  "number_ar": "١٨-٢",
+  "file": "figures/ch2/fig_2_18_monuments_durations.png",
+  "caption": "مدة الكلية عند المواقع الأثرية المصرية في ٢٠٢٧ (محسوبة).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 2,
+  "number": "2-19",
+  "number_ar": "١٩-٢",
+  "file": "figures/ch2/fig_2_19_monuments_map.png",
+  "caption": "خريطة المواقع الأثرية في وادي النيل داخل مسار الكلية ومدتها (محسوبة).",
+  "kind": "map"
+ }
+]

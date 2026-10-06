@@ -1,0 +1,194 @@
+[
+ {
+  "chapter": 6,
+  "number": "6-1",
+  "number_ar": "١-٦",
+  "file": "figures/ch6/fig_6_01_governorate_luxor.png",
+  "caption": "خريطة محافظة الأقصر ومدة الكلية ونسبة الاحتجاب فيها (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 6,
+  "number": "6-2",
+  "number_ar": "٢-٦",
+  "file": "figures/ch6/fig_6_02_governorate_qena.png",
+  "caption": "خريطة محافظة قنا ومدة الكلية ونسبة الاحتجاب فيها (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 6,
+  "number": "6-3",
+  "number_ar": "٣-٦",
+  "file": "figures/ch6/fig_6_03_governorate_sohag.png",
+  "caption": "خريطة محافظة سوهاج ومدة الكلية ونسبة الاحتجاب فيها (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 6,
+  "number": "6-4",
+  "number_ar": "٤-٦",
+  "file": "figures/ch6/fig_6_04_governorate_asyut.png",
+  "caption": "خريطة محافظة أسيوط ومدة الكلية ونسبة الاحتجاب فيها (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 6,
+  "number": "6-5",
+  "number_ar": "٥-٦",
+  "file": "figures/ch6/fig_6_05_governorate_minya.png",
+  "caption": "خريطة محافظة المنيا ومدة الكلية ونسبة الاحتجاب فيها (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 6,
+  "number": "6-6",
+  "number_ar": "٦-٦",
+  "file": "figures/ch6/fig_6_06_governorate_aswan.png",
+  "caption": "خريطة محافظة أسوان ومدة الكلية ونسبة الاحتجاب فيها (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 6,
+  "number": "6-7",
+  "number_ar": "٧-٦",
+  "file": "figures/ch6/fig_6_07_governorate_red_sea.png",
+  "caption": "خريطة محافظة البحر الأحمر ومدة الكلية ونسبة الاحتجاب فيها (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 6,
+  "number": "6-8",
+  "number_ar": "٨-٦",
+  "file": "figures/ch6/fig_6_08_governorate_new_valley.png",
+  "caption": "خريطة محافظة الوادي الجديد ومدة الكلية ونسبة الاحتجاب فيها (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 6,
+  "number": "6-9",
+  "number_ar": "٩-٦",
+  "file": "figures/ch6/fig_6_09_governorate_matrouh.png",
+  "caption": "خريطة محافظة مطروح ومدة الكلية ونسبة الاحتجاب فيها (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 6,
+  "number": "6-10",
+  "number_ar": "١٠-٦",
+  "file": "figures/ch6/fig_6_10_governorate_giza.png",
+  "caption": "خريطة محافظة الجيزة ومدة الكلية ونسبة الاحتجاب فيها (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 6,
+  "number": "6-11",
+  "number_ar": "١١-٦",
+  "file": "figures/ch6/fig_6_11_governorate_beni_suef.png",
+  "caption": "خريطة محافظة بني سويف ومدة الكلية ونسبة الاحتجاب فيها (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 6,
+  "number": "6-12",
+  "number_ar": "١٢-٦",
+  "file": "figures/ch6/fig_6_12_governorate_faiyum.png",
+  "caption": "خريطة محافظة الفيوم ومدة الكلية ونسبة الاحتجاب فيها (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 6,
+  "number": "6-13",
+  "number_ar": "١٣-٦",
+  "file": "figures/ch6/fig_6_13_governorate_cairo.png",
+  "caption": "خريطة محافظة القاهرة ومدة الكلية ونسبة الاحتجاب فيها (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 6,
+  "number": "6-14",
+  "number_ar": "١٤-٦",
+  "file": "figures/ch6/fig_6_14_governorate_south_sinai.png",
+  "caption": "خريطة محافظة جنوب سيناء ومدة الكلية ونسبة الاحتجاب فيها (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 6,
+  "number": "6-15",
+  "number_ar": "١٥-٦",
+  "file": "figures/ch6/fig_6_15_red_sea_coast.png",
+  "caption": "خريطة ساحل البحر الأحمر ومدة الكلية في مدنه (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 6,
+  "number": "6-16",
+  "number_ar": "١٦-٦",
+  "file": "figures/ch6/fig_6_16_western_oases.png",
+  "caption": "خريطة الواحات المصرية وكسوف ٢٠٢٧ (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 6,
+  "number": "6-17",
+  "number_ar": "١٧-٦",
+  "file": "figures/ch6/fig_6_17_delta_cairo.png",
+  "caption": "نسبة الاحتجاب في الدلتا والقاهرة الكبرى (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 6,
+  "number": "6-18",
+  "number_ar": "١٨-٦",
+  "file": "figures/ch6/fig_6_18_sinai.png",
+  "caption": "نسبة الاحتجاب في سيناء ومدن القناة (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 6,
+  "number": "6-19",
+  "number_ar": "١٩-٦",
+  "file": "figures/ch6/fig_6_19_egypt_shadow_1275.png",
+  "caption": "موقع ظل القمر فوق مصر الساعة ١٢:٤٥ بتوقيت مصر (محسوب).",
+  "kind": "map"
+ },
+ {
+  "chapter": 6,
+  "number": "6-20",
+  "number_ar": "٢٠-٦",
+  "file": "figures/ch6/fig_6_20_egypt_shadow_1285.png",
+  "caption": "موقع ظل القمر فوق مصر الساعة ١٢:٥١ بتوقيت مصر (محسوب).",
+  "kind": "map"
+ },
+ {
+  "chapter": 6,
+  "number": "6-21",
+  "number_ar": "٢١-٦",
+  "file": "figures/ch6/fig_6_21_egypt_shadow_1295.png",
+  "caption": "موقع ظل القمر فوق مصر الساعة ١٢:٥٧ بتوقيت مصر (محسوب).",
+  "kind": "map"
+ },
+ {
+  "chapter": 6,
+  "number": "6-22",
+  "number_ar": "٢٢-٦",
+  "file": "figures/ch6/fig_6_22_egypt_shadow_1305.png",
+  "caption": "موقع ظل القمر فوق مصر الساعة ١٣:٠٣ بتوقيت مصر (محسوب).",
+  "kind": "map"
+ },
+ {
+  "chapter": 6,
+  "number": "6-23",
+  "number_ar": "٢٣-٦",
+  "file": "figures/ch6/fig_6_23_egypt_shadow_1315.png",
+  "caption": "موقع ظل القمر فوق مصر الساعة ١٣:٠٩ بتوقيت مصر (محسوب).",
+  "kind": "map"
+ },
+ {
+  "chapter": 6,
+  "number": "6-24",
+  "number_ar": "٢٤-٦",
+  "file": "figures/ch6/fig_6_24_egypt_shadow_1325.png",
+  "caption": "موقع ظل القمر فوق مصر الساعة ١٣:١٥ بتوقيت مصر (محسوب).",
+  "kind": "map"
+ }
+]

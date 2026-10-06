@@ -1,0 +1,378 @@
+[
+ {
+  "chapter": 3,
+  "number": "3-1",
+  "number_ar": "١-٣",
+  "file": "figures/ch3/fig_3_01_key_numbers.png",
+  "caption": "أبرز أرقام كسوف ٢ أغسطس ٢٠٢٧ (محسوبة).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 3,
+  "number": "3-2",
+  "number_ar": "٢-٣",
+  "file": "figures/ch3/fig_3_02_shadow_country_crossings.png",
+  "caption": "توقيت عبور خط المركز لكل دولة ومدة الكلية عنده (محسوب).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 3,
+  "number": "3-3",
+  "number_ar": "٣-٣",
+  "file": "figures/ch3/fig_3_03_countries_best_city.png",
+  "caption": "أطول مدة للكلية في مدينة رئيسية من كل دولة على المسار (محسوبة).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 3,
+  "number": "3-4",
+  "number_ar": "٤-٣",
+  "file": "figures/ch3/fig_3_04_shadow_snapshots_grid.png",
+  "caption": "مواقع ظل القمر كل ربع ساعة يوم ٢ أغسطس ٢٠٢٧ (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 3,
+  "number": "3-5",
+  "number_ar": "٥-٣",
+  "file": "figures/ch3/fig_3_05_shadow_0850.png",
+  "caption": "موقع ظل القمر الساعة ١١:٣٠ بتوقيت مصر (محسوب).",
+  "kind": "map"
+ },
+ {
+  "chapter": 3,
+  "number": "3-6",
+  "number_ar": "٦-٣",
+  "file": "figures/ch3/fig_3_06_shadow_0900.png",
+  "caption": "موقع ظل القمر الساعة ١٢:٠٠ بتوقيت مصر (محسوب).",
+  "kind": "map"
+ },
+ {
+  "chapter": 3,
+  "number": "3-7",
+  "number_ar": "٧-٣",
+  "file": "figures/ch3/fig_3_07_shadow_0950.png",
+  "caption": "موقع ظل القمر الساعة ١٢:٣٠ بتوقيت مصر (محسوب).",
+  "kind": "map"
+ },
+ {
+  "chapter": 3,
+  "number": "3-8",
+  "number_ar": "٨-٣",
+  "file": "figures/ch3/fig_3_08_shadow_0975.png",
+  "caption": "موقع ظل القمر الساعة ١٢:٤٥ بتوقيت مصر (محسوب).",
+  "kind": "map"
+ },
+ {
+  "chapter": 3,
+  "number": "3-9",
+  "number_ar": "٩-٣",
+  "file": "figures/ch3/fig_3_09_shadow_1000.png",
+  "caption": "موقع ظل القمر الساعة ١٣:٠٠ بتوقيت مصر (محسوب).",
+  "kind": "map"
+ },
+ {
+  "chapter": 3,
+  "number": "3-10",
+  "number_ar": "١٠-٣",
+  "file": "figures/ch3/fig_3_10_shadow_1008.png",
+  "caption": "موقع ظل القمر الساعة ١٣:٠٥ بتوقيت مصر (محسوب).",
+  "kind": "map"
+ },
+ {
+  "chapter": 3,
+  "number": "3-11",
+  "number_ar": "١١-٣",
+  "file": "figures/ch3/fig_3_11_shadow_1025.png",
+  "caption": "موقع ظل القمر الساعة ١٣:١٥ بتوقيت مصر (محسوب).",
+  "kind": "map"
+ },
+ {
+  "chapter": 3,
+  "number": "3-12",
+  "number_ar": "١٢-٣",
+  "file": "figures/ch3/fig_3_12_shadow_1050.png",
+  "caption": "موقع ظل القمر الساعة ١٣:٣٠ بتوقيت مصر (محسوب).",
+  "kind": "map"
+ },
+ {
+  "chapter": 3,
+  "number": "3-13",
+  "number_ar": "١٣-٣",
+  "file": "figures/ch3/fig_3_13_shadow_1100.png",
+  "caption": "موقع ظل القمر الساعة ١٤:٠٠ بتوقيت مصر (محسوب).",
+  "kind": "map"
+ },
+ {
+  "chapter": 3,
+  "number": "3-14",
+  "number_ar": "١٤-٣",
+  "file": "figures/ch3/fig_3_14_shadow_1150.png",
+  "caption": "موقع ظل القمر الساعة ١٤:٣٠ بتوقيت مصر (محسوب).",
+  "kind": "map"
+ },
+ {
+  "chapter": 3,
+  "number": "3-15",
+  "number_ar": "١٥-٣",
+  "file": "figures/ch3/fig_3_15_egypt_timetable_total.png",
+  "caption": "جدول مواعيد الكسوف في المدن المصرية داخل مسار الكلية (محسوب).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 3,
+  "number": "3-16",
+  "number_ar": "١٦-٣",
+  "file": "figures/ch3/fig_3_16_egypt_timetable_partial.png",
+  "caption": "جدول مواعيد الكسوف في المدن المصرية خارج مسار الكلية (محسوب).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 3,
+  "number": "3-17",
+  "number_ar": "١٧-٣",
+  "file": "figures/ch3/fig_3_17_egypt_cities_totality.png",
+  "caption": "مدة الكلية في المدن المصرية الواقعة داخل المسار (محسوبة).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 3,
+  "number": "3-18",
+  "number_ar": "١٨-٣",
+  "file": "figures/ch3/fig_3_18_egypt_cities_partial.png",
+  "caption": "نسبة احتجاب الشمس في المدن المصرية الواقعة خارج مسار الكلية (محسوبة).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 3,
+  "number": "3-19",
+  "number_ar": "١٩-٣",
+  "file": "figures/ch3/fig_3_19_egypt_cities_gantt.png",
+  "caption": "مخطط زمني لمراحل الكسوف في مدن مصرية مختارة (محسوب).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 3,
+  "number": "3-20",
+  "number_ar": "٢٠-٣",
+  "file": "figures/ch3/fig_3_20_light_curves.png",
+  "caption": "منحنى نسبة قرص الشمس الظاهر مع الزمن في الأقصر وأسوان والقاهرة والإسكندرية (محسوب).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 3,
+  "number": "3-21",
+  "number_ar": "٢١-٣",
+  "file": "figures/ch3/fig_3_21_partial_vs_total.png",
+  "caption": "مقارنة بين كسوف جزئي بنسبة ٩٤٫٨٪ و٩٩٫٨٪ والكسوف الكلي.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 3,
+  "number": "3-22",
+  "number_ar": "٢٢-٣",
+  "file": "figures/ch3/fig_3_22_c2_times_egypt.png",
+  "caption": "توقيت بداية الكلية في المدن المصرية حسب خط العرض (محسوب).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 3,
+  "number": "3-23",
+  "number_ar": "٢٣-٣",
+  "file": "figures/ch3/fig_3_23_sun_position_cities.png",
+  "caption": "ارتفاع الشمس واتجاهها لحظة الذروة في المدن المصرية (محسوب).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 3,
+  "number": "3-24",
+  "number_ar": "٢٤-٣",
+  "file": "figures/ch3/fig_3_24_city_card_luxor.png",
+  "caption": "بطاقة الكسوف لمدينة الأقصر (محسوبة).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 3,
+  "number": "3-25",
+  "number_ar": "٢٥-٣",
+  "file": "figures/ch3/fig_3_25_city_card_aswan.png",
+  "caption": "بطاقة الكسوف لمدينة أسوان (محسوبة).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 3,
+  "number": "3-26",
+  "number_ar": "٢٦-٣",
+  "file": "figures/ch3/fig_3_26_city_card_qena.png",
+  "caption": "بطاقة الكسوف لمدينة قنا (محسوبة).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 3,
+  "number": "3-27",
+  "number_ar": "٢٧-٣",
+  "file": "figures/ch3/fig_3_27_city_card_sohag.png",
+  "caption": "بطاقة الكسوف لمدينة سوهاج (محسوبة).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 3,
+  "number": "3-28",
+  "number_ar": "٢٨-٣",
+  "file": "figures/ch3/fig_3_28_city_card_asyut.png",
+  "caption": "بطاقة الكسوف لمدينة أسيوط (محسوبة).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 3,
+  "number": "3-29",
+  "number_ar": "٢٩-٣",
+  "file": "figures/ch3/fig_3_29_city_card_minya.png",
+  "caption": "بطاقة الكسوف لمدينة المنيا (محسوبة).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 3,
+  "number": "3-30",
+  "number_ar": "٣٠-٣",
+  "file": "figures/ch3/fig_3_30_city_card_beni_suef.png",
+  "caption": "بطاقة الكسوف لمدينة بني سويف (محسوبة).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 3,
+  "number": "3-31",
+  "number_ar": "٣١-٣",
+  "file": "figures/ch3/fig_3_31_city_card_faiyum.png",
+  "caption": "بطاقة الكسوف لمدينة الفيوم (محسوبة).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 3,
+  "number": "3-32",
+  "number_ar": "٣٢-٣",
+  "file": "figures/ch3/fig_3_32_city_card_cairo.png",
+  "caption": "بطاقة الكسوف لمدينة القاهرة (محسوبة).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 3,
+  "number": "3-33",
+  "number_ar": "٣٣-٣",
+  "file": "figures/ch3/fig_3_33_city_card_giza.png",
+  "caption": "بطاقة الكسوف لمدينة الجيزة (محسوبة).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 3,
+  "number": "3-34",
+  "number_ar": "٣٤-٣",
+  "file": "figures/ch3/fig_3_34_city_card_alexandria.png",
+  "caption": "بطاقة الكسوف لمدينة الإسكندرية (محسوبة).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 3,
+  "number": "3-35",
+  "number_ar": "٣٥-٣",
+  "file": "figures/ch3/fig_3_35_city_card_hurghada.png",
+  "caption": "بطاقة الكسوف لمدينة الغردقة (محسوبة).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 3,
+  "number": "3-36",
+  "number_ar": "٣٦-٣",
+  "file": "figures/ch3/fig_3_36_city_card_safaga.png",
+  "caption": "بطاقة الكسوف لمدينة سفاجا (محسوبة).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 3,
+  "number": "3-37",
+  "number_ar": "٣٧-٣",
+  "file": "figures/ch3/fig_3_37_city_card_el_quseir.png",
+  "caption": "بطاقة الكسوف لمدينة القصير (محسوبة).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 3,
+  "number": "3-38",
+  "number_ar": "٣٨-٣",
+  "file": "figures/ch3/fig_3_38_city_card_marsa_alam.png",
+  "caption": "بطاقة الكسوف لمدينة مرسى علم (محسوبة).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 3,
+  "number": "3-39",
+  "number_ar": "٣٩-٣",
+  "file": "figures/ch3/fig_3_39_city_card_kharga.png",
+  "caption": "بطاقة الكسوف لمدينة الخارجة (محسوبة).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 3,
+  "number": "3-40",
+  "number_ar": "٤٠-٣",
+  "file": "figures/ch3/fig_3_40_city_card_mut_dakhla_oasis.png",
+  "caption": "بطاقة الكسوف لمدينة موط (واحة الداخلة) (محسوبة).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 3,
+  "number": "3-41",
+  "number_ar": "٤١-٣",
+  "file": "figures/ch3/fig_3_41_city_card_edfu.png",
+  "caption": "بطاقة الكسوف لمدينة إدفو (محسوبة).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 3,
+  "number": "3-42",
+  "number_ar": "٤٢-٣",
+  "file": "figures/ch3/fig_3_42_city_card_kom_ombo.png",
+  "caption": "بطاقة الكسوف لمدينة كوم أمبو (محسوبة).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 3,
+  "number": "3-43",
+  "number_ar": "٤٣-٣",
+  "file": "figures/ch3/fig_3_43_city_card_esna.png",
+  "caption": "بطاقة الكسوف لمدينة إسنا (محسوبة).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 3,
+  "number": "3-44",
+  "number_ar": "٤٤-٣",
+  "file": "figures/ch3/fig_3_44_city_card_abu_simbel.png",
+  "caption": "بطاقة الكسوف لمدينة أبو سمبل (محسوبة).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 3,
+  "number": "3-45",
+  "number_ar": "٤٥-٣",
+  "file": "figures/ch3/fig_3_45_city_card_sharm_el_sheikh.png",
+  "caption": "بطاقة الكسوف لمدينة شرم الشيخ (محسوبة).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 3,
+  "number": "3-46",
+  "number_ar": "٤٦-٣",
+  "file": "figures/ch3/fig_3_46_city_card_siwa.png",
+  "caption": "بطاقة الكسوف لمدينة سيوة (محسوبة).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 3,
+  "number": "3-47",
+  "number_ar": "٤٧-٣",
+  "file": "figures/ch3/fig_3_47_city_card_berenice.png",
+  "caption": "بطاقة الكسوف لمدينة برنيس (محسوبة).",
+  "kind": "infographic"
+ }
+]

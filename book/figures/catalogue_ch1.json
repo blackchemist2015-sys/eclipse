@@ -1,0 +1,250 @@
+[
+ {
+  "chapter": 1,
+  "number": "1-1",
+  "number_ar": "١-١",
+  "file": "figures/ch1/fig_1_01_cosmic_coincidence.png",
+  "caption": "تتطابق الأقطار الزاوية للشمس والقمر تقريبًا لأن نسبة القطرين تقارب نسبة البعدين.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 1,
+  "number": "1-2",
+  "number_ar": "٢-١",
+  "file": "figures/ch1/fig_1_02_true_scale.png",
+  "caption": "المقياس الحقيقي للمسافات بين الأرض والقمر والشمس.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 1,
+  "number": "1-3",
+  "number_ar": "٣-١",
+  "file": "figures/ch1/fig_1_03_apparent_diameters_2027.png",
+  "caption": "تغير القطر الظاهري للشمس والقمر على مدار ٢٠٢٧ (محسوب).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 1,
+  "number": "1-4",
+  "number_ar": "٤-١",
+  "file": "figures/ch1/fig_1_04_shadow_geometry.png",
+  "caption": "مخروطا ظل القمر: الظل الكامل وشبه الظل والظل المضاد، وأنواع الكسوف المقابلة.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 1,
+  "number": "1-5",
+  "number_ar": "٥-١",
+  "file": "figures/ch1/fig_1_05_eclipse_types.png",
+  "caption": "أنواع الكسوف الشمسي: الكلي والحلقي والهجين والجزئي.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 1,
+  "number": "1-6",
+  "number_ar": "٦-١",
+  "file": "figures/ch1/fig_1_06_solar_vs_lunar.png",
+  "caption": "الفرق بين كسوف الشمس وخسوف القمر من حيث ترتيب الأجرام ومدة الظاهرة.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 1,
+  "number": "1-7",
+  "number_ar": "٧-١",
+  "file": "figures/ch1/fig_1_07_orbit_inclination.png",
+  "caption": "ميل مدار القمر وعقدتاه: شرط حدوث الكسوف.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 1,
+  "number": "1-8",
+  "number_ar": "٨-١",
+  "file": "figures/ch1/fig_1_08_node_line_seasons.png",
+  "caption": "اتجاه خط العقد وتفسير حدوث موسمين للكسوف كل عام.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 1,
+  "number": "1-9",
+  "number_ar": "٩-١",
+  "file": "figures/ch1/fig_1_09_eclipse_seasons_2027.png",
+  "caption": "مواسم الكسوف في ٢٠٢٧: موسم فبراير وموسم يوليو–أغسطس (محسوب).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 1,
+  "number": "1-10",
+  "number_ar": "١٠-١",
+  "file": "figures/ch1/fig_1_10_four_contacts.png",
+  "caption": "التماسات الأربعة للكسوف الكلي من البداية إلى النهاية.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 1,
+  "number": "1-11",
+  "number_ar": "١١-١",
+  "file": "figures/ch1/fig_1_11_phenomena_timeline.png",
+  "caption": "تسلسل الظواهر المرئية قبل الكلية وخلالها وبعدها.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 1,
+  "number": "1-12",
+  "number_ar": "١٢-١",
+  "file": "figures/ch1/fig_1_12_diamond_ring.png",
+  "caption": "رسم توضيحي لظاهرة الخاتم الماسي.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 1,
+  "number": "1-13",
+  "number_ar": "١٣-١",
+  "file": "figures/ch1/fig_1_13_bailys_beads.png",
+  "caption": "رسم توضيحي لحبات بيلي عند حافة القمر.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 1,
+  "number": "1-14",
+  "number_ar": "١٤-١",
+  "file": "figures/ch1/fig_1_14_corona_anatomy.png",
+  "caption": "أجزاء الهالة الشمسية التي تظهر أثناء الكلية.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 1,
+  "number": "1-15",
+  "number_ar": "١٥-١",
+  "file": "figures/ch1/fig_1_15_sun_structure.png",
+  "caption": "طبقات الشمس ودرجات حرارتها التقريبية.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 1,
+  "number": "1-16",
+  "number_ar": "١٦-١",
+  "file": "figures/ch1/fig_1_16_moon_facts.png",
+  "caption": "بطاقة حقائق عن القمر.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 1,
+  "number": "1-17",
+  "number_ar": "١٧-١",
+  "file": "figures/ch1/fig_1_17_sun_facts.png",
+  "caption": "بطاقة حقائق عن الشمس.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 1,
+  "number": "1-18",
+  "number_ar": "١٨-١",
+  "file": "figures/ch1/fig_1_18_shadow_speed.png",
+  "caption": "سرعة ظل القمر على امتداد مسار الكلية (محسوبة).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 1,
+  "number": "1-19",
+  "number_ar": "١٩-١",
+  "file": "figures/ch1/fig_1_19_umbra_length.png",
+  "caption": "مقارنة طول مخروط ظل القمر ببعده عن الأقصر لحظة الكسوف (محسوب).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 1,
+  "number": "1-20",
+  "number_ar": "٢٠-١",
+  "file": "figures/ch1/fig_1_20_gamma.png",
+  "caption": "معامل غاما لكسوف ٢٠٢٧ وموقع محور الظل بالنسبة لمركز الأرض (محسوب).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 1,
+  "number": "1-21",
+  "number_ar": "٢١-١",
+  "file": "figures/ch1/fig_1_21_magnitude_vs_obscuration.png",
+  "caption": "العلاقة بين قدر الكسوف ونسبة احتجاب قرص الشمس (محسوبة).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 1,
+  "number": "1-22",
+  "number_ar": "٢٢-١",
+  "file": "figures/ch1/fig_1_22_saros_cycle.png",
+  "caption": "الأشهر الثلاثة التي تتوافق في دورة ساروس.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 1,
+  "number": "1-23",
+  "number_ar": "٢٣-١",
+  "file": "figures/ch1/fig_1_23_saros136_paths.png",
+  "caption": "خطوط مركز كسوفات سلسلة ساروس ١٣٦ من ١٩٠١ إلى ٢٠٤٥ (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 1,
+  "number": "1-24",
+  "number_ar": "٢٤-١",
+  "file": "figures/ch1/fig_1_24_saros136_durations.png",
+  "caption": "مدة الكلية العظمى لكسوفات ساروس ١٣٦ (محسوبة).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 1,
+  "number": "1-25",
+  "number_ar": "٢٥-١",
+  "file": "figures/ch1/fig_1_25_eclipse_statistics.png",
+  "caption": "إحصاء كسوفات الشمس ١٩٠١–٢٠٥٠ حسب النوع والعقد (محسوب).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 1,
+  "number": "1-26",
+  "number_ar": "٢٦-١",
+  "file": "figures/ch1/fig_1_26_central_paths_1951_2000.png",
+  "caption": "خطوط مركز جميع الكسوفات الكلية والحلقية والهجينة ١٩٥١–٢٠٠٠ (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 1,
+  "number": "1-27",
+  "number_ar": "٢٧-١",
+  "file": "figures/ch1/fig_1_27_central_paths_2001_2050.png",
+  "caption": "خطوط مركز جميع الكسوفات الكلية والحلقية والهجينة ٢٠٠١–٢٠٥٠ (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 1,
+  "number": "1-28",
+  "number_ar": "٢٨-١",
+  "file": "figures/ch1/fig_1_28_sky_during_totality_luxor.png",
+  "caption": "خريطة سماء الأقصر لحظة ذروة الكلية: مواقع الكواكب والنجوم الساطعة (محسوبة).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 1,
+  "number": "1-29",
+  "number_ar": "٢٩-١",
+  "file": "figures/ch1/fig_1_29_light_levels.png",
+  "caption": "مقارنة تقريبية لشدة الإضاءة أثناء الكسوف الكلي بمواقف يومية.",
+  "kind": "chart"
+ },
+ {
+  "chapter": 1,
+  "number": "1-30",
+  "number_ar": "٣٠-١",
+  "file": "figures/ch1/fig_1_30_what_changes.png",
+  "caption": "تغيرات بيئية يلاحظها الراصدون أثناء الكسوف الكلي.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 1,
+  "number": "1-31",
+  "number_ar": "٣١-١",
+  "file": "figures/ch1/fig_1_31_future_of_eclipses.png",
+  "caption": "ابتعاد القمر التدريجي ومستقبل الكسوفات الكلية.",
+  "kind": "infographic"
+ }
+]

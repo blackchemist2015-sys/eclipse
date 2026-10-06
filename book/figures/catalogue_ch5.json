@@ -1,0 +1,154 @@
+[
+ {
+  "chapter": 5,
+  "number": "5-1",
+  "number_ar": "١-٥",
+  "file": "figures/ch5/fig_5_01_equipment.png",
+  "caption": "قائمة معدات تصوير الكسوف.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 5,
+  "number": "5-2",
+  "number_ar": "٢-٥",
+  "file": "figures/ch5/fig_5_02_exposure_table_f56.png",
+  "caption": "جدول أزمنة التعريض المقترحة لظواهر الكسوف عند الفتحة ⁦f/5.6⁩ (محسوب).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 5,
+  "number": "5-3",
+  "number_ar": "٣-٥",
+  "file": "figures/ch5/fig_5_03_exposure_table_f80.png",
+  "caption": "جدول أزمنة التعريض المقترحة لظواهر الكسوف عند الفتحة ⁦f/8⁩ (محسوب).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 5,
+  "number": "5-4",
+  "number_ar": "٤-٥",
+  "file": "figures/ch5/fig_5_04_exposure_table_f110.png",
+  "caption": "جدول أزمنة التعريض المقترحة لظواهر الكسوف عند الفتحة ⁦f/11⁩ (محسوب).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 5,
+  "number": "5-5",
+  "number_ar": "٥-٥",
+  "file": "figures/ch5/fig_5_05_brightness_ladder.png",
+  "caption": "الفرق الكبير في سطوع ظواهر الكسوف الكلي (قيم Q).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 5,
+  "number": "5-6",
+  "number_ar": "٦-٥",
+  "file": "figures/ch5/fig_5_06_sun_image_size.png",
+  "caption": "قطر صورة الشمس على المستشعر حسب البعد البؤري (محسوب).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 5,
+  "number": "5-7",
+  "number_ar": "٧-٥",
+  "file": "figures/ch5/fig_5_07_framing_guide.png",
+  "caption": "مقارنة تأطير الشمس المكسوفة على مستشعرين وأبعاد بؤرية مختلفة (محسوب).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 5,
+  "number": "5-8",
+  "number_ar": "٨-٥",
+  "file": "figures/ch5/fig_5_08_tripod_drift_limit.png",
+  "caption": "أطول زمن تعريض على حامل ثابت قبل ظهور أثر حركة الشمس (محسوب).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 5,
+  "number": "5-9",
+  "number_ar": "٩-٥",
+  "file": "figures/ch5/fig_5_09_totality_plan_luxor.png",
+  "caption": "خطة التصوير خلال دقائق الكلية في الأقصر (محسوبة).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 5,
+  "number": "5-10",
+  "number_ar": "١٠-٥",
+  "file": "figures/ch5/fig_5_10_totality_plan_sohag.png",
+  "caption": "خطة التصوير خلال دقائق الكلية في سوهاج (محسوبة).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 5,
+  "number": "5-11",
+  "number_ar": "١١-٥",
+  "file": "figures/ch5/fig_5_11_sequence_plan_luxor.png",
+  "caption": "مسار الشمس ومراحل الكسوف في سماء الأقصر لتخطيط صورة متتابعة (محسوب).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 5,
+  "number": "5-12",
+  "number_ar": "١٢-٥",
+  "file": "figures/ch5/fig_5_12_sequence_plan_cairo.png",
+  "caption": "مسار الشمس ومراحل الكسوف في سماء القاهرة لتخطيط صورة متتابعة (محسوب).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 5,
+  "number": "5-13",
+  "number_ar": "١٣-٥",
+  "file": "figures/ch5/fig_5_13_sequence_plan_aswan.png",
+  "caption": "مسار الشمس ومراحل الكسوف في سماء أسوان لتخطيط صورة متتابعة (محسوب).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 5,
+  "number": "5-14",
+  "number_ar": "١٤-٥",
+  "file": "figures/ch5/fig_5_14_sequence_plan_hurghada.png",
+  "caption": "مسار الشمس ومراحل الكسوف في سماء الغردقة لتخطيط صورة متتابعة (محسوب).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 5,
+  "number": "5-15",
+  "number_ar": "١٥-٥",
+  "file": "figures/ch5/fig_5_15_wide_angle_needed.png",
+  "caption": "مجال الرؤية الرأسي والعدسة اللازمة لتصوير الشمس مع المعالم الأرضية (محسوب).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 5,
+  "number": "5-16",
+  "number_ar": "١٦-٥",
+  "file": "figures/ch5/fig_5_16_smartphone_tips.png",
+  "caption": "نصائح تصوير الكسوف بالهاتف الذكي.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 5,
+  "number": "5-17",
+  "number_ar": "١٧-٥",
+  "file": "figures/ch5/fig_5_17_camera_setup.png",
+  "caption": "قائمة ضبط الكاميرا والتحضير للتصوير.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 5,
+  "number": "5-18",
+  "number_ar": "١٨-٥",
+  "file": "figures/ch5/fig_5_18_common_mistakes.png",
+  "caption": "أخطاء شائعة في تصوير الكسوف وكيف تتجنبها.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 5,
+  "number": "5-19",
+  "number_ar": "١٩-٥",
+  "file": "figures/ch5/fig_5_19_processing_workflow.png",
+  "caption": "خطوات معالجة صور الهالة الشمسية.",
+  "kind": "infographic"
+ }
+]

@@ -1,0 +1,170 @@
+[
+ {
+  "chapter": 4,
+  "number": "4-1",
+  "number_ar": "١-٤",
+  "file": "figures/ch4/fig_4_01_golden_rule.png",
+  "caption": "القاعدة الذهبية لرصد الشمس بأمان.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 4,
+  "number": "4-2",
+  "number_ar": "٢-٤",
+  "file": "figures/ch4/fig_4_02_safe_vs_unsafe.png",
+  "caption": "مقارنة بين الوسائل الآمنة وغير الآمنة لمشاهدة الكسوف.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 4,
+  "number": "4-3",
+  "number_ar": "٣-٤",
+  "file": "figures/ch4/fig_4_03_glasses_checklist.png",
+  "caption": "قائمة فحص نظارة الكسوف قبل الاستخدام.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 4,
+  "number": "4-4",
+  "number_ar": "٤-٤",
+  "file": "figures/ch4/fig_4_04_welding_shade_numbers.png",
+  "caption": "نفاذية زجاج اللحام حسب رقم الظل وحد الأمان للرصد الشمسي (محسوبة).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 4,
+  "number": "4-5",
+  "number_ar": "٥-٤",
+  "file": "figures/ch4/fig_4_05_pinhole_steps.png",
+  "caption": "خطوات صنع كاميرا الثقب لمشاهدة الكسوف بأمان.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 4,
+  "number": "4-6",
+  "number_ar": "٦-٤",
+  "file": "figures/ch4/fig_4_06_pinhole_image_size.png",
+  "caption": "قطر صورة الشمس في كاميرا الثقب حسب المسافة (محسوب).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 4,
+  "number": "4-7",
+  "number_ar": "٧-٤",
+  "file": "figures/ch4/fig_4_07_natural_pinholes.png",
+  "caption": "أهلّة الشمس المكسوفة تحت الأشجار: كاميرات ثقب طبيعية.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 4,
+  "number": "4-8",
+  "number_ar": "٨-٤",
+  "file": "figures/ch4/fig_4_08_eye_damage.png",
+  "caption": "كيف يسبب النظر إلى الشمس اعتلال الشبكية الشمسي.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 4,
+  "number": "4-9",
+  "number_ar": "٩-٤",
+  "file": "figures/ch4/fig_4_09_glasses_timeline_luxor.png",
+  "caption": "الخط الزمني لارتداء نظارة الكسوف في الأقصر (محسوب).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 4,
+  "number": "4-10",
+  "number_ar": "١٠-٤",
+  "file": "figures/ch4/fig_4_10_glasses_timeline_sohag.png",
+  "caption": "الخط الزمني لارتداء نظارة الكسوف في سوهاج (محسوب).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 4,
+  "number": "4-11",
+  "number_ar": "١١-٤",
+  "file": "figures/ch4/fig_4_11_glasses_timeline_cairo.png",
+  "caption": "الخط الزمني لارتداء نظارة الكسوف في القاهرة (محسوب).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 4,
+  "number": "4-12",
+  "number_ar": "١٢-٤",
+  "file": "figures/ch4/fig_4_12_glasses_timeline_aswan.png",
+  "caption": "الخط الزمني لارتداء نظارة الكسوف في أسوان (محسوب).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 4,
+  "number": "4-13",
+  "number_ar": "١٣-٤",
+  "file": "figures/ch4/fig_4_13_glasses_timeline_asyut.png",
+  "caption": "الخط الزمني لارتداء نظارة الكسوف في أسيوط (محسوب).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 4,
+  "number": "4-14",
+  "number_ar": "١٤-٤",
+  "file": "figures/ch4/fig_4_14_glasses_timeline_hurghada.png",
+  "caption": "الخط الزمني لارتداء نظارة الكسوف في الغردقة (محسوب).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 4,
+  "number": "4-15",
+  "number_ar": "١٥-٤",
+  "file": "figures/ch4/fig_4_15_myths_facts.png",
+  "caption": "خرافات شائعة عن الكسوف وتصحيحها.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 4,
+  "number": "4-16",
+  "number_ar": "١٦-٤",
+  "file": "figures/ch4/fig_4_16_checklist_day.png",
+  "caption": "قائمة التجهيزات المقترحة ليوم الكسوف.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 4,
+  "number": "4-17",
+  "number_ar": "١٧-٤",
+  "file": "figures/ch4/fig_4_17_children_safety.png",
+  "caption": "إرشادات سلامة الأطفال والمدارس أثناء الكسوف.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 4,
+  "number": "4-18",
+  "number_ar": "١٨-٤",
+  "file": "figures/ch4/fig_4_18_heat_safety.png",
+  "caption": "إرشادات الوقاية من الحر أثناء متابعة الكسوف.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 4,
+  "number": "4-19",
+  "number_ar": "١٩-٤",
+  "file": "figures/ch4/fig_4_19_where_to_watch_egypt.png",
+  "caption": "مواقع مقترحة لمشاهدة الكسوف الكلي في مصر ومدة الكلية فيها (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 4,
+  "number": "4-20",
+  "number_ar": "٢٠-٤",
+  "file": "figures/ch4/fig_4_20_student_observation_sheet.png",
+  "caption": "نموذج ورقة رصد ميداني للطلاب أثناء الكسوف.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 4,
+  "number": "4-21",
+  "number_ar": "٢١-٤",
+  "file": "figures/ch4/fig_4_21_optics_rules.png",
+  "caption": "قواعد استعمال المناظير والتلسكوبات لرصد الشمس.",
+  "kind": "infographic"
+ }
+]

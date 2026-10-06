@@ -1,7 +1,8 @@
 numpy
-matplotlib
+matplotlib>=3.11
 geopandas
 shapely
 cartopy
 skyfield
 skyfield-data
+pyerfa

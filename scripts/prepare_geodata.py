@@ -32,16 +32,16 @@ def main():
     os.makedirs(OUT, exist_ok=True)
 
     c10 = fetch("ne_10m_admin_0_countries", cache)
-    c10 = c10[c10.intersects(REGION)][["ADMIN", "NAME", "ADM0_A3", "geometry"]]
+    c10 = c10[c10.intersects(REGION)][["ADMIN", "NAME", "NAME_AR", "ADM0_A3", "geometry"]]
     c10["geometry"] = c10.geometry.simplify(0.01, preserve_topology=True)
     c10.to_file(os.path.join(OUT, "countries_region.geojson"), driver="GeoJSON")
 
-    c50 = fetch("ne_50m_admin_0_countries", cache)[["ADMIN", "NAME", "ADM0_A3", "geometry"]]
+    c50 = fetch("ne_50m_admin_0_countries", cache)[["ADMIN", "NAME", "NAME_AR", "ADM0_A3", "geometry"]]
     c50["geometry"] = c50.geometry.simplify(0.05, preserve_topology=True)
     c50.to_file(os.path.join(OUT, "countries_world.geojson"), driver="GeoJSON")
 
     a1 = fetch("ne_10m_admin_1_states_provinces", cache)
-    a1 = a1[a1.intersects(REGION)][["name", "name_en", "adm0_a3", "geometry"]]
+    a1 = a1[a1.intersects(REGION)][["name", "name_en", "name_ar", "adm0_a3", "geometry"]]
     a1["geometry"] = a1.geometry.simplify(0.005, preserve_topology=True)
     a1.to_file(os.path.join(OUT, "admin1_region.geojson"), driver="GeoJSON")
 
