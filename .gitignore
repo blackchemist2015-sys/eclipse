@@ -1,3 +1,4 @@
 .cache/
 __pycache__/
 *.pyc
+book/word/manuscript_img.json

@@ -41,3 +41,8 @@ ECLIPSE_LANG=ar python -m eclipse2027.maps   # الخرائط الأربعون �
 ---
 
 **English summary.** These are 201 print-ready Arabic figures for a book about the 2027 eclipse: 77 infographics, 38 charts and 86 maps. They are grouped into chapters: Scientific background (31), Eclipses in Egypt's history (19), The 2 August 2027 eclipse (47), Safe observing (21), Photographing the eclipse (19), Additional maps (24), Atlas: the 40 maps in Arabic (40). The full list with captions is in `catalogue.json`, and every figure is shown in `index.html`.
+## النسخة الورقية (Word)
+
+[`word/كتاب_الكسوف_الكلي_2027.docx`](word/) هو الكتاب كاملًا بصيغة Word: الغلاف، والملاحظات، والمحتويات، والمقدمة، والفصول السبعة بنصوصها وأشكالها الـ٢٠١ مع تعليقاتها، ثم الملاحق (جداول المواعيد، ومسرد المصطلحات، والمصادر). الاتجاه من اليمين إلى اليسار، والمقاس A4.
+
+يُبنى الملف كما يلي: يكتب `python book/manuscript.py` النص في `word/manuscript.json`، ثم يحوّل `node book/make_docx.js <manuscript_img.json> <out.docx>` الصور المضغوطة إلى ملف Word. عند فتح الملف أول مرة يطلب Word تحديث الحقول ليملأ جدول المحتويات؛ اختر «نعم».
