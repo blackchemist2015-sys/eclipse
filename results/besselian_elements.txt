@@ -1,0 +1,14 @@
+Besselian elements, total solar eclipse 2027-08-02, fitted from JPL DE421 (Skyfield)
+t = hours from T0 = 10.0 h UT;  value = a0 + a1 t + a2 t^2 + a3 t^3
+
+  x: -0.00931863  +0.54471039  -0.00004461  -0.00000922
+  y: +0.15601357  -0.21116262  -0.00012171  +0.00000376
+ l1: +0.53060067  +0.00001358  -0.00001283  +0.00000000
+ l2: -0.01545945  +0.00001351  -0.00001276  +0.00000000
+  d: +17.76228709  -0.01018119  -0.00000388  -0.00000001   (deg)
+ mu: -31.57821333  +15.00209660  +0.00000201  -0.00000002   (deg, continuous)
+tan f1 = 0.0046065   tan f2 = 0.0045835
+
+Greatest duration on the central line: 6m 23s at 26.819N 31.110E, 10:00:23 UT, Sun altitude 80.8 deg
+Central line on Earth from 08:25:08 to 11:48:17 UT
+Maximum path width: 259 km

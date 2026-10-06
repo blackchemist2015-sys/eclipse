@@ -1,0 +1,7 @@
+numpy
+matplotlib
+geopandas
+shapely
+cartopy
+skyfield
+skyfield-data

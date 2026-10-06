@@ -1,0 +1,28 @@
+governorate,max_totality_s,max_totality,area_in_totality_pct,min_obscuration_pct,max_obscuration_pct
+New Valley,383,6m 23s,16,76.1,100.0
+Sohag,383,6m 23s,100,100.0,100.0
+Qena,383,6m 23s,100,100.0,100.0
+Minya,383,6m 23s,91,99.4,100.0
+Red Sea,383,6m 23s,56,90.7,100.0
+Giza,382,6m 22s,60,94.4,100.0
+Matrouh,382,6m 22s,59,94.7,100.0
+Luxor,382,6m 22s,100,100.0,100.0
+Asyut,381,6m 21s,100,100.0,100.0
+Aswan,355,5m 55s,12,90.6,100.0
+Beni Suef,206,3m 26s,10,97.0,100.0
+Faiyum,0,—,0,96.3,99.8
+Suez,0,—,0,91.0,97.0
+Beheira,0,—,0,91.5,97.0
+Alexandria,0,—,0,92.6,96.7
+South Sinai,0,—,0,89.2,96.4
+Cairo,0,—,0,92.6,95.6
+Monufia,0,—,0,92.9,94.6
+Qalyubia,0,—,0,92.9,94.5
+Al Sharqia,0,—,0,88.8,93.6
+Gharbia,0,—,0,91.1,93.4
+Dakahlia,0,—,0,88.4,92.8
+Ismailia,0,—,0,88.8,92.8
+Kafr el-Sheikh,0,—,0,89.4,92.4
+North Sinai,0,—,0,84.3,91.9
+Damietta,0,—,0,88.2,90.1
+Port Said,0,—,0,88.3,88.9
