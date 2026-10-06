@@ -164,6 +164,10 @@ GLOSSARY = [
     ("عناصر بِسِل", "مجموعة معاملات تصف هندسة ظل القمر وتُستعمل لحساب ظروف الكسوف في أي موقع."),
     ("ISO 12312-2", "المعيار الدولي لمرشحات المشاهدة المباشرة للشمس (نظارات الكسوف)."),
 ]
+GLOSSARY_EN = ["Total solar eclipse", "Annular eclipse", "Hybrid eclipse", "Umbra", "Penumbra", "First / fourth contact (C1/C4)",
+               "Second / third contact (C2/C3)", "Eclipse magnitude", "Obscuration", "Central line", "Lunar nodes",
+               "Saros cycle", "Gamma", "Corona", "Chromosphere", "Solar prominences", "Baily's beads", "Diamond ring",
+               "Shadow bands", "Delta T (TT − UT)", "Besselian elements", "Solar viewer standard"]
 
 SOURCES = [
     "Park, R. S. et al., The JPL Planetary and Lunar Ephemerides DE421 (Jet Propulsion Laboratory) — عبر مكتبة Skyfield.",
@@ -199,6 +203,60 @@ METHOD = [
 ]
 
 
+# Arabic scientific term → English equivalent, shown in parentheses at first use in each chapter
+TERMS = [
+    ("الكسوف الكلي للشمس", "Total solar eclipse"), ("الكسوف الكلي", "Total solar eclipse"), ("كسوف كلي", "Total eclipse"),
+    ("الكسوف الحلقي", "Annular eclipse"), ("كسوف حلقي", "Annular eclipse"), ("الكسوف الهجين", "Hybrid eclipse"),
+    ("الكسوف الجزئي", "Partial eclipse"), ("كسوفًا جزئيًا", "Partial eclipse"), ("خسوف القمر", "Lunar eclipse"),
+    ("الظل الكامل", "Umbra"), ("شبه الظل", "Penumbra"), ("الظل المضاد", "Antumbra"),
+    ("التماسين الثاني والثالث", "Second & third contacts, C2–C3"), ("التماس الأول", "First contact, C1"),
+    ("التماس الثاني", "Second contact, C2"), ("التماس الثالث", "Third contact, C3"), ("التماس الرابع", "Fourth contact, C4"),
+    ("تماسات", "Contacts"), ("مسار الكلية", "Path of totality"), ("مسار الكسوف الكلي", "Path of totality"),
+    ("دقائق الكلية", "Totality"), ("الكلية التامة", "Totality"), ("مدة الكلية", "Duration of totality"),
+    ("الكسوف الشمسي", "Solar eclipse"), ("القطر الظاهري", "Apparent diameter"), ("الأقطار الزاوية", "Angular diameters"),
+    ("القطر الزاوي", "Angular diameter"), ("نظارة الكسوف", "Eclipse glasses"), ("نظارات الكسوف", "Eclipse glasses"), ("قدر الكسوف", "Eclipse magnitude"), ("نسبة الاحتجاب", "Obscuration"),
+    ("خط المركز", "Central line"), ("العقدتين", "Lunar nodes"), ("العقدتان", "Lunar nodes"), ("الحضيض", "Perigee"),
+    ("الأوج", "Apogee"), ("المحاق", "New Moon"), ("دائرة البروج", "Ecliptic"), ("دورة ساروس", "Saros cycle"),
+    ("ساروس", "Saros"), ("غاما", "Gamma"), ("الهالة", "Corona"), ("الكروموسفير", "Chromosphere"),
+    ("الألسنة الشمسية", "Solar prominences"), ("حبات بيلي", "Baily's beads"), ("الخاتم الماسي", "Diamond ring"),
+    ("الأحزمة الظلية", "Shadow bands"), ("عناصر بِسِل", "Besselian elements"), ("فرق التوقيت", "Delta T"),
+    ("التقويم اليولياني", "Julian calendar"), ("التقويم الحسابي", "Tabular Islamic calendar"),
+    ("الفوتوسفير", "Photosphere"), ("اعتلال الشبكية الشمسي", "Solar retinopathy"), ("كاميرا الثقب", "Pinhole camera"),
+    ("الحجرة المظلمة", "Camera obscura"), ("مرشح شمسي", "Solar filter"), ("المرشح الشمسي", "Solar filter"),
+    ("جداول التعريض", "Exposure tables"), ("التعريض", "Exposure"), ("البعد البؤري", "Focal length"),
+    ("الزيج الحاكمي الكبير", "al-Zij al-Hakimi al-Kabir"), ("الشهر الاقتراني", "Synodic month"),
+    ("الشكل الإهليلجي", "Ellipsoid"), ("التوقيت العالمي", "Universal Time, UT"), ("سمت الرأس", "Zenith"),
+    ("الشروق الاحتراقي", "Heliacal rising"), ("العشريات", "Decans"), ("الساعات النجمية", "Star clocks"),
+    ("ساعات نجمية", "Star clocks"), ("مختبر الدفع النفاث", "Jet Propulsion Laboratory"),
+    ("الشمس شبه عمودية", "Sun near the zenith"), ("محور الظل", "Shadow axis"), ("الأحجام الظاهرية", "Apparent sizes"),
+    ("حجمه الظاهري", "Apparent size"), ("موسمين", "Eclipse seasons"), ("ميكانيكا سماوية", "Celestial mechanics"),
+    ("التقويم الفلكي", "Astronomical Almanac"), ("كثيرات حدود", "Polynomials"), ("طريقة نيوتن التكرارية", "Newton iteration"),
+]
+_AR = "\u0621-\u064a\u0640"
+
+
+def annotate(text, seen):
+    """Split text into segments [[str, is_english]], adding "(English)" after the first use of each term."""
+    import re
+    terms = sorted(TERMS, key=lambda t: -len(t[0]))
+    pat = re.compile("(?<![" + _AR + "])(?:[وبلفك]|ال)?(" + "|".join(re.escape(a) for a, _ in terms) +
+                     ")(?![" + _AR + "\u064b-\u0652])")
+    lookup = dict(terms)
+    segs, pos = [], 0
+    for m in pat.finditer(text):
+        ar = m.group(1)
+        en = lookup[ar]
+        if en in seen:
+            continue
+        seen.add(en)
+        end = m.end()
+        segs.append([text[pos:end], False])
+        segs.append([" (" + en + ")", True])
+        pos = end
+    segs.append([text[pos:], False])
+    return [s for s in segs if s[0]]
+
+
 def city_tables():
     rows = list(csv.DictReader(open(os.path.join(ROOT, "results", "local_circumstances_egypt.csv"), encoding="utf-8")))
     import sys
@@ -231,17 +289,22 @@ def city_tables():
 def build():
     cat = json.load(open(os.path.join(HERE, "catalogue.json"), encoding="utf-8"))
     egypt, other = city_tables()
-    spec = dict(title=TITLE, subtitle=SUBTITLE, front=FRONT, edition=EDITION, notes=NOTES, method=METHOD, chapters=[], glossary=GLOSSARY, sources=SOURCES,
+    glossary = [[a, e, b] for (a, b), e in zip(GLOSSARY, GLOSSARY_EN)]
+    spec = dict(title=TITLE, subtitle=SUBTITLE, front=FRONT, edition=EDITION, notes=NOTES, method=METHOD, chapters=[], glossary=GLOSSARY, sources=SOURCES, glossary3=glossary,
                 egypt_table=egypt, other_table=other)
+    seen = set()
+    spec["front"] = [[k, annotate(t, seen) if k in ("p", "warn") else t] for k, t in FRONT]
     for ch in range(1, 8):
         label, name, intro = CHAPTERS[ch]
+        seen = set()
+        intro = [annotate(t, seen) for t in intro]
         items = []
         for c in [c for c in cat if c["chapter"] == ch]:
             if c["number"] in SECTIONS:
                 h, paras = SECTIONS[c["number"]]
                 items.append(dict(type="h2", text=h))
-                items += [dict(type="p", text=p) for p in paras]
-            items.append(dict(type="figure", file=c["file"], number=c["number_ar"], caption=c["caption"]))
+                items += [dict(type="p", text=annotate(p, seen)) for p in paras]
+            items.append(dict(type="figure", file=c["file"], number=c["number_ar"], caption=annotate(c["caption"], seen)))
         spec["chapters"].append(dict(label=label, name=name, intro=intro, items=items))
     os.makedirs(os.path.join(HERE, "word"), exist_ok=True)
     json.dump(spec, open(os.path.join(HERE, "word", "manuscript.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)

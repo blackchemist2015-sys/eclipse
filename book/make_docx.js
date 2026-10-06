@@ -30,6 +30,17 @@ function run(text, o = {}) {
   });
 }
 
+function enRun(text, o = {}) {
+  return new TextRun({ text, rightToLeft: false, font: font("Arial"), size: Math.round((o.size || 26) * 0.82),
+    sizeComplexScript: Math.round((o.size || 26) * 0.82), italics: true, color: o.enColor || "355C8C" });
+}
+
+// Arabic text or [[text, isEnglish], ...] segments → runs
+function runs(t, o = {}) {
+  if (typeof t === "string") return [run(t, o)];
+  return t.map(([txt, en]) => (en ? enRun(txt, o) : run(txt, o)));
+}
+
 function para(text, o = {}) {
   return new Paragraph({
     bidirectional: true,
@@ -41,7 +52,7 @@ function para(text, o = {}) {
     border: o.border,
     shading: o.shading,
     indent: o.indent,
-    children: Array.isArray(text) ? text : [run(text, o)],
+    children: Array.isArray(text) && text.length && text[0] instanceof TextRun ? text : runs(text, o),
   });
 }
 
@@ -56,7 +67,7 @@ function figure(it) {
       children: [new ImageRun({ type: "jpg", data: fs.readFileSync(it.jpg), transformation: { width: Math.round(w), height: Math.round(h) },
         altText: { title: "شكل " + it.number, description: it.caption, name: "fig" + it.number } })],
     }),
-    para([run("شكل " + it.number + ": ", { bold: true, size: 20, color: NAVY, font: HEAD }), run(it.caption, { size: 20, color: MUTED })],
+    para([run("شكل " + it.number + ": ", { bold: true, size: 20, color: NAVY, font: HEAD }), ...runs(it.caption, { size: 20, color: MUTED })],
       { align: AlignmentType.CENTER, after: 280 }),
   ];
 }
@@ -66,8 +77,11 @@ function cell(text, width, o = {}) {
     width: { size: width, type: WidthType.DXA },
     shading: o.fill ? { fill: o.fill, type: ShadingType.CLEAR, color: "auto" } : undefined,
     margins: { top: 40, bottom: 40, left: 60, right: 60 },
-    children: [para(text, { align: AlignmentType.CENTER, after: 0, line: 260, size: o.size || 17, bold: o.bold,
-      color: o.color, font: o.bold ? HEAD : BODY })],
+    children: [/[A-Za-z]/.test(text) && !/[\u0600-\u06FF]/.test(text)
+      ? new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 0, line: 260 },
+          children: [new TextRun({ text, font: font("Arial"), size: o.size || 17, sizeComplexScript: o.size || 17, bold: !!o.bold, color: o.color })] })
+      : para(text, { align: AlignmentType.CENTER, after: 0, line: 260, size: o.size || 17, bold: o.bold,
+          color: o.color, font: o.bold ? HEAD : BODY })],
   });
 }
 
@@ -147,7 +161,7 @@ const appendixPortrait = [
   table(["الدولة", "المدينة", "الذروة (محلي)", "المنطقة الزمنية", "مدة الكلية", "الاحتجاب"], spec.other_table,
     [1700, 2000, 1500, 1500, 1400, 1300], 18),
   para("ملحق ج: مسرد المصطلحات", { heading: HeadingLevel.HEADING_2, size: 32, bold: true, font: HEAD, color: NAVY, before: 400, after: 160, pageBreakBefore: true }),
-  table(["المصطلح", "المعنى"], spec.glossary, [2600, 6800], 20),
+  table(["المصطلح", "Term", "المعنى"], spec.glossary3, [2200, 2400, 4800], 19),
   para("ملحق د: المصادر والمنهجية", { heading: HeadingLevel.HEADING_2, size: 32, bold: true, font: HEAD, color: NAVY, before: 400, after: 160, pageBreakBefore: true }),
   ...spec.method.map((t) => para(t, { size: 22 })),
   ...spec.sources.map((t, i) => para([run(String(i + 1).replace(/\d/g, (d) => "٠١٢٣٤٥٦٧٨٩"[d]) + ". ", { size: 22, bold: true }),
