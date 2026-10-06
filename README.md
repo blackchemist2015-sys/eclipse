@@ -171,7 +171,7 @@ The full table, including partial-eclipse cities, is in [`results/local_circumst
 ## Arabic edition and book graphics
 
 - **[`maps_ar/`](maps_ar/)**: the same 40 maps with every label in Arabic. Run `ECLIPSE_LANG=ar python -m eclipse2027.maps`. Matplotlib ≥ 3.11 shapes Arabic and applies the bidi algorithm itself, so strings are passed through unchanged. The maps use Eastern Arabic digits and Arabic city, governorate and country names.
-- **[`book/`](book/)**: 201 Arabic figures for a book about the eclipse, in seven chapters: the science, eclipses in Egypt's history, the 2027 event, safe observing, photography, extra maps and the Arabic atlas. Open [`book/index.html`](book/index.html) to browse them, and see [`book/README.md`](book/README.md) for details.
+- **[`book/`](book/)**: 224 Arabic figures and a Word edition (`book/word/`) of a ten-chapter book: the science, eclipse records through world history, eclipses in Egypt's history, the 2027 event, safe observing, introductory experiments, photography, apps and planning, extra maps and the Arabic atlas. Open [`book/index.html`](book/index.html) to browse them, and see [`book/README.md`](book/README.md) for details.
 - Historical eclipses before 1900 (Ibn Yunus 977/978, Sohag 1882) are computed with ERFA's Moon98/EPV00 and the Espenak–Meeus ΔT polynomials (`eclipse2027/engine.py`). Results are cached in `results/historic_egypt_1000_1900.json` and `results/solar_eclipses_1901_2050.json`.
 
 ## How it is computed

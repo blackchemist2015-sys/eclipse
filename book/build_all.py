@@ -13,10 +13,28 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 FIG = os.path.join(HERE, "figures")
 CHAPTERS = ["ch1_science.py", "ch2_history.py", "ch3_event2027.py", "ch4_observing.py", "ch5_photography.py",
-            "ch6_maps.py"]
-TITLES = {1: "الفصل الأول: الأساس العلمي للكسوف", 2: "الفصل الثاني: الكسوف في تاريخ مصر",
-          3: "الفصل الثالث: كسوف ٢ أغسطس ٢٠٢٧", 4: "الفصل الرابع: الرصد الآمن", 5: "الفصل الخامس: تصوير الكسوف",
-          6: "الفصل السادس: خرائط إضافية", 7: "الفصل السابع: الأطلس — ٤٠ خريطة بالعربية"}
+            "ch6_maps.py", "ch8_world_history.py", "ch9_experiments.py", "ch10_apps.py"]
+# order of chapters in the book (source chapter ids); figures are numbered by book position
+BOOK_ORDER = [1, 8, 2, 3, 4, 9, 5, 10, 6, 7]
+ORD_AR = ["الأول", "الثاني", "الثالث", "الرابع", "الخامس", "السادس", "السابع", "الثامن", "التاسع", "العاشر"]
+NAMES = {1: "الأساس العلمي للكسوف", 8: "توثيق الكسوف عبر التاريخ", 2: "الكسوف في تاريخ مصر",
+         3: "كسوف ٢ أغسطس ٢٠٢٧", 4: "الرصد الآمن", 9: "تجارب علمية تمهيدية", 5: "تصوير الكسوف",
+         10: "تطبيقات وأدوات التخطيط", 6: "خرائط إضافية", 7: "الأطلس — ٤٠ خريطة بالعربية"}
+TITLES = {src: f"الفصل {ORD_AR[i]}: {NAMES[src]}" for i, src in enumerate(BOOK_ORDER)}
+
+
+def renumber(cat):
+    """Assign book-order figure numbers (chapter position in the book, then index)."""
+    from eclipse2027.i18n import ar_digits
+    pos = {src: i + 1 for i, src in enumerate(BOOK_ORDER)}
+    count = {}
+    out = []
+    for src in BOOK_ORDER:
+        for c in [c for c in cat if c["chapter"] == src]:
+            count[src] = count.get(src, 0) + 1
+            p, n = pos[src], count[src]
+            out.append(dict(c, book_chapter=p, src_number=c["number"], number=f"{p}-{n}", number_ar=ar_digits(n) + "-" + ar_digits(p)))
+    return out
 
 MAP_CAPTIONS_AR = {
     "world_overview_orthographic": "نظرة عالمية: مسار الكلية ونسب الاحتجاب ووقت الذروة",
@@ -70,14 +88,15 @@ def arabic_maps_catalogue():
 def write_index():
     sys.path.insert(0, ROOT)
     cat = []
-    for n in range(1, 7):
+    for n in [1, 2, 3, 4, 5, 6, 8, 9, 10]:
         p = os.path.join(FIG, f"catalogue_ch{n}.json")
         cat += json.load(open(p, encoding="utf-8"))
     cat += arabic_maps_catalogue()
+    cat = renumber(cat)
     json.dump(cat, open(os.path.join(HERE, "catalogue.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     kinds = {"map": "خريطة", "chart": "رسم بياني", "infographic": "إنفوجرافيك"}
     parts = []
-    for ch in range(1, 8):
+    for ch in BOOK_ORDER:
         items = [c for c in cat if c["chapter"] == ch]
         cards = "\n".join(
             f'<figure><a href="{c["file"]}"><img loading="lazy" src="{c["file"]}" alt=""></a>'

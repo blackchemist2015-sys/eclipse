@@ -1,0 +1,82 @@
+[
+ {
+  "chapter": 9,
+  "number": "9-1",
+  "number_ar": "١-٩",
+  "file": "figures/ch9/fig_9_01_exp_pinhole_crescents.png",
+  "caption": "تجربة للمستوى التمهيدي: أهلّة تحت الشجرة.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 9,
+  "number": "9-2",
+  "number_ar": "٢-٩",
+  "file": "figures/ch9/fig_9_02_exp_temperature_drop.png",
+  "caption": "تجربة للمستوى التمهيدي: هل تبرد الأرض أثناء الكسوف؟.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 9,
+  "number": "9-3",
+  "number_ar": "٣-٩",
+  "file": "figures/ch9/fig_9_03_exp_light_meter.png",
+  "caption": "تجربة للمستوى التمهيدي: منحنى الضوء بالهاتف.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 9,
+  "number": "9-4",
+  "number_ar": "٤-٩",
+  "file": "figures/ch9/fig_9_04_exp_sharp_shadows.png",
+  "caption": "تجربة للمستوى التمهيدي: الظلال تزداد حدة.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 9,
+  "number": "9-5",
+  "number_ar": "٥-٩",
+  "file": "figures/ch9/fig_9_05_exp_shadow_bands.png",
+  "caption": "تجربة للمستوى التمهيدي: اصطياد الأحزمة الظلية.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 9,
+  "number": "9-6",
+  "number_ar": "٦-٩",
+  "file": "figures/ch9/fig_9_06_exp_animal_behavior.png",
+  "caption": "تجربة للمستوى التمهيدي: الطيور والحيوانات.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 9,
+  "number": "9-7",
+  "number_ar": "٧-٩",
+  "file": "figures/ch9/fig_9_07_exp_timing_contacts.png",
+  "caption": "تجربة للمستوى التمهيدي: هل صدق الحساب؟.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 9,
+  "number": "9-8",
+  "number_ar": "٨-٩",
+  "file": "figures/ch9/fig_9_08_exp_sun_size.png",
+  "caption": "تجربة للمستوى التمهيدي: قِس قطر الشمس بكاميرا الثقب.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 9,
+  "number": "9-9",
+  "number_ar": "٩-٩",
+  "file": "figures/ch9/fig_9_09_scale_model.png",
+  "caption": "أبعاد نموذج الكسوف بمقياس رسم حقيقي للاستخدام في الفصل (محسوب).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 9,
+  "number": "9-10",
+  "number_ar": "١٠-٩",
+  "file": "figures/ch9/fig_9_10_predicted_light_curve.png",
+  "caption": "منحنى الضوء المتوقع في الأقصر لمقارنته بقياسات الطلاب (محسوب).",
+  "kind": "chart"
+ }
+]

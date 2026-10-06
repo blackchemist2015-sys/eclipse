@@ -1,0 +1,90 @@
+[
+ {
+  "chapter": 8,
+  "number": "8-1",
+  "number_ar": "١-٨",
+  "file": "figures/ch8/fig_8_01_documentation_timeline.png",
+  "caption": "خط زمني لأبرز محطات توثيق الكسوف الشمسي في تاريخ البشرية.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 8,
+  "number": "8-2",
+  "number_ar": "٢-٨",
+  "file": "figures/ch8/fig_8_02_documentation_media.png",
+  "caption": "وسائل توثيق الكسوف عبر العصور من ألواح الطين إلى المراصد الفضائية.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 8,
+  "number": "8-3",
+  "number_ar": "٣-٨",
+  "file": "figures/ch8/fig_8_03_eclipse_763bc_assyria.png",
+  "caption": "خريطة تقريبية لكسوف ٧٦٣ ق.م فوق بلاد آشور (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 8,
+  "number": "8-4",
+  "number_ar": "٤-٨",
+  "file": "figures/ch8/fig_8_04_eclipse_585bc_thales.png",
+  "caption": "خريطة تقريبية لكسوف ٥٨٥ ق.م المنسوب إلى طاليس (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 8,
+  "number": "8-5",
+  "number_ar": "٥-٨",
+  "file": "figures/ch8/fig_8_05_eclipse_1715_halley.png",
+  "caption": "مسار كسوف ١٧١٥ الذي تنبأ به إدموند هالي (محسوب).",
+  "kind": "map"
+ },
+ {
+  "chapter": 8,
+  "number": "8-6",
+  "number_ar": "٦-٨",
+  "file": "figures/ch8/fig_8_06_eclipse_1851_first_photo.png",
+  "caption": "مسار كسوف ١٨٥١ الذي التُقطت فيه أول صورة للكلية (محسوب).",
+  "kind": "map"
+ },
+ {
+  "chapter": 8,
+  "number": "8-7",
+  "number_ar": "٧-٨",
+  "file": "figures/ch8/fig_8_07_eclipse_1868_helium.png",
+  "caption": "مسار كسوف ١٨٦٨ في الهند وجنوب شرق آسيا (محسوب).",
+  "kind": "map"
+ },
+ {
+  "chapter": 8,
+  "number": "8-8",
+  "number_ar": "٨-٨",
+  "file": "figures/ch8/fig_8_08_helium_1868.png",
+  "caption": "اكتشاف خط الهيليوم في طيف الشمس أثناء كسوف ١٨٦٨.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 8,
+  "number": "8-9",
+  "number_ar": "٩-٨",
+  "file": "figures/ch8/fig_8_09_eclipse_1919_eddington.png",
+  "caption": "مسار كسوف ١٩١٩ وموقعا بعثتي إدنغتون ودايسون (محسوب).",
+  "kind": "map"
+ },
+ {
+  "chapter": 8,
+  "number": "8-10",
+  "number_ar": "١٠-٨",
+  "file": "figures/ch8/fig_8_10_eddington_1919.png",
+  "caption": "تجربة إدنغتون ١٩١٩: انحناء ضوء النجوم قرب الشمس أثناء الكسوف.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 8,
+  "number": "8-11",
+  "number_ar": "١١-٨",
+  "file": "figures/ch8/fig_8_11_eclipse_1973_concorde.png",
+  "caption": "مسار كسوف ١٩٧٣ الطويل عبر أفريقيا (محسوب).",
+  "kind": "map"
+ }
+]

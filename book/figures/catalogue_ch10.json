@@ -1,0 +1,18 @@
+[
+ {
+  "chapter": 10,
+  "number": "10-1",
+  "number_ar": "١-١٠",
+  "file": "figures/ch10/fig_10_01_useful_apps.png",
+  "caption": "تطبيقات ومواقع مفيدة لتخطيط رصد الكسوف وتصويره.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 10,
+  "number": "10-2",
+  "number_ar": "٢-١٠",
+  "file": "figures/ch10/fig_10_02_planning_timeline.png",
+  "caption": "جدول زمني مقترح للاستعداد لكسوف ٢٠٢٧.",
+  "kind": "infographic"
+ }
+]

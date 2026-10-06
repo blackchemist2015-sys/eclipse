@@ -2,17 +2,20 @@
 
 # رسوم كتاب «الكسوف الكلي للشمس — ٢ أغسطس ٢٠٢٧»
 
-تضم هذه المجموعة **201 شكلًا** جاهزة للطباعة (٢٢٠ نقطة في البوصة): إنفوجرافيك ورسوم بيانية وخرائط، وكل نصوصها بالعربية. الأرقام كلها محسوبة من تقويم مختبر الدفع النفاث JPL DE421، ومن نظرية ERFA للكسوفات السابقة لعام ١٩٠٠. افتح [`index.html`](index.html) لتصفّح الأشكال مع أرقامها وتعليقاتها.
+تضم هذه المجموعة **224 شكلًا** جاهزة للطباعة (٢٢٠ نقطة في البوصة): إنفوجرافيك ورسوم بيانية وخرائط، وكل نصوصها بالعربية. الأرقام كلها محسوبة من تقويم مختبر الدفع النفاث JPL DE421، ومن نظرية ERFA للكسوفات السابقة لعام ١٩٠٠. افتح [`index.html`](index.html) لتصفّح الأشكال مع أرقامها وتعليقاتها.
 
 | الفصل | الموضوع | عدد الأشكال |
 |---|---|---|
-| 1 | الأساس العلمي للكسوف | 31 |
-| 2 | الكسوف في تاريخ مصر | 19 |
-| 3 | كسوف ٢ أغسطس ٢٠٢٧ | 47 |
-| 4 | الرصد الآمن | 21 |
-| 5 | تصوير الكسوف | 19 |
-| 6 | خرائط إضافية | 24 |
-| 7 | الأطلس: ٤٠ خريطة بالعربية | 40 |
+| الأول | الأساس العلمي للكسوف | 31 |
+| الثاني | توثيق الكسوف عبر التاريخ | 11 |
+| الثالث | الكسوف في تاريخ مصر | 19 |
+| الرابع | كسوف ٢ أغسطس ٢٠٢٧ | 47 |
+| الخامس | الرصد الآمن | 21 |
+| السادس | تجارب علمية تمهيدية | 10 |
+| السابع | تصوير الكسوف | 19 |
+| الثامن | تطبيقات وأدوات التخطيط | 2 |
+| التاسع | خرائط إضافية | 24 |
+| العاشر | الأطلس — ٤٠ خريطة بالعربية | 40 |
 
 ## التدقيق اللغوي والطباعي
 
@@ -40,9 +43,9 @@ ECLIPSE_LANG=ar python -m eclipse2027.maps   # الخرائط الأربعون �
 
 ---
 
-**English summary.** These are 201 print-ready Arabic figures for a book about the 2027 eclipse: 77 infographics, 38 charts and 86 maps. They are grouped into chapters: Scientific background (31), Eclipses in Egypt's history (19), The 2 August 2027 eclipse (47), Safe observing (21), Photographing the eclipse (19), Additional maps (24), Atlas: the 40 maps in Arabic (40). The full list with captions is in `catalogue.json`, and every figure is shown in `index.html`.
+**English summary.** These are 224 print-ready Arabic figures for a book about the 2027 eclipse: 77 infographics, 38 charts and 86 maps. They are grouped into chapters: Scientific background (31), Eclipses in Egypt's history (19), The 2 August 2027 eclipse (47), Safe observing (21), Photographing the eclipse (19), Additional maps (24), Atlas: the 40 maps in Arabic (40). The full list with captions is in `catalogue.json`, and every figure is shown in `index.html`.
 ## النسخة الورقية (Word)
 
-[`word/كتاب_الكسوف_الكلي_2027.docx`](word/) هو الكتاب كاملًا بصيغة Word: الغلاف، والملاحظات، والمحتويات، والمقدمة، والفصول السبعة بنصوصها وأشكالها الـ٢٠١ مع تعليقاتها، ثم الملاحق (جداول المواعيد، ومسرد المصطلحات، والمصادر). الاتجاه من اليمين إلى اليسار، والمقاس A4.
+[`word/كتاب_الكسوف_الكلي_2027.docx`](word/) هو الكتاب كاملًا بصيغة Word: الغلاف، والملاحظات، والمحتويات، والمقدمة، والفصول العشرة بنصوصها وأشكالها الـ٢٢٤ مع تعليقاتها، ثم الملاحق (جداول المواعيد، ومسرد المصطلحات، والمصادر). الاتجاه من اليمين إلى اليسار، والمقاس A4.
 
-يُبنى الملف كما يلي: يكتب `python book/manuscript.py` النص في `word/manuscript.json`، ثم يحوّل `node book/make_docx.js <manuscript_img.json> <out.docx>` الصور المضغوطة إلى ملف Word. عند فتح الملف أول مرة يطلب Word تحديث الحقول ليملأ جدول المحتويات؛ اختر «نعم».
+يُبنى الملف كما يلي: يكتب `python book/word_build.py` كل شيء: يكتب النص، ويضغط الصور، ثم يولّد ملف Word عبر `make_docx.js`. عند فتح الملف أول مرة يطلب Word تحديث الحقول ليملأ جدول المحتويات؛ اختر «نعم».

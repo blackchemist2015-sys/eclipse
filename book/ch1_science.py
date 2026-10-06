@@ -331,7 +331,7 @@ def fig_phenomena_timeline():
         ax.add_patch(Circ(ax, (0.70, y), 0.016, fc=col, ec="white", lw=1.5, zorder=3))
         ax.text(0.95, y, when, ha="right", va="center", fontsize=10.5, fontweight="bold", color=col)
         ax.text(0.66, y, wrap(what, 40), ha="right", va="center", fontsize=10, color=INK, linespacing=1.4)
-    footer(fig, "يختلف التوقيت من موقع لآخر؛ راجع بطاقة مدينتك في الفصل الثالث.")
+    footer(fig, "يختلف التوقيت من موقع لآخر؛ راجع بطاقة مدينتك في الفصل الرابع.")
     save(fig, CH, "phenomena_timeline", "تسلسل الظواهر المرئية قبل الكلية وخلالها وبعدها.")
 
 
