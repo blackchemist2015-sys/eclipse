@@ -371,7 +371,15 @@
   "chapter": 3,
   "number": "3-47",
   "number_ar": "٤٧-٣",
-  "file": "figures/ch3/fig_3_47_city_card_berenice.png",
+  "file": "figures/ch3/fig_3_47_city_card_bawiti_bahariya_oasis.png",
+  "caption": "بطاقة الكسوف لمدينة الباويطي (الواحات البحرية) (محسوبة).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 3,
+  "number": "3-48",
+  "number_ar": "٤٨-٣",
+  "file": "figures/ch3/fig_3_48_city_card_berenice.png",
   "caption": "بطاقة الكسوف لمدينة برنيس (محسوبة).",
   "kind": "infographic"
  }

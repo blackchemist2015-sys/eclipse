@@ -2,7 +2,7 @@
 import numpy as np
 
 import mapkit as MK
-from common import (A, BLUE, BODY, CARD, Circ, INK, INK2, LINE, MUTED, NAVY, PAPER, RED, SUN, SUN_DEEP, TITLE,
+from common import (style_axes, A, BLUE, BODY, CARD, Circ, INK, INK2, LINE, MUTED, NAVY, PAPER, RED, SUN, SUN_DEEP, TITLE,
                     canvas, card, corona, footer, halo, header, moon_disk, number_badge, page, para, plt, save,
                     sun_disk, wrap, write_catalogue)
 from eclipse2027 import engine as E, i18n as I
@@ -141,6 +141,59 @@ def fig_helium():
     save(fig, CH, "helium_1868", "اكتشاف خط الهيليوم في طيف الشمس أثناء كسوف ١٨٦٨.")
 
 
+def fig_ancient_records():
+    rows = [("شو جينغ (كتاب الوثائق)", "الصين", "تقليديًا القرن ٢٢ ق.م", "قصة الفلكيين «هسي وهو» اللذين لم يتنبآ بكسوف؛ تاريخها غير محسوم"),
+            ("شي جينغ (كتاب الأغاني)", "الصين", "القرن ٨ ق.م", "قصيدة تذكر كسوفًا في اليوم «سين-ماو» من الشهر العاشر"),
+            ("سجلات الأعوام الآشورية", "آشور", "١٥ يونيو ٧٦٣ ق.م", "خط مرسوم على اللوح يميّز الحدث؛ مرتكز تأريخ الشرق القديم"),
+            ("حوليات الربيع والخريف", "الصين", "٧٢٠–٤٩٥ ق.م", "تُنسب إلى كونفوشيوس، وتسجل نحو ٣٦ كسوفًا للشمس"),
+            ("هيرودوت", "الأناضول", "٢٨ مايو ٥٨٥ ق.م", "كسوف طاليس الذي أوقف معركة الميديين والليديين"),
+            ("زينوفون (الحملة)", "لاريسا/نمرود", "١٩ مايو ٥٥٧ ق.م", "مدينة مهجورة ارتبط سقوطها بغياب الشمس"),
+            ("هيرودوت", "سارديس", "نحو ٤٨٠ ق.م", "كسوف زمن حملة خشايارشا (زركسيس)؛ تحديده موضع نقاش"),
+            ("ثوسيديدس", "أثينا", "٣ أغسطس ٤٣١ ق.م", "كسوف حلقي في بداية حرب البيلوبونيز (يؤكده حسابنا)"),
+            ("المجسطي لبطليموس", "بابل والإسكندرية", "٧٢٠ ق.م – ١٣٦ م", "أرصاد كسوف وخسوف استُعملت لدراسة حركة القمر")]
+    RH = 0.66
+    H = 1.7 + RH * len(rows)
+    fig = page(9.0, H)
+    ax = canvas(fig)
+    header(fig, "سجلات الكسوف القديمة", "مصادر مكتوبة دوّنت الكسوف قبل عصر التلسكوب")
+    cols = ["المصدر", "المكان", "التاريخ", "ما الذي يخبرنا به؟"]
+    xs = [0.96, 0.70, 0.56, 0.40]
+    y0 = 1 - 1.30 / H
+    for x, c in zip(xs, cols):
+        ax.text(x, y0, c, ha="right", fontsize=10.5, fontweight="bold", color=BLUE[10])
+    for i, r in enumerate(rows):
+        y = y0 - (i + 1) * RH / H
+        if i % 2 == 0:
+            ax.add_patch(plt.Rectangle((0.02, y - RH / 2 / H), 0.96, RH / H, fc="#f1efea", ec="none", transform=ax.transAxes))
+        for k, (x, v) in enumerate(zip(xs, r)):
+            ax.text(x, y, wrap(v, 50) if k == 3 else v, ha="right", va="center", fontsize=9.4 if k == 3 else 9.8,
+                    fontweight="bold" if k == 0 else "normal", linespacing=1.3)
+    footer(fig, "المصادر: Sepharial, Eclipses (1915)، مع تدقيق التواريخ بحسابات المؤلف؛ التواريخ القديمة تقريبية وبعضها موضع خلاف.")
+    save(fig, CH, "ancient_records_table", "جدول بأشهر سجلات الكسوف المكتوبة في العالم القديم.")
+
+
+def fig_delta_t():
+    yrs = np.arange(-1000, 2031, 5)
+    dt = np.array([E.delta_t(y) for y in yrs]) / 3600
+    fig = page(8.6, 5.0)
+    header(fig, "لماذا تختلف السجلات القديمة عن الحساب البسيط؟", "فرق التوقيت ΔT: تباطؤ دوران الأرض بفعل المد والجزر يتراكم عبر القرون")
+    ax = fig.add_axes([0.08, 0.17, 0.82, 0.59])
+    ax.plot(yrs, dt, color=BLUE[9], lw=2.4)
+    for y, lab in [(-762, "آشور ٧٦٣ ق.م"), (-584, "طاليس"), (977, "ابن يونس"), (1882, "سوهاج")]:
+        v = E.delta_t(y) / 3600
+        ax.plot(y, v, "o", color=RED)
+        off = {"آشور ٧٦٣ ق.م": (10, 4), "طاليس": (10, -26)}.get(lab, (8, 8))
+        ax.annotate(lab + "\n≈ " + A(f"{v:.1f}") + " ساعة", (y, v), xytext=off, textcoords="offset points", fontsize=8.8)
+    ax.set_ylabel("ΔT (ساعة)")
+    ax.set_xlabel("السنة (السالب = قبل الميلاد)")
+    style_axes(ax)
+    from common import arabic_ticks, mirror_y
+    arabic_ticks(ax, fmt="{:.0f}")
+    mirror_y(ax)
+    footer(fig, "معادلات إسبيناك ومييس (ناسا). لولا تصحيح ΔT لانزاح مسار كسوف ٧٦٣ ق.م عن آشور نحو ٩٠ درجة طول (كل ساعة = ١٥°).")
+    save(fig, CH, "delta_t_curve", "منحنى فرق التوقيت ΔT عبر ثلاثة آلاف عام وأثره على مواقع الكسوفات القديمة (محسوب).", "chart")
+
+
 def main():
     fig_timeline()
     fig_media()
@@ -167,6 +220,11 @@ def main():
     hist_map(1973, 6, 30, 11, "كسوف ٣٠ يونيو ١٩٧٣ ومطاردة الكونكورد", "أطول كلية شهدها بشر: ٧٤ دقيقة على متن طائرة أسرع من الصوت",
              "eclipse_1973_concorde", "مسار كسوف ١٩٧٣ الطويل عبر أفريقيا (محسوب).", (-30, 60, -5, 35),
              [("نواكشوط", 18.08, -15.98), ("أغاديز", 16.97, 7.99), ("نيروبي", -1.29, 36.82), ("القاهرة", 30.04, 31.24)])
+    hist_map(-430, 8, 3, 16, "كسوف ثوسيديدس ٤٣١ ق.م", "كسوف حلقي رآه الأثينيون جزئيًا في بداية حرب البيلوبونيز",
+             "eclipse_431bc_athens", "خريطة تقريبية لكسوف ٤٣١ ق.م الحلقي (محسوبة).", (-15, 60, 20, 55),
+             [("أثينا", 37.98, 23.73), ("الإسكندرية", 31.2, 29.92), ("بابل", 32.54, 44.42)])
+    fig_ancient_records()
+    fig_delta_t()
     write_catalogue("ch8")
 
 

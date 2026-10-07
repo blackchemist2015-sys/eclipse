@@ -420,6 +420,36 @@
   "src_number": "8-11"
  },
  {
+  "chapter": 8,
+  "number": "2-12",
+  "number_ar": "١٢-٢",
+  "file": "figures/ch8/fig_8_12_eclipse_431bc_athens.png",
+  "caption": "خريطة تقريبية لكسوف ٤٣١ ق.م الحلقي (محسوبة).",
+  "kind": "map",
+  "book_chapter": 2,
+  "src_number": "8-12"
+ },
+ {
+  "chapter": 8,
+  "number": "2-13",
+  "number_ar": "١٣-٢",
+  "file": "figures/ch8/fig_8_13_ancient_records_table.png",
+  "caption": "جدول بأشهر سجلات الكسوف المكتوبة في العالم القديم.",
+  "kind": "infographic",
+  "book_chapter": 2,
+  "src_number": "8-13"
+ },
+ {
+  "chapter": 8,
+  "number": "2-14",
+  "number_ar": "١٤-٢",
+  "file": "figures/ch8/fig_8_14_delta_t_curve.png",
+  "caption": "منحنى فرق التوقيت ΔT عبر ثلاثة آلاف عام وأثره على مواقع الكسوفات القديمة (محسوب).",
+  "kind": "chart",
+  "book_chapter": 2,
+  "src_number": "8-14"
+ },
+ {
   "chapter": 2,
   "number": "3-1",
   "number_ar": "١-٣",
@@ -1073,11 +1103,21 @@
   "chapter": 3,
   "number": "4-47",
   "number_ar": "٤٧-٤",
-  "file": "figures/ch3/fig_3_47_city_card_berenice.png",
-  "caption": "بطاقة الكسوف لمدينة برنيس (محسوبة).",
+  "file": "figures/ch3/fig_3_47_city_card_bawiti_bahariya_oasis.png",
+  "caption": "بطاقة الكسوف لمدينة الباويطي (الواحات البحرية) (محسوبة).",
   "kind": "infographic",
   "book_chapter": 4,
   "src_number": "3-47"
+ },
+ {
+  "chapter": 3,
+  "number": "4-48",
+  "number_ar": "٤٨-٤",
+  "file": "figures/ch3/fig_3_48_city_card_berenice.png",
+  "caption": "بطاقة الكسوف لمدينة برنيس (محسوبة).",
+  "kind": "infographic",
+  "book_chapter": 4,
+  "src_number": "3-48"
  },
  {
   "chapter": 4,
@@ -1580,6 +1620,56 @@
   "src_number": "5-19"
  },
  {
+  "chapter": 5,
+  "number": "7-20",
+  "number_ar": "٢٠-٧",
+  "file": "figures/ch5/fig_5_20_site_selection.png",
+  "caption": "خطوات اختيار موقع التصوير (مقتبسة بتصرف من Allan Hall, 2017).",
+  "kind": "infographic",
+  "book_chapter": 7,
+  "src_number": "5-20"
+ },
+ {
+  "chapter": 5,
+  "number": "7-21",
+  "number_ar": "٢١-٧",
+  "file": "figures/ch5/fig_5_21_zenith_challenge.png",
+  "caption": "تحديات تصوير الكسوف والشمس قرب سمت الرأس في صعيد مصر.",
+  "kind": "infographic",
+  "book_chapter": 7,
+  "src_number": "5-21"
+ },
+ {
+  "chapter": 5,
+  "number": "7-22",
+  "number_ar": "٢٢-٧",
+  "file": "figures/ch5/fig_5_22_vibration_free.png",
+  "caption": "طرق إطلاق الغالق دون اهتزاز (مقتبسة بتصرف من Allan Hall, 2017).",
+  "kind": "infographic",
+  "book_chapter": 7,
+  "src_number": "5-22"
+ },
+ {
+  "chapter": 5,
+  "number": "7-23",
+  "number_ar": "٢٣-٧",
+  "file": "figures/ch5/fig_5_23_diy_filter_card.png",
+  "caption": "خطوات صنع حامل لرقائق المرشح الشمسي (مقتبسة بتصرف من Allan Hall, 2017).",
+  "kind": "infographic",
+  "book_chapter": 7,
+  "src_number": "5-23"
+ },
+ {
+  "chapter": 5,
+  "number": "7-24",
+  "number_ar": "٢٤-٧",
+  "file": "figures/ch5/fig_5_24_camera_types.png",
+  "caption": "مقارنة أنواع الكاميرات لتصوير الكسوف (مقتبسة بتصرف من Allan Hall, 2017).",
+  "kind": "infographic",
+  "book_chapter": 7,
+  "src_number": "5-24"
+ },
+ {
   "chapter": 10,
   "number": "8-1",
   "number_ar": "١-٨",
@@ -1753,8 +1843,8 @@
   "chapter": 6,
   "number": "9-16",
   "number_ar": "١٦-٩",
-  "file": "figures/ch6/fig_6_16_western_oases.png",
-  "caption": "خريطة الواحات المصرية وكسوف ٢٠٢٧ (محسوبة).",
+  "file": "figures/ch6/fig_6_16_bahariya_oasis.png",
+  "caption": "الواحات البحرية: مدة الكلية في الباويطي والحيز ومنديشة، وأطول مدة على خط المركز (محسوبة).",
   "kind": "map",
   "book_chapter": 9,
   "src_number": "6-16"
@@ -1763,8 +1853,8 @@
   "chapter": 6,
   "number": "9-17",
   "number_ar": "١٧-٩",
-  "file": "figures/ch6/fig_6_17_delta_cairo.png",
-  "caption": "نسبة الاحتجاب في الدلتا والقاهرة الكبرى (محسوبة).",
+  "file": "figures/ch6/fig_6_17_western_oases.png",
+  "caption": "خريطة الواحات المصرية وكسوف ٢٠٢٧ (محسوبة).",
   "kind": "map",
   "book_chapter": 9,
   "src_number": "6-17"
@@ -1773,8 +1863,8 @@
   "chapter": 6,
   "number": "9-18",
   "number_ar": "١٨-٩",
-  "file": "figures/ch6/fig_6_18_sinai.png",
-  "caption": "نسبة الاحتجاب في سيناء ومدن القناة (محسوبة).",
+  "file": "figures/ch6/fig_6_18_delta_cairo.png",
+  "caption": "نسبة الاحتجاب في الدلتا والقاهرة الكبرى (محسوبة).",
   "kind": "map",
   "book_chapter": 9,
   "src_number": "6-18"
@@ -1783,8 +1873,8 @@
   "chapter": 6,
   "number": "9-19",
   "number_ar": "١٩-٩",
-  "file": "figures/ch6/fig_6_19_egypt_shadow_1275.png",
-  "caption": "موقع ظل القمر فوق مصر الساعة ١٢:٤٥ بتوقيت مصر (محسوب).",
+  "file": "figures/ch6/fig_6_19_sinai.png",
+  "caption": "نسبة الاحتجاب في سيناء ومدن القناة (محسوبة).",
   "kind": "map",
   "book_chapter": 9,
   "src_number": "6-19"
@@ -1793,8 +1883,8 @@
   "chapter": 6,
   "number": "9-20",
   "number_ar": "٢٠-٩",
-  "file": "figures/ch6/fig_6_20_egypt_shadow_1285.png",
-  "caption": "موقع ظل القمر فوق مصر الساعة ١٢:٥١ بتوقيت مصر (محسوب).",
+  "file": "figures/ch6/fig_6_20_egypt_shadow_1275.png",
+  "caption": "موقع ظل القمر فوق مصر الساعة ١٢:٤٥ بتوقيت مصر (محسوب).",
   "kind": "map",
   "book_chapter": 9,
   "src_number": "6-20"
@@ -1803,8 +1893,8 @@
   "chapter": 6,
   "number": "9-21",
   "number_ar": "٢١-٩",
-  "file": "figures/ch6/fig_6_21_egypt_shadow_1295.png",
-  "caption": "موقع ظل القمر فوق مصر الساعة ١٢:٥٧ بتوقيت مصر (محسوب).",
+  "file": "figures/ch6/fig_6_21_egypt_shadow_1285.png",
+  "caption": "موقع ظل القمر فوق مصر الساعة ١٢:٥١ بتوقيت مصر (محسوب).",
   "kind": "map",
   "book_chapter": 9,
   "src_number": "6-21"
@@ -1813,8 +1903,8 @@
   "chapter": 6,
   "number": "9-22",
   "number_ar": "٢٢-٩",
-  "file": "figures/ch6/fig_6_22_egypt_shadow_1305.png",
-  "caption": "موقع ظل القمر فوق مصر الساعة ١٣:٠٣ بتوقيت مصر (محسوب).",
+  "file": "figures/ch6/fig_6_22_egypt_shadow_1295.png",
+  "caption": "موقع ظل القمر فوق مصر الساعة ١٢:٥٧ بتوقيت مصر (محسوب).",
   "kind": "map",
   "book_chapter": 9,
   "src_number": "6-22"
@@ -1823,8 +1913,8 @@
   "chapter": 6,
   "number": "9-23",
   "number_ar": "٢٣-٩",
-  "file": "figures/ch6/fig_6_23_egypt_shadow_1315.png",
-  "caption": "موقع ظل القمر فوق مصر الساعة ١٣:٠٩ بتوقيت مصر (محسوب).",
+  "file": "figures/ch6/fig_6_23_egypt_shadow_1305.png",
+  "caption": "موقع ظل القمر فوق مصر الساعة ١٣:٠٣ بتوقيت مصر (محسوب).",
   "kind": "map",
   "book_chapter": 9,
   "src_number": "6-23"
@@ -1833,11 +1923,21 @@
   "chapter": 6,
   "number": "9-24",
   "number_ar": "٢٤-٩",
-  "file": "figures/ch6/fig_6_24_egypt_shadow_1325.png",
-  "caption": "موقع ظل القمر فوق مصر الساعة ١٣:١٥ بتوقيت مصر (محسوب).",
+  "file": "figures/ch6/fig_6_24_egypt_shadow_1315.png",
+  "caption": "موقع ظل القمر فوق مصر الساعة ١٣:٠٩ بتوقيت مصر (محسوب).",
   "kind": "map",
   "book_chapter": 9,
   "src_number": "6-24"
+ },
+ {
+  "chapter": 6,
+  "number": "9-25",
+  "number_ar": "٢٥-٩",
+  "file": "figures/ch6/fig_6_25_egypt_shadow_1325.png",
+  "caption": "موقع ظل القمر فوق مصر الساعة ١٣:١٥ بتوقيت مصر (محسوب).",
+  "kind": "map",
+  "book_chapter": 9,
+  "src_number": "6-25"
  },
  {
   "chapter": 7,
@@ -2233,10 +2333,20 @@
   "chapter": 7,
   "number": "10-40",
   "number_ar": "٤٠-١٠",
-  "file": "../maps_ar/40_egypt_city_berenice.png",
-  "caption": "خريطة مدينة برنيس مع مراحل الكسوف وجدول المواعيد",
+  "file": "../maps_ar/40_egypt_city_bawiti_bahariya_oasis.png",
+  "caption": "خريطة مدينة الباويطي (الواحات البحرية) مع مراحل الكسوف وجدول المواعيد",
   "kind": "map",
   "book_chapter": 10,
   "src_number": "7-40"
+ },
+ {
+  "chapter": 7,
+  "number": "10-41",
+  "number_ar": "٤١-١٠",
+  "file": "../maps_ar/41_egypt_city_berenice.png",
+  "caption": "خريطة مدينة برنيس مع مراحل الكسوف وجدول المواعيد",
+  "kind": "map",
+  "book_chapter": 10,
+  "src_number": "7-41"
  }
 ]

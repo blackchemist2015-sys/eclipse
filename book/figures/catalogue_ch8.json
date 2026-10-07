@@ -86,5 +86,29 @@
   "file": "figures/ch8/fig_8_11_eclipse_1973_concorde.png",
   "caption": "مسار كسوف ١٩٧٣ الطويل عبر أفريقيا (محسوب).",
   "kind": "map"
+ },
+ {
+  "chapter": 8,
+  "number": "8-12",
+  "number_ar": "١٢-٨",
+  "file": "figures/ch8/fig_8_12_eclipse_431bc_athens.png",
+  "caption": "خريطة تقريبية لكسوف ٤٣١ ق.م الحلقي (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 8,
+  "number": "8-13",
+  "number_ar": "١٣-٨",
+  "file": "figures/ch8/fig_8_13_ancient_records_table.png",
+  "caption": "جدول بأشهر سجلات الكسوف المكتوبة في العالم القديم.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 8,
+  "number": "8-14",
+  "number_ar": "١٤-٨",
+  "file": "figures/ch8/fig_8_14_delta_t_curve.png",
+  "caption": "منحنى فرق التوقيت ΔT عبر ثلاثة آلاف عام وأثره على مواقع الكسوفات القديمة (محسوب).",
+  "kind": "chart"
  }
 ]

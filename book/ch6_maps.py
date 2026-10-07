@@ -3,6 +3,7 @@ import numpy as np
 
 import mapkit as MK
 from common import (A, BLUE, INK, INK2, NAVY, ORANGE, PAPER, RED, footer, halo, header, plt, save, write_catalogue)
+from common import SUN as SUN_C
 from eclipse2027 import besselian, circumstances as C, i18n as I
 from eclipse2027.places import EGYPT_CITIES
 
@@ -92,6 +93,39 @@ def region_map(title, sub, bounds, slug, caption):
     save(fig, CH, slug, caption, "map")
 
 
+def bahariya_map():
+    """Bahariya Oasis: inside the path, central line ~24 km south of Bawiti."""
+    lon0, lon1, lat0, lat1 = 27.9, 29.8, 27.4, 28.9
+    fig = plt.figure(figsize=(7.6, 7.2), facecolor=PAPER)
+    ax = fig.add_axes([0.04, 0.09, 0.86, 0.73])
+    MK.base(ax, lon0, lon1, lat0, lat1, labels=False)
+    MK.field(ax, B, lon0, lon1, lat0, lat1, n=320)
+    MK.path(ax, B, -1.7, 1.95)
+    for n, g, la0, lo0, own in EGYPT_CITIES:
+        if "Bahariya" not in n:
+            continue
+        rr = C.local_circumstances(B, np.array([la0]), np.array([lo0]))
+        short = I.place(n).split(" (")[0]
+        right = "Mandisha" in n
+        ax.plot(lo0, la0, "o", ms=6, mfc=INK, mec="white", mew=1.2, zorder=9)
+        ax.annotate(short + "\nكلي " + I.fmt_dur(rr["duration_s"][0]), (lo0, la0), xytext=(8 if right else -8, 4),
+                    textcoords="offset points", ha="left" if right else "right", fontsize=9.5, path_effects=halo(),
+                    zorder=10)
+    # longest totality inside the oasis: on the central line south of Bawiti
+    t = np.linspace(-0.6, 0.2, 40001)
+    la, lo = C.central_line(B, t)
+    j = int(np.nanargmin(np.abs(lo - 28.865)))
+    r = C.local_circumstances(B, la[j:j + 1], lo[j:j + 1])
+    ax.plot(lo[j], la[j], marker="*", ms=18, color=SUN_C, mec=INK, zorder=10)
+    ax.annotate("أطول كلية في الواحة\n" + I.fmt_dur(r["duration_s"][0], long=True) + "\n" + I.fmt_lat(la[j], 2) + "  " +
+                I.fmt_lon(lo[j], 2), (lo[j], la[j]), xytext=(12, -10), textcoords="offset points", ha="left", va="top",
+                fontsize=9.5, fontweight="bold", path_effects=halo(), zorder=11)
+    header(fig, "الواحات البحرية تحت الظل",
+           "الواحة كلها داخل مسار الكلية؛ وخط المركز يعبرها جنوب الباويطي بنحو " + A(f"{(28.349 - la[j]) * 111:.0f}") + " كم")
+    footer(fig, SRC + " النجمة: نقطة خط المركز داخل نطاق الواحة.")
+    save(fig, CH, "bahariya_oasis", "الواحات البحرية: مدة الكلية في الباويطي والحيز ومنديشة، وأطول مدة على خط المركز (محسوبة).", "map")
+
+
 def egypt_frames():
     lon0, lon1, lat0, lat1 = 24.5, 37.0, 21.7, 31.8
     for hh in [12.75, 12.85, 12.95, 13.05, 13.15, 13.25]:
@@ -123,7 +157,8 @@ def main():
         gov_map(g)
     region_map("ساحل البحر الأحمر", "من الغردقة إلى الشلاتين: منتجعات داخل مسار الكلية وخارجه", (32.6, 36.6, 22.6, 28.2),
                "red_sea_coast", "خريطة ساحل البحر الأحمر ومدة الكلية في مدنه (محسوبة).")
-    region_map("واحات الصحراء الغربية", "سيوة والفرافرة والداخلة والخارجة", (24.6, 31.2, 24.2, 30.2),
+    bahariya_map()
+    region_map("واحات الصحراء الغربية", "سيوة والبحرية والفرافرة والداخلة والخارجة", (24.6, 31.2, 24.2, 30.2),
                "western_oases", "خريطة الواحات المصرية وكسوف ٢٠٢٧ (محسوبة).")
     region_map("الدلتا والقاهرة الكبرى", "كسوف جزئي عميق في أكثر مناطق مصر سكانًا", (29.2, 32.8, 29.3, 31.7),
                "delta_cairo", "نسبة الاحتجاب في الدلتا والقاهرة الكبرى (محسوبة).")

@@ -150,5 +150,45 @@
   "file": "figures/ch5/fig_5_19_processing_workflow.png",
   "caption": "خطوات معالجة صور الهالة الشمسية.",
   "kind": "infographic"
+ },
+ {
+  "chapter": 5,
+  "number": "5-20",
+  "number_ar": "٢٠-٥",
+  "file": "figures/ch5/fig_5_20_site_selection.png",
+  "caption": "خطوات اختيار موقع التصوير (مقتبسة بتصرف من Allan Hall, 2017).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 5,
+  "number": "5-21",
+  "number_ar": "٢١-٥",
+  "file": "figures/ch5/fig_5_21_zenith_challenge.png",
+  "caption": "تحديات تصوير الكسوف والشمس قرب سمت الرأس في صعيد مصر.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 5,
+  "number": "5-22",
+  "number_ar": "٢٢-٥",
+  "file": "figures/ch5/fig_5_22_vibration_free.png",
+  "caption": "طرق إطلاق الغالق دون اهتزاز (مقتبسة بتصرف من Allan Hall, 2017).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 5,
+  "number": "5-23",
+  "number_ar": "٢٣-٥",
+  "file": "figures/ch5/fig_5_23_diy_filter_card.png",
+  "caption": "خطوات صنع حامل لرقائق المرشح الشمسي (مقتبسة بتصرف من Allan Hall, 2017).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 5,
+  "number": "5-24",
+  "number_ar": "٢٤-٥",
+  "file": "figures/ch5/fig_5_24_camera_types.png",
+  "caption": "مقارنة أنواع الكاميرات لتصوير الكسوف (مقتبسة بتصرف من Allan Hall, 2017).",
+  "kind": "infographic"
  }
 ]
