@@ -310,6 +310,116 @@
   "src_number": "1-31"
  },
  {
+  "chapter": 1,
+  "number": "1-32",
+  "number_ar": "٣٢-١",
+  "file": "figures/ch1/fig_1_32_nasa_diamond_ring.png",
+  "caption": "الخاتم الماسي (Diamond Ring): صورة ناسا (NASA/Aubrey Gemignani).",
+  "kind": "photo",
+  "book_chapter": 1,
+  "src_number": "1-32"
+ },
+ {
+  "chapter": 1,
+  "number": "1-33",
+  "number_ar": "٣٣-١",
+  "file": "figures/ch1/fig_1_33_nasa_baily_beads.png",
+  "caption": "حبات بيلي (Baily's Beads): صورة ناسا (NASA/Aubrey Gemignani).",
+  "kind": "photo",
+  "book_chapter": 1,
+  "src_number": "1-33"
+ },
+ {
+  "chapter": 1,
+  "number": "1-34",
+  "number_ar": "٣٤-١",
+  "file": "figures/ch1/fig_1_34_nasa_corona.png",
+  "caption": "الهالة الشمسية (Corona): صورة ناسا (NASA/Aubrey Gemignani).",
+  "kind": "photo",
+  "book_chapter": 1,
+  "src_number": "1-34"
+ },
+ {
+  "chapter": 1,
+  "number": "1-35",
+  "number_ar": "٣٥-١",
+  "file": "figures/ch1/fig_1_35_nasa_prominences.png",
+  "caption": "الشواظ والكروموسفير (Prominences & Chromosphere): صورة ناسا (NASA/Keegan Barber).",
+  "kind": "photo",
+  "book_chapter": 1,
+  "src_number": "1-35"
+ },
+ {
+  "chapter": 1,
+  "number": "1-36",
+  "number_ar": "٣٦-١",
+  "file": "figures/ch1/fig_1_36_nasa_partial_sequence.png",
+  "caption": "مراحل الكسوف (Eclipse Sequence): صورة ناسا (NASA/Aubrey Gemignani).",
+  "kind": "photo",
+  "book_chapter": 1,
+  "src_number": "1-36"
+ },
+ {
+  "chapter": 1,
+  "number": "1-37",
+  "number_ar": "٣٧-١",
+  "file": "figures/ch1/fig_1_37_nasa_iss_shadow.png",
+  "caption": "ظل القمر من الفضاء (Umbra from the ISS): صورة ناسا (NASA/JSC (ISS Expedition 71)).",
+  "kind": "photo",
+  "book_chapter": 1,
+  "src_number": "1-37"
+ },
+ {
+  "chapter": 1,
+  "number": "1-38",
+  "number_ar": "٣٨-١",
+  "file": "figures/ch1/fig_1_38_nasa_dscovr_shadow.png",
+  "caption": "الظل من مليون ونصف كيلومتر (DSCOVR/EPIC): صورة ناسا (NASA/NOAA DSCOVR EPIC).",
+  "kind": "photo",
+  "book_chapter": 1,
+  "src_number": "1-38"
+ },
+ {
+  "chapter": 1,
+  "number": "1-39",
+  "number_ar": "٣٩-١",
+  "file": "figures/ch1/fig_1_39_nasa_iss_transit.png",
+  "caption": "محطة الفضاء تعبر الشمس (ISS Transit): صورة ناسا (NASA/Joel Kowsky).",
+  "kind": "photo",
+  "book_chapter": 1,
+  "src_number": "1-39"
+ },
+ {
+  "chapter": 1,
+  "number": "1-40",
+  "number_ar": "٤٠-١",
+  "file": "figures/ch1/fig_1_40_nasa_citizen_science.png",
+  "caption": "علم المواطن: قياس الطقس أثناء الكسوف (Citizen Science): صورة ناسا (NASA/Michael DeMocker).",
+  "kind": "photo",
+  "book_chapter": 1,
+  "src_number": "1-40"
+ },
+ {
+  "chapter": 1,
+  "number": "1-41",
+  "number_ar": "٤١-١",
+  "file": "figures/ch1/fig_1_41_nasa_orion.png",
+  "caption": "الكسوف من مركبة أوريون (Artemis II): صورة ناسا (NASA/JSC (Artemis II)).",
+  "kind": "photo",
+  "book_chapter": 1,
+  "src_number": "1-41"
+ },
+ {
+  "chapter": 1,
+  "number": "1-42",
+  "number_ar": "٤٢-١",
+  "file": "figures/ch1/fig_1_42_nasa_viewing.png",
+  "caption": "المشاهدة الآمنة (Safe Viewing): صورة ناسا (NASA/Aubrey Gemignani).",
+  "kind": "photo",
+  "book_chapter": 1,
+  "src_number": "1-42"
+ },
+ {
   "chapter": 8,
   "number": "2-1",
   "number_ar": "١-٢",

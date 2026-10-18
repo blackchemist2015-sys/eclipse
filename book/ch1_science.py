@@ -907,13 +907,24 @@ NASA_PLATES = [
     ("iss_transit", "محطة الفضاء تعبر الشمس (ISS Transit)",
      "تصوير بمرشح شمسي لمحطة الفضاء الدولية وهي تعبر قرص الشمس أثناء الكسوف الجزئي في أقل من ثانية؛ "
      "ويتطلب تخطيطًا دقيقًا لموقع المصوّر ومعدات مزودة بمرشح آمن."),
-    ("crescents", "أهلّة الظلال (Pinhole Crescents)",
-     "الفراغات بين أوراق الأشجار تعمل ككاميرات ثقب طبيعية، فتنعكس على الأرض مئات الصور الصغيرة للشمس المكسوفة على هيئة أهلّة. "
-     "وهي أسهل طريقة آمنة لمشاهدة المرحلة الجزئية."),
+    ("citizen_science", "علم المواطن: قياس الطقس أثناء الكسوف (Citizen Science)",
+     "طلاب يسجلون درجة الحرارة والرطوبة والرياح كل بضع دقائق طوال الكسوف ضمن مشروع علمي بالتعاون مع ناسا. "
+     "ويمكن لأي مدرسة في مصر أن تكرر هذه التجربة يوم ٢ أغسطس ٢٠٢٧ بميزان حرارة وساعة ودفتر، كما يشرح فصل التجارب."),
+    ("orion", "الكسوف من مركبة أوريون (Artemis II)",
+     "في ٦ أبريل ٢٠٢٦، وأثناء تحليق طاقم أرتميس ٢ حول القمر، اصطفّت الشمس خلف القمر كما تُرى من المركبة، فشاهد الرواد كسوفًا "
+     "لا يُرى من الأرض: حافة القمر المظلمة تحجب الشمس ويتسرب من خلفها توهج الهالة."),
     ("viewing", "المشاهدة الآمنة (Safe Viewing)",
      "نظارات الكسوف المطابقة للمواصفة ISO 12312-2 هي الوسيلة الآمنة للنظر إلى الشمس في المراحل الجزئية، "
      "ولا تُخلع إلا في أثناء الكلية التامة."),
 ]
+
+
+# (x0, x1, y0, y1) fractions: enlarge small subjects
+PLATE_CREDIT = {"dscovr_shadow": "NASA/NOAA DSCOVR EPIC", "iss_shadow": "NASA/JSC (ISS Expedition 71)",
+                "orion": "NASA/JSC (Artemis II)"}
+PLATE_DATE = {"dscovr_shadow": "2017-08-21", "orion": "2026-04-06"}
+PLATE_CROPS = {"baily_beads": (0.18, 0.82, 0.05, 0.95), "diamond_ring": (0.15, 0.85, 0.0, 1.0),
+               "partial_sequence": (0.25, 1.0, 0.0, 0.75)}
 
 
 def fig_nasa_plates():
@@ -933,20 +944,24 @@ def fig_nasa_plates():
             continue
         cr = credits[key]
         img = plt.imread(f)
+        if key in PLATE_CROPS:
+            x0, x1, y0, y1 = PLATE_CROPS[key]
+            H0, W0 = img.shape[:2]
+            img = img[int(y0 * H0):int(y1 * H0), int(x0 * W0):int(x1 * W0)]
         h, w = img.shape[:2]
         W = 8.4
         ph = min(W * 0.92 * h / w, 7.0)
-        H = ph + 2.6
+        H = ph + 3.0
         fig = page(W, H, NAVY)
         header(fig, title, "صورة مفتوحة المصدر من مكتبة ناسا للصور", color="white", sub_color="#c9d3e3")
         pw = ph * w / h / W
-        ax = fig.add_axes([(1 - pw) / 2, 1.55 / H, pw, ph / H])
+        ax = fig.add_axes([(1 - pw) / 2, 1.95 / H, pw, ph / H])
         ax.imshow(img)
         ax.axis("off")
-        fig.text(0.965, 1.32 / H, wrap(text, 92), ha="right", va="top", fontsize=10.2, color="white", linespacing=1.55)
-        who = cr.get("photographer") or cr.get("center") or "NASA"
+        fig.text(0.965, 1.75 / H, wrap(text, 100), ha="right", va="top", fontsize=10, color="white", linespacing=1.25)
+        who = PLATE_CREDIT.get(key) or cr.get("photographer", "").strip("() ") or cr.get("center") or "NASA"
         who = who if who.upper().startswith("NASA") else "NASA/" + who
-        footer(fig, f"الصورة: {who} — {cr['nasa_id']} ({cr.get('date', '')}) | images.nasa.gov — مادة ناسا متاحة للاستخدام مع ذكر المصدر.",
+        footer(fig, f"الصورة: {who} — {cr['nasa_id']} ({PLATE_DATE.get(key, cr.get('date', ''))}) | images.nasa.gov — مادة ناسا متاحة للاستخدام مع ذكر المصدر.",
                color="#c9d3e3")
         save(fig, CH, f"nasa_{key}", f"{title}: صورة ناسا ({who}).", "photo")
 

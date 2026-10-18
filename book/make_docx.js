@@ -1,3 +1,4 @@
+const plain = (c) => Array.isArray(c) ? c.map((x) => (typeof x === "string" ? x : (x.text || (Array.isArray(x) ? x[0] : "")))).join("") : String(c);
 // Build the Arabic (RTL) Word edition of the eclipse book from book/word/manuscript_img.json.
 // Usage: node book/make_docx.js <manuscript_img.json> <output.docx>
 const fs = require("fs");
@@ -65,7 +66,7 @@ function figure(it) {
     new Paragraph({
       alignment: AlignmentType.CENTER, keepNext: true, spacing: { before: 200, after: 80 },
       children: [new ImageRun({ type: "jpg", data: fs.readFileSync(it.jpg), transformation: { width: Math.round(w), height: Math.round(h) },
-        altText: { title: "شكل " + it.number, description: it.caption, name: "fig" + it.number } })],
+        altText: { title: "شكل " + it.number, description: plain(it.caption).replace(/&/g, "و").replace(/[<>"]/g, ""), name: "fig" + it.number } })],
     }),
     para([run("شكل " + it.number + ": ", { bold: true, size: 20, color: NAVY, font: HEAD }), ...runs(it.caption, { size: 20, color: MUTED })],
       { align: AlignmentType.CENTER, after: 280 }),

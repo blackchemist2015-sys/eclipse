@@ -1,0 +1,101 @@
+{
+ "diamond_ring": {
+  "nasa_id": "NHQ201708210102",
+  "title": "2017 Total Solar Eclipse",
+  "photographer": "(NASA/Aubrey Gemignani)",
+  "center": "HQ",
+  "date": "2017-08-21",
+  "url": "https://images-assets.nasa.gov/image/NHQ201708210102/NHQ201708210102~large.jpg",
+  "page": "https://images.nasa.gov/details/NHQ201708210102"
+ },
+ "baily_beads": {
+  "nasa_id": "NHQ201708210101",
+  "title": "2017 Total Solar Eclipse",
+  "photographer": "(NASA/Aubrey Gemignani)",
+  "center": "HQ",
+  "date": "2017-08-21",
+  "url": "https://images-assets.nasa.gov/image/NHQ201708210101/NHQ201708210101~large.jpg",
+  "page": "https://images.nasa.gov/details/NHQ201708210101"
+ },
+ "prominences": {
+  "nasa_id": "NHQ202404080107",
+  "title": "2024 Total Solar Eclipse",
+  "photographer": "NASA/Keegan Barber",
+  "center": "HQ",
+  "date": "2024-04-08",
+  "url": "https://images-assets.nasa.gov/image/NHQ202404080107/NHQ202404080107~orig.jpg",
+  "page": "https://images.nasa.gov/details/NHQ202404080107"
+ },
+ "partial_sequence": {
+  "nasa_id": "NHQ201708210106",
+  "title": "2017 Total Solar Eclipse",
+  "photographer": "(NASA/Aubrey Gemignani)",
+  "center": "HQ",
+  "date": "2017-08-21",
+  "url": "https://images-assets.nasa.gov/image/NHQ201708210106/NHQ201708210106~large.jpg",
+  "page": "https://images.nasa.gov/details/NHQ201708210106"
+ },
+ "iss_shadow": {
+  "nasa_id": "iss071e002694",
+  "title": "The 2024 Eclipse Umbra Pictured from Space",
+  "photographer": "",
+  "center": "JSC",
+  "date": "2024-04-08",
+  "url": "https://images-assets.nasa.gov/image/iss071e002694/iss071e002694~large.jpg",
+  "page": "https://images.nasa.gov/details/iss071e002694"
+ },
+ "dscovr_shadow": {
+  "nasa_id": "GSFC_20171208_Archive_e000005",
+  "title": "NASA's EPIC View of 2017 Eclipse Across America",
+  "photographer": "",
+  "center": "GSFC",
+  "date": "2017-12-08",
+  "url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000005/GSFC_20171208_Archive_e000005~large.jpg",
+  "page": "https://images.nasa.gov/details/GSFC_20171208_Archive_e000005"
+ },
+ "iss_transit": {
+  "nasa_id": "NHQ201708210202",
+  "title": "2017 Total Solar Eclipse - ISS Transit",
+  "photographer": "NASA/Joel Kowsky",
+  "center": "HQ",
+  "date": "2017-08-21",
+  "url": "https://images-assets.nasa.gov/image/NHQ201708210202/NHQ201708210202~large.jpg",
+  "page": "https://images.nasa.gov/details/NHQ201708210202"
+ },
+ "viewing": {
+  "nasa_id": "NHQ201708210108",
+  "title": "2017 Total Solar Eclipse",
+  "photographer": "(NASA/Aubrey Gemignani)",
+  "center": "HQ",
+  "date": "2017-08-21",
+  "url": "https://images-assets.nasa.gov/image/NHQ201708210108/NHQ201708210108~large.jpg",
+  "page": "https://images.nasa.gov/details/NHQ201708210108"
+ },
+ "orion": {
+  "nasa_id": "art002e010782",
+  "title": "A Solar Eclipse Like No Other ",
+  "photographer": "NASA",
+  "center": "JSC",
+  "date": "2026-04-07",
+  "url": "https://images-assets.nasa.gov/image/art002e010782/art002e010782~large.jpg",
+  "page": "https://images.nasa.gov/details/art002e010782"
+ },
+ "corona": {
+  "nasa_id": "NHQ201708210100",
+  "title": "2017 Total Solar Eclipse",
+  "photographer": "(NASA/Aubrey Gemignani)",
+  "center": "HQ",
+  "date": "2017-08-21",
+  "url": "https://images-assets.nasa.gov/image/NHQ201708210100/NHQ201708210100~large.jpg",
+  "page": "https://images.nasa.gov/details/NHQ201708210100"
+ },
+ "citizen_science": {
+  "nasa_id": "MAF_20240408_NOLAeclipse04",
+  "title": "Partial Solar Eclipse in New Orleans",
+  "photographer": "Michael DeMocker",
+  "center": "MSFC",
+  "date": "2024-04-08",
+  "url": "https://images-assets.nasa.gov/image/MAF_20240408_NOLAeclipse04/MAF_20240408_NOLAeclipse04~large.jpg",
+  "page": "https://images.nasa.gov/details/MAF_20240408_NOLAeclipse04"
+ }
+}

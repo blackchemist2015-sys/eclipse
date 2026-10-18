@@ -28,10 +28,24 @@ PHENOMENA = {
     "iss_shadow": ("moon shadow earth International Space Station eclipse", ["shadow"], []),
     "dscovr_shadow": ("DSCOVR EPIC moon shadow eclipse", ["shadow"], []),
     "iss_transit": ("International Space Station transit sun solar eclipse", ["transit"], []),
-    "crescents": ("eclipse crescent shadows pinhole", ["crescent"], []),
+    "citizen_science": ("Civil Air Patrol solar eclipse mission weather data", ["weather"], []),
     "viewing": ("eclipse glasses viewing total solar eclipse", ["glasses"], []),
+    "orion": ("Artemis II solar eclipse Orion", ["eclipse"], []),
 }
-PINNED = {}  # e.g. {"diamond_ring": "NHQ2017xxxxxxxx"}
+# Images chosen by hand after reviewing the library (the search above is only a fallback)
+PINNED = {
+    "diamond_ring": "NHQ201708210102",      # Madras, Oregon, 2017 — Aubrey Gemignani
+    "baily_beads": "NHQ201708210101",       # Madras, Oregon, 2017 — Aubrey Gemignani
+    "corona": "NHQ201708210100",            # Madras, Oregon, 2017 — Aubrey Gemignani
+    "prominences": "NHQ202404080107",       # Dallas, Texas, 2024 — Keegan Barber
+    "partial_sequence": "NHQ201708210106",  # Madras composite, 2017 — Aubrey Gemignani
+    "iss_shadow": "iss071e002694",          # 2024 umbra from the ISS
+    "dscovr_shadow": "GSFC_20171208_Archive_e000005",  # DSCOVR/EPIC, 2017
+    "iss_transit": "NHQ201708210202",       # ISS transit composite, 2017 — Joel Kowsky
+    "citizen_science": "MAF_20240408_NOLAeclipse04",  # students record weather data, 2024 — Michael DeMocker
+    "viewing": "NHQ201708210108",           # eclipse glasses, Madras 2017
+    "orion": "art002e010782",               # Artemis II crew, eclipse from Orion, 2026
+}
 
 
 def get(url):
@@ -53,7 +67,9 @@ def pick(key):
     for it in items:
         d = it["data"][0]
         text = (d.get("title", "") + " " + d.get("description", "")).lower()
-        if key in PINNED and d["nasa_id"] != PINNED[key]:
+        if key in PINNED:
+            if d["nasa_id"] == PINNED[key]:
+                return d
             continue
         if all(w in text for w in need) and not any(w in text for w in avoid):
             return d
