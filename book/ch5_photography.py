@@ -9,7 +9,7 @@ from eclipse2027 import besselian, circumstances as C, i18n as I
 
 CH = 5
 UTC = 3
-B = besselian.compute()
+B = besselian.elements()
 
 # Espenak's brightness exponents Q for eclipse phenomena (NASA eclipse bulletins)
 Q = [("جزئي (مرشح ND 5.0)", 8), ("جزئي (مرشح ND 4.0)", 11), ("حبات بيلي", 12), ("الكروموسفير", 10),

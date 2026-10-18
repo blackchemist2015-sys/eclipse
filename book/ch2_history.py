@@ -44,7 +44,7 @@ def fig_timeline(next_luxor=None):
           ("١٧ مايو ١٨٨٢", "كسوف كلي في سوهاج؛ بعثات أوروبية تصوّر الهالة، ويظهر مذنّب قرب الشمس سُمّي «توفيق»."),
           ("٣٠ أغسطس ١٩٠٥", "كسوف كلي يعبر صعيد مصر وأسوان."),
           ("٢٩ مارس ٢٠٠٦", "كسوف كلي في السلوم يجذب آلاف الزوار والعلماء إلى الساحل الشمالي الغربي."),
-          ("٢ أغسطس ٢٠٢٧", "من أطول الكسوفات الكلية في القرن الحادي والعشرين: ٦ دقائق و٢٣ ثانية في صعيد مصر."),
+          ("٢ أغسطس ٢٠٢٧", "من أطول الكسوفات الكلية في القرن الحادي والعشرين: أقصاها ٦ دقائق و٢٣ ثانية غرب طهطا (سوهاج)."),
           ]
     if next_luxor:
         ev.append(next_luxor)
@@ -370,7 +370,7 @@ MONUMENTS = [("معبد الكرنك", 25.7188, 32.6573), ("معبد الأقص�
 
 def fig_monuments_chart():
     from eclipse2027 import besselian
-    B = besselian.compute()
+    B = besselian.elements()
     vals = []
     for n, la, lo in MONUMENTS:
         r = C.local_circumstances(B, np.array([la]), np.array([lo]))
@@ -392,13 +392,13 @@ def fig_monuments_chart():
     ax.set_xlabel("مدة الكلية (دقيقة)")
     style_axes(ax)
     arabic_ticks(ax, y=False)
-    footer(fig, SRC + " من تقويم JPL DE421؛ الراصد عند مستوى سطح البحر.")
+    footer(fig, SRC + " من عناصر بِسِل المنشورة لدى ناسا (إسبيناك، ΔT = ٧٦ ث)؛ الراصد عند مستوى سطح البحر.")
     save(fig, CH, "monuments_durations", "مدة الكلية عند المواقع الأثرية المصرية في ٢٠٢٧ (محسوبة).", "chart")
 
 
 def fig_monuments_map():
     from eclipse2027 import besselian
-    B = besselian.compute()
+    B = besselian.elements()
     lon0, lon1, lat0, lat1 = 30.6, 33.6, 24.2, 27.0
     fig = plt.figure(figsize=(8.0, 8.4), facecolor=PAPER)
     ax = fig.add_axes([0.05, 0.06, 0.84, 0.80])
@@ -417,7 +417,7 @@ def fig_monuments_map():
             ax.annotate(n + "\n" + I.fmt_dur(r["duration_s"][0]), (lo, la), xytext=(-6, 2), textcoords="offset points",
                         ha="right", fontsize=8.6, path_effects=halo(), zorder=9)
     header(fig, "المواقع الأثرية في مسار الكلية", "وادي النيل من المنيا إلى أسوان يوم ٢ أغسطس ٢٠٢٧")
-    footer(fig, SRC + " من تقويم JPL DE421.")
+    footer(fig, SRC + " من عناصر بِسِل المنشورة لدى ناسا (إسبيناك، ΔT = ٧٦ ث).")
     save(fig, CH, "monuments_map", "خريطة المواقع الأثرية في وادي النيل داخل مسار الكلية ومدتها (محسوبة).", "map")
 
 

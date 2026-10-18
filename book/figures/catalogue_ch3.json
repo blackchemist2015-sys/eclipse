@@ -187,199 +187,207 @@
   "chapter": 3,
   "number": "3-24",
   "number_ar": "٢٤-٣",
-  "file": "figures/ch3/fig_3_24_city_card_luxor.png",
-  "caption": "بطاقة الكسوف لمدينة الأقصر (محسوبة).",
-  "kind": "infographic"
+  "file": "figures/ch3/fig_3_24_longest_totality_point.png",
+  "caption": "أطول مدة للكلية (٦ د ٢٣ ث) ونقطة أعظم كسوف (٦ د ٢٢ ث) وترتيب المدن (محسوبة).",
+  "kind": "map"
  },
  {
   "chapter": 3,
   "number": "3-25",
   "number_ar": "٢٥-٣",
-  "file": "figures/ch3/fig_3_25_city_card_aswan.png",
-  "caption": "بطاقة الكسوف لمدينة أسوان (محسوبة).",
+  "file": "figures/ch3/fig_3_25_city_card_luxor.png",
+  "caption": "بطاقة الكسوف لمدينة الأقصر (محسوبة).",
   "kind": "infographic"
  },
  {
   "chapter": 3,
   "number": "3-26",
   "number_ar": "٢٦-٣",
-  "file": "figures/ch3/fig_3_26_city_card_qena.png",
-  "caption": "بطاقة الكسوف لمدينة قنا (محسوبة).",
+  "file": "figures/ch3/fig_3_26_city_card_aswan.png",
+  "caption": "بطاقة الكسوف لمدينة أسوان (محسوبة).",
   "kind": "infographic"
  },
  {
   "chapter": 3,
   "number": "3-27",
   "number_ar": "٢٧-٣",
-  "file": "figures/ch3/fig_3_27_city_card_sohag.png",
-  "caption": "بطاقة الكسوف لمدينة سوهاج (محسوبة).",
+  "file": "figures/ch3/fig_3_27_city_card_qena.png",
+  "caption": "بطاقة الكسوف لمدينة قنا (محسوبة).",
   "kind": "infographic"
  },
  {
   "chapter": 3,
   "number": "3-28",
   "number_ar": "٢٨-٣",
-  "file": "figures/ch3/fig_3_28_city_card_asyut.png",
-  "caption": "بطاقة الكسوف لمدينة أسيوط (محسوبة).",
+  "file": "figures/ch3/fig_3_28_city_card_sohag.png",
+  "caption": "بطاقة الكسوف لمدينة سوهاج (محسوبة).",
   "kind": "infographic"
  },
  {
   "chapter": 3,
   "number": "3-29",
   "number_ar": "٢٩-٣",
-  "file": "figures/ch3/fig_3_29_city_card_minya.png",
-  "caption": "بطاقة الكسوف لمدينة المنيا (محسوبة).",
+  "file": "figures/ch3/fig_3_29_city_card_asyut.png",
+  "caption": "بطاقة الكسوف لمدينة أسيوط (محسوبة).",
   "kind": "infographic"
  },
  {
   "chapter": 3,
   "number": "3-30",
   "number_ar": "٣٠-٣",
-  "file": "figures/ch3/fig_3_30_city_card_beni_suef.png",
-  "caption": "بطاقة الكسوف لمدينة بني سويف (محسوبة).",
+  "file": "figures/ch3/fig_3_30_city_card_minya.png",
+  "caption": "بطاقة الكسوف لمدينة المنيا (محسوبة).",
   "kind": "infographic"
  },
  {
   "chapter": 3,
   "number": "3-31",
   "number_ar": "٣١-٣",
-  "file": "figures/ch3/fig_3_31_city_card_faiyum.png",
-  "caption": "بطاقة الكسوف لمدينة الفيوم (محسوبة).",
+  "file": "figures/ch3/fig_3_31_city_card_beni_suef.png",
+  "caption": "بطاقة الكسوف لمدينة بني سويف (محسوبة).",
   "kind": "infographic"
  },
  {
   "chapter": 3,
   "number": "3-32",
   "number_ar": "٣٢-٣",
-  "file": "figures/ch3/fig_3_32_city_card_cairo.png",
-  "caption": "بطاقة الكسوف لمدينة القاهرة (محسوبة).",
+  "file": "figures/ch3/fig_3_32_city_card_faiyum.png",
+  "caption": "بطاقة الكسوف لمدينة الفيوم (محسوبة).",
   "kind": "infographic"
  },
  {
   "chapter": 3,
   "number": "3-33",
   "number_ar": "٣٣-٣",
-  "file": "figures/ch3/fig_3_33_city_card_giza.png",
-  "caption": "بطاقة الكسوف لمدينة الجيزة (محسوبة).",
+  "file": "figures/ch3/fig_3_33_city_card_cairo.png",
+  "caption": "بطاقة الكسوف لمدينة القاهرة (محسوبة).",
   "kind": "infographic"
  },
  {
   "chapter": 3,
   "number": "3-34",
   "number_ar": "٣٤-٣",
-  "file": "figures/ch3/fig_3_34_city_card_alexandria.png",
-  "caption": "بطاقة الكسوف لمدينة الإسكندرية (محسوبة).",
+  "file": "figures/ch3/fig_3_34_city_card_giza.png",
+  "caption": "بطاقة الكسوف لمدينة الجيزة (محسوبة).",
   "kind": "infographic"
  },
  {
   "chapter": 3,
   "number": "3-35",
   "number_ar": "٣٥-٣",
-  "file": "figures/ch3/fig_3_35_city_card_hurghada.png",
-  "caption": "بطاقة الكسوف لمدينة الغردقة (محسوبة).",
+  "file": "figures/ch3/fig_3_35_city_card_alexandria.png",
+  "caption": "بطاقة الكسوف لمدينة الإسكندرية (محسوبة).",
   "kind": "infographic"
  },
  {
   "chapter": 3,
   "number": "3-36",
   "number_ar": "٣٦-٣",
-  "file": "figures/ch3/fig_3_36_city_card_safaga.png",
-  "caption": "بطاقة الكسوف لمدينة سفاجا (محسوبة).",
+  "file": "figures/ch3/fig_3_36_city_card_hurghada.png",
+  "caption": "بطاقة الكسوف لمدينة الغردقة (محسوبة).",
   "kind": "infographic"
  },
  {
   "chapter": 3,
   "number": "3-37",
   "number_ar": "٣٧-٣",
-  "file": "figures/ch3/fig_3_37_city_card_el_quseir.png",
-  "caption": "بطاقة الكسوف لمدينة القصير (محسوبة).",
+  "file": "figures/ch3/fig_3_37_city_card_safaga.png",
+  "caption": "بطاقة الكسوف لمدينة سفاجا (محسوبة).",
   "kind": "infographic"
  },
  {
   "chapter": 3,
   "number": "3-38",
   "number_ar": "٣٨-٣",
-  "file": "figures/ch3/fig_3_38_city_card_marsa_alam.png",
-  "caption": "بطاقة الكسوف لمدينة مرسى علم (محسوبة).",
+  "file": "figures/ch3/fig_3_38_city_card_el_quseir.png",
+  "caption": "بطاقة الكسوف لمدينة القصير (محسوبة).",
   "kind": "infographic"
  },
  {
   "chapter": 3,
   "number": "3-39",
   "number_ar": "٣٩-٣",
-  "file": "figures/ch3/fig_3_39_city_card_kharga.png",
-  "caption": "بطاقة الكسوف لمدينة الخارجة (محسوبة).",
+  "file": "figures/ch3/fig_3_39_city_card_marsa_alam.png",
+  "caption": "بطاقة الكسوف لمدينة مرسى علم (محسوبة).",
   "kind": "infographic"
  },
  {
   "chapter": 3,
   "number": "3-40",
   "number_ar": "٤٠-٣",
-  "file": "figures/ch3/fig_3_40_city_card_mut_dakhla_oasis.png",
-  "caption": "بطاقة الكسوف لمدينة موط (واحة الداخلة) (محسوبة).",
+  "file": "figures/ch3/fig_3_40_city_card_kharga.png",
+  "caption": "بطاقة الكسوف لمدينة الخارجة (محسوبة).",
   "kind": "infographic"
  },
  {
   "chapter": 3,
   "number": "3-41",
   "number_ar": "٤١-٣",
-  "file": "figures/ch3/fig_3_41_city_card_edfu.png",
-  "caption": "بطاقة الكسوف لمدينة إدفو (محسوبة).",
+  "file": "figures/ch3/fig_3_41_city_card_mut_dakhla_oasis.png",
+  "caption": "بطاقة الكسوف لمدينة موط (واحة الداخلة) (محسوبة).",
   "kind": "infographic"
  },
  {
   "chapter": 3,
   "number": "3-42",
   "number_ar": "٤٢-٣",
-  "file": "figures/ch3/fig_3_42_city_card_kom_ombo.png",
-  "caption": "بطاقة الكسوف لمدينة كوم أمبو (محسوبة).",
+  "file": "figures/ch3/fig_3_42_city_card_edfu.png",
+  "caption": "بطاقة الكسوف لمدينة إدفو (محسوبة).",
   "kind": "infographic"
  },
  {
   "chapter": 3,
   "number": "3-43",
   "number_ar": "٤٣-٣",
-  "file": "figures/ch3/fig_3_43_city_card_esna.png",
-  "caption": "بطاقة الكسوف لمدينة إسنا (محسوبة).",
+  "file": "figures/ch3/fig_3_43_city_card_kom_ombo.png",
+  "caption": "بطاقة الكسوف لمدينة كوم أمبو (محسوبة).",
   "kind": "infographic"
  },
  {
   "chapter": 3,
   "number": "3-44",
   "number_ar": "٤٤-٣",
-  "file": "figures/ch3/fig_3_44_city_card_abu_simbel.png",
-  "caption": "بطاقة الكسوف لمدينة أبو سمبل (محسوبة).",
+  "file": "figures/ch3/fig_3_44_city_card_esna.png",
+  "caption": "بطاقة الكسوف لمدينة إسنا (محسوبة).",
   "kind": "infographic"
  },
  {
   "chapter": 3,
   "number": "3-45",
   "number_ar": "٤٥-٣",
-  "file": "figures/ch3/fig_3_45_city_card_sharm_el_sheikh.png",
-  "caption": "بطاقة الكسوف لمدينة شرم الشيخ (محسوبة).",
+  "file": "figures/ch3/fig_3_45_city_card_abu_simbel.png",
+  "caption": "بطاقة الكسوف لمدينة أبو سمبل (محسوبة).",
   "kind": "infographic"
  },
  {
   "chapter": 3,
   "number": "3-46",
   "number_ar": "٤٦-٣",
-  "file": "figures/ch3/fig_3_46_city_card_siwa.png",
-  "caption": "بطاقة الكسوف لمدينة سيوة (محسوبة).",
+  "file": "figures/ch3/fig_3_46_city_card_sharm_el_sheikh.png",
+  "caption": "بطاقة الكسوف لمدينة شرم الشيخ (محسوبة).",
   "kind": "infographic"
  },
  {
   "chapter": 3,
   "number": "3-47",
   "number_ar": "٤٧-٣",
-  "file": "figures/ch3/fig_3_47_city_card_bawiti_bahariya_oasis.png",
-  "caption": "بطاقة الكسوف لمدينة الباويطي (الواحات البحرية) (محسوبة).",
+  "file": "figures/ch3/fig_3_47_city_card_siwa.png",
+  "caption": "بطاقة الكسوف لمدينة سيوة (محسوبة).",
   "kind": "infographic"
  },
  {
   "chapter": 3,
   "number": "3-48",
   "number_ar": "٤٨-٣",
-  "file": "figures/ch3/fig_3_48_city_card_berenice.png",
+  "file": "figures/ch3/fig_3_48_city_card_bawiti_bahariya_oasis.png",
+  "caption": "بطاقة الكسوف لمدينة الباويطي (الواحات البحرية) (محسوبة).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 3,
+  "number": "3-49",
+  "number_ar": "٤٩-٣",
+  "file": "figures/ch3/fig_3_49_city_card_berenice.png",
   "caption": "بطاقة الكسوف لمدينة برنيس (محسوبة).",
   "kind": "infographic"
  }

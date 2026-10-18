@@ -1,14 +1,16 @@
-Besselian elements, total solar eclipse 2027-08-02, fitted from JPL DE421 (Skyfield)
+Besselian elements, total solar eclipse 2027-08-02: NASA/Espenak published set (Delta-T = 76 s),
+re-expressed in UT; an independent fit from JPL DE421 (Skyfield) agrees to within 0.3 s in duration
 t = hours from T0 = 10.0 h UT;  value = a0 + a1 t + a2 t^2 + a3 t^3
 
-  x: -0.00931863  +0.54471039  -0.00004461  -0.00000922
-  y: +0.15601357  -0.21116262  -0.00012171  +0.00000376
- l1: +0.53060067  +0.00001358  -0.00001283  +0.00000000
- l2: -0.01545945  +0.00001351  -0.00001276  +0.00000000
-  d: +17.76228709  -0.01018119  -0.00000388  -0.00000001   (deg)
- mu: -31.57821333  +15.00209660  +0.00000201  -0.00000002   (deg, continuous)
-tan f1 = 0.0046065   tan f2 = 0.0045835
+  x: -0.00827254  +0.54471040  -0.00004518  -0.00000920
+  y: +0.15560316  -0.21116333  -0.00012146  +0.00000380
+ l1: +0.53059629  +0.00001326  -0.00001280
+ l2: -0.01546372  +0.00001316  -0.00001280
+  d: +17.76225527  -0.01018117  -0.00000400   (deg)
+ mu: +328.42172368  +15.00210000  +0.00000000   (deg, continuous)
+tan f1 = 0.0046064   tan f2 = 0.0045834
 
-Greatest duration on the central line: 6m 23s at 26.819N 31.110E, 10:00:23 UT, Sun altitude 80.8 deg
-Central line on Earth from 08:25:08 to 11:48:17 UT
+Greatest duration on the central line: 6m 23s at 26.816N 31.143E, 10:00:17 UT, Sun altitude 80.9 deg (383.1 s; NASA: 383.2 s at 26.813N 31.133E)
+Greatest eclipse: 25.502N 33.196E, 10:06:34 UT, duration 382.5 s (NASA: 382.7 s at 25.507N 33.180E)
+Central line on Earth from 08:25:02 to 11:48:11 UT
 Maximum path width: 259 km

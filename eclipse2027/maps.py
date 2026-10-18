@@ -36,7 +36,7 @@ SEA, LAND, LAND_OTHER = "#e8eef3", "#fbfaf7", "#f1efea"
 LIMIT = "#0d366b"
 CENTRAL = "#b3261e"
 
-B = besselian.compute()
+B = besselian.elements()
 
 DUR_LEVELS = np.arange(0, 6.5 * 60 + 1, 30)  # seconds
 DUR_CMAP = ListedColormap(BLUE[: len(DUR_LEVELS) - 1])
@@ -319,12 +319,42 @@ _GD = None
 def greatest_duration():
     global _GD
     if _GD is None:
-        t = np.linspace(-1.0, 1.0, 4001)
+        t = np.linspace(-1.0, 1.0, 20001)
         la, lo = circ.central_line(B, t)
         r = circ.local_circumstances(B, la, lo)
         i = int(np.nanargmax(r["duration_s"]))
         _GD = dict(lat=la[i], lon=lo[i], dur=r["duration_s"][i], t=r["tmax"][i], alt=r["sun_alt_deg"][i])
     return _GD
+
+
+_GE = None
+
+
+def greatest_eclipse():
+    """Instant when the shadow axis passes closest to Earth's centre (NASA's 'greatest eclipse')."""
+    global _GE
+    if _GE is None:
+        t = np.linspace(-1.0, 1.0, 40001)
+        e = B.at(t)
+        k = int(np.argmin(e["x"] ** 2 + e["y"] ** 2))
+        la, lo = circ.central_line(B, t[k:k + 1])
+        r = circ.local_circumstances(B, la, lo)
+        _GE = dict(lat=float(la[0]), lon=float(lo[0]), dur=float(r["duration_s"][0]), t=float(r["tmax"][0]),
+                   alt=float(r["sun_alt_deg"][0]))
+    return _GE
+
+
+def mark_extremes(ax, fontsize=8):
+    """Star: greatest duration (NASA 6m 23.2s); diamond: greatest eclipse (NASA 6m 22.7s)."""
+    gd, ge = greatest_duration(), greatest_eclipse()
+    from matplotlib import patheffects as pe
+    halo = [pe.withStroke(linewidth=2.6, foreground="white")]
+    ax.plot(gd["lon"], gd["lat"], marker="*", ms=17, mfc="#ffd23f", mec=INK, mew=0.8, zorder=12)
+    ax.plot(ge["lon"], ge["lat"], marker="D", ms=8, mfc="#ffd23f", mec=INK, mew=0.8, zorder=12)
+    ax.annotate(T("gd_mark", d=I.fmt_dur(gd["dur"])), (gd["lon"], gd["lat"]), xytext=(-12, -3), textcoords="offset points",
+                ha="right", va="center", fontsize=fontsize, fontweight="bold", color=INK, path_effects=halo, zorder=13)
+    ax.annotate(T("ge_mark", d=I.fmt_dur(ge["dur"])), (ge["lon"], ge["lat"]), xytext=(-8, -14), textcoords="offset points",
+                ha="right", va="top", fontsize=fontsize, fontweight="bold", color=INK, path_effects=halo, zorder=13)
 
 
 def regional_overview(idx):
@@ -432,6 +462,8 @@ def country_map(idx, key):
         cities = [(n, la, lo) for n, _g, la, lo, own in EGYPT_CITIES if own and n not in skip] + \
                  [(n, la, lo) for n, _g, la, lo, own in EGYPT_CITIES if n in ("Siwa", "Port Said", "Berenice", "Farafra")]
     draw_cities(ax, cities, lon0, lon1, lat0, lat1, utc, fontsize=7 if span > 6 else 8)
+    if key == "egypt":
+        mark_extremes(ax)
     title(ax, T("country_title", name=I.AR_COUNTRIES[key] if AR else name) + "\n")
     subtitle(ax, T("country_sub", tz=I.AR_TZ.get(tzl, tzl) if AR else tzl, utc=I.utc_label(utc)))
     add_colorbars(fig, ax)
@@ -449,6 +481,7 @@ def egypt_governorates(idx):
     draw_field(ax, LON, LAT, r, obs_fill=False)
     draw_path(ax)
     draw_cities(ax, CITIES["egypt"], lon0, lon1, lat0, lat1, utc, fontsize=6.4, show_values=False, min_sep=0.2)
+    mark_extremes(ax, fontsize=7.5)
     title(ax, T("gov_title"))
     add_colorbars(fig, ax, show_obs=False)
     # governorate summary table: max totality inside each governorate
@@ -470,7 +503,7 @@ def egypt_governorates(idx):
             wr.writerow(["governorate", "max_totality_s", "max_totality", "area_in_totality_pct",
                          "min_obscuration_pct", "max_obscuration_pct"])
             for g, d, a, omin, omax in rows:
-                wr.writerow([g, f"{d:.0f}", circ.fmt_dur(d), f"{a:.0f}", f"{omin:.1f}", f"{omax:.1f}"])
+                wr.writerow([g, f"{d:.1f}", circ.fmt_dur(d), f"{a:.0f}", f"{omin:.1f}", f"{omax:.1f}"])
     cells = [[I.governorate(g), I.fmt_dur(d), I.num(f"{a:.0f}%")] for g, d, a, _o, _p in rows if d > 0]
     head = [T("gov_head"), T("gov_max"), T("gov_area")]
     if AR:
@@ -634,7 +667,8 @@ def city_map(idx, name, gov, lat, lon):
 def write_tables():
     os.makedirs(RESULTS, exist_ok=True)
     with open(os.path.join(RESULTS, "besselian_elements.txt"), "w") as f:
-        f.write("Besselian elements, total solar eclipse 2027-08-02, fitted from JPL DE421 (Skyfield)\n")
+        f.write("Besselian elements, total solar eclipse 2027-08-02: NASA/Espenak published set (Delta-T = 76 s),\n"
+                "re-expressed in UT; an independent fit from JPL DE421 (Skyfield) agrees to within 0.3 s in duration\n")
         f.write(f"t = hours from T0 = {besselian.T0_UT_HOURS:.1f} h UT;  value = a0 + a1 t + a2 t^2 + a3 t^3\n\n")
         for k in ("x", "y", "l1", "l2"):
             f.write(f"{k:>3}: " + "  ".join(f"{v:+.8f}" for v in getattr(B, k)) + "\n")
@@ -643,7 +677,11 @@ def write_tables():
         f.write(f"tan f1 = {B.tan_f1:.7f}   tan f2 = {B.tan_f2:.7f}\n")
         gd = greatest_duration()
         f.write(f"\nGreatest duration on the central line: {circ.fmt_dur(gd['dur'])} at "
-                f"{gd['lat']:.3f}N {gd['lon']:.3f}E, {circ.fmt_hms(gd['t'])} UT, Sun altitude {gd['alt']:.1f} deg\n")
+                f"{gd['lat']:.3f}N {gd['lon']:.3f}E, {circ.fmt_hms(gd['t'])} UT, Sun altitude {gd['alt']:.1f} deg "
+                f"({gd['dur']:.1f} s; NASA: 383.2 s at 26.813N 31.133E)\n")
+        ge = greatest_eclipse()
+        f.write(f"Greatest eclipse: {ge['lat']:.3f}N {ge['lon']:.3f}E, {circ.fmt_hms(ge['t'])} UT, duration {ge['dur']:.1f} s "
+                f"(NASA: 382.7 s at 25.507N 33.180E)\n")
         f.write(f"Central line on Earth from {circ.fmt_hms(PATH['t'][0])} to {circ.fmt_hms(PATH['t'][-1])} UT\n")
         w = path_width(np.linspace(-1.5, 1.8, 300))
         f.write(f"Maximum path width: {np.nanmax(w):.0f} km\n")
@@ -666,7 +704,7 @@ def write_tables():
                 C1_local=circ.fmt_hms(c["c1"], utc), C2_local=circ.fmt_hms(c["c2"], utc) if total else "",
                 max_local=circ.fmt_hms(c["tmax"], utc), C3_local=circ.fmt_hms(c["c3"], utc) if total else "",
                 C4_local=circ.fmt_hms(c["c4"], utc), C1_UT=circ.fmt_hms(c["c1"]), max_UT=circ.fmt_hms(c["tmax"]),
-                C4_UT=circ.fmt_hms(c["c4"]), totality_s=f"{c['duration_s']:.0f}",
+                C4_UT=circ.fmt_hms(c["c4"]), totality_s=f"{c['duration_s']:.1f}",
                 totality=circ.fmt_dur(c["duration_s"]) if total else "", magnitude=f"{c['magnitude']:.4f}",
                 obscuration_pct=f"{c['obscuration'] * 100:.2f}", sun_altitude_deg=f"{c['sun_alt']:.1f}",
                 sun_azimuth_deg=f"{c['sun_az']:.1f}"))

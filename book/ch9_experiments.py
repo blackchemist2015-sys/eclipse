@@ -8,7 +8,7 @@ from eclipse2027 import besselian, circumstances as C, i18n as I
 
 CH = 9
 UTC = 3
-B = besselian.compute()
+B = besselian.elements()
 
 EXPERIMENTS = [
     dict(slug="pinhole_crescents", title="أهلّة تحت الشجرة", level="ابتدائي", time="١٥ دقيقة",
@@ -133,7 +133,7 @@ def fig_predicted_light(name="الأقصر", la=25.6872, lo=32.6396):
     style_axes(ax)
     arabic_ticks(ax, x=False)
     mirror_y(ax)
-    footer(fig, "المصدر: حسابات المؤلف من تقويم JPL DE421؛ الإضاءة الحقيقية أثناء الكلية ليست صفرًا تمامًا بسبب ضوء الأفق.")
+    footer(fig, "المصدر: حسابات المؤلف من عناصر بِسِل المنشورة لدى ناسا (إسبيناك، ΔT = ٧٦ ث)؛ الإضاءة الحقيقية أثناء الكلية ليست صفرًا تمامًا بسبب ضوء الأفق.")
     save(fig, CH, "predicted_light_curve", f"منحنى الضوء المتوقع في {name} لمقارنته بقياسات الطلاب (محسوب).", "chart")
 
 

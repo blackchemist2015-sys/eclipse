@@ -9,8 +9,8 @@ from eclipse2027 import besselian, circumstances as C, engine as E, i18n as I
 from eclipse2027.places import CITIES, COUNTRIES, EGYPT_CITIES
 
 CH = 3
-SRC = "المصدر: حسابات المؤلف من تقويم JPL DE421"
-B = besselian.compute()
+SRC = "المصدر: حسابات المؤلف من عناصر بِسِل المنشورة لدى ناسا (إسبيناك، ΔT = ٧٦ ث)"
+B = besselian.elements()
 T0 = besselian.T0_UT_HOURS
 UTC = 3
 
@@ -41,7 +41,7 @@ def fig_key_numbers(G):
     w = 6371 * np.radians(1) * np.hypot(ln - ls, (on - os_) * np.cos(np.radians(0.5 * (ln + ls))))
     fig = page(8.6, 6.4, NAVY)
     ax = canvas(fig)
-    header(fig, "كسوف ٢ أغسطس ٢٠٢٧ في أرقام", "قيم محسوبة لهذا الكتاب من تقويم JPL DE421", color="white",
+    header(fig, "كسوف ٢ أغسطس ٢٠٢٧ في أرقام", "قيم محسوبة لهذا الكتاب من عناصر بِسِل المنشورة لدى ناسا", color="white",
            sub_color="#c9d3e3")
     tiles = [(I.fmt_dur(G["dur"], long=True), "أطول مدة للكلية", "في صعيد مصر"),
              (A(f"{np.nanmax(w):.0f}") + " كم", "أقصى عرض لمسار الكلية", "قرب خط عرض ٢٢° شمالًا"),
@@ -245,7 +245,8 @@ def fig_light_curves(rows):
     arabic_ticks(ax, x=False)
     mirror_y(ax)
     ax.legend(loc="center left", bbox_to_anchor=(0.0, 0.42), frameon=False, fontsize=10)
-    ax.annotate("الكلية في الأقصر:\nالضوء صفر ٪ لمدة ٦ دقائق و٢٠ ثانية", (13.09, 0), xytext=(14.05, 38), fontsize=9,
+    lux = circ_city(25.6872, 32.6396)["duration_s"]
+    ax.annotate("الكلية في الأقصر:\nالضوء صفر ٪ لمدة " + I.fmt_dur(lux, long=True), (13.09, 0), xytext=(14.05, 38), fontsize=9,
                 arrowprops=dict(arrowstyle="-", color=NAVY))
     footer(fig, SRC + "؛ المقصود نسبة مساحة القرص الظاهرة، والإضاءة الفعلية تنخفض بنسبة مشابهة.")
     save(fig, CH, "light_curves", "منحنى نسبة قرص الشمس الظاهر مع الزمن في الأقصر وأسوان والقاهرة والإسكندرية (محسوب).", "chart")
@@ -342,6 +343,52 @@ def fig_countries_best():
 
 
 # ------------------------------------------------------------------ city cards
+def fig_longest_totality():
+    """Where totality is longest: greatest duration (star), greatest eclipse (diamond), 6m 23s strip."""
+    from matplotlib.colors import ListedColormap
+    lon0, lon1, lat0, lat1 = 29.9, 34.3, 24.9, 27.75
+    fig = plt.figure(figsize=(8.6, 7.6), facecolor=PAPER)
+    ax = fig.add_axes([0.04, 0.12, 0.92, 0.70])
+    MK.base(ax, lon0, lon1, lat0, lat1, labels=False)
+    LON, LAT = np.meshgrid(np.linspace(lon0, lon1, 900), np.linspace(lat0, lat1, 640))
+    d = C.local_circumstances(B, LAT.ravel(), LON.ravel())["duration_s"].reshape(LON.shape)
+    d = np.where(d > 0, d, np.nan)
+    lv = [0, 300, 345, 360, 370, 376, 380, 382, 383, 400]
+    cols = [BLUE[1], BLUE[2], BLUE[3], BLUE[4], BLUE[5], BLUE[7], BLUE[9], BLUE[11], RED]
+    ax.contourf(LON, LAT, d, levels=lv, colors=cols, alpha=0.8, zorder=3)
+    cs = ax.contour(LON, LAT, d, levels=[300, 345, 360, 370, 376, 380, 382], colors="white", linewidths=0.5, zorder=3.6)
+    ax.clabel(cs, fmt=lambda v: I.fmt_dur(v), fontsize=7)
+    MK.path(ax, B, -1.7, 1.95)
+    t = np.linspace(-0.5, 0.5, 40001)
+    la, lo = C.central_line(B, t)
+    dur = C.local_circumstances(B, la, lo)["duration_s"]
+    i = int(np.nanargmax(dur))
+    e = B.at(t)
+    k = int(np.argmin(e["x"] ** 2 + e["y"] ** 2))
+    ax.plot(lo[i], la[i], marker="*", ms=20, mfc=SUN, mec=INK, mew=0.9, zorder=12)
+    ax.plot(lo[k], la[k], marker="D", ms=10, mfc=SUN, mec=INK, mew=0.9, zorder=12)
+    ax.annotate("أطول مدة للكلية: " + I.fmt_dur(dur[i]) + "\n(ناسا: ٦ د ٢٣٫٢ ث)\n" + I.fmt_lat(la[i], 2) + "  " + I.fmt_lon(lo[i], 2),
+                (lo[i], la[i]), xytext=(-40, -95), textcoords="offset points", ha="right", va="top", fontsize=9.2, fontweight="bold",
+                path_effects=halo(), zorder=13, arrowprops=dict(arrowstyle="-", color=INK, lw=0.7))
+    ax.annotate("أعظم كسوف: " + I.fmt_dur(dur[k]) + "\n(ناسا: ٦ د ٢٢٫٧ ث)\n" + I.fmt_lat(la[k], 2) + "  " + I.fmt_lon(lo[k], 2),
+                (lo[k], la[k]), xytext=(10, -48), textcoords="offset points", ha="left", fontsize=9.2, fontweight="bold",
+                path_effects=halo(), zorder=13, arrowprops=dict(arrowstyle="-", color=INK, lw=0.7))
+    pts = [(n, la0, lo0) for n, g, la0, lo0, own in EGYPT_CITIES
+           if n in ("Luxor", "Sohag", "Nag Hammadi", "Qena", "Asyut", "Tahta", "Qus", "Abydos (El Balyana)", "Esna")]
+    for n, la0, lo0 in pts:
+        rr = C.local_circumstances(B, np.array([la0]), np.array([lo0]))
+        ax.plot(lo0, la0, "o", ms=4.5, mfc=INK, mec="white", mew=1, zorder=9)
+        right = n in ("Qena", "Qus", "Tahta", "Asyut")
+        ax.annotate(I.place(n).split(" (")[0] + " " + I.fmt_dur(rr["duration_s"][0]), (lo0, la0),
+                    xytext=(5 if right else -5, 3), textcoords="offset points", ha="left" if right else "right",
+                    fontsize=8.2, path_effects=halo(), zorder=10)
+    header(fig, "أين تبلغ الكلية أقصى مدتها؟",
+           "النجمة: أطول مدة (غرب النيل) | المعيَّن: لحظة أعظم كسوف (الصحراء الشرقية) | الأحمر: نطاق ٦ د ٢٣ ث")
+    footer(fig, "الثواني مقطوعة لا مقرَّبة (٣٨٢٫٧ ث تُكتب ٦ د ٢٢ ث)؛ نطاق ٦ د ٢٣ ث شريط عرضه بضعة كيلومترات حول خط المركز، "
+           "وكل المدن دونه.\n" + SRC + ".")
+    save(fig, CH, "longest_totality_point", "أطول مدة للكلية (٦ د ٢٣ ث) ونقطة أعظم كسوف (٦ د ٢٢ ث) وترتيب المدن (محسوبة).", "map")
+
+
 def fig_city_card(r):
     tot = r["duration_s"] > 0
     fig = page(7.0, 8.6, NAVY if tot else PAPER)
@@ -441,6 +488,7 @@ def main():
     fig_why_9999_isnt_total()
     fig_c2_along_nile(rows)
     fig_sun_position(rows)
+    fig_longest_totality()
     for r in rows:
         if r["own"]:
             fig_city_card(r)

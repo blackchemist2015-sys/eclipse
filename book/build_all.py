@@ -94,7 +94,7 @@ def write_index():
     cat += arabic_maps_catalogue()
     cat = renumber(cat)
     json.dump(cat, open(os.path.join(HERE, "catalogue.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-    kinds = {"map": "خريطة", "chart": "رسم بياني", "infographic": "إنفوجرافيك"}
+    kinds = {"map": "خريطة", "chart": "رسم بياني", "infographic": "إنفوجرافيك", "photo": "صورة ناسا"}
     parts = []
     for ch in BOOK_ORDER:
         items = [c for c in cat if c["chapter"] == ch]

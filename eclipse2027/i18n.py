@@ -109,7 +109,7 @@ def ar_count(n, one, two, few, many):
 def fmt_dur(sec, long=False):
     if sec is None or not np.isfinite(sec) or sec <= 0:
         return "—"
-    m, s = divmod(int(round(sec)), 60)
+    m, s = divmod(int(sec + 1e-6), 60)  # truncated, never rounded up
     if is_ar():
         if long:
             mm = ar_count(m, "دقيقة واحدة", "دقيقتان", "دقائق", "دقيقة")
@@ -253,9 +253,9 @@ def utc_label(utc):
 
 # ------------------------------------------------------------------ UI strings
 S = {
-    "source": ("Computed from JPL DE421 ephemeris (Skyfield) via Besselian elements; borders: Natural Earth. "
+    "source": ("Computed from NASA's published Besselian elements (F. Espenak, ΔT = 76 s); borders: Natural Earth. "
                "Sea-level observer, smooth lunar limb.",
-               "حُسبت من تقويم مختبر الدفع النفاث JPL DE421 عبر عناصر بِسِل؛ الحدود: Natural Earth. "
+               "حُسبت من عناصر بِسِل المنشورة لدى ناسا (إسبيناك، ΔT = ٧٦ ث)؛ الحدود: Natural Earth. "
                "الراصد عند مستوى سطح البحر، مع إهمال تضاريس حافة القمر."),
     "total": ("total", "كلي"),
     "covered": ("covered", "مُغطّى"),
@@ -287,6 +287,8 @@ S = {
                   "مصر حسب المحافظات — أين يطول الكسوف الكلي؟ (٢ أغسطس ٢٠٢٧)"),
     "gov_head": ("Governorate", "المحافظة"),
     "gov_max": ("max totality", "أطول كلية"),
+    "gd_mark": ("greatest duration {d}", "أطول مدة {d}"),
+    "ge_mark": ("greatest eclipse {d}", "أعظم كسوف {d}"),
     "gov_area": ("area in path", "المساحة داخل المسار"),
     "c1_title": ("Partial eclipse begins (first contact)", "بداية الكسوف الجزئي (التماس الأول)"),
     "max_title": ("Maximum eclipse", "ذروة الكسوف"),

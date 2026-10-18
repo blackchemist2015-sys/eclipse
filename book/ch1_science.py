@@ -881,6 +881,76 @@ def fig_top_view_seasons():
     save(fig, CH, "node_line_seasons", "اتجاه خط العقد وتفسير حدوث موسمين للكسوف كل عام.")
 
 
+# ------------------------------------------------------------------ NASA photographs (open, public domain)
+NASA_PLATES = [
+    ("diamond_ring", "الخاتم الماسي (Diamond Ring)",
+     "قبل الكلية بلحظات وبعدها مباشرة يبقى من قرص الشمس نقطة واحدة متوهجة تطل من وادٍ على حافة القمر، وحولها حلقة الهالة "
+     "الخافتة، فيبدو المشهد كخاتم تعلوه ماسة. وهو إشارة البدء والانتهاء: عند ظهوره الثاني يجب إعادة النظارة فورًا."),
+    ("baily_beads", "حبات بيلي (Baily's Beads)",
+     "حافة القمر ليست ملساء بل تتخللها جبال ووديان؛ فقبل الكلية بثوانٍ يتسلل ضوء الشمس عبر الوديان فقط فيظهر كعقد من الخرز المضيء. "
+     "سُمّيت باسم الفلكي الإنجليزي فرانسيس بيلي الذي وصفها عام ١٨٣٦."),
+    ("corona", "الهالة الشمسية (Corona)",
+     "حين يحجب القمر قرص الشمس كله تظهر الهالة: الغلاف الخارجي للشمس، أخفت من القرص بنحو مليون مرة، وتبلغ حرارته ملايين الدرجات. "
+     "شكل أشرطتها يتبع المجال المغناطيسي للشمس، ويختلف من كسوف لآخر حسب دورة النشاط الشمسي."),
+    ("prominences", "الشواظ والكروموسفير (Prominences & Chromosphere)",
+     "على حافة القمر خلال الكلية تظهر ألسنة وردية حمراء هي الشواظ الشمسية: سحب من غاز الهيدروجين يحملها المجال المغناطيسي فوق "
+     "سطح الشمس، وتحتها شريط رقيق وردي هو الكروموسفير الذي لا يُرى بالعين إلا لثوانٍ عند بداية الكلية ونهايتها."),
+    ("partial_sequence", "مراحل الكسوف (Eclipse Sequence)",
+     "صورة مركّبة من لقطات متتابعة بفواصل زمنية ثابتة، تُظهر القمر وهو يأكل قرص الشمس تدريجيًا حتى الكلية ثم ينحسر عنه. "
+     "ويمكن صنع مثلها بالكاميرا الثابتة مع مرشح شمسي كما يشرح فصل التصوير."),
+    ("iss_shadow", "ظل القمر من الفضاء (Umbra from the ISS)",
+     "من محطة الفضاء الدولية يبدو ظل القمر بقعة داكنة ضبابية الحواف تزحف فوق سطح الأرض بسرعة تتجاوز ألفي كيلومتر في الساعة. "
+     "ويوم ٢ أغسطس ٢٠٢٧ ستعبر بقعة كهذه صعيد مصر في نحو ربع ساعة."),
+    ("dscovr_shadow", "الظل من مليون ونصف كيلومتر (DSCOVR/EPIC)",
+     "تلتقط كاميرا EPIC على القمر الصناعي DSCOVR، من نقطة لاغرانج الأولى بين الأرض والشمس، صورًا لنصف الكرة الأرضية المضيء كله، "
+     "فيظهر ظل القمر بقعة صغيرة داكنة تعبر القارات."),
+    ("iss_transit", "محطة الفضاء تعبر الشمس (ISS Transit)",
+     "تصوير بمرشح شمسي لمحطة الفضاء الدولية وهي تعبر قرص الشمس أثناء الكسوف الجزئي في أقل من ثانية؛ "
+     "ويتطلب تخطيطًا دقيقًا لموقع المصوّر ومعدات مزودة بمرشح آمن."),
+    ("crescents", "أهلّة الظلال (Pinhole Crescents)",
+     "الفراغات بين أوراق الأشجار تعمل ككاميرات ثقب طبيعية، فتنعكس على الأرض مئات الصور الصغيرة للشمس المكسوفة على هيئة أهلّة. "
+     "وهي أسهل طريقة آمنة لمشاهدة المرحلة الجزئية."),
+    ("viewing", "المشاهدة الآمنة (Safe Viewing)",
+     "نظارات الكسوف المطابقة للمواصفة ISO 12312-2 هي الوسيلة الآمنة للنظر إلى الشمس في المراحل الجزئية، "
+     "ولا تُخلع إلا في أثناء الكلية التامة."),
+]
+
+
+def fig_nasa_plates():
+    """One page per open NASA photograph, when the images were fetched (scripts/fetch_nasa_images.py)."""
+    import json
+    import os
+    from common import ROOT
+    d = os.path.join(ROOT, "data", "nasa_images")
+    cp = os.path.join(d, "credits.json")
+    if not os.path.exists(cp):
+        print("NASA photographs not downloaded; run scripts/fetch_nasa_images.py")
+        return
+    credits = json.load(open(cp, encoding="utf-8"))
+    for key, title, text in NASA_PLATES:
+        f = os.path.join(d, f"{key}.jpg")
+        if key not in credits or not os.path.exists(f):
+            continue
+        cr = credits[key]
+        img = plt.imread(f)
+        h, w = img.shape[:2]
+        W = 8.4
+        ph = min(W * 0.92 * h / w, 7.0)
+        H = ph + 2.6
+        fig = page(W, H, NAVY)
+        header(fig, title, "صورة مفتوحة المصدر من مكتبة ناسا للصور", color="white", sub_color="#c9d3e3")
+        pw = ph * w / h / W
+        ax = fig.add_axes([(1 - pw) / 2, 1.55 / H, pw, ph / H])
+        ax.imshow(img)
+        ax.axis("off")
+        fig.text(0.965, 1.32 / H, wrap(text, 92), ha="right", va="top", fontsize=10.2, color="white", linespacing=1.55)
+        who = cr.get("photographer") or cr.get("center") or "NASA"
+        who = who if who.upper().startswith("NASA") else "NASA/" + who
+        footer(fig, f"الصورة: {who} — {cr['nasa_id']} ({cr.get('date', '')}) | images.nasa.gov — مادة ناسا متاحة للاستخدام مع ذكر المصدر.",
+               color="#c9d3e3")
+        save(fig, CH, f"nasa_{key}", f"{title}: صورة ناسا ({who}).", "photo")
+
+
 def main():
     fig_coincidence()
     fig_scale()
@@ -914,6 +984,7 @@ def main():
     fig_light_levels()
     fig_what_changes()
     fig_future()
+    fig_nasa_plates()
     write_catalogue("ch1")
 
 

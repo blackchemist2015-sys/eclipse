@@ -10,65 +10,69 @@ This repository computes the 2 August 2027 total solar eclipse from first princi
 |---|---|
 | Date | Monday 2 August 2027 |
 | Type | Total (Saros 136) |
-| Greatest duration on the central line | 6m 23s at 26.819N 31.110E, 10:00:23 UT, Sun altitude 80.8 deg |
-| Central line on Earth | from 08:25:08 to 11:48:17 UT |
+| Greatest duration on the central line | 6m 23s (383.1 s) at 26.816N 31.143E, 10:00:17 UT, Sun altitude 80.9° — Western Desert ~36 km west of Tahta (Sohag) |
+| Greatest eclipse | 25.502N 33.196E, 10:06:34 UT, totality 382.5 s (6m 22s) — Eastern Desert ~60 km east of Luxor |
+| Central line on Earth | from 08:25:02 to 11:48:11 UT |
 | Maximum path width | 259 km |
 | Countries in the path of totality | Spain, Gibraltar, Morocco, Algeria, Tunisia, Libya, Egypt, the Halaib Triangle (administered by Egypt, claimed by Sudan; Natural Earth draws it as Sudan), Saudi Arabia, Yemen, Somalia (Somaliland/Puntland) |
 
-For reference, NASA (Espenak) lists the greatest duration as 6m 23s and the path width as 258 km.
+All 2027 computations use NASA's published Besselian elements (F. Espenak, ΔT = 76 s); NASA lists greatest duration 6m 23.2s at 26°48.8'N 31°08.0'E and greatest eclipse 6m 22.7s at 25°30.4'N 33°10.8'E. An independent fit from JPL DE421 agrees within 0.3 s. Seconds are **truncated**, not rounded, as in NASA's tables (382.7 s → 6m 22s), so every Egyptian city gets at most 6m 22s; only a strip a few km wide along the central line reaches 6m 23s.
 
 ## Egypt — city by city (local time EEST = UT+3)
 
 | City | Governorate | Type | Partial begins | Totality begins | Maximum | Totality ends | Partial ends | Totality | Obscuration | Sun alt. |
 |---|---|---|---|---|---|---|---|---|---|---|
-| Nag Hammadi | Qena | total | 11:39:01 | 13:00:43 | 13:03:55 | 13:07:06 | 14:25:17 | 6m 23s | 100.00% | 81.6° |
-| Sohag | Sohag | total | 11:37:17 | 12:58:49 | 13:02:00 | 13:05:10 | 14:23:29 | 6m 22s | 100.00% | 81.2° |
-| Abydos (El Balyana) | Sohag | total | 11:38:11 | 12:59:51 | 13:03:02 | 13:06:13 | 14:24:31 | 6m 22s | 100.00% | 81.5° |
-| Luxor | Luxor | total | 11:40:18 | 13:02:08 | 13:05:19 | 13:08:29 | 14:26:35 | 6m 20s | 100.00% | 81.8° |
-| Berenice | Red Sea | total | 11:48:41 | 13:10:45 | 13:13:55 | 13:17:05 | 14:34:07 | 6m 20s | 100.00% | 80.7° |
-| Qus | Qena | total | 11:40:18 | 13:02:02 | 13:05:12 | 13:08:22 | 14:26:22 | 6m 20s | 100.00% | 81.5° |
-| Tahta | Sohag | total | 11:36:39 | 12:58:07 | 13:01:16 | 13:04:26 | 14:22:47 | 6m 19s | 100.00% | 81.0° |
-| Armant | Luxor | total | 11:40:09 | 13:02:05 | 13:05:12 | 13:08:19 | 14:26:32 | 6m 15s | 100.00% | 81.9° |
-| Dendera | Qena | total | 11:39:50 | 13:01:32 | 13:04:39 | 13:07:45 | 14:25:48 | 6m 13s | 100.00% | 81.4° |
-| Qena | Qena | total | 11:39:55 | 13:01:38 | 13:04:43 | 13:07:48 | 14:25:51 | 6m 10s | 100.00% | 81.3° |
-| Asyut | Asyut | total | 11:35:33 | 12:56:57 | 13:00:00 | 13:03:03 | 14:21:32 | 6m 06s | 100.00% | 80.6° |
-| Esna | Luxor | total | 11:40:35 | 13:02:53 | 13:05:46 | 13:08:39 | 14:27:09 | 5m 47s | 100.00% | 82.1° |
-| Shalateen | Red Sea | total | 11:50:05 | 13:12:44 | 13:15:33 | 13:18:22 | 14:35:48 | 5m 39s | 100.00% | 80.9° |
-| Edfu | Aswan | total | 11:41:40 | 13:04:10 | 13:06:57 | 13:09:43 | 14:28:15 | 5m 33s | 100.00% | 82.2° |
-| Siwa | Matrouh | total | 11:22:15 | 12:42:36 | 12:45:21 | 12:48:07 | 14:08:07 | 5m 31s | 100.00% | 75.5° |
-| Marsa Alam | Red Sea | total | 11:45:56 | 13:08:06 | 13:10:50 | 13:13:34 | 14:31:10 | 5m 28s | 100.00% | 80.8° |
-| Mallawi | Minya | total | 11:34:17 | 12:55:46 | 12:58:28 | 13:01:09 | 14:19:58 | 5m 22s | 100.00% | 80.0° |
-| Minya | Minya | total | 11:33:44 | 12:55:41 | 12:57:43 | 12:59:45 | 14:19:07 | 4m 04s | 100.00% | 79.6° |
-| Kom Ombo | Aswan | total | 11:42:27 | 13:06:10 | 13:07:55 | 13:09:40 | 14:29:16 | 3m 29s | 100.00% | 82.6° |
-| Daraw | Aswan | total | 11:42:30 | 13:06:26 | 13:07:59 | 13:09:31 | 14:29:20 | 3m 05s | 100.00% | 82.7° |
-| El Quseir | Red Sea | total | 11:43:23 | 13:06:46 | 13:07:56 | 13:09:06 | 14:28:19 | 2m 20s | 100.00% | 80.6° |
-| Aswan | Aswan | partial | 11:42:52 | — | 13:08:28 | — | 14:29:52 | — | 99.84% | 82.9° |
-| Farafra | New Valley | partial | 11:29:00 | — | 12:53:26 | — | 14:16:10 | — | 99.72% | 79.5° |
-| Safaga | Red Sea | partial | 11:41:57 | — | 13:06:15 | — | 14:26:38 | — | 99.59% | 80.3° |
-| Kharga | New Valley | partial | 11:36:09 | — | 13:01:22 | — | 14:23:33 | — | 99.52% | 82.3° |
-| Hurghada | Red Sea | partial | 11:41:08 | — | 13:05:09 | — | 14:25:26 | — | 98.51% | 80.0° |
-| El Gouna | Red Sea | partial | 11:40:42 | — | 13:04:41 | — | 14:24:59 | — | 98.37% | 79.9° |
-| Beni Suef | Beni Suef | partial | 11:33:39 | — | 12:57:01 | — | 14:17:54 | — | 98.15% | 78.6° |
-| Faiyum | Faiyum | partial | 11:32:55 | — | 12:56:09 | — | 14:17:03 | — | 97.88% | 78.4° |
-| Baris | New Valley | partial | 11:37:12 | — | 13:02:41 | — | 14:24:55 | — | 97.51% | 83.1° |
-| Marsa Matruh | Matrouh | partial | 11:24:15 | — | 12:46:13 | — | 14:07:29 | — | 97.48% | 74.7° |
-| Mut (Dakhla Oasis) | New Valley | partial | 11:32:47 | — | 12:57:55 | — | 14:20:37 | — | 96.99% | 81.7° |
-| Ras Gharib | Red Sea | partial | 11:38:29 | — | 13:02:00 | — | 14:22:14 | — | 96.65% | 79.2° |
-| El Tor | South Sinai | partial | 11:39:46 | — | 13:03:15 | — | 14:23:15 | — | 95.94% | 79.2° |
-| Sharm El Sheikh | South Sinai | partial | 11:41:37 | — | 13:05:08 | — | 14:24:54 | — | 95.51% | 79.2° |
-| Giza | Giza | partial | 11:33:10 | — | 12:55:53 | — | 14:16:16 | — | 94.93% | 77.7° |
-| Cairo | Cairo | partial | 11:33:12 | — | 12:55:53 | — | 14:16:15 | — | 94.77% | 77.7° |
-| Alexandria | Alexandria | partial | 11:29:43 | — | 12:51:43 | — | 14:12:03 | — | 93.31% | 76.1° |
-| Dahab | South Sinai | partial | 11:41:29 | — | 13:04:34 | — | 14:23:58 | — | 93.18% | 78.6° |
-| Tanta | Gharbia | partial | 11:32:13 | — | 12:54:24 | — | 14:14:28 | — | 92.68% | 76.9° |
-| Suez | Suez | partial | 11:36:02 | — | 12:58:34 | — | 14:18:20 | — | 92.41% | 77.8° |
-| Zagazig | Al Sharqia | partial | 11:33:23 | — | 12:55:39 | — | 14:15:36 | — | 92.38% | 77.1° |
-| Abu Simbel | Aswan | partial | 11:42:40 | — | 13:08:42 | — | 14:30:38 | — | 92.04% | 85.0° |
-| Mansoura | Dakahlia | partial | 11:32:51 | — | 12:54:47 | — | 14:14:32 | — | 91.04% | 76.7° |
-| Ismailia | Ismailia | partial | 11:35:01 | — | 12:57:07 | — | 14:16:41 | — | 90.80% | 77.2° |
-| Damietta | Damietta | partial | 11:33:32 | — | 12:55:06 | — | 14:14:24 | — | 88.84% | 76.3° |
-| Port Said | Port Said | partial | 11:34:39 | — | 12:56:14 | — | 14:15:24 | — | 88.39% | 76.5° |
-| Arish | North Sinai | partial | 11:37:57 | — | 12:59:16 | — | 14:17:41 | — | 85.75% | 76.5° |
+| Nag Hammadi | Qena | total | 11:38:51 | 13:00:33 | 13:03:44 | 13:06:56 | 14:25:07 | 6m 22s | 100.00% | 81.6° |
+| Sohag | Sohag | total | 11:37:07 | 12:58:38 | 13:01:49 | 13:05:00 | 14:23:19 | 6m 22s | 100.00% | 81.2° |
+| Abydos (El Balyana) | Sohag | total | 11:38:00 | 12:59:41 | 13:02:52 | 13:06:02 | 14:24:21 | 6m 21s | 100.00% | 81.5° |
+| Qus | Qena | total | 11:40:07 | 13:01:51 | 13:05:01 | 13:08:12 | 14:26:12 | 6m 21s | 100.00% | 81.5° |
+| Berenice | Red Sea | total | 11:48:31 | 13:10:34 | 13:13:45 | 13:16:54 | 14:33:58 | 6m 20s | 100.00% | 80.8° |
+| Luxor | Luxor | total | 11:40:07 | 13:01:58 | 13:05:08 | 13:08:18 | 14:26:25 | 6m 20s | 100.00% | 81.8° |
+| Tahta | Sohag | total | 11:36:28 | 12:57:56 | 13:01:06 | 13:04:16 | 14:22:37 | 6m 19s | 100.00% | 81.0° |
+| Bawiti (Bahariya Oasis) | Giza | total | 11:29:26 | 12:50:10 | 12:53:19 | 12:56:28 | 14:15:23 | 6m 17s | 100.00% | 78.7° |
+| El Hayz (Bahariya) | Giza | total | 11:29:14 | 12:50:08 | 12:53:17 | 12:56:25 | 14:15:32 | 6m 16s | 100.00% | 78.9° |
+| Mandisha (Bahariya) | Giza | total | 11:29:35 | 12:50:19 | 12:53:27 | 12:56:35 | 14:15:30 | 6m 15s | 100.00% | 78.7° |
+| Dendera | Qena | total | 11:39:40 | 13:01:21 | 13:04:28 | 13:07:35 | 14:25:38 | 6m 14s | 100.00% | 81.4° |
+| Armant | Luxor | total | 11:39:58 | 13:01:55 | 13:05:02 | 13:08:08 | 14:26:23 | 6m 13s | 100.00% | 81.9° |
+| Qena | Qena | total | 11:39:45 | 13:01:27 | 13:04:33 | 13:07:38 | 14:25:41 | 6m 11s | 100.00% | 81.3° |
+| Asyut | Asyut | total | 11:35:23 | 12:56:46 | 12:59:49 | 13:02:53 | 14:21:22 | 6m 07s | 100.00% | 80.6° |
+| Esna | Luxor | total | 11:40:24 | 13:02:43 | 13:05:36 | 13:08:28 | 14:27:00 | 5m 44s | 100.00% | 82.2° |
+| Shalateen | Red Sea | total | 11:49:54 | 13:12:35 | 13:15:23 | 13:18:11 | 14:35:38 | 5m 36s | 100.00% | 80.9° |
+| Marsa Alam | Red Sea | total | 11:45:45 | 13:07:54 | 13:10:40 | 13:13:25 | 14:31:00 | 5m 31s | 100.00% | 80.8° |
+| Edfu | Aswan | total | 11:41:30 | 13:04:01 | 13:06:47 | 13:09:31 | 14:28:05 | 5m 30s | 100.00% | 82.3° |
+| Siwa | Matrouh | total | 11:22:05 | 12:42:26 | 12:45:11 | 12:47:55 | 14:07:57 | 5m 28s | 100.00% | 75.5° |
+| Mallawi | Minya | total | 11:34:07 | 12:55:34 | 12:58:17 | 13:01:00 | 14:19:48 | 5m 25s | 100.00% | 80.0° |
+| Minya | Minya | total | 11:33:34 | 12:55:28 | 12:57:32 | 12:59:37 | 14:18:58 | 4m 09s | 100.00% | 79.6° |
+| Kom Ombo | Aswan | total | 11:42:16 | 13:06:04 | 13:07:44 | 13:09:25 | 14:29:06 | 3m 21s | 100.00% | 82.6° |
+| Daraw | Aswan | total | 11:42:19 | 13:06:20 | 13:07:48 | 13:09:16 | 14:29:10 | 2m 55s | 100.00% | 82.7° |
+| El Quseir | Red Sea | total | 11:43:12 | 13:06:30 | 13:07:46 | 13:09:02 | 14:28:10 | 2m 31s | 100.00% | 80.6° |
+| Aswan | Aswan | partial | 11:42:42 | — | 13:08:17 | — | 14:29:42 | — | 99.81% | 82.9° |
+| Farafra | New Valley | partial | 11:28:49 | — | 12:53:16 | — | 14:16:00 | — | 99.69% | 79.5° |
+| Safaga | Red Sea | partial | 11:41:46 | — | 13:06:04 | — | 14:26:28 | — | 99.62% | 80.3° |
+| Kharga | New Valley | partial | 11:35:59 | — | 13:01:12 | — | 14:23:23 | — | 99.48% | 82.3° |
+| Hurghada | Red Sea | partial | 11:40:57 | — | 13:04:59 | — | 14:25:17 | — | 98.56% | 80.0° |
+| El Gouna | Red Sea | partial | 11:40:31 | — | 13:04:30 | — | 14:24:49 | — | 98.43% | 79.9° |
+| Beni Suef | Beni Suef | partial | 11:33:29 | — | 12:56:51 | — | 14:17:44 | — | 98.20% | 78.6° |
+| Faiyum | Faiyum | partial | 11:32:45 | — | 12:55:59 | — | 14:16:53 | — | 97.93% | 78.3° |
+| Marsa Matruh | Matrouh | partial | 11:24:05 | — | 12:46:03 | — | 14:07:19 | — | 97.52% | 74.7° |
+| Baris | New Valley | partial | 11:37:01 | — | 13:02:30 | — | 14:24:45 | — | 97.46% | 83.1° |
+| Mut (Dakhla Oasis) | New Valley | partial | 11:32:37 | — | 12:57:44 | — | 14:20:26 | — | 96.94% | 81.7° |
+| Ras Gharib | Red Sea | partial | 11:38:18 | — | 13:01:50 | — | 14:22:05 | — | 96.71% | 79.3° |
+| El Tor | South Sinai | partial | 11:39:36 | — | 13:03:05 | — | 14:23:06 | — | 96.00% | 79.2° |
+| Sharm El Sheikh | South Sinai | partial | 11:41:26 | — | 13:04:58 | — | 14:24:44 | — | 95.57% | 79.2° |
+| Giza | Giza | partial | 11:32:59 | — | 12:55:43 | — | 14:16:07 | — | 94.99% | 77.7° |
+| Cairo | Cairo | partial | 11:33:01 | — | 12:55:43 | — | 14:16:05 | — | 94.83% | 77.7° |
+| Alexandria | Alexandria | partial | 11:29:33 | — | 12:51:33 | — | 14:11:53 | — | 93.37% | 76.1° |
+| Dahab | South Sinai | partial | 11:41:18 | — | 13:04:23 | — | 14:23:49 | — | 93.24% | 78.6° |
+| Tanta | Gharbia | partial | 11:32:02 | — | 12:54:13 | — | 14:14:18 | — | 92.74% | 76.8° |
+| Suez | Suez | partial | 11:35:52 | — | 12:58:24 | — | 14:18:10 | — | 92.47% | 77.8° |
+| Zagazig | Al Sharqia | partial | 11:33:13 | — | 12:55:28 | — | 14:15:26 | — | 92.44% | 77.1° |
+| Abu Simbel | Aswan | partial | 11:42:29 | — | 13:08:32 | — | 14:30:27 | — | 91.98% | 85.0° |
+| Mansoura | Dakahlia | partial | 11:32:40 | — | 12:54:36 | — | 14:14:22 | — | 91.10% | 76.6° |
+| Ismailia | Ismailia | partial | 11:34:50 | — | 12:56:57 | — | 14:16:32 | — | 90.86% | 77.2° |
+| Damietta | Damietta | partial | 11:33:22 | — | 12:54:55 | — | 14:14:15 | — | 88.90% | 76.3° |
+| Port Said | Port Said | partial | 11:34:29 | — | 12:56:04 | — | 14:15:14 | — | 88.45% | 76.5° |
+| Arish | North Sinai | partial | 11:37:46 | — | 12:59:05 | — | 14:17:32 | — | 85.81% | 76.5° |
 
 The per-governorate summary is in [`results/egypt_governorates.csv`](results/egypt_governorates.csv).
 
@@ -176,7 +180,7 @@ The full table, including partial-eclipse cities, is in [`results/local_circumst
 
 ## How it is computed
 
-1. **Ephemeris → Besselian elements** (`eclipse2027/besselian.py`). Skyfield gives apparent geocentric positions of the Sun and Moon from JPL **DE421**. The shadow axis, the fundamental-plane coordinates *x, y*, the declination *d*, the hour angle *μ* and the penumbral/umbral radii *l₁, l₂* are computed every 3 minutes over ±3.5 h and fitted with cubic polynomials in UT (residual < 10⁻⁷ Earth radii). The fitted elements are in [`results/besselian_elements.txt`](results/besselian_elements.txt).
+1. **Besselian elements** (`eclipse2027/besselian.py`). The maps and book use NASA's published elements (`besselian.elements()`); as an independent check, `besselian.compute()` derives them from DE421: Skyfield gives apparent geocentric positions of the Sun and Moon from JPL **DE421**. The shadow axis, the fundamental-plane coordinates *x, y*, the declination *d*, the hour angle *μ* and the penumbral/umbral radii *l₁, l₂* are computed every 3 minutes over ±3.5 h and fitted with cubic polynomials in UT (residual < 10⁻⁷ Earth radii). The fitted elements are in [`results/besselian_elements.txt`](results/besselian_elements.txt).
 2. **Local circumstances** (`eclipse2027/circumstances.py`). For any latitude and longitude this uses vectorised Newton iteration (Explanatory Supplement / Meeus) to find the time of maximum and the contacts C1–C4, then derives the magnitude, the obscuration, the duration of totality and the Sun's altitude. The whole map grids are evaluated at once.
 3. **Path of totality**. The central line is the intersection of the shadow axis with the WGS-84 ellipsoid. The northern and southern limits are found by bisection perpendicular to the track. The central-line table is in [`results/central_line.csv`](results/central_line.csv).
 4. **Maps** (`eclipse2027/maps.py`). Matplotlib, GeoPandas and Cartopy draw the Natural Earth borders (10 m countries and level-1 provinces such as Egypt's governorates). On each map, blue shows how long totality lasts, orange shows how much of the Sun is covered, the dark-blue lines mark the limits of totality and the red dashed line is the central line. Each Egyptian city map also draws the topocentric Sun–Moon phases from C1 to C4, as seen from that city.

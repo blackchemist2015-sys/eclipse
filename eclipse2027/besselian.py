@@ -107,3 +107,50 @@ def compute(degree=3):
                      l1=fit("l1"), l2=fit("l2"),
                      tan_f1=float(np.mean(r["tan_f1"])),
                      tan_f2=float(np.mean(r["tan_f2"])))
+
+
+# Published NASA elements (F. Espenak, NASA GSFC: VSOP87/ELP2000-82, Delta-T = 76.0 s,
+# t in TD hours from 10:00 TD).  These are the elements behind NASA's own maps
+# and tables, so durations and positions match NASA to a fraction of a second.
+NASA_DELTA_T = 76.0
+NASA_ELEMENTS = dict(
+    x=[-0.0197720, 0.5447123, -0.0000446, -0.0000092],
+    y=[0.1600610, -0.2111582, -0.0001217, 0.0000038],
+    d=[17.7624702, -0.0101810, -0.0000040],          # degrees
+    mu=[328.422546, 15.002100, 0.0],                 # degrees
+    l1=[0.5305960, 0.0000138, -0.0000128],
+    l2=[-0.0154640, 0.0000137, -0.0000128],
+    tan_f1=0.0046064, tan_f2=0.0045834,
+)
+# NASA reference points (EclipseWise / NASA eclipse web site)
+NASA_GREATEST_DURATION = dict(lat=26 + 48.8 / 60, lon=31 + 8.0 / 60, ut="10:00:21", seconds=383.24)
+NASA_GREATEST_ECLIPSE = dict(lat=25 + 30.4 / 60, lon=33 + 10.8 / 60, ut="10:06:34", seconds=382.7)
+
+
+def _shift(c, s):
+    """Coefficients of p(t + s) for polynomial coefficients c (lowest first)."""
+    out = np.zeros(len(c))
+    for k, ck in enumerate(c):
+        tk = np.polynomial.polynomial.polypow([s, 1.0], k)
+        out[:len(tk)] += ck * tk
+    return out
+
+
+def nasa(delta_t=NASA_DELTA_T):
+    """NASA's Besselian elements re-expressed in UT hours from 10:00 UT.
+
+    t_TD = t_UT + delta_t; following Meeus (Elements of Solar Eclipses) the
+    hour angle is corrected by 0.00417807 deg per second of Delta-T.
+    """
+    s = delta_t / 3600.0
+    E = NASA_ELEMENTS
+    rad = np.pi / 180
+    mu = _shift(E["mu"], s)
+    mu[0] -= 0.00417807 * delta_t
+    return Besselian(x=_shift(E["x"], s), y=_shift(E["y"], s), d=_shift(E["d"], s) * rad, mu=mu * rad,
+                     l1=_shift(E["l1"], s), l2=_shift(E["l2"], s), tan_f1=E["tan_f1"], tan_f2=E["tan_f2"])
+
+
+def elements():
+    """Elements used throughout the project: NASA's published set."""
+    return nasa()

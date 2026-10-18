@@ -9,7 +9,7 @@ from eclipse2027 import besselian, circumstances as C, i18n as I
 
 CH = 4
 UTC = 3
-B = besselian.compute()
+B = besselian.elements()
 
 
 def city(la, lo):
@@ -210,7 +210,7 @@ def glasses_timeline(name, la, lo, slug):
     if not tot:
         ax.text(0.5, 0.17, f"{name} خارج مسار الكلية (احتجاب {I.pct(c['obscuration'] * 100)}): لا تنزع النظارة في أي لحظة",
                 ha="center", color=RED, fontsize=11, fontweight="bold")
-    footer(fig, "المصدر: حسابات المؤلف من تقويم JPL DE421.")
+    footer(fig, "المصدر: حسابات المؤلف من عناصر بِسِل المنشورة لدى ناسا (إسبيناك، ΔT = ٧٦ ث).")
     save(fig, CH, slug, f"الخط الزمني لارتداء نظارة الكسوف في {name} (محسوب).", "chart")
 
 

@@ -9,8 +9,8 @@ from eclipse2027.places import EGYPT_CITIES
 
 CH = 6
 UTC = 3
-B = besselian.compute()
-SRC = "المصدر: حسابات المؤلف من تقويم JPL DE421؛ الحدود: Natural Earth."
+B = besselian.elements()
+SRC = "المصدر: حسابات المؤلف من عناصر بِسِل المنشورة لدى ناسا (إسبيناك، ΔT = ٧٦ ث)؛ الحدود: Natural Earth."
 PTS = [(I.place(n), la, lo) for n, g, la, lo, own in EGYPT_CITIES]
 
 GOVS = ["Luxor", "Qena", "Sohag", "Asyut", "Minya", "Aswan", "Red Sea", "New Valley", "Matrouh", "Giza", "Beni Suef",
