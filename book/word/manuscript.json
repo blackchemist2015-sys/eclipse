@@ -44,15 +44,7 @@
      true
     ],
     [
-     " الرسمية التي نشرتها وكالة ناسا لهذا الكسوف (فريد إسبيناك)، وهي العناصر نفسها وراء خرائط ناسا وجداولها. وللتحقق حُسبت العناصر أيضًا من تقويم مختبر الدفع النفاث",
-     false
-    ],
-    [
-     " (Jet Propulsion Laboratory)",
-     true
-    ],
-    [
-     " (JPL DE421) فجاءت المدد متفقة في حدود ثلث ثانية. أطول مدة ٦ دقائق و٢٣ ثانية، وأقصى عرض للمسار نحو ٢٥٩ كيلومترًا. والثواني في الكتاب كله مقطوعة لا مقرّبة، كما في جداول ناسا: فالمدة ٦ دقائق و٢٢٫٧ ثانية تُكتب ٦ دقائق و٢٢ ثانية.",
+     " الرسمية التي نشرتها وكالة ناسا لهذا الكسوف (فريد إسبيناك)، وهي العناصر نفسها وراء خرائط ناسا وجداولها. وللتحقق حُسبت العناصر أيضًا من تقويم مختبر الدفع النفاث (JPL DE421) فجاءت المدد متفقة في حدود ثلث ثانية. أطول مدة ٦ دقائق و٢٣ ثانية، وأقصى عرض للمسار نحو ٢٥٩ كيلومترًا. والثواني في الكتاب كله مقطوعة لا مقرّبة، كما في جداول ناسا: فالمدة ٦ دقائق و٢٢٫٧ ثانية تُكتب ٦ دقائق و٢٢ ثانية.",
      false
     ]
    ]
@@ -635,15 +627,7 @@
      "number": "١٨-١",
      "caption": [
       [
-       "سرعة ظل القمر على امتداد مسار الكلية",
-       false
-      ],
-      [
-       " (Path of totality)",
-       true
-      ],
-      [
-       " (محسوبة).",
+       "سرعة ظل القمر على امتداد مسار الكلية (محسوبة).",
        false
       ]
      ]
@@ -1838,23 +1822,7 @@
      "type": "p",
      "text": [
       [
-       "تُظهر الخرائط التالية موقع الظل الكامل",
-       false
-      ],
-      [
-       " (Umbra)",
-       true
-      ],
-      [
-       " (البقعة الداكنة) وشبه الظل",
-       false
-      ],
-      [
-       " (Penumbra)",
-       true
-      ],
-      [
-       " (التدرج البرتقالي) في لحظات متتالية. لاحظ كيف يصغر الظل ويتباطأ حين يقترب من مصر، حيث الشمس شبه عمودية",
+       "تُظهر الخرائط التالية موقع الظل الكامل (البقعة الداكنة) وشبه الظل (التدرج البرتقالي) في لحظات متتالية. لاحظ كيف يصغر الظل ويتباطأ حين يقترب من مصر، حيث الشمس شبه عمودية",
        false
       ],
       [
@@ -2007,15 +1975,7 @@
      "number": "١٥-٤",
      "caption": [
       [
-       "جدول مواعيد الكسوف في المدن المصرية داخل مسار الكلية",
-       false
-      ],
-      [
-       " (Path of totality)",
-       true
-      ],
-      [
-       " (محسوب).",
+       "جدول مواعيد الكسوف في المدن المصرية داخل مسار الكلية (محسوب).",
        false
       ]
      ]
@@ -2858,7 +2818,23 @@
        true
       ],
       [
-       " التي تتطلب الوجود قرب الكلية.",
+       " التي تتطلب الوجود قرب الكلية. ويلي بطاقة كل تجربة مخطط علمي يوضح التجهيز الصحيح والمبدأ الفيزيائي والنتائج المتوقعة محسوبة لموقع حقيقي، حتى يتعلم الطالب خطوات المنهج العلمي",
+       false
+      ],
+      [
+       " (Scientific method)",
+       true
+      ],
+      [
+       ": السؤال، والفرضية",
+       false
+      ],
+      [
+       " (Hypothesis)",
+       true
+      ],
+      [
+       "، والمتغيرات، والقياس، والمقارنة بالتوقع.",
        false
       ]
      ]
@@ -2876,8 +2852,27 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch9/fig_9_02_exp_temperature_drop.png",
+     "file": "figures/ch9/fig_9_02_diag_pinhole.png",
      "number": "٢-٦",
+     "caption": [
+      [
+       "مخطط علمي لتجربة كاميرا الثقب",
+       false
+      ],
+      [
+       " (Pinhole camera)",
+       true
+      ],
+      [
+       ": مسار الأشعة والصورة المقلوبة وقطر الصورة (محسوب).",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch9/fig_9_03_exp_temperature_drop.png",
+     "number": "٣-٦",
      "caption": [
       [
        "تجربة للمستوى التمهيدي: هل تبرد الأرض أثناء الكسوف؟.",
@@ -2887,8 +2882,19 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch9/fig_9_03_exp_light_meter.png",
-     "number": "٣-٦",
+     "file": "figures/ch9/fig_9_04_diag_temperature.png",
+     "number": "٤-٦",
+     "caption": [
+      [
+       "مخطط علمي لتجربة قياس الحرارة: التجهيز والمنحنى المتوقع (نموذج مبسّط).",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch9/fig_9_05_exp_light_meter.png",
+     "number": "٥-٦",
      "caption": [
       [
        "تجربة للمستوى التمهيدي: منحنى الضوء بالهاتف.",
@@ -2898,8 +2904,19 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch9/fig_9_04_exp_sharp_shadows.png",
-     "number": "٤-٦",
+     "file": "figures/ch9/fig_9_06_diag_light_meter.png",
+     "number": "٦-٦",
+     "caption": [
+      [
+       "مخطط علمي لتجربة قياس الضوء: وضع الهاتف والمنحنى اللوغاريتمي المتوقع (محسوب).",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch9/fig_9_07_exp_sharp_shadows.png",
+     "number": "٧-٦",
      "caption": [
       [
        "تجربة للمستوى التمهيدي: الظلال تزداد حدة.",
@@ -2909,8 +2926,35 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch9/fig_9_05_exp_shadow_bands.png",
-     "number": "٥-٦",
+     "file": "figures/ch9/fig_9_08_diag_sharp_shadows.png",
+     "number": "٨-٦",
+     "caption": [
+      [
+       "مخطط علمي لتجربة الظلال: الظل الكامل",
+       false
+      ],
+      [
+       " (Umbra)",
+       true
+      ],
+      [
+       " وشبه الظل",
+       false
+      ],
+      [
+       " (Penumbra)",
+       true
+      ],
+      [
+       " وعرضه حسب حجم المصدر (محسوب).",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch9/fig_9_09_exp_shadow_bands.png",
+     "number": "٩-٦",
      "caption": [
       [
        "تجربة للمستوى التمهيدي: اصطياد الأحزمة الظلية.",
@@ -2920,8 +2964,19 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch9/fig_9_06_exp_animal_behavior.png",
-     "number": "٦-٦",
+     "file": "figures/ch9/fig_9_10_diag_shadow_bands.png",
+     "number": "١٠-٦",
+     "caption": [
+      [
+       "مخطط علمي لتجربة الأحزمة الظلية: التجهيز وآلية تكوّنها في الهواء المضطرب.",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch9/fig_9_11_exp_animal_behavior.png",
+     "number": "١١-٦",
      "caption": [
       [
        "تجربة للمستوى التمهيدي: الطيور والحيوانات.",
@@ -2931,8 +2986,19 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch9/fig_9_07_exp_timing_contacts.png",
-     "number": "٧-٦",
+     "file": "figures/ch9/fig_9_12_diag_animals.png",
+     "number": "١٢-٦",
+     "caption": [
+      [
+       "مخطط علمي لتجربة سلوك الحيوانات: المنهج العلمي وجدول الرصد ومواعيد التسجيل (محسوب).",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch9/fig_9_13_exp_timing_contacts.png",
+     "number": "١٣-٦",
      "caption": [
       [
        "تجربة للمستوى التمهيدي: هل صدق الحساب؟.",
@@ -2942,19 +3008,49 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch9/fig_9_08_exp_sun_size.png",
-     "number": "٨-٦",
+     "file": "figures/ch9/fig_9_14_diag_contacts.png",
+     "number": "١٤-٦",
      "caption": [
       [
-       "تجربة للمستوى التمهيدي: قِس قطر الشمس بكاميرا الثقب",
+       "مخطط علمي لتجربة توقيت التماسات",
        false
       ],
       [
-       " (Pinhole camera)",
+       " (Contacts)",
        true
       ],
       [
-       ".",
+       " في الأقصر مع جدول O − C (محسوب).",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch9/fig_9_15_exp_sun_size.png",
+     "number": "١٥-٦",
+     "caption": [
+      [
+       "تجربة للمستوى التمهيدي: قِس قطر الشمس بكاميرا الثقب.",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch9/fig_9_16_diag_sun_size.png",
+     "number": "١٦-٦",
+     "caption": [
+      [
+       "مخطط علمي لقياس قطر الشمس بكاميرا الثقب: المثلثات المتشابهة",
+       false
+      ],
+      [
+       " (Similar triangles)",
+       true
+      ],
+      [
+       " ومثال محلول (محسوب).",
        false
       ]
      ]
@@ -2974,8 +3070,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch9/fig_9_09_scale_model.png",
-     "number": "٩-٦",
+     "file": "figures/ch9/fig_9_17_scale_model.png",
+     "number": "١٧-٦",
      "caption": [
       [
        "أبعاد نموذج الكسوف بمقياس رسم حقيقي للاستخدام في الفصل (محسوب).",
@@ -2985,8 +3081,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch9/fig_9_10_predicted_light_curve.png",
-     "number": "١٠-٦",
+     "file": "figures/ch9/fig_9_18_predicted_light_curve.png",
+     "number": "١٨-٦",
      "caption": [
       [
        "منحنى الضوء المتوقع في الأقصر لمقارنته بقياسات الطلاب (محسوب).",
@@ -3018,29 +3114,13 @@
    "items": [
     {
      "type": "h2",
-     "text": "المعدات والتعريض"
+     "text": "المعدات"
     },
     {
      "type": "p",
      "text": [
       [
-       "يمتد سطوع ظواهر الكسوف الكلي على مدى هائل: الهالة",
-       false
-      ],
-      [
-       " (Corona)",
-       true
-      ],
-      [
-       " الخارجية أخفت من حبات بيلي",
-       false
-      ],
-      [
-       " (Baily's beads)",
-       true
-      ],
-      [
-       " بعشرات آلاف المرات. لذلك يعتمد التصوير الناجح على سلسلة تعريضات متعددة، تُحسب أزمنتها من معادلة بسيطة يعرضها الجدولان التاليان.",
+       "تبدأ رحلة التصوير بقائمة معدات بسيطة، ثم بفهم الإعدادات الثلاثة التي تتحكم في كل صورة.",
        false
       ]
      ]
@@ -3057,12 +3137,47 @@
      ]
     },
     {
-     "type": "figure",
-     "file": "figures/ch5/fig_5_02_exposure_table_f56.png",
-     "number": "٢-٧",
-     "caption": [
+     "type": "h2",
+     "text": "مصطلحات الكاميرا وإعداداتها"
+    },
+    {
+     "type": "p",
+     "text": [
       [
-       "جدول أزمنة التعريض",
+       "كل صورة تتحكم فيها ثلاثة إعدادات تُسمى معًا «مثلث التعريض",
+       false
+      ],
+      [
+       " (Exposure triangle)",
+       true
+      ],
+      [
+       "»: فتحة العدسة (Aperture) التي تحدد قطر الفتحة التي يمر منها الضوء ويُعبَّر عنها برقم f — والرقم الأصغر يعني فتحة أوسع؛ وزمن الغالق (Shutter speed) أي المدة التي يبقى فيها المستشعر",
+       false
+      ],
+      [
+       " (Image sensor)",
+       true
+      ],
+      [
+       " مكشوفًا للضوء؛ والحساسية (ISO) أي درجة تضخيم إشارة المستشعر. وكل مضاعفة للضوء تُسمى «درجة» (Stop).",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": [
+      [
+       "وفي الكسوف نعمل دائمًا في الوضع اليدوي (Manual mode)، لأن الوضع الآلي ينخدع بالسماء المظلمة حول الهالة",
+       false
+      ],
+      [
+       " (Corona)",
+       true
+      ],
+      [
+       " فيبالغ في التعريض",
        false
       ],
       [
@@ -3070,15 +3185,111 @@
        true
       ],
       [
-       " المقترحة لظواهر الكسوف عند الفتحة ⁦f/5.6⁩ (محسوب).",
+       ". ونثبّت الفتحة على قيمة واحدة (مثل f/8) والحساسية منخفضة (ISO 100–400)، ونغيّر زمن الغالق وحده من لقطة إلى أخرى. ونصوّر بصيغة الملف الخام (RAW) لأنها تحتفظ بكل تفاصيل السطوع، ونضبط التركيز يدويًا (Manual focus) قبل الحدث ثم نثبّته.",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": [
+      [
+       "ولأن سطوع الهالة يتغير آلاف المرات من حافة القمر إلى أطرافها الخارجية، لا توجد صورة واحدة «صحيحة» للكلية. الحل هو التعريضات المتدرجة (Bracketing): سلسلة لقطات سريعة بأزمنة مختلفة تُدمج لاحقًا بتقنية المدى الديناميكي العالي (HDR). ويساعدك المدرّج التكراري (Histogram) على شاشة الكاميرا في الحكم على التعريض أدق من النظر إلى الصورة في الظلام.",
        false
       ]
      ]
     },
     {
      "type": "figure",
-     "file": "figures/ch5/fig_5_03_exposure_table_f80.png",
+     "file": "figures/ch5/fig_5_02_exposure_triangle.png",
+     "number": "٢-٧",
+     "caption": [
+      [
+       "مثلث التعريض: فتحة العدسة وزمن الغالق والحساسية وأثر كل منها.",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch5/fig_5_03_settings_glossary_1.png",
      "number": "٣-٧",
+     "caption": [
+      [
+       "قاموس إعدادات الكاميرا بالعربية والإنجليزية مع القيم المقترحة للكسوف (١ من ٢).",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch5/fig_5_04_settings_glossary_2.png",
+     "number": "٤-٧",
+     "caption": [
+      [
+       "قاموس إعدادات الكاميرا بالعربية والإنجليزية مع القيم المقترحة للكسوف (٢ من ٢).",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch5/fig_5_05_phase_settings.png",
+     "number": "٥-٧",
+     "caption": [
+      [
+       "إعدادات الكاميرا المقترحة لكل مرحلة من مراحل الكسوف (محسوبة).",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch5/fig_5_06_histogram_guide.png",
+     "number": "٦-٧",
+     "caption": [
+      [
+       "كيف تقرأ المدرّج التكراري لتقييم تعريض صور الكسوف (رسم توضيحي).",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "h2",
+     "text": "التعريض"
+    },
+    {
+     "type": "p",
+     "text": [
+      [
+       "يمتد سطوع ظواهر الكسوف الكلي على مدى هائل: الهالة الخارجية أخفت من حبات بيلي",
+       false
+      ],
+      [
+       " (Baily's beads)",
+       true
+      ],
+      [
+       " بعشرات آلاف المرات. لذلك يعتمد التصوير الناجح على سلسلة تعريضات متعددة، تُحسب أزمنتها من معادلة بسيطة تعرضها الجداول التالية.",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch5/fig_5_07_exposure_table_f56.png",
+     "number": "٧-٧",
+     "caption": [
+      [
+       "جدول أزمنة التعريض المقترحة لظواهر الكسوف عند الفتحة ⁦f/5.6⁩ (محسوب).",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch5/fig_5_08_exposure_table_f80.png",
+     "number": "٨-٧",
      "caption": [
       [
        "جدول أزمنة التعريض المقترحة لظواهر الكسوف عند الفتحة ⁦f/8⁩ (محسوب).",
@@ -3088,8 +3299,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch5/fig_5_04_exposure_table_f110.png",
-     "number": "٤-٧",
+     "file": "figures/ch5/fig_5_09_exposure_table_f110.png",
+     "number": "٩-٧",
      "caption": [
       [
        "جدول أزمنة التعريض المقترحة لظواهر الكسوف عند الفتحة ⁦f/11⁩ (محسوب).",
@@ -3099,8 +3310,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch5/fig_5_05_brightness_ladder.png",
-     "number": "٥-٧",
+     "file": "figures/ch5/fig_5_10_brightness_ladder.png",
+     "number": "١٠-٧",
      "caption": [
       [
        "الفرق الكبير في سطوع ظواهر الكسوف الكلي (قيم Q).",
@@ -3114,27 +3325,19 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch5/fig_5_06_sun_image_size.png",
-     "number": "٦-٧",
+     "file": "figures/ch5/fig_5_11_sun_image_size.png",
+     "number": "١١-٧",
      "caption": [
       [
-       "قطر صورة الشمس على المستشعر حسب البعد البؤري",
-       false
-      ],
-      [
-       " (Focal length)",
-       true
-      ],
-      [
-       " (محسوب).",
+       "قطر صورة الشمس على المستشعر حسب البعد البؤري (محسوب).",
        false
       ]
      ]
     },
     {
      "type": "figure",
-     "file": "figures/ch5/fig_5_07_framing_guide.png",
-     "number": "٧-٧",
+     "file": "figures/ch5/fig_5_12_framing_guide.png",
+     "number": "١٢-٧",
      "caption": [
       [
        "مقارنة تأطير الشمس المكسوفة على مستشعرين وأبعاد بؤرية مختلفة (محسوب).",
@@ -3144,8 +3347,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch5/fig_5_08_tripod_drift_limit.png",
-     "number": "٨-٧",
+     "file": "figures/ch5/fig_5_13_tripod_drift_limit.png",
+     "number": "١٣-٧",
      "caption": [
       [
        "أطول زمن تعريض على حامل ثابت قبل ظهور أثر حركة الشمس (محسوب).",
@@ -3168,8 +3371,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch5/fig_5_09_totality_plan_luxor.png",
-     "number": "٩-٧",
+     "file": "figures/ch5/fig_5_14_totality_plan_luxor.png",
+     "number": "١٤-٧",
      "caption": [
       [
        "خطة التصوير خلال دقائق الكلية",
@@ -3187,8 +3390,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch5/fig_5_10_totality_plan_sohag.png",
-     "number": "١٠-٧",
+     "file": "figures/ch5/fig_5_15_totality_plan_sohag.png",
+     "number": "١٥-٧",
      "caption": [
       [
        "خطة التصوير خلال دقائق الكلية في سوهاج (محسوبة).",
@@ -3198,8 +3401,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch5/fig_5_11_sequence_plan_luxor.png",
-     "number": "١١-٧",
+     "file": "figures/ch5/fig_5_16_sequence_plan_luxor.png",
+     "number": "١٦-٧",
      "caption": [
       [
        "مسار الشمس ومراحل الكسوف في سماء الأقصر لتخطيط صورة متتابعة (محسوب).",
@@ -3209,8 +3412,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch5/fig_5_12_sequence_plan_cairo.png",
-     "number": "١٢-٧",
+     "file": "figures/ch5/fig_5_17_sequence_plan_cairo.png",
+     "number": "١٧-٧",
      "caption": [
       [
        "مسار الشمس ومراحل الكسوف في سماء القاهرة لتخطيط صورة متتابعة (محسوب).",
@@ -3220,8 +3423,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch5/fig_5_13_sequence_plan_aswan.png",
-     "number": "١٣-٧",
+     "file": "figures/ch5/fig_5_18_sequence_plan_aswan.png",
+     "number": "١٨-٧",
      "caption": [
       [
        "مسار الشمس ومراحل الكسوف في سماء أسوان لتخطيط صورة متتابعة (محسوب).",
@@ -3231,8 +3434,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch5/fig_5_14_sequence_plan_hurghada.png",
-     "number": "١٤-٧",
+     "file": "figures/ch5/fig_5_19_sequence_plan_hurghada.png",
+     "number": "١٩-٧",
      "caption": [
       [
        "مسار الشمس ومراحل الكسوف في سماء الغردقة لتخطيط صورة متتابعة (محسوب).",
@@ -3246,8 +3449,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch5/fig_5_15_wide_angle_needed.png",
-     "number": "١٥-٧",
+     "file": "figures/ch5/fig_5_20_wide_angle_needed.png",
+     "number": "٢٠-٧",
      "caption": [
       [
        "مجال الرؤية الرأسي والعدسة اللازمة لتصوير الشمس مع المعالم الأرضية (محسوب).",
@@ -3261,8 +3464,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch5/fig_5_16_smartphone_tips.png",
-     "number": "١٦-٧",
+     "file": "figures/ch5/fig_5_21_smartphone_tips.png",
+     "number": "٢١-٧",
      "caption": [
       [
        "نصائح تصوير الكسوف بالهاتف الذكي.",
@@ -3272,8 +3475,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch5/fig_5_17_camera_setup.png",
-     "number": "١٧-٧",
+     "file": "figures/ch5/fig_5_22_camera_setup.png",
+     "number": "٢٢-٧",
      "caption": [
       [
        "قائمة ضبط الكاميرا والتحضير للتصوير.",
@@ -3283,8 +3486,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch5/fig_5_18_common_mistakes.png",
-     "number": "١٨-٧",
+     "file": "figures/ch5/fig_5_23_common_mistakes.png",
+     "number": "٢٣-٧",
      "caption": [
       [
        "أخطاء شائعة في تصوير الكسوف وكيف تتجنبها.",
@@ -3294,8 +3497,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch5/fig_5_19_processing_workflow.png",
-     "number": "١٩-٧",
+     "file": "figures/ch5/fig_5_24_processing_workflow.png",
+     "number": "٢٤-٧",
      "caption": [
       [
        "خطوات معالجة صور الهالة الشمسية.",
@@ -3335,8 +3538,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch5/fig_5_20_site_selection.png",
-     "number": "٢٠-٧",
+     "file": "figures/ch5/fig_5_25_site_selection.png",
+     "number": "٢٥-٧",
      "caption": [
       [
        "خطوات اختيار موقع التصوير (مقتبسة بتصرف من Allan Hall, 2017).",
@@ -3346,8 +3549,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch5/fig_5_21_zenith_challenge.png",
-     "number": "٢١-٧",
+     "file": "figures/ch5/fig_5_26_zenith_challenge.png",
+     "number": "٢٦-٧",
      "caption": [
       [
        "تحديات تصوير الكسوف والشمس قرب سمت الرأس في صعيد مصر.",
@@ -3357,8 +3560,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch5/fig_5_22_vibration_free.png",
-     "number": "٢٢-٧",
+     "file": "figures/ch5/fig_5_27_vibration_free.png",
+     "number": "٢٧-٧",
      "caption": [
       [
        "طرق إطلاق الغالق دون اهتزاز (مقتبسة بتصرف من Allan Hall, 2017).",
@@ -3368,27 +3571,19 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch5/fig_5_23_diy_filter_card.png",
-     "number": "٢٣-٧",
+     "file": "figures/ch5/fig_5_28_diy_filter_card.png",
+     "number": "٢٨-٧",
      "caption": [
       [
-       "خطوات صنع حامل لرقائق المرشح الشمسي",
-       false
-      ],
-      [
-       " (Solar filter)",
-       true
-      ],
-      [
-       " (مقتبسة بتصرف من Allan Hall, 2017).",
+       "خطوات صنع حامل لرقائق المرشح الشمسي (مقتبسة بتصرف من Allan Hall, 2017).",
        false
       ]
      ]
     },
     {
      "type": "figure",
-     "file": "figures/ch5/fig_5_24_camera_types.png",
-     "number": "٢٤-٧",
+     "file": "figures/ch5/fig_5_29_camera_types.png",
+     "number": "٢٩-٧",
      "caption": [
       [
        "مقارنة أنواع الكاميرات لتصوير الكسوف (مقتبسة بتصرف من Allan Hall, 2017).",

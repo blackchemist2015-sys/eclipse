@@ -11,71 +11,135 @@
   "chapter": 9,
   "number": "9-2",
   "number_ar": "٢-٩",
-  "file": "figures/ch9/fig_9_02_exp_temperature_drop.png",
-  "caption": "تجربة للمستوى التمهيدي: هل تبرد الأرض أثناء الكسوف؟.",
+  "file": "figures/ch9/fig_9_02_diag_pinhole.png",
+  "caption": "مخطط علمي لتجربة كاميرا الثقب: مسار الأشعة والصورة المقلوبة وقطر الصورة (محسوب).",
   "kind": "infographic"
  },
  {
   "chapter": 9,
   "number": "9-3",
   "number_ar": "٣-٩",
-  "file": "figures/ch9/fig_9_03_exp_light_meter.png",
-  "caption": "تجربة للمستوى التمهيدي: منحنى الضوء بالهاتف.",
+  "file": "figures/ch9/fig_9_03_exp_temperature_drop.png",
+  "caption": "تجربة للمستوى التمهيدي: هل تبرد الأرض أثناء الكسوف؟.",
   "kind": "infographic"
  },
  {
   "chapter": 9,
   "number": "9-4",
   "number_ar": "٤-٩",
-  "file": "figures/ch9/fig_9_04_exp_sharp_shadows.png",
-  "caption": "تجربة للمستوى التمهيدي: الظلال تزداد حدة.",
+  "file": "figures/ch9/fig_9_04_diag_temperature.png",
+  "caption": "مخطط علمي لتجربة قياس الحرارة: التجهيز والمنحنى المتوقع (نموذج مبسّط).",
   "kind": "infographic"
  },
  {
   "chapter": 9,
   "number": "9-5",
   "number_ar": "٥-٩",
-  "file": "figures/ch9/fig_9_05_exp_shadow_bands.png",
-  "caption": "تجربة للمستوى التمهيدي: اصطياد الأحزمة الظلية.",
+  "file": "figures/ch9/fig_9_05_exp_light_meter.png",
+  "caption": "تجربة للمستوى التمهيدي: منحنى الضوء بالهاتف.",
   "kind": "infographic"
  },
  {
   "chapter": 9,
   "number": "9-6",
   "number_ar": "٦-٩",
-  "file": "figures/ch9/fig_9_06_exp_animal_behavior.png",
-  "caption": "تجربة للمستوى التمهيدي: الطيور والحيوانات.",
+  "file": "figures/ch9/fig_9_06_diag_light_meter.png",
+  "caption": "مخطط علمي لتجربة قياس الضوء: وضع الهاتف والمنحنى اللوغاريتمي المتوقع (محسوب).",
   "kind": "infographic"
  },
  {
   "chapter": 9,
   "number": "9-7",
   "number_ar": "٧-٩",
-  "file": "figures/ch9/fig_9_07_exp_timing_contacts.png",
-  "caption": "تجربة للمستوى التمهيدي: هل صدق الحساب؟.",
+  "file": "figures/ch9/fig_9_07_exp_sharp_shadows.png",
+  "caption": "تجربة للمستوى التمهيدي: الظلال تزداد حدة.",
   "kind": "infographic"
  },
  {
   "chapter": 9,
   "number": "9-8",
   "number_ar": "٨-٩",
-  "file": "figures/ch9/fig_9_08_exp_sun_size.png",
-  "caption": "تجربة للمستوى التمهيدي: قِس قطر الشمس بكاميرا الثقب.",
+  "file": "figures/ch9/fig_9_08_diag_sharp_shadows.png",
+  "caption": "مخطط علمي لتجربة الظلال: الظل الكامل وشبه الظل وعرضه حسب حجم المصدر (محسوب).",
   "kind": "infographic"
  },
  {
   "chapter": 9,
   "number": "9-9",
   "number_ar": "٩-٩",
-  "file": "figures/ch9/fig_9_09_scale_model.png",
-  "caption": "أبعاد نموذج الكسوف بمقياس رسم حقيقي للاستخدام في الفصل (محسوب).",
+  "file": "figures/ch9/fig_9_09_exp_shadow_bands.png",
+  "caption": "تجربة للمستوى التمهيدي: اصطياد الأحزمة الظلية.",
   "kind": "infographic"
  },
  {
   "chapter": 9,
   "number": "9-10",
   "number_ar": "١٠-٩",
-  "file": "figures/ch9/fig_9_10_predicted_light_curve.png",
+  "file": "figures/ch9/fig_9_10_diag_shadow_bands.png",
+  "caption": "مخطط علمي لتجربة الأحزمة الظلية: التجهيز وآلية تكوّنها في الهواء المضطرب.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 9,
+  "number": "9-11",
+  "number_ar": "١١-٩",
+  "file": "figures/ch9/fig_9_11_exp_animal_behavior.png",
+  "caption": "تجربة للمستوى التمهيدي: الطيور والحيوانات.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 9,
+  "number": "9-12",
+  "number_ar": "١٢-٩",
+  "file": "figures/ch9/fig_9_12_diag_animals.png",
+  "caption": "مخطط علمي لتجربة سلوك الحيوانات: المنهج العلمي وجدول الرصد ومواعيد التسجيل (محسوب).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 9,
+  "number": "9-13",
+  "number_ar": "١٣-٩",
+  "file": "figures/ch9/fig_9_13_exp_timing_contacts.png",
+  "caption": "تجربة للمستوى التمهيدي: هل صدق الحساب؟.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 9,
+  "number": "9-14",
+  "number_ar": "١٤-٩",
+  "file": "figures/ch9/fig_9_14_diag_contacts.png",
+  "caption": "مخطط علمي لتجربة توقيت التماسات في الأقصر مع جدول O − C (محسوب).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 9,
+  "number": "9-15",
+  "number_ar": "١٥-٩",
+  "file": "figures/ch9/fig_9_15_exp_sun_size.png",
+  "caption": "تجربة للمستوى التمهيدي: قِس قطر الشمس بكاميرا الثقب.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 9,
+  "number": "9-16",
+  "number_ar": "١٦-٩",
+  "file": "figures/ch9/fig_9_16_diag_sun_size.png",
+  "caption": "مخطط علمي لقياس قطر الشمس بكاميرا الثقب: المثلثات المتشابهة ومثال محلول (محسوب).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 9,
+  "number": "9-17",
+  "number_ar": "١٧-٩",
+  "file": "figures/ch9/fig_9_17_scale_model.png",
+  "caption": "أبعاد نموذج الكسوف بمقياس رسم حقيقي للاستخدام في الفصل (محسوب).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 9,
+  "number": "9-18",
+  "number_ar": "١٨-٩",
+  "file": "figures/ch9/fig_9_18_predicted_light_curve.png",
   "caption": "منحنى الضوء المتوقع في الأقصر لمقارنته بقياسات الطلاب (محسوب).",
   "kind": "chart"
  }

@@ -138,8 +138,10 @@ def fig_predicted_light(name="الأقصر", la=25.6872, lo=32.6396):
 
 
 def main():
+    from ch9_diagrams import DIAGRAMS
     for k, e in enumerate(EXPERIMENTS, 1):
         experiment_card(e, k)
+        DIAGRAMS[e["slug"]]()
     fig_scale_model()
     fig_predicted_light()
     write_catalogue("ch9")
