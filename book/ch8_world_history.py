@@ -5,7 +5,7 @@ import mapkit as MK
 from common import (style_axes, A, BLUE, BODY, CARD, Circ, INK, INK2, LINE, MUTED, NAVY, PAPER, RED, SUN, SUN_DEEP, TITLE,
                     canvas, card, corona, footer, halo, header, moon_disk, number_badge, page, para, plt, save,
                     sun_disk, wrap, write_catalogue)
-from eclipse2027 import engine as E, i18n as I
+from eclipse2027 import circumstances as C, engine as E, i18n as I
 from history_calc import GREG_MONTHS
 
 CH = 8
@@ -194,6 +194,46 @@ def fig_delta_t():
     save(fig, CH, "delta_t_curve", "منحنى فرق التوقيت ΔT عبر ثلاثة آلاف عام وأثره على مواقع الكسوفات القديمة (محسوب).", "chart")
 
 
+HISTORIC_PATHS = [(1715, 5, 3, 9, "١٧١٥ هالي"), (1806, 6, 16, 16, "١٨٠٦"), (1836, 5, 15, 13, "١٨٣٦ بيلي"),
+                  (1842, 7, 8, 7, "١٨٤٢"), (1851, 7, 28, 14, "١٨٥١"), (1860, 7, 18, 14, "١٨٦٠"),
+                  (1868, 8, 18, 5, "١٨٦٨ الهيليوم"), (1869, 8, 7, 22, "١٨٦٩"), (1878, 7, 29, 22, "١٨٧٨"),
+                  (1882, 5, 17, 8, "١٨٨٢ سوهاج"), (1905, 8, 30, 13, "١٩٠٥ أسوان"), (1919, 5, 29, 13, "١٩١٩ إدنغتون"),
+                  (1973, 6, 30, 11, "١٩٧٣ الكونكورد"), (2006, 3, 29, 10, "٢٠٠٦ السلوم"), (2027, 8, 2, 10, "٢٠٢٧ الأقصر")]
+
+
+def fig_historic_paths():
+    """World map of the central paths of eclipses of historic interest (computed)."""
+    lon0, lon1, lat0, lat1 = -180, 180, -40, 75
+    fig = plt.figure(figsize=(11.0, 5.5), facecolor=PAPER)
+    ax = fig.add_axes([0.02, 0.07, 0.96, 0.74])
+    MK.base(ax, lon0, lon1, lat0, lat1, highlight=("EGY",), admin1=None)
+    egypt = ("سوهاج", "أسوان", "السلوم", "الأقصر")
+    pal = ["#2a78d6", "#1f7a4d", "#7a4fc2", "#d4711a", "#0d366b", "#6d6d68"]
+    for k, (y, m, d, h, lab) in enumerate(HISTORIC_PATHS):
+        ec = E.eclipse_near(E.jd_from_date(y, m, d, h))
+        t = np.linspace(-3.4, 3.4, 900)
+        la, lo = C.central_line(ec.B, t)
+        ok = np.isfinite(la)
+        la, lo = la[ok], lo[ok]
+        lo = np.array(lo, float)
+        brk = np.where(np.abs(np.diff(lo)) > 180)[0]
+        lo[brk] = np.nan
+        hl = any(e in lab for e in egypt)
+        col = RED if hl else pal[k % len(pal)]
+        ax.plot(lo, la, color=col, lw=4.2 if hl else 3.0, alpha=0.8, solid_capstyle="round", zorder=5 if hl else 4)
+        fin = np.where(np.isfinite(lo))[0]
+        j = fin[-1] if k % 2 == 0 else fin[0]
+        txt = lab if hl else lab.split()[0]
+        ax.plot(lo[j], la[j], "o", ms=5, color=col, zorder=6)
+        ax.text(lo[j], la[j] - 3.2 if la[j] > 0 else la[j] + 2.2, txt, color=col, fontsize=8.4 if not hl else 9.2,
+                fontweight="bold", ha="center", path_effects=halo(), zorder=7)
+    ax.set_xticks([])
+    ax.set_yticks([])
+    header(fig, "مسارات كسوفات صنعت التاريخ", "خطوط المركز لكسوفات كلية وحلقية شهيرة منذ ١٧١٥، وبالأحمر الكسوفات التي عبرت مصر")
+    footer(fig, SRC + ": قبل ١٩٠٠ بنظرية ERFA ومعادلات ΔT (المسارات تقريبية)، وبعدها من DE421.")
+    save(fig, CH, "historic_paths_world", "خريطة عالمية لمسارات كسوفات ذات أهمية تاريخية ١٧١٥–٢٠٢٧ (محسوبة).", "map")
+
+
 def main():
     fig_timeline()
     fig_media()
@@ -225,6 +265,7 @@ def main():
              [("أثينا", 37.98, 23.73), ("الإسكندرية", 31.2, 29.92), ("بابل", 32.54, 44.42)])
     fig_ancient_records()
     fig_delta_t()
+    fig_historic_paths()
     write_catalogue("ch8")
 
 

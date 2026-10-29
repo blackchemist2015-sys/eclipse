@@ -1,0 +1,194 @@
+[
+ {
+  "chapter": 11,
+  "number": "11-1",
+  "number_ar": "١-١١",
+  "file": "figures/ch11/fig_11_01_eclipse_types_2024_2045.png",
+  "caption": "توزيع أنواع كسوفات الشمس ٢٠٢٤–٢٠٤٥ (محسوب).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 11,
+  "number": "11-2",
+  "number_ar": "٢-١١",
+  "file": "figures/ch11/fig_11_02_eclipses_table_1.png",
+  "caption": "جدول كسوفات الشمس ٢٠٢٤–٢٠٤٥ (١ من ٢) مع المقارنة بقيم إسبيناك.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 11,
+  "number": "11-3",
+  "number_ar": "٣-١١",
+  "file": "figures/ch11/fig_11_03_eclipses_table_2.png",
+  "caption": "جدول كسوفات الشمس ٢٠٢٤–٢٠٤٥ (٢ من ٢) مع المقارنة بقيم إسبيناك.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 11,
+  "number": "11-4",
+  "number_ar": "٤-١١",
+  "file": "figures/ch11/fig_11_04_egypt_visibility_2024_2045.png",
+  "caption": "الكسوفات التي تُرى من مصر ٢٠٢٤–٢٠٤٥ ونسبها في أربع مدن (محسوب).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 11,
+  "number": "11-5",
+  "number_ar": "٥-١١",
+  "file": "figures/ch11/fig_11_05_central_paths_africa_middle_east.png",
+  "caption": "مسارات الكسوفات الكلية والحلقية فوق أفريقيا والشرق الأوسط ٢٠٢٤–٢٠٤٥ (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 11,
+  "number": "11-6",
+  "number_ar": "٦-١١",
+  "file": "figures/ch11/fig_11_06_region_2026_08_12.png",
+  "caption": "كسوف ١٢ أغسطس ٢٠٢٦ كلي فوق أفريقيا والشرق الأوسط (محسوب).",
+  "kind": "map"
+ },
+ {
+  "chapter": 11,
+  "number": "11-7",
+  "number_ar": "٧-١١",
+  "file": "figures/ch11/fig_11_07_region_2027_02_06.png",
+  "caption": "كسوف ٦ فبراير ٢٠٢٧ حلقي فوق أفريقيا والشرق الأوسط (محسوب).",
+  "kind": "map"
+ },
+ {
+  "chapter": 11,
+  "number": "11-8",
+  "number_ar": "٨-١١",
+  "file": "figures/ch11/fig_11_08_region_2027_08_02.png",
+  "caption": "كسوف ٢ أغسطس ٢٠٢٧ كلي فوق أفريقيا والشرق الأوسط (محسوب).",
+  "kind": "map"
+ },
+ {
+  "chapter": 11,
+  "number": "11-9",
+  "number_ar": "٩-١١",
+  "file": "figures/ch11/fig_11_09_region_2028_01_26.png",
+  "caption": "كسوف ٢٦ يناير ٢٠٢٨ حلقي فوق أفريقيا والشرق الأوسط (محسوب).",
+  "kind": "map"
+ },
+ {
+  "chapter": 11,
+  "number": "11-10",
+  "number_ar": "١٠-١١",
+  "file": "figures/ch11/fig_11_10_region_2030_06_01.png",
+  "caption": "كسوف ١ يونيو ٢٠٣٠ حلقي فوق أفريقيا والشرق الأوسط (محسوب).",
+  "kind": "map"
+ },
+ {
+  "chapter": 11,
+  "number": "11-11",
+  "number_ar": "١١-١١",
+  "file": "figures/ch11/fig_11_11_region_2030_11_25.png",
+  "caption": "كسوف ٢٥ نوفمبر ٢٠٣٠ كلي فوق أفريقيا والشرق الأوسط (محسوب).",
+  "kind": "map"
+ },
+ {
+  "chapter": 11,
+  "number": "11-12",
+  "number_ar": "١٢-١١",
+  "file": "figures/ch11/fig_11_12_region_2031_05_21.png",
+  "caption": "كسوف ٢١ مايو ٢٠٣١ حلقي فوق أفريقيا والشرق الأوسط (محسوب).",
+  "kind": "map"
+ },
+ {
+  "chapter": 11,
+  "number": "11-13",
+  "number_ar": "١٣-١١",
+  "file": "figures/ch11/fig_11_13_region_2034_03_20.png",
+  "caption": "كسوف ٢٠ مارس ٢٠٣٤ كلي فوق أفريقيا والشرق الأوسط (محسوب).",
+  "kind": "map"
+ },
+ {
+  "chapter": 11,
+  "number": "11-14",
+  "number_ar": "١٤-١١",
+  "file": "figures/ch11/fig_11_14_region_2038_01_05.png",
+  "caption": "كسوف ٥ يناير ٢٠٣٨ حلقي فوق أفريقيا والشرق الأوسط (محسوب).",
+  "kind": "map"
+ },
+ {
+  "chapter": 11,
+  "number": "11-15",
+  "number_ar": "١٥-١١",
+  "file": "figures/ch11/fig_11_15_region_2038_07_02.png",
+  "caption": "كسوف ٢ يوليو ٢٠٣٨ حلقي فوق أفريقيا والشرق الأوسط (محسوب).",
+  "kind": "map"
+ },
+ {
+  "chapter": 11,
+  "number": "11-16",
+  "number_ar": "١٦-١١",
+  "file": "figures/ch11/fig_11_16_region_2041_04_30.png",
+  "caption": "كسوف ٣٠ أبريل ٢٠٤١ كلي فوق أفريقيا والشرق الأوسط (محسوب).",
+  "kind": "map"
+ },
+ {
+  "chapter": 11,
+  "number": "11-17",
+  "number_ar": "١٧-١١",
+  "file": "figures/ch11/fig_11_17_world_eclipses_2024_2026.png",
+  "caption": "خرائط عالمية لكسوفات الشمس ٢٠٢٤–٢٠٢٦ (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 11,
+  "number": "11-18",
+  "number_ar": "١٨-١١",
+  "file": "figures/ch11/fig_11_18_world_eclipses_2027_2029.png",
+  "caption": "خرائط عالمية لكسوفات الشمس ٢٠٢٧–٢٠٢٩ (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 11,
+  "number": "11-19",
+  "number_ar": "١٩-١١",
+  "file": "figures/ch11/fig_11_19_world_eclipses_2029_2031.png",
+  "caption": "خرائط عالمية لكسوفات الشمس ٢٠٢٩–٢٠٣١ (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 11,
+  "number": "11-20",
+  "number_ar": "٢٠-١١",
+  "file": "figures/ch11/fig_11_20_world_eclipses_2032_2034.png",
+  "caption": "خرائط عالمية لكسوفات الشمس ٢٠٣٢–٢٠٣٤ (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 11,
+  "number": "11-21",
+  "number_ar": "٢١-١١",
+  "file": "figures/ch11/fig_11_21_world_eclipses_2035_2037.png",
+  "caption": "خرائط عالمية لكسوفات الشمس ٢٠٣٥–٢٠٣٧ (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 11,
+  "number": "11-22",
+  "number_ar": "٢٢-١١",
+  "file": "figures/ch11/fig_11_22_world_eclipses_2037_2039.png",
+  "caption": "خرائط عالمية لكسوفات الشمس ٢٠٣٧–٢٠٣٩ (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 11,
+  "number": "11-23",
+  "number_ar": "٢٣-١١",
+  "file": "figures/ch11/fig_11_23_world_eclipses_2040_2042.png",
+  "caption": "خرائط عالمية لكسوفات الشمس ٢٠٤٠–٢٠٤٢ (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 11,
+  "number": "11-24",
+  "number_ar": "٢٤-١١",
+  "file": "figures/ch11/fig_11_24_world_eclipses_2043_2045.png",
+  "caption": "خرائط عالمية لكسوفات الشمس ٢٠٤٣–٢٠٤٥ (محسوبة).",
+  "kind": "map"
+ }
+]

@@ -57,14 +57,14 @@ function para(text, o = {}) {
   });
 }
 
-function figure(it) {
+function figure(it, brk = false) {
   const maxW = TEXT_W * PX_PER_DXA;              // px at 96 dpi
   const maxH = 21.5 / 2.54 * 96;                  // 21.5 cm
   let w = maxW, h = maxW * it.h / it.w;
   if (h > maxH) { h = maxH; w = maxH * it.w / it.h; }
   return [
     new Paragraph({
-      alignment: AlignmentType.CENTER, keepNext: true, spacing: { before: 200, after: 80 },
+      alignment: AlignmentType.CENTER, keepNext: true, pageBreakBefore: brk, spacing: { before: 200, after: 80 },
       children: [new ImageRun({ type: "jpg", data: fs.readFileSync(it.jpg), transformation: { width: Math.round(w), height: Math.round(h) },
         altText: { title: "شكل " + it.number, description: plain(it.caption).replace(/&/g, "و").replace(/[<>"]/g, ""), name: "fig" + it.number } })],
     }),
@@ -100,7 +100,8 @@ function table(header, rows, widths, size) {
   });
 }
 
-const header = new Header({ children: [para(spec.title + " — ٢ أغسطس ٢٠٢٧", { align: AlignmentType.CENTER, size: 16, color: MUTED, after: 0 })] });
+const header = new Header({ children: [para(spec.title + " — ٢ أغسطس ٢٠٢٧", { align: AlignmentType.CENTER, size: 16, color: MUTED, after: 0,
+  border: { bottom: { style: BorderStyle.SINGLE, size: 6, color: "E88A2C", space: 4 } } })] });
 const footer = new Footer({
   children: [new Paragraph({ alignment: AlignmentType.CENTER, bidirectional: true,
     children: [new TextRun({ children: [PageNumber.CURRENT], font: font(BODY), size: 18, sizeComplexScript: 18, color: MUTED })] })],
@@ -111,16 +112,14 @@ const pageProps = (landscape) => ({
     pageNumbers: { formatType: NumberFormat.HINDI_NUMBERS } },
 });
 
-// ---------------------------------------------------------------- cover
-const coverImg = path.join(ROOT, "book", "word", "cover.jpg");
+// ---------------------------------------------------------------- cover (full-page designed image)
+const coverImg = path.join(ROOT, "book", "word", "cover_full.jpg");
 const cover = [
-  para(spec.title, { align: AlignmentType.CENTER, size: 64, bold: true, font: HEAD, color: NAVY, before: 1200, after: 200 }),
-  para(spec.subtitle, { align: AlignmentType.CENTER, size: 30, color: MUTED, after: 500 }),
-  new Paragraph({ alignment: AlignmentType.CENTER, children: [new ImageRun({ type: "jpg", data: fs.readFileSync(coverImg),
-    transformation: { width: 520, height: 520 }, altText: { title: "الغلاف", description: "خريطة عالمية لمسار الكسوف", name: "cover" } })] }),
-  para("إنفوجرافيك وخرائط ورسوم محسوبة من تقويم JPL DE421", { align: AlignmentType.CENTER, size: 22, color: MUTED, before: 500 }),
-  para("الطبعة الأولى — " + spec.edition, { align: AlignmentType.CENTER, size: 22, color: MUTED }),
+  new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 0, after: 0 }, children: [new ImageRun({ type: "jpg",
+    data: fs.readFileSync(coverImg), transformation: { width: 776, height: 1094 },
+    altText: { title: "الغلاف", description: "هالة الشمس أثناء الكسوف الكلي وعنوان الكتاب", name: "cover" } })] }),
 ];
+const coverProps = { page: { size: { width: PAGE_W, height: PAGE_H }, margin: { top: 0, bottom: 0, left: 0, right: 0, header: 0, footer: 0 } } };
 
 // ---------------------------------------------------------------- front matter
 const front = [
@@ -141,15 +140,40 @@ for (const [kind, text] of spec.front) {
 
 // ---------------------------------------------------------------- chapters
 const chapterChildren = [];
+const GOLD = "E88A2C";
+const toAr = (n) => String(n).replace(/\d/g, (d) => "٠١٢٣٤٥٦٧٨٩"[d]);
 spec.chapters.forEach((ch, idx) => {
-  chapterChildren.push(para(ch.label, { size: 28, color: MUTED, align: AlignmentType.CENTER, pageBreakBefore: true, before: 2400, after: 100, font: HEAD }));
-  chapterChildren.push(para(ch.name, { heading: HeadingLevel.HEADING_1, size: 52, bold: true, font: HEAD, color: NAVY,
-    align: AlignmentType.CENTER, after: 600 }));
-  ch.intro.forEach((t) => chapterChildren.push(para(t)));
+  // ---- opener page: banner image, big number, title, intro box, "in this chapter"
+  const bw = TEXT_W * PX_PER_DXA;
+  chapterChildren.push(new Paragraph({ alignment: AlignmentType.CENTER, pageBreakBefore: true, spacing: { before: 0, after: 240 },
+    children: [new ImageRun({ type: "jpg", data: fs.readFileSync(ch.hero), transformation: { width: Math.round(bw), height: Math.round(bw / 2) },
+      altText: { title: ch.name, description: "صورة افتتاحية للفصل", name: "hero" + idx } })] }));
+  chapterChildren.push(para(ch.src === 11 ? "ملحق" : toAr(ch.num), { size: ch.src === 11 ? 56 : 96, bold: true, font: HEAD, color: GOLD,
+    align: AlignmentType.CENTER, before: 480, after: 0, line: 360 }));
+  chapterChildren.push(para(ch.label, { size: 24, color: MUTED, align: AlignmentType.CENTER, before: 200, after: 60, font: HEAD }));
+  chapterChildren.push(para(ch.name, { heading: HeadingLevel.HEADING_1, size: 48, bold: true, font: HEAD, color: NAVY,
+    align: AlignmentType.CENTER, after: 240,
+    border: { bottom: { style: BorderStyle.SINGLE, size: 18, color: GOLD, space: 10 } } }));
+  ch.intro.forEach((t) => chapterChildren.push(para(t, { size: 24, line: 330, after: 100,
+    shading: { fill: "EEF4FC", type: ShadingType.CLEAR, color: "auto" },
+    border: { right: { style: BorderStyle.SINGLE, size: 30, color: NAVY, space: 10 } }, indent: { left: 200 } })));
+  if (ch.sections.length) {
+    chapterChildren.push(para("في هذا الفصل", { size: 26, bold: true, font: HEAD, color: GOLD, before: 240, after: 80 }));
+    ch.sections.forEach((h) => chapterChildren.push(para([run("◆  ", { size: 20, color: GOLD }), run(h, { size: 22, color: NAVY })],
+      { after: 30, align: AlignmentType.RIGHT })));
+  }
+  // ---- content
+  let first = true;
   for (const it of ch.items) {
-    if (it.type === "h2") chapterChildren.push(para(it.text, { heading: HeadingLevel.HEADING_2, size: 32, bold: true, font: HEAD, color: NAVY, before: 360, after: 160, keepNext: true }));
-    else if (it.type === "p") chapterChildren.push(para(it.text, { keepNext: false }));
-    else chapterChildren.push(...figure(it));
+    if (it.type === "h2") chapterChildren.push(para(it.text, { heading: HeadingLevel.HEADING_2, size: 32, bold: true, font: HEAD, color: NAVY,
+      before: 360, after: 160, keepNext: true, pageBreakBefore: first,
+      border: { right: { style: BorderStyle.SINGLE, size: 36, color: GOLD, space: 8 } },
+      shading: { fill: "F4F1EA", type: ShadingType.CLEAR, color: "auto" } }));
+    else if (it.type === "p") chapterChildren.push(para(it.text, { keepNext: false, pageBreakBefore: first }));
+    else {
+      chapterChildren.push(...figure(it, first));
+    }
+    first = false;
   }
 });
 
@@ -190,7 +214,7 @@ const doc = new Document({
   numbering: { config: [{ reference: "src", levels: [{ level: 0, format: LevelFormat.DECIMAL, text: "%1.", alignment: AlignmentType.START,
     style: { paragraph: { indent: { start: 500, hanging: 360 } } } }] }] },
   sections: [
-    { properties: { ...pageProps(false), titlePage: true }, children: cover },
+    { properties: coverProps, children: cover },
     { properties: pageProps(false), headers: { default: header }, footers: { default: footer }, children: [...front, ...chapterChildren] },
     { properties: pageProps(true), headers: { default: header }, footers: { default: footer }, children: appendixLandscape },
     { properties: pageProps(false), headers: { default: header }, footers: { default: footer }, children: appendixPortrait },

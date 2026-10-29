@@ -293,7 +293,7 @@
      "number": "٤-١",
      "caption": [
       [
-       "مخروطا ظل القمر: الظل الكامل وشبه الظل والظل المضاد",
+       "الظل الكامل وشبه الظل والظل المضاد",
        false
       ],
       [
@@ -301,7 +301,15 @@
        true
       ],
       [
-       "، وأنواع الكسوف المقابلة.",
+       ": هندسة الكسوف الكلي",
+       false
+      ],
+      [
+       " (Total solar eclipse)",
+       true
+      ],
+      [
+       " والحلقي.",
        false
       ]
      ]
@@ -416,21 +424,37 @@
     },
     {
      "type": "h2",
+     "text": "تقويم الكسوفات"
+    },
+    {
+     "type": "p",
+     "text": [
+      [
+       "تتكرر مواسم الكسوف مرتين في العام تقريبًا، لكنها تبكّر نحو تسعة عشر يومًا كل سنة لأن خط العقد يدور ببطء. ويُظهر التقويم التالي كل كسوفات الشمس من ٢٠٢٢ إلى ٢٠٤٥ فتبدو هذه الحركة خطوطًا مائلة من النقاط.",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch1/fig_1_10_eclipse_calendar.png",
+     "number": "١٠-١",
+     "caption": [
+      [
+       "تقويم الكسوفات الشمسية ٢٠٢٢–٢٠٤٥ حسب الشهر والسنة وأنواعها (محسوب).",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "h2",
      "text": "مراحل الكسوف الكلي وظواهره"
     },
     {
      "type": "p",
      "text": [
       [
-       "يمر الكسوف الكلي",
-       false
-      ],
-      [
-       " (Total solar eclipse)",
-       true
-      ],
-      [
-       " بأربعة «تماسات",
+       "يمر الكسوف الكلي بأربعة «تماسات",
        false
       ],
       [
@@ -493,8 +517,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch1/fig_1_10_four_contacts.png",
-     "number": "١٠-١",
+     "file": "figures/ch1/fig_1_11_four_contacts.png",
+     "number": "١١-١",
      "caption": [
       [
        "التماسات الأربعة للكسوف الكلي من البداية إلى النهاية.",
@@ -504,8 +528,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch1/fig_1_11_phenomena_timeline.png",
-     "number": "١١-١",
+     "file": "figures/ch1/fig_1_12_phenomena_timeline.png",
+     "number": "١٢-١",
      "caption": [
       [
        "تسلسل الظواهر المرئية قبل الكلية وخلالها وبعدها.",
@@ -515,8 +539,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch1/fig_1_12_diamond_ring.png",
-     "number": "١٢-١",
+     "file": "figures/ch1/fig_1_13_diamond_ring.png",
+     "number": "١٣-١",
      "caption": [
       [
        "رسم توضيحي لظاهرة الخاتم الماسي.",
@@ -526,8 +550,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch1/fig_1_13_bailys_beads.png",
-     "number": "١٣-١",
+     "file": "figures/ch1/fig_1_14_bailys_beads.png",
+     "number": "١٤-١",
      "caption": [
       [
        "رسم توضيحي لحبات بيلي عند حافة القمر.",
@@ -537,8 +561,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch1/fig_1_14_corona_anatomy.png",
-     "number": "١٤-١",
+     "file": "figures/ch1/fig_1_15_corona_anatomy.png",
+     "number": "١٥-١",
      "caption": [
       [
        "أجزاء الهالة الشمسية التي تظهر أثناء الكلية.",
@@ -548,8 +572,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch1/fig_1_15_sun_structure.png",
-     "number": "١٥-١",
+     "file": "figures/ch1/fig_1_16_sun_structure.png",
+     "number": "١٦-١",
      "caption": [
       [
        "طبقات الشمس ودرجات حرارتها التقريبية.",
@@ -572,8 +596,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch1/fig_1_16_moon_facts.png",
-     "number": "١٦-١",
+     "file": "figures/ch1/fig_1_17_moon_facts.png",
+     "number": "١٧-١",
      "caption": [
       [
        "بطاقة حقائق عن القمر.",
@@ -583,8 +607,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch1/fig_1_17_sun_facts.png",
-     "number": "١٧-١",
+     "file": "figures/ch1/fig_1_18_sun_facts.png",
+     "number": "١٨-١",
      "caption": [
       [
        "بطاقة حقائق عن الشمس.",
@@ -623,8 +647,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch1/fig_1_18_shadow_speed.png",
-     "number": "١٨-١",
+     "file": "figures/ch1/fig_1_19_shadow_speed.png",
+     "number": "١٩-١",
      "caption": [
       [
        "سرعة ظل القمر على امتداد مسار الكلية (محسوبة).",
@@ -634,8 +658,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch1/fig_1_19_umbra_length.png",
-     "number": "١٩-١",
+     "file": "figures/ch1/fig_1_20_umbra_length.png",
+     "number": "٢٠-١",
      "caption": [
       [
        "مقارنة طول مخروط ظل القمر ببعده عن الأقصر لحظة الكسوف (محسوب).",
@@ -645,8 +669,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch1/fig_1_20_gamma.png",
-     "number": "٢٠-١",
+     "file": "figures/ch1/fig_1_21_gamma.png",
+     "number": "٢١-١",
      "caption": [
       [
        "معامل غاما لكسوف ٢٠٢٧ وموقع محور الظل بالنسبة لمركز الأرض (محسوب).",
@@ -656,8 +680,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch1/fig_1_21_magnitude_vs_obscuration.png",
-     "number": "٢١-١",
+     "file": "figures/ch1/fig_1_22_magnitude_vs_obscuration.png",
+     "number": "٢٢-١",
      "caption": [
       [
        "العلاقة بين قدر الكسوف",
@@ -696,8 +720,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch1/fig_1_22_saros_cycle.png",
-     "number": "٢٢-١",
+     "file": "figures/ch1/fig_1_23_saros_cycle.png",
+     "number": "٢٣-١",
      "caption": [
       [
        "الأشهر الثلاثة التي تتوافق في دورة ساروس",
@@ -715,8 +739,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch1/fig_1_23_saros136_paths.png",
-     "number": "٢٣-١",
+     "file": "figures/ch1/fig_1_24_saros136_paths.png",
+     "number": "٢٤-١",
      "caption": [
       [
        "خطوط مركز كسوفات سلسلة ساروس ١٣٦ من ١٩٠١ إلى ٢٠٤٥ (محسوبة).",
@@ -726,8 +750,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch1/fig_1_24_saros136_durations.png",
-     "number": "٢٤-١",
+     "file": "figures/ch1/fig_1_25_saros136_durations.png",
+     "number": "٢٥-١",
      "caption": [
       [
        "مدة الكلية",
@@ -758,8 +782,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch1/fig_1_25_eclipse_statistics.png",
-     "number": "٢٥-١",
+     "file": "figures/ch1/fig_1_26_eclipse_statistics.png",
+     "number": "٢٦-١",
      "caption": [
       [
        "إحصاء كسوفات الشمس ١٩٠١–٢٠٥٠ حسب النوع والعقد (محسوب).",
@@ -769,8 +793,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch1/fig_1_26_central_paths_1951_2000.png",
-     "number": "٢٦-١",
+     "file": "figures/ch1/fig_1_27_central_paths_1951_2000.png",
+     "number": "٢٧-١",
      "caption": [
       [
        "خطوط مركز جميع الكسوفات الكلية والحلقية والهجينة ١٩٥١–٢٠٠٠ (محسوبة).",
@@ -780,8 +804,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch1/fig_1_27_central_paths_2001_2050.png",
-     "number": "٢٧-١",
+     "file": "figures/ch1/fig_1_28_central_paths_2001_2050.png",
+     "number": "٢٨-١",
      "caption": [
       [
        "خطوط مركز جميع الكسوفات الكلية والحلقية والهجينة ٢٠٠١–٢٠٥٠ (محسوبة).",
@@ -804,8 +828,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch1/fig_1_28_sky_during_totality_luxor.png",
-     "number": "٢٨-١",
+     "file": "figures/ch1/fig_1_29_sky_during_totality_luxor.png",
+     "number": "٢٩-١",
      "caption": [
       [
        "خريطة سماء الأقصر لحظة ذروة الكلية: مواقع الكواكب والنجوم الساطعة (محسوبة).",
@@ -815,8 +839,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch1/fig_1_29_light_levels.png",
-     "number": "٢٩-١",
+     "file": "figures/ch1/fig_1_30_light_levels.png",
+     "number": "٣٠-١",
      "caption": [
       [
        "مقارنة تقريبية لشدة الإضاءة أثناء الكسوف الكلي بمواقف يومية.",
@@ -826,8 +850,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch1/fig_1_30_what_changes.png",
-     "number": "٣٠-١",
+     "file": "figures/ch1/fig_1_31_what_changes.png",
+     "number": "٣١-١",
      "caption": [
       [
        "تغيرات بيئية يلاحظها الراصدون أثناء الكسوف الكلي.",
@@ -837,8 +861,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch1/fig_1_31_future_of_eclipses.png",
-     "number": "٣١-١",
+     "file": "figures/ch1/fig_1_32_future_of_eclipses.png",
+     "number": "٣٢-١",
      "caption": [
       [
        "ابتعاد القمر التدريجي ومستقبل الكسوفات الكلية.",
@@ -861,8 +885,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch1/fig_1_32_nasa_diamond_ring.png",
-     "number": "٣٢-١",
+     "file": "figures/ch1/fig_1_33_nasa_diamond_ring.png",
+     "number": "٣٣-١",
      "caption": [
       [
        "الخاتم الماسي (Diamond Ring): صورة ناسا (NASA/Aubrey Gemignani).",
@@ -872,8 +896,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch1/fig_1_33_nasa_baily_beads.png",
-     "number": "٣٣-١",
+     "file": "figures/ch1/fig_1_34_nasa_baily_beads.png",
+     "number": "٣٤-١",
      "caption": [
       [
        "حبات بيلي (Baily's Beads): صورة ناسا (NASA/Aubrey Gemignani).",
@@ -883,8 +907,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch1/fig_1_34_nasa_corona.png",
-     "number": "٣٤-١",
+     "file": "figures/ch1/fig_1_35_nasa_corona.png",
+     "number": "٣٥-١",
      "caption": [
       [
        "الهالة الشمسية (Corona): صورة ناسا (NASA/Aubrey Gemignani).",
@@ -894,8 +918,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch1/fig_1_35_nasa_prominences.png",
-     "number": "٣٥-١",
+     "file": "figures/ch1/fig_1_36_nasa_prominences.png",
+     "number": "٣٦-١",
      "caption": [
       [
        "الشواظ والكروموسفير (Prominences & Chromosphere): صورة ناسا (NASA/Keegan Barber).",
@@ -905,8 +929,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch1/fig_1_36_nasa_partial_sequence.png",
-     "number": "٣٦-١",
+     "file": "figures/ch1/fig_1_37_nasa_partial_sequence.png",
+     "number": "٣٧-١",
      "caption": [
       [
        "مراحل الكسوف (Eclipse Sequence): صورة ناسا (NASA/Aubrey Gemignani).",
@@ -916,8 +940,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch1/fig_1_37_nasa_iss_shadow.png",
-     "number": "٣٧-١",
+     "file": "figures/ch1/fig_1_38_nasa_iss_shadow.png",
+     "number": "٣٨-١",
      "caption": [
       [
        "ظل القمر من الفضاء (Umbra from the ISS): صورة ناسا (NASA/JSC (ISS Expedition 71)).",
@@ -927,8 +951,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch1/fig_1_38_nasa_dscovr_shadow.png",
-     "number": "٣٨-١",
+     "file": "figures/ch1/fig_1_39_nasa_dscovr_shadow.png",
+     "number": "٣٩-١",
      "caption": [
       [
        "الظل من مليون ونصف كيلومتر (DSCOVR/EPIC): صورة ناسا (NASA/NOAA DSCOVR EPIC).",
@@ -938,8 +962,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch1/fig_1_39_nasa_iss_transit.png",
-     "number": "٣٩-١",
+     "file": "figures/ch1/fig_1_40_nasa_iss_transit.png",
+     "number": "٤٠-١",
      "caption": [
       [
        "محطة الفضاء تعبر الشمس (ISS Transit): صورة ناسا (NASA/Joel Kowsky).",
@@ -949,8 +973,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch1/fig_1_40_nasa_citizen_science.png",
-     "number": "٤٠-١",
+     "file": "figures/ch1/fig_1_41_nasa_citizen_science.png",
+     "number": "٤١-١",
      "caption": [
       [
        "علم المواطن: قياس الطقس أثناء الكسوف (Citizen Science): صورة ناسا (NASA/Michael DeMocker).",
@@ -960,8 +984,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch1/fig_1_41_nasa_orion.png",
-     "number": "٤١-١",
+     "file": "figures/ch1/fig_1_42_nasa_orion.png",
+     "number": "٤٢-١",
      "caption": [
       [
        "الكسوف من مركبة أوريون (Artemis II): صورة ناسا (NASA/JSC (Artemis II)).",
@@ -971,15 +995,110 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch1/fig_1_42_nasa_viewing.png",
-     "number": "٤٢-١",
+     "file": "figures/ch1/fig_1_43_nasa_viewing.png",
+     "number": "٤٣-١",
      "caption": [
       [
        "المشاهدة الآمنة (Safe Viewing): صورة ناسا (NASA/Aubrey Gemignani).",
        false
       ]
      ]
+    },
+    {
+     "type": "h2",
+     "text": "من عدسات المراصد: الكسوف والشمس النشطة"
+    },
+    {
+     "type": "p",
+     "text": [
+      [
+       "صور مفتوحة الترخيص من المرصد الجنوبي الأوروبي (ESO) لكسوف ٢ يوليو ٢٠١٩ فوق صحراء أتاكاما، ومن مراصد ناسا ووكالة الفضاء الأوروبية للشمس النشطة: التوهجات وحلقات الهالة والانبعاثات الكتلية — وهي الظواهر نفسها التي تصنع أشكال الهالة التي نراها أثناء الكلية.",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch1/fig_1_44_open_eso_lasilla_sequence.png",
+     "number": "٤٤-١",
+     "caption": [
+      [
+       "كسوف من البداية إلى النهاية في صورة واحدة — ESO/P. Horálek.",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch1/fig_1_45_open_eso_lasilla_totality.png",
+     "number": "٤٥-١",
+     "caption": [
+      [
+       "غروب في كل الاتجاهات (Horizon glow) — ESO/M. Zamani.",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch1/fig_1_46_open_sdo_flare_earth_scale.png",
+     "number": "٤٦-١",
+     "caption": [
+      [
+       "الشمس عن قرب: الأرض بالمقياس نفسه — NASA/SDO/AIA/GSFC.",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch1/fig_1_47_open_sdo_flare_2012.png",
+     "number": "٤٧-١",
+     "caption": [
+      [
+       "توهج شمسي (Solar flare) — NASA/SDO/AIA.",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch1/fig_1_48_open_trace_coronal_loops.png",
+     "number": "٤٨-١",
+     "caption": [
+      [
+       "حلقات الهالة (Coronal loops) — NASA/TRACE.",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch1/fig_1_49_open_soho_lasco_cme.png",
+     "number": "٤٩-١",
+     "caption": [
+      [
+       "انبعاث كتلي إكليلي (Coronal mass ejection) — ESA/NASA SOHO LASCO.",
+       false
+      ]
+     ]
     }
+   ],
+   "src": 1,
+   "num": 1,
+   "sections": [
+    "الشمس والقمر: مصادفة الأحجام",
+    "الظل وأنواع الكسوف",
+    "لماذا لا يحدث الكسوف كل شهر؟",
+    "تقويم الكسوفات",
+    "مراحل الكسوف الكلي وظواهره",
+    "بطاقتا تعريف",
+    "هندسة كسوف ٢٠٢٧",
+    "دورة ساروس وعائلات الكسوف",
+    "الكسوف بالأرقام",
+    "ماذا يحدث حولك أثناء الكلية؟",
+    "الظواهر كما صوّرتها ناسا",
+    "من عدسات المراصد: الكسوف والشمس النشطة"
    ]
   },
   {
@@ -1410,7 +1529,31 @@
        false
       ]
      ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch8/fig_8_15_historic_paths_world.png",
+     "number": "١٥-٢",
+     "caption": [
+      [
+       "خريطة عالمية لمسارات كسوفات ذات أهمية تاريخية ١٧١٥–٢٠٢٧ (محسوبة).",
+       false
+      ]
+     ]
     }
+   ],
+   "src": 8,
+   "num": 2,
+   "sections": [
+    "من الأسطورة إلى السجل",
+    "كسوفات صنعت التاريخ والعلم",
+    "عصر التصوير والطيف",
+    "الكسوف يختبر أينشتاين",
+    "من الطائرات إلى الفضاء",
+    "كسوف ثوسيديدس",
+    "سجلات مكتوبة قبل التلسكوب",
+    "الكسوف في التنجيم: معتقد قديم لا علم",
+    "فرق التوقيت ΔT"
    ]
   },
   {
@@ -1891,6 +2034,16 @@
       ]
      ]
     }
+   ],
+   "src": 2,
+   "num": 3,
+   "sections": [
+    "من الأسطورة إلى العلم",
+    "كسوفات مصر القديمة كما وردت في رواية «أرصاد وأطوار»",
+    "كسوفات تاريخية فوق مصر",
+    "سماء القاهرة الفاطمية بين التاريخ والرواية",
+    "قرن ونصف من الكسوفات فوق مصر",
+    "آثار مصر تحت الظل"
    ]
   },
   {
@@ -2579,6 +2732,16 @@
       ]
      ]
     }
+   ],
+   "src": 3,
+   "num": 4,
+   "sections": [
+    "الحدث بالأرقام",
+    "رحلة الظل ربعَ ساعة بربع ساعة",
+    "مدن مصر: المواعيد والمدد",
+    "أين تبلغ الكلية أقصى مدتها؟",
+    "الواحات البحرية",
+    "بطاقات المدن"
    ]
   },
   {
@@ -2918,6 +3081,15 @@
       ]
      ]
     }
+   ],
+   "src": 4,
+   "num": 5,
+   "sections": [
+    "القاعدة الذهبية والوسائل الآمنة",
+    "كاميرا الثقب وأهلّة الأشجار",
+    "العين والشمس",
+    "متى ألبس النظارة ومتى أنزعها؟",
+    "التحضير ليوم الكسوف"
    ]
   },
   {
@@ -3234,6 +3406,12 @@
       ]
      ]
     }
+   ],
+   "src": 9,
+   "num": 6,
+   "sections": [
+    "ثماني تجارب",
+    "أدوات للمعلم"
    ]
   },
   {
@@ -3735,6 +3913,18 @@
       ]
      ]
     }
+   ],
+   "src": 5,
+   "num": 7,
+   "sections": [
+    "المعدات",
+    "مصطلحات الكاميرا وإعداداتها",
+    "التعريض",
+    "التأطير وحركة الشمس",
+    "خطط زمنية محسوبة",
+    "الشمس فوق الرأس والتصوير الواسع",
+    "نصائح عملية",
+    "نصائح ميدانية من خبرة المصوّرين"
    ]
   },
   {
@@ -3903,6 +4093,12 @@
       ]
      ]
     }
+   ],
+   "src": 10,
+   "num": 8,
+   "sections": [
+    "التطبيقات والمواقع المفيدة",
+    "جدول الاستعداد"
    ]
   },
   {
@@ -4245,6 +4441,13 @@
       ]
      ]
     }
+   ],
+   "src": 6,
+   "num": 9,
+   "sections": [
+    "المحافظات",
+    "الأقاليم",
+    "ظل القمر فوق مصر دقيقةً بدقيقة"
    ]
   },
   {
@@ -4750,6 +4953,419 @@
       ]
      ]
     }
+   ],
+   "src": 7,
+   "num": 10,
+   "sections": [
+    "نظرة عالمية",
+    "خرائط الدول",
+    "خرائط مصر",
+    "خرائط المدن المصرية"
+   ]
+  },
+  {
+   "label": "ملحق",
+   "name": "كل كسوفات الشمس ٢٠٢٤–٢٠٤٥: خرائط وجداول",
+   "intro": [
+    [
+     [
+      "بين عامي ٢٠٢٤ و٢٠٤٥ يكسف القمر الشمس ثماني وأربعين مرة. يعرض هذا الملحق خريطة عالمية لكل منها، وجدولًا بأرقامها، ثم يركّز على ما يهم القارئ العربي: الكسوفات التي تعبر مساراتها أفريقيا والشرق الأوسط، وما يُرى منها في مصر.",
+      false
+     ]
+    ],
+    [
+     [
+      "استلهمنا فكرة هذا الملحق من الملحق «أ» في كتاب «Totality: The Great North American Eclipse of 2024» لمارك ليتمان وفريد إسبيناك (٢٠٢٤)، الذي يضم خرائط فريد إسبيناك لهذه الكسوفات. أما الخرائط هنا فمرسومة من حساباتنا نحن بتقويم JPL DE421، واستعملنا القيم المنشورة في ذلك الملحق للمقارنة فقط: فجاءت قيمة غاما",
+      false
+     ],
+     [
+      " (Gamma)",
+      true
+     ],
+     [
+      " متطابقة حتى الخانة الرابعة، ومدة الكلية",
+      false
+     ],
+     [
+      " (Duration of totality)",
+      true
+     ],
+     [
+      " أو الحلقية عند نقطة أعظم كسوف متفقة في حدود ثانية واحدة.",
+      false
+     ]
+    ]
+   ],
+   "items": [
+    {
+     "type": "h2",
+     "text": "أنواع الكسوف في ربع قرن"
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch11/fig_11_01_eclipse_types_2024_2045.png",
+     "number": "١-١١",
+     "caption": [
+      [
+       "توزيع أنواع كسوفات الشمس ٢٠٢٤–٢٠٤٥ (محسوب).",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "h2",
+     "text": "الجدول الشامل"
+    },
+    {
+     "type": "p",
+     "text": [
+      [
+       "يجمع الجدولان التاليان الكسوفات الثمانية والأربعين: التاريخ والنوع ورقم سلسلة ساروس",
+       false
+      ],
+      [
+       " (Saros)",
+       true
+      ],
+      [
+       " ووقت أعظم كسوف بالتوقيت العالمي",
+       false
+      ],
+      [
+       " (Universal Time, UT)",
+       true
+      ],
+      [
+       " وقيمة غاما (بُعد محور الظل",
+       false
+      ],
+      [
+       " (Shadow axis)",
+       true
+      ],
+      [
+       " عن مركز الأرض بأنصاف أقطارها)، ثم مدة الكلية أو الحلقية عند نقطة أعظم كسوف بحسابنا وبحساب إسبيناك، وأخيرًا نسبة احتجاب الشمس في القاهرة. وعند المقارنة وجدنا في نص الملحق المنشور أخطاء مطبعية يسيرة صحّحها الحساب: فكسوف ٢٢ يوليو ٢٠٢٨ طُبع «٢٢ يناير»، وكسوفا ٣٠ مارس ٢٠٣٣ و٩ مارس ٢٠٣٥ طُبعا في مايو، وجاءت إشارة غاما معكوسة في ثلاثة كسوفات.",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch11/fig_11_02_eclipses_table_1.png",
+     "number": "٢-١١",
+     "caption": [
+      [
+       "جدول كسوفات الشمس ٢٠٢٤–٢٠٤٥ (١ من ٢) مع المقارنة بقيم إسبيناك.",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch11/fig_11_03_eclipses_table_2.png",
+     "number": "٣-١١",
+     "caption": [
+      [
+       "جدول كسوفات الشمس ٢٠٢٤–٢٠٤٥ (٢ من ٢) مع المقارنة بقيم إسبيناك.",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "h2",
+     "text": "ما يراه المصريون"
+    },
+    {
+     "type": "p",
+     "text": [
+      [
+       "سبعة كسوفات فقط من الثمانية والأربعين تُرى من مصر، أعظمها بلا منازع كسوف ٢ أغسطس ٢٠٢٧. ثم يأتي كسوف ٢٠ مارس ٢٠٣٤ الكلي الذي يعبر ظله السودان والسعودية قريبًا من جنوب مصر، فيبلغ الاحتجاب في أسوان نحو ٩٧٪.",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch11/fig_11_04_egypt_visibility_2024_2045.png",
+     "number": "٤-١١",
+     "caption": [
+      [
+       "الكسوفات التي تُرى من مصر ٢٠٢٤–٢٠٤٥ ونسبها في أربع مدن (محسوب).",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "h2",
+     "text": "أفريقيا والشرق الأوسط"
+    },
+    {
+     "type": "p",
+     "text": [
+      [
+       "تعرض الخريطة التالية أشرطة الكسوفات المركزية التي تعبر أفريقيا والشرق الأوسط بعرضها الحقيقي، تليها خريطة مفصلة لكل منها: مدة الكلية أو الحلقية بالأزرق، ونسبة تغطية الشمس بالبرتقالي، وقيمها في مدن مختارة من الدار البيضاء إلى طهران.",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch11/fig_11_05_central_paths_africa_middle_east.png",
+     "number": "٥-١١",
+     "caption": [
+      [
+       "مسارات الكسوفات الكلية والحلقية فوق أفريقيا والشرق الأوسط ٢٠٢٤–٢٠٤٥ (محسوبة).",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch11/fig_11_06_region_2026_08_12.png",
+     "number": "٦-١١",
+     "caption": [
+      [
+       "كسوف ١٢ أغسطس ٢٠٢٦ كلي فوق أفريقيا والشرق الأوسط (محسوب).",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch11/fig_11_07_region_2027_02_06.png",
+     "number": "٧-١١",
+     "caption": [
+      [
+       "كسوف ٦ فبراير ٢٠٢٧ حلقي فوق أفريقيا والشرق الأوسط (محسوب).",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch11/fig_11_08_region_2027_08_02.png",
+     "number": "٨-١١",
+     "caption": [
+      [
+       "كسوف ٢ أغسطس ٢٠٢٧ كلي فوق أفريقيا والشرق الأوسط (محسوب).",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch11/fig_11_09_region_2028_01_26.png",
+     "number": "٩-١١",
+     "caption": [
+      [
+       "كسوف ٢٦ يناير ٢٠٢٨ حلقي فوق أفريقيا والشرق الأوسط (محسوب).",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch11/fig_11_10_region_2030_06_01.png",
+     "number": "١٠-١١",
+     "caption": [
+      [
+       "كسوف ١ يونيو ٢٠٣٠ حلقي فوق أفريقيا والشرق الأوسط (محسوب).",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch11/fig_11_11_region_2030_11_25.png",
+     "number": "١١-١١",
+     "caption": [
+      [
+       "كسوف ٢٥ نوفمبر ٢٠٣٠ كلي فوق أفريقيا والشرق الأوسط (محسوب).",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch11/fig_11_12_region_2031_05_21.png",
+     "number": "١٢-١١",
+     "caption": [
+      [
+       "كسوف ٢١ مايو ٢٠٣١ حلقي فوق أفريقيا والشرق الأوسط (محسوب).",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch11/fig_11_13_region_2034_03_20.png",
+     "number": "١٣-١١",
+     "caption": [
+      [
+       "كسوف ٢٠ مارس ٢٠٣٤ كلي فوق أفريقيا والشرق الأوسط (محسوب).",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch11/fig_11_14_region_2038_01_05.png",
+     "number": "١٤-١١",
+     "caption": [
+      [
+       "كسوف ٥ يناير ٢٠٣٨ حلقي فوق أفريقيا والشرق الأوسط (محسوب).",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch11/fig_11_15_region_2038_07_02.png",
+     "number": "١٥-١١",
+     "caption": [
+      [
+       "كسوف ٢ يوليو ٢٠٣٨ حلقي فوق أفريقيا والشرق الأوسط (محسوب).",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch11/fig_11_16_region_2041_04_30.png",
+     "number": "١٦-١١",
+     "caption": [
+      [
+       "كسوف ٣٠ أبريل ٢٠٤١ كلي فوق أفريقيا والشرق الأوسط (محسوب).",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "h2",
+     "text": "خريطة لكل كسوف"
+    },
+    {
+     "type": "p",
+     "text": [
+      [
+       "في كل خريطة: الشريط البرتقالي منطقة الكسوف الجزئي",
+       false
+      ],
+      [
+       " (Partial eclipse)",
+       true
+      ],
+      [
+       " بدرجات ٢٥٪ و٥٠٪ و٧٥٪ من قطر الشمس، والخط الملوّن مسار الكلية (أحمر) أو الحلقية (برتقالي) أو الهجين (بنفسجي)، والنجمة موضع أعظم كسوف. وتحت كل خريطة مدة الكسوف عند الذروة وارتفاع الشمس ونسبة الاحتجاب",
+       false
+      ],
+      [
+       " (Obscuration)",
+       true
+      ],
+      [
+       " في القاهرة.",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch11/fig_11_17_world_eclipses_2024_2026.png",
+     "number": "١٧-١١",
+     "caption": [
+      [
+       "خرائط عالمية لكسوفات الشمس ٢٠٢٤–٢٠٢٦ (محسوبة).",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch11/fig_11_18_world_eclipses_2027_2029.png",
+     "number": "١٨-١١",
+     "caption": [
+      [
+       "خرائط عالمية لكسوفات الشمس ٢٠٢٧–٢٠٢٩ (محسوبة).",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch11/fig_11_19_world_eclipses_2029_2031.png",
+     "number": "١٩-١١",
+     "caption": [
+      [
+       "خرائط عالمية لكسوفات الشمس ٢٠٢٩–٢٠٣١ (محسوبة).",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch11/fig_11_20_world_eclipses_2032_2034.png",
+     "number": "٢٠-١١",
+     "caption": [
+      [
+       "خرائط عالمية لكسوفات الشمس ٢٠٣٢–٢٠٣٤ (محسوبة).",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch11/fig_11_21_world_eclipses_2035_2037.png",
+     "number": "٢١-١١",
+     "caption": [
+      [
+       "خرائط عالمية لكسوفات الشمس ٢٠٣٥–٢٠٣٧ (محسوبة).",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch11/fig_11_22_world_eclipses_2037_2039.png",
+     "number": "٢٢-١١",
+     "caption": [
+      [
+       "خرائط عالمية لكسوفات الشمس ٢٠٣٧–٢٠٣٩ (محسوبة).",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch11/fig_11_23_world_eclipses_2040_2042.png",
+     "number": "٢٣-١١",
+     "caption": [
+      [
+       "خرائط عالمية لكسوفات الشمس ٢٠٤٠–٢٠٤٢ (محسوبة).",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch11/fig_11_24_world_eclipses_2043_2045.png",
+     "number": "٢٤-١١",
+     "caption": [
+      [
+       "خرائط عالمية لكسوفات الشمس ٢٠٤٣–٢٠٤٥ (محسوبة).",
+       false
+      ]
+     ]
+    }
+   ],
+   "src": 11,
+   "num": 11,
+   "sections": [
+    "أنواع الكسوف في ربع قرن",
+    "الجدول الشامل",
+    "ما يراه المصريون",
+    "أفريقيا والشرق الأوسط",
+    "خريطة لكل كسوف"
    ]
   }
  ],
@@ -4856,6 +5472,8 @@
   "NASA Image and Video Library (images.nasa.gov) — صور الظواهر في الفصل الأول، كلٌّ منها مع اسم المصوّر ورقم الصورة.",
   "رواية «أرصاد وأطوار: سرّ الحاكم — ثغرة الكسوف»، وملحق مؤلفها «ما هو حقيقيّ في هذا الكتاب» — مصدرٌ لقائمة الأحداث الفلكية المحقَّقة في الفصل الثالث فقط.",
   "Caussin de Perceval, J.-J. A., Le Livre de la grande table Hakémite (Paris, 1804) — نشرة أرصاد ابن يونس وترجمتها.",
+  "Littmann, M. & Espenak, F., Totality: The Great North American Eclipse of 2024 (Oxford University Press, 2024) — فكرة الملحق «أ» وقيمه المنشورة للمقارنة، وصور ESO وNASA المفتوحة الترخيص الواردة فيه.",
+  "European Southern Observatory (ESO) — صورتا كسوف ٢ يوليو ٢٠١٩ فوق لاسيا (P. Horálek, M. Zamani)، بترخيص CC BY 4.0.",
   "Hall, A., How to Take Pictures of an Eclipse: An Astrophotography Beginner's Guide (2017) — نصائح التصوير الميدانية، مُلخّصة بتصرف.",
   "Sepharial, Eclipses: Astronomically and Astrologically Considered and Explained (1915) — السجلات التاريخية فقط؛ أما التفسيرات التنجيمية فلا يعتمدها هذا الكتاب."
  ],

@@ -1,0 +1,38 @@
+{
+ "eso_lasilla_sequence": {
+  "credit": "ESO/P. Horálek",
+  "license": "CC BY 4.0",
+  "date": "2019-07-02",
+  "source": "ESO; reproduced in Littmann & Espenak, Totality (2024)"
+ },
+ "eso_lasilla_totality": {
+  "credit": "ESO/M. Zamani",
+  "license": "CC BY 4.0",
+  "date": "2019-07-02",
+  "source": "ESO; reproduced in Littmann & Espenak, Totality (2024)"
+ },
+ "sdo_flare_earth_scale": {
+  "credit": "NASA/SDO/AIA/GSFC",
+  "license": "Public domain (NASA)",
+  "date": "",
+  "source": "NASA Solar Dynamics Observatory"
+ },
+ "sdo_flare_2012": {
+  "credit": "NASA/SDO/AIA",
+  "license": "Public domain (NASA)",
+  "date": "2012-07-06",
+  "source": "NASA Solar Dynamics Observatory"
+ },
+ "trace_coronal_loops": {
+  "credit": "NASA/TRACE",
+  "license": "Public domain (NASA)",
+  "date": "",
+  "source": "NASA Transition Region and Coronal Explorer"
+ },
+ "soho_lasco_cme": {
+  "credit": "ESA/NASA SOHO LASCO",
+  "license": "ESA/NASA, free use with credit",
+  "date": "2002-01-08",
+  "source": "SOHO (ESA & NASA)"
+ }
+}

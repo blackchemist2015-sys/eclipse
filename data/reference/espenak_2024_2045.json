@@ -1,0 +1,441 @@
+{
+ "source": "Littmann & Espenak, Totality: The Great North American Eclipse of 2024 (OUP 2024), Appendix A — eclipse data (©2022 F. Espenak, EclipseWise.com); facts only, used to cross-check our own computation",
+ "eclipses": [
+  {
+   "kind": "Total",
+   "date": "2024 Apr 08",
+   "saros": 139,
+   "gmt": "18:17",
+   "gamma": 0.3431,
+   "duration": "04m28s",
+   "alt": 70
+  },
+  {
+   "kind": "Annular",
+   "date": "2024 Oct 02",
+   "saros": 144,
+   "gmt": "18:45",
+   "gamma": -0.3508,
+   "duration": "07m25s",
+   "alt": 69
+  },
+  {
+   "kind": "Partial",
+   "date": "2025 Mar 29",
+   "saros": 149,
+   "gmt": "10:47",
+   "gamma": 1.0405,
+   "magnitude": "0.9376",
+   "alt": 0
+  },
+  {
+   "kind": "Partial",
+   "date": "2025 Sep 21",
+   "saros": 154,
+   "gmt": "19:42",
+   "gamma": -1.0651,
+   "magnitude": "0.8550",
+   "alt": 0
+  },
+  {
+   "kind": "Annular",
+   "date": "2026 Feb 17",
+   "saros": 121,
+   "gmt": "12:12",
+   "gamma": -0.9743,
+   "duration": "02m20s",
+   "alt": 12
+  },
+  {
+   "kind": "Total",
+   "date": "2026 Aug 12",
+   "saros": 126,
+   "gmt": "17:46",
+   "gamma": 0.8978,
+   "duration": "02m18s",
+   "alt": 26
+  },
+  {
+   "kind": "Annular",
+   "date": "2027 Feb 06",
+   "saros": 131,
+   "gmt": "16:00",
+   "gamma": -0.2952,
+   "duration": "07m51s",
+   "alt": 73
+  },
+  {
+   "kind": "Total",
+   "date": "2027 Aug 02",
+   "saros": 136,
+   "gmt": "10:07",
+   "gamma": 0.1421,
+   "duration": "06m23s",
+   "alt": 82
+  },
+  {
+   "kind": "Annular",
+   "date": "2028 Jan 26",
+   "saros": 141,
+   "gmt": "15:08",
+   "gamma": -0.3902,
+   "duration": "10m27s",
+   "alt": 67
+  },
+  {
+   "kind": "Total",
+   "date": "2028 Jul 22",
+   "saros": 146,
+   "gmt": "02:55",
+   "gamma": -0.6055,
+   "duration": "05m10s",
+   "alt": 53,
+   "note": "printed as \"Jan 22\" in the source extract; the eclipse is 2028 Jul 22"
+  },
+  {
+   "kind": "Partial",
+   "date": "2029 Jan 14",
+   "saros": 151,
+   "gmt": "17:13",
+   "gamma": 1.0553,
+   "magnitude": "0.8714",
+   "alt": 0
+  },
+  {
+   "kind": "Partial",
+   "date": "2029 Jun 12",
+   "saros": 118,
+   "gmt": "04:05",
+   "gamma": 1.2943,
+   "magnitude": "0.4576",
+   "alt": 0
+  },
+  {
+   "kind": "Partial",
+   "date": "2029 Jul 11",
+   "saros": 156,
+   "gmt": "15:36",
+   "gamma": -1.4191,
+   "magnitude": "0.2303",
+   "alt": 0
+  },
+  {
+   "kind": "Partial",
+   "date": "2029 Dec 05",
+   "saros": 123,
+   "gmt": "15:03",
+   "gamma": -1.0609,
+   "magnitude": "0.8911",
+   "alt": 0
+  },
+  {
+   "kind": "Annular",
+   "date": "2030 Jun 01",
+   "saros": 128,
+   "gmt": "06:28",
+   "gamma": 0.5627,
+   "duration": "05m21s",
+   "alt": 55
+  },
+  {
+   "kind": "Total",
+   "date": "2030 Nov 25",
+   "saros": 133,
+   "gmt": "06:50",
+   "gamma": -0.3867,
+   "duration": "03m44s",
+   "alt": 67
+  },
+  {
+   "kind": "Annular",
+   "date": "2031 May 21",
+   "saros": 138,
+   "gmt": "07:15",
+   "gamma": -0.197,
+   "duration": "05m26s",
+   "alt": 79
+  },
+  {
+   "kind": "Hybrid",
+   "date": "2031 Nov 14",
+   "saros": 143,
+   "gmt": "21:06",
+   "gamma": 0.3077,
+   "duration": "01m08s",
+   "alt": 72
+  },
+  {
+   "kind": "Annular",
+   "date": "2032 May 09",
+   "saros": 148,
+   "gmt": "13:25",
+   "gamma": -0.9375,
+   "duration": "00m22s",
+   "alt": 20
+  },
+  {
+   "kind": "Partial",
+   "date": "2032 Nov 03",
+   "saros": 153,
+   "gmt": "05:33",
+   "gamma": 1.0643,
+   "magnitude": "0.8554",
+   "alt": 0
+  },
+  {
+   "kind": "Total",
+   "date": "2033 Mar 30",
+   "saros": 120,
+   "gmt": "18:01",
+   "gamma": 0.9778,
+   "duration": "02m37s",
+   "alt": 11,
+   "note": "printed as \"May 30\" in the source extract"
+  },
+  {
+   "kind": "Partial",
+   "date": "2033 Sep 23",
+   "saros": 125,
+   "gmt": "13:53",
+   "gamma": -1.1583,
+   "magnitude": "0.6890",
+   "alt": 0
+  },
+  {
+   "kind": "Total",
+   "date": "2034 Mar 20",
+   "saros": 130,
+   "gmt": "10:18",
+   "gamma": 0.2894,
+   "duration": "04m09s",
+   "alt": 73
+  },
+  {
+   "kind": "Annular",
+   "date": "2034 Sep 12",
+   "saros": 135,
+   "gmt": "16:18",
+   "gamma": -0.3936,
+   "duration": "02m58s",
+   "alt": 67
+  },
+  {
+   "kind": "Annular",
+   "date": "2035 Mar 09",
+   "saros": 140,
+   "gmt": "23:05",
+   "gamma": -0.4368,
+   "duration": "00m48s",
+   "alt": 64,
+   "note": "printed as \"May 09\" in the source extract"
+  },
+  {
+   "kind": "Total",
+   "date": "2035 Sep 02",
+   "saros": 145,
+   "gmt": "01:56",
+   "gamma": 0.3728,
+   "duration": "02m54s",
+   "alt": 68
+  },
+  {
+   "kind": "Partial",
+   "date": "2036 Feb 27",
+   "saros": 150,
+   "gmt": "04:46",
+   "gamma": 1.1942,
+   "magnitude": "0.6286",
+   "alt": 0
+  },
+  {
+   "kind": "Partial",
+   "date": "2036 Jul 23",
+   "saros": 117,
+   "gmt": "10:31",
+   "gamma": -1.425,
+   "magnitude": "0.1992",
+   "alt": 0
+  },
+  {
+   "kind": "Partial",
+   "date": "2036 Aug 21",
+   "saros": 155,
+   "gmt": "17:24",
+   "gamma": 1.0825,
+   "magnitude": "0.8622",
+   "alt": 0
+  },
+  {
+   "kind": "Partial",
+   "date": "2037 Jan 16",
+   "saros": 122,
+   "gmt": "09:48",
+   "gamma": 1.1477,
+   "magnitude": "0.7049",
+   "alt": 0
+  },
+  {
+   "kind": "Total",
+   "date": "2037 Jul 13",
+   "saros": 127,
+   "gmt": "02:39",
+   "gamma": -0.7246,
+   "duration": "03m58s",
+   "alt": 43
+  },
+  {
+   "kind": "Annular",
+   "date": "2038 Jan 05",
+   "saros": 132,
+   "gmt": "13:46",
+   "gamma": 0.4169,
+   "duration": "03m18s",
+   "alt": 65
+  },
+  {
+   "kind": "Annular",
+   "date": "2038 Jul 02",
+   "saros": 137,
+   "gmt": "13:32",
+   "gamma": 0.0397,
+   "duration": "01m00s",
+   "alt": 88
+  },
+  {
+   "kind": "Total",
+   "date": "2038 Dec 26",
+   "saros": 142,
+   "gmt": "00:59",
+   "gamma": -0.2882,
+   "duration": "02m18s",
+   "alt": 73
+  },
+  {
+   "kind": "Annular",
+   "date": "2039 Jun 21",
+   "saros": 147,
+   "gmt": "17:12",
+   "gamma": 0.8311,
+   "duration": "04m05s",
+   "alt": 33
+  },
+  {
+   "kind": "Total",
+   "date": "2039 Dec 15",
+   "saros": 152,
+   "gmt": "16:22",
+   "gamma": 0.9457,
+   "duration": "01m51s",
+   "alt": 18
+  },
+  {
+   "kind": "Partial",
+   "date": "2040 May 11",
+   "saros": 119,
+   "gmt": "03:42",
+   "gamma": -1.2529,
+   "magnitude": "0.5306",
+   "alt": 0
+  },
+  {
+   "kind": "Partial",
+   "date": "2040 Nov 04",
+   "saros": 124,
+   "gmt": "19:08",
+   "gamma": 1.0993,
+   "magnitude": "0.8074",
+   "alt": 0
+  },
+  {
+   "kind": "Total",
+   "date": "2041 Apr 30",
+   "saros": 129,
+   "gmt": "11:51",
+   "gamma": -0.4492,
+   "duration": "01m51s",
+   "alt": 63
+  },
+  {
+   "kind": "Annular",
+   "date": "2041 Oct 25",
+   "saros": 134,
+   "gmt": "01:35",
+   "gamma": 0.4133,
+   "duration": "06m07s",
+   "alt": 66
+  },
+  {
+   "kind": "Total",
+   "date": "2042 Apr 20",
+   "saros": 139,
+   "gmt": "02:16",
+   "gamma": 0.2956,
+   "duration": "04m51s",
+   "alt": 73
+  },
+  {
+   "kind": "Annular",
+   "date": "2042 Oct 14",
+   "saros": 144,
+   "gmt": "01:59",
+   "gamma": -0.3031,
+   "duration": "07m44s",
+   "alt": 72
+  },
+  {
+   "kind": "Total",
+   "date": "2043 Apr 09",
+   "saros": 149,
+   "gmt": "18:56",
+   "gamma": 1.0031,
+   "duration": "02m27s",
+   "alt": 0
+  },
+  {
+   "kind": "Annular",
+   "date": "2043 Oct 03",
+   "saros": 154,
+   "gmt": "03:00",
+   "gamma": -1.0102,
+   "duration": "02m04s",
+   "alt": 0
+  },
+  {
+   "kind": "Annular",
+   "date": "2044 Feb 28",
+   "saros": 121,
+   "gmt": "20:23",
+   "gamma": -0.9954,
+   "duration": "07m47s",
+   "alt": 4
+  },
+  {
+   "kind": "Total",
+   "date": "2044 Aug 23",
+   "saros": 126,
+   "gmt": "01:16",
+   "gamma": 0.9613,
+   "duration": "06m06s",
+   "alt": 15
+  },
+  {
+   "kind": "Annular",
+   "date": "2045 Feb 16",
+   "saros": 131,
+   "gmt": null,
+   "gamma": null,
+   "alt": null,
+   "note": "not in the extract; saros from the 18y11d cycle"
+  },
+  {
+   "kind": "Total",
+   "date": "2045 Aug 12",
+   "saros": 136,
+   "gmt": null,
+   "gamma": null,
+   "duration": null,
+   "alt": null,
+   "note": "not in the extract; saros from the 18y11d cycle"
+  }
+ ]
+}

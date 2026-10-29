@@ -119,31 +119,55 @@ def fig_apparent_sizes():
 
 # ------------------------------------------------------------------ 4 shadow geometry
 def fig_shadows():
-    fig = page(8.6, 4.8, NAVY)
-    ax = canvas(fig)
-    header(fig, "ظلّ القمر: الظل الكامل وشبه الظل والظل المضاد", color="white")
-    sy = 0.48
-    sx, sr = 0.0, 0.17
-    sun_disk(ax, sx - 0.05, sy, sr, glow=False)
-    mx, mr = 0.50, 0.035
-    # umbra cone: tangent lines from sun edges crossing
-    tip = 0.80
-    ax.fill([mx, mx, tip], [sy + mr, sy - mr, sy], color="#000000", alpha=0.85, zorder=3)
-    ax.fill([tip, 0.97, 0.97], [sy, sy + 0.06, sy - 0.06], color="#556070", alpha=0.6, zorder=2)
-    ax.fill([mx, mx, 0.97, 0.97], [sy + mr, sy - mr, sy - 0.28, sy + 0.28], color="#7d8a9e", alpha=0.35, zorder=1)
-    for s in (1, -1):
-        pass
-    moon_disk(ax, mx, sy, mr, color="#9aa6b8", z=5)
-    lab = dict(color="white", fontsize=10.5, ha="center")
-    ax.text(0.66, sy - 0.012, "الظل الكامل", **lab, zorder=6, fontweight="bold")
-    ax.text(0.90, sy - 0.012, "الظل المضاد", **lab, zorder=6)
-    ax.text(0.82, sy + 0.20, "شبه الظل", **lab)
-    ax.text(0.82, sy - 0.22, "شبه الظل", **lab)
-    ax.text(mx, sy + 0.07, "القمر", **lab)
-    notes = [("داخل الظل الكامل", "كسوف كلي"), ("داخل الظل المضاد", "كسوف حلقي"), ("داخل شبه الظل", "كسوف جزئي")]
-    for i, (a, b) in enumerate(notes):
-        ax.text(0.95 - i * 0.27, 0.07, a + " ← " + b, ha="right", color=SUN, fontsize=9.5)
-    save(fig, CH, "shadow_geometry", "مخروطا ظل القمر: الظل الكامل وشبه الظل والظل المضاد، وأنواع الكسوف المقابلة.")
+    """Total vs annular eclipse: Sun above, Moon, cones of umbra/penumbra/antumbra reaching Earth (not to scale)."""
+    fig = page(8.6, 7.4, NAVY)
+    header(fig, "ظلّ القمر: لماذا يكون الكسوف كليًا مرة وحلقيًا مرة؟",
+           "يتوقف الأمر على وصول رأس مخروط الظل الكامل إلى سطح الأرض — رسم تخطيطي غير مرسوم بمقياس", color="white",
+           sub_color="#c9d3e3")
+    for k, (ttl, rm, kind) in enumerate([("كسوف كلي (Total)", 0.40, "total"), ("كسوف حلقي (Annular)", 0.315, "annular")]):
+        ax = fig.add_axes([0.53 - k * 0.48, 0.13, 0.44, 0.70])
+        ax.set_xlim(-2.4, 2.4)
+        ax.set_ylim(0.2, 10.7)
+        ax.set_aspect("equal")
+        ax.axis("off")
+        rs, ys, ym = 0.8, 9.0, 5.0
+        ax.add_patch(plt.Circle((0, ys), rs, fc=SUN, ec="none", zorder=3))
+        ax.add_patch(plt.Circle((0, ys), rs * 1.18, fc=SUN, ec="none", alpha=0.10, zorder=2))
+        tip = ym - rm * (ys - ym) / (rs - rm)
+        yb = -0.3
+        # penumbra: sun edge through the opposite moon edge
+        xp = lambda y: rm + (rm + rs) * (ym - y) / (ys - ym)
+        ax.fill([-rm, rm, xp(yb), -xp(yb)], [ym, ym, yb, yb], color="#7d8a9e", alpha=0.30, lw=0, zorder=1)
+        for sgn in (1, -1):
+            ax.plot([-sgn * rs, sgn * xp(yb)], [ys, yb], color="#9aa6b8", lw=0.7, ls="--", zorder=2)
+            ax.plot([sgn * rs, sgn * rm, 0 if kind == "total" else 0], [ys, ym, tip], color="#c9d3e3", lw=0.7, zorder=2)
+        ax.fill([-rm, rm, 0], [ym, ym, tip], color="#05080f", zorder=4)
+        if kind == "annular":
+            xa = lambda y: rm * (tip - y) / (ym - tip) * -1
+            ax.fill([0, -xa(yb), xa(yb)], [tip, yb, yb], color="#3b4a63", alpha=0.85, zorder=4)
+        ax.add_patch(plt.Circle((0, ym), rm, fc="#9aa6b8", ec="none", zorder=5))
+        earth = plt.Circle((0, -2.2), 3.8, fc="#2a78d6", ec="#9ec5f4", lw=1.2, zorder=4.5)
+        ax.add_patch(earth)
+        top = 1.6
+        if kind == "total":
+            ax.add_patch(Ellipse((0, top - 0.03), 0.22, 0.09, fc="#05080f", ec="none", zorder=6))
+        else:
+            wa = rm * (tip - top) / (ym - tip)
+            ax.add_patch(Ellipse((0, top - 0.03), 2 * abs(wa) + 0.05, 0.12, fc="#3b4a63", ec="#9ec5f4", lw=0.6, zorder=6))
+        lab = dict(color="white", fontsize=9.6, ha="center", zorder=8)
+        ax.text(0, ys + rs + 0.35, "الشمس (Sun)", **lab)
+        ax.text(rm + 0.25, ym + 0.12, "القمر (Moon)", color="white", fontsize=9.6, ha="left", zorder=8)
+        ax.text(0.95, 3.6, "الظل الكامل\n(Umbra)", color="white", fontsize=8.8, ha="left", zorder=8)
+        ax.annotate("", (0.05, 3.9), (0.9, 3.75), arrowprops=dict(arrowstyle="-", color="#c9d3e3", lw=0.6), zorder=8)
+        ax.text(-1.95, 2.5, "شبه الظل\n(Penumbra)", color="#c9d3e3", fontsize=8.6, ha="center", zorder=8)
+        if kind == "annular":
+            ax.text(0.95, 2.0, "الظل المضاد\n(Antumbra)", color="#9ec5f4", fontsize=8.6, ha="left", zorder=8)
+        ax.text(0, 0.85, "الأرض (Earth)", **lab)
+        ax.set_title(ttl, color=SUN, fontsize=12, fontweight="bold", pad=2)
+        note = ("رأس الظل الكامل يبلغ سطح الأرض:\nمن يقف في البقعة المظلمة يرى كسوفًا كليًا" if kind == "total" else
+                "القمر أبعد فلا يبلغ ظله الكامل الأرض:\nفي الظل المضاد تبقى حلقة من الشمس")
+        fig.text(0.75 - k * 0.48, 0.105, note, color="#e6ebf2", fontsize=9, ha="center", va="top", linespacing=1.4)
+    save(fig, CH, "shadow_geometry", "الظل الكامل وشبه الظل والظل المضاد: هندسة الكسوف الكلي والحلقي.")
 
 
 # ------------------------------------------------------------------ 5 eclipse types
@@ -279,6 +303,49 @@ def fig_seasons_2027():
 
 
 # ------------------------------------------------------------------ 9 contacts diagram
+def fig_eclipse_calendar(cat, y0=2022, y1=2045):
+    """Calendar of solar eclipses: every eclipse as a dot by month (x) and year (y); seasons drift ~19 days/yr earlier."""
+    import datetime as dt
+    rows = [c for c in cat if y0 <= c["date"][0] <= y1]
+    fig = page(8.4, 9.6)
+    header(fig, f"تقويم الكسوفات الشمسية {A(y0)}–{A(y1)}",
+           "كل نقطة كسوف؛ لاحظ أن مواسم الكسوف تنزلق نحو ١٩ يومًا أبكر كل عام فتتشكل خطوط مائلة")
+    ax = fig.add_axes([0.10, 0.11, 0.80, 0.75])
+    style = {"total": dict(marker="o", ms=9, mfc=RED, mec=RED), "annular": dict(marker="o", ms=9, mfc="white", mec=SUN_DEEP, mew=2.2),
+             "hybrid": dict(marker="o", ms=9, mfc="#7a4fc2", mec="#7a4fc2"), "partial": dict(marker="o", ms=6, mfc="#9aa6b8", mec="#9aa6b8")}
+    for c in rows:
+        y, m, d = c["date"]
+        doy = (dt.date(y, m, d) - dt.date(y, 1, 1)).days + c["hour"] / 24
+        ax.plot(doy, y, zorder=4, **style[c["kind"]])
+        if (y, m, d) == (2027, 8, 2):
+            ax.plot(doy, y, marker="o", ms=17, mfc="none", mec=INK, mew=1.4, zorder=5)
+            ax.annotate("٢ أغسطس ٢٠٢٧\nصعيد مصر", (doy, y), xytext=(doy + 22, y + 0.2), fontsize=9, fontweight="bold",
+                        va="center", arrowprops=dict(arrowstyle="-", color=INK, lw=0.8))
+    ax.set_ylim(y1 + 0.7, y0 - 0.7)
+    ax.set_xlim(0, 366)
+    ax.set_yticks(range(y0, y1 + 1))
+    ax.set_yticklabels([A(y) for y in range(y0, y1 + 1)], fontsize=8.6)
+    months = ["يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"]
+    starts = np.cumsum([0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30])
+    ax.set_xticks(starts + 15)
+    ax.set_xticklabels(months, fontsize=8.6)
+    ax.xaxis.tick_top()
+    for x in starts:
+        ax.axvline(x, color=LINE, lw=0.6, zorder=1)
+    for y in range(y0, y1 + 1):
+        ax.axhline(y, color=LINE, lw=0.4, zorder=1)
+    for sp in ax.spines.values():
+        sp.set_visible(False)
+    ax.tick_params(length=0)
+    legend = [("كلي (Total)", "total"), ("حلقي (Annular)", "annular"), ("هجين (Hybrid)", "hybrid"), ("جزئي (Partial)", "partial")]
+    for k, (lab, kind) in enumerate(legend):
+        x = 0.96 - k * 0.24
+        fig.text(x, 0.062, lab, ha="right", va="center", fontsize=9)
+        fig.lines.append(plt.Line2D([x + 0.018], [0.062], transform=fig.transFigure, **style[kind]))
+    footer(fig, SRC + "؛ كل الكسوفات محسوبة بالبرنامج نفسه (التاريخ بالتوقيت العالمي).")
+    save(fig, CH, "eclipse_calendar", f"تقويم الكسوفات الشمسية {A(y0)}–{A(y1)} حسب الشهر والسنة وأنواعها (محسوب).", "chart")
+
+
 def fig_contacts():
     fig = page(8.6, 4.2, NAVY)
     ax = canvas(fig)
@@ -966,6 +1033,54 @@ def fig_nasa_plates():
         save(fig, CH, f"nasa_{key}", f"{title}: صورة ناسا ({who}).", "photo")
 
 
+OPEN_PLATES = [
+    ("eso_lasilla_sequence", "كسوف من البداية إلى النهاية في صورة واحدة",
+     "صورة متتابعة لكسوف ٢ يوليو ٢٠١٩ الكلي فوق مرصد لاسيا في صحراء أتاكاما بتشيلي: أهلّة الكسوف الجزئي تتعاقب على امتداد مسار "
+     "الشمس، وفي وسطها الهالة البيضاء لحظة الكلية. ويمكن صنع مثلها في مصر يوم ٢ أغسطس ٢٠٢٧ بكاميرا ثابتة ومرشح شمسي."),
+    ("eso_lasilla_totality", "غروب في كل الاتجاهات (Horizon glow)",
+     "أثناء الكلية تُظلم السماء فوق الرأس، بينما يتوهج الأفق كله بلون الغروب البرتقالي، لأن الضوء يأتي من خارج ظل القمر على بعد "
+     "عشرات الكيلومترات. وفي الأعلى الهالة الشمسية تحيط بقرص القمر الأسود."),
+    ("sdo_flare_earth_scale", "الشمس عن قرب: الأرض بالمقياس نفسه",
+     "صورة بالأشعة فوق البنفسجية من مرصد ديناميكا الشمس (SDO) تُظهر انفجارًا بلازميًا على سطح الشمس، والنقطة الصغيرة في الأسفل "
+     "هي الأرض بالمقياس الحقيقي. هذه الطاقة المغناطيسية هي ما يشكّل أشرطة الهالة التي نراها أثناء الكسوف."),
+    ("sdo_flare_2012", "توهج شمسي (Solar flare)",
+     "التوهج الشمسي انفجار مفاجئ في الغلاف الجوي للشمس يطلق طاقة هائلة وجسيمات مشحونة. هذه الصورة لتوهج ٦ يوليو ٢٠١٢ من SDO؛ "
+     "والمجالات المغناطيسية نفسها ترفع الشواظ التي تظهر وردية على حافة القمر أثناء الكلية."),
+    ("trace_coronal_loops", "حلقات الهالة (Coronal loops)",
+     "نوافير من غاز تبلغ حرارته ملايين الدرجات تتبع خطوط المجال المغناطيسي فوق سطح الشمس، كما صوّرها القمر الصناعي TRACE. "
+     "وهذا يفسر جزئيًا لغز الهالة: لماذا تكون أسخن بمئات المرات من السطح المرئي."),
+    ("soho_lasco_cme", "انبعاث كتلي إكليلي (Coronal mass ejection)",
+     "يحجب جهاز LASCO على مرصد SOHO قرص الشمس بقرص معدني فيصنع «كسوفًا صناعيًا» دائمًا. وفي هذه الصورة (٨ يناير ٢٠٠٢) فقاعة "
+     "هائلة من البلازما تنطلق في الفضاء. ومع ذلك تبقى الهالة الداخلية القريبة من الشمس أوضح أثناء الكسوف الطبيعي."),
+]
+
+
+def fig_open_plates():
+    """Open-licence images (ESO CC BY 4.0, NASA/ESA) as reproduced in Littmann & Espenak, Totality (2024)."""
+    import json
+    import os
+    from common import ROOT
+    d = os.path.join(ROOT, "data", "open_images")
+    credits = json.load(open(os.path.join(d, "credits.json"), encoding="utf-8"))
+    for key, title, text in OPEN_PLATES:
+        cr = credits[key]
+        img = plt.imread(os.path.join(d, f"{key}.jpg"))
+        h, w = img.shape[:2]
+        W = 8.4
+        ph = min(W * 0.92 * h / w, 7.0)
+        H = ph + 3.0
+        fig = page(W, H, NAVY)
+        header(fig, title, "صورة مفتوحة الترخيص", color="white", sub_color="#c9d3e3")
+        pw = ph * w / h / W
+        ax = fig.add_axes([(1 - pw) / 2, 1.95 / H, pw, ph / H])
+        ax.imshow(img, cmap="gray" if img.ndim == 2 else None)
+        ax.axis("off")
+        fig.text(0.965, 1.75 / H, wrap(text, 100), ha="right", va="top", fontsize=10, color="white", linespacing=1.25)
+        when = f" ({cr['date']})" if cr.get("date") else ""
+        footer(fig, f"الصورة: {cr['credit']}{when} — الترخيص: {cr['license']}.", color="#c9d3e3")
+        save(fig, CH, f"open_{key}", f"{title} — {cr['credit']}.", "photo")
+
+
 def main():
     fig_coincidence()
     fig_scale()
@@ -976,6 +1091,7 @@ def main():
     fig_inclination()
     fig_top_view_seasons()
     fig_seasons_2027()
+    fig_eclipse_calendar(eclipse_catalogue())
     fig_contacts()
     fig_phenomena_timeline()
     fig_diamond_ring()
@@ -1000,6 +1116,7 @@ def main():
     fig_what_changes()
     fig_future()
     fig_nasa_plates()
+    fig_open_plates()
     write_catalogue("ch1")
 
 

@@ -110,5 +110,13 @@
   "file": "figures/ch8/fig_8_14_delta_t_curve.png",
   "caption": "منحنى فرق التوقيت ΔT عبر ثلاثة آلاف عام وأثره على مواقع الكسوفات القديمة (محسوب).",
   "kind": "chart"
+ },
+ {
+  "chapter": 8,
+  "number": "8-15",
+  "number_ar": "١٥-٨",
+  "file": "figures/ch8/fig_8_15_historic_paths_world.png",
+  "caption": "خريطة عالمية لمسارات كسوفات ذات أهمية تاريخية ١٧١٥–٢٠٢٧ (محسوبة).",
+  "kind": "map"
  }
 ]

@@ -215,7 +215,12 @@ def classify(gamma, l2, l1):
     if g > 1.0 + l1:
         return "none"
     if g > 0.9972:
-        return "partial" if g < 1.0 + l1 else "none"
+        if g > 1.0 + l1:
+            return "none"
+        # non-central eclipse: the umbra/antumbra grazes the Earth near a pole although the axis misses it
+        if g < 0.9972 + abs(l2):
+            return "total" if l2 < 0 else "annular"
+        return "partial"
     # central: compare umbral radius on the Earth's surface
     zeta = np.sqrt(max(1 - g * g, 0))
     l2_surface = l2 - zeta * 0.0046
