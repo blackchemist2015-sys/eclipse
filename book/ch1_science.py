@@ -1091,7 +1091,7 @@ def main():
     fig_inclination()
     fig_top_view_seasons()
     fig_seasons_2027()
-    fig_eclipse_calendar(eclipse_catalogue())
+    fig_eclipse_calendar(eclipse_catalogue(), 2027, 2049)
     fig_contacts()
     fig_phenomena_timeline()
     fig_diamond_ring()
