@@ -62,61 +62,66 @@ def main():
     # ---- title block
     fig.text(0.5, 0.955, "كسوف القرن", ha="center", va="top", color="white", fontsize=50, fontweight="bold",
              fontfamily=TITLE, path_effects=halo)
-    fig.text(0.5, 0.875, "٢ أغسطس ٢٠٢٧", ha="center", va="top", color=GOLD, fontsize=30, fontweight="bold",
+    fig.text(0.5, 0.875, "٢ أغسطس ٢٠٢٧", ha="center", va="top", color="#ff4d3d", fontsize=30, fontweight="bold",
              fontfamily=TITLE, path_effects=halo)
-    fig.text(0.5, 0.825, "دليل علمي مصوّر بالخرائط لكسوف أغسطس ٢٠٢٧", ha="center", va="top", color="#eef2f7",
+    fig.text(0.5, 0.825, "دليل علمي مصوّر بالخرائط لكسوف أغسطس ٢٠٢٧", ha="center", va="top", color="#9ec5f4",
              fontsize=17, path_effects=halo)
-    # ---- map panel: path of totality, Egypt highlighted, Luxor
+    # ---- large map rendered separately, then blended into the photograph with a soft top fade
     B = besselian.elements()
-    lon0, lon1, lat0, lat1 = 17.0, 43.0, 21.0, 32.8
-    card = fig.add_axes([0.05, 0.085, 0.90, 0.33])
-    card.axis("off")
-    card.add_patch(FancyBboxPatch((0, 0), 1, 1, boxstyle="round,pad=0,rounding_size=0.03", fc="#05080f", ec=GOLD,
-                                  lw=1.2, alpha=0.82, transform=card.transAxes))
-    ax = fig.add_axes([0.07, 0.10, 0.86, 0.30])
-    countries = MK.geo("countries_region")
-    ax.set_facecolor("#0d1a2b")
-    countries.plot(ax=ax, color="#26303d", edgecolor="#55606e", linewidth=0.5)
-    countries = countries.cx[lon0 - 3:lon1 + 3, lat0 - 3:lat1 + 3]
+    MX0, MX1, MY0, MY1 = 0.0, 1.0, 0.06, 0.60              # page area of the map
+    mw, mh = W * (MX1 - MX0), H * (MY1 - MY0)
+    lat0, lat1 = 20.3, 33.6
+    lon_span = mw / mh * (lat1 - lat0) / np.cos(np.radians(27))
+    lon0, lon1 = 31.0 - lon_span / 2, 31.0 + lon_span / 2
+    mf = plt.figure(figsize=(mw, mh), dpi=150)
+    mf.patch.set_alpha(0)
+    ax = mf.add_axes([0, 0, 1, 1])
+    ax.patch.set_alpha(0)
+    countries = MK.geo("countries_region").cx[lon0 - 3:lon1 + 3, lat0 - 3:lat1 + 3]
+    countries.plot(ax=ax, color="#10233f", edgecolor="#5d7aa3", linewidth=0.6, alpha=0.72)
     egy = countries[countries["ADM0_A3"] == "EGY"]
-    egy.plot(ax=ax, color="#c99a3a", edgecolor=GOLD, linewidth=1.6, zorder=3)
+    egy.plot(ax=ax, color="#d9a441", edgecolor=GOLD, linewidth=2.0, alpha=0.88, zorder=3)
     t = np.linspace(-1.4, 1.6, 900)
     la, lo, ln, on, ls, os_ = C.path_limits(B, t)
     ok = np.isfinite(on) & np.isfinite(os_)
-    ax.fill(np.r_[on[ok], os_[ok][::-1]], np.r_[ln[ok], ls[ok][::-1]], color="#0a0a0a", alpha=0.62, zorder=4, lw=0)
-    ax.plot(on[ok], ln[ok], color="white", lw=0.8, zorder=5)
-    ax.plot(os_[ok], ls[ok], color="white", lw=0.8, zorder=5)
-    ax.plot(lo, la, color="#ff5a4a", lw=1.4, ls=(0, (5, 3)), zorder=5)
+    ax.fill(np.r_[on[ok], os_[ok][::-1]], np.r_[ln[ok], ls[ok][::-1]], color="#2a78d6", alpha=0.42, zorder=4, lw=0)
+    ax.plot(on[ok], ln[ok], color="#8fc0ff", lw=1.4, zorder=5)
+    ax.plot(os_[ok], ls[ok], color="#8fc0ff", lw=1.4, zorder=5)
+    ax.plot(lo, la, color="#ff3b30", lw=2.2, ls=(0, (6, 3)), zorder=5)
     ax.set_xlim(lon0, lon1)
     ax.set_ylim(lat0, lat1)
-    ax.set_aspect(1 / np.cos(np.radians(27)))
     ax.set_xticks([])
     ax.set_yticks([])
     ax.set_xlabel("")
     ax.set_ylabel("")
-    for s in ax.spines.values():
-        s.set_visible(False)
-    ax.plot(LUXOR[1], LUXOR[0], marker="*", ms=17, color=GOLD, mec="black", zorder=8)
-    tx = dict(color="white", fontsize=12, fontweight="bold", path_effects=halo, zorder=9)
-    ax.text(LUXOR[1] + 0.35, LUXOR[0] - 0.05, "الأقصر  ٦ د ٢٠ ث", ha="left", va="center", **tx)
-    ax.text(29.6, 26.6, "مصر", ha="center", va="center", color="#1a1205", fontsize=26, fontweight="bold",
+    for sp in ax.spines.values():
+        sp.set_visible(False)
+    ax.plot(LUXOR[1], LUXOR[0], marker="*", ms=24, color="#ff3b30", mec="white", mew=1.2, zorder=8)
+    tx = dict(color="white", fontsize=15, fontweight="bold", path_effects=halo, zorder=9)
+    ax.text(LUXOR[1] - 0.45, LUXOR[0] + 0.05, "الأقصر  ٦ د ٢٠ ث", ha="right", va="center", **tx)
+    ax.text(29.0, 27.6, "مصر", ha="center", va="center", color="#2a1a04", fontsize=40, fontweight="bold",
             fontfamily=TITLE, zorder=7)
-    ax.text(21.5, 30.0, "مسار الكلية", ha="center", va="center", color="white", fontsize=11, rotation=-22,
-            path_effects=halo, zorder=9)
-    # Luxor Temple silhouette, large, on the right of the map with a pointer to Luxor
-    tax = fig.add_axes([0.66, 0.11, 0.27, 0.13])
+    k = int(np.nanargmin(np.abs(lo - 24.6)))
+    ax.text(24.6, la[k] + 0.55, "مسار الكسوف الكلي", ha="center", va="bottom", color="#cfe3ff", fontsize=14,
+            fontweight="bold", rotation=-24, path_effects=halo, zorder=9)
+    mf.canvas.draw()
+    rgba = np.asarray(mf.canvas.buffer_rgba()).astype(float) / 255.0
+    plt.close(mf)
+    ramp = np.clip(np.linspace(0, 1, rgba.shape[0]) / 0.28, 0, 1)[:, None]   # fade in over the top 28 %
+    rgba[..., 3] *= ramp
+    bg.imshow(rgba, extent=(MX0, MX1, MY0, MY1), aspect="auto", zorder=5)
+    # Luxor Temple silhouette on the right, pointing to Luxor
+    tax = fig.add_axes([0.66, 0.085, 0.30, 0.14])
     tax.set_xlim(-4.3, 3.4)
     tax.set_ylim(-0.3, 3.6)
     tax.set_aspect("equal")
     tax.axis("off")
-    luxor_temple(tax, 0, 0, 1.0)
-    tax.text(-0.4, 3.45, "معبد الأقصر", ha="center", va="bottom", color=GOLD, fontsize=13, fontweight="bold",
+    luxor_temple(tax, 0, 0, 1.0, color="#0b1426")
+    tax.text(-0.4, 3.45, "معبد الأقصر", ha="center", va="bottom", color=GOLD, fontsize=14, fontweight="bold",
              path_effects=halo, zorder=22)
-    ax.annotate("", (LUXOR[1] + 0.25, LUXOR[0] - 0.25), xytext=(37.4, 23.9),
-                arrowprops=dict(arrowstyle="-", color=GOLD, lw=1.0, ls=(0, (2, 2))), zorder=8)
     # ---- facts line and credit
     facts = "أطول كلية ٦ دقائق و٢٣ ثانية  •  الشمس على ارتفاع ٨٢° فوق الصعيد  •  عرض المسار ٢٥٩ كم"
-    fig.text(0.5, 0.055, facts, ha="center", va="center", color=GOLD, fontsize=12.5, fontweight="bold", path_effects=halo)
+    fig.text(0.5, 0.05, facts, ha="center", va="center", color=GOLD, fontsize=12.5, fontweight="bold", path_effects=halo)
     fig.text(0.5, 0.025, "الخلفية: هالة الشمس في كسوف ٢٠١٧ — NASA/Aubrey Gemignani | المسار محسوب من عناصر ناسا",
              ha="center", va="center", color="#8a96a8", fontsize=7.5)
     fig.savefig(OUT, dpi=150, facecolor="#000000")
