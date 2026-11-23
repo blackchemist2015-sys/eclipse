@@ -138,7 +138,7 @@ def egypt_frames():
         ob = r["obscuration"].reshape(LON.shape)
         ax.contourf(LON, LAT, ob, levels=MK.OBS_LEVELS, cmap=MK.OBS_CMAP, norm=MK.OBS_NORM, alpha=0.6, zorder=2)
         cs = ax.contour(LON, LAT, ob, levels=[0.8, 0.9, 0.95, 0.99], colors=ORANGE[-1], linewidths=0.6, zorder=3)
-        ax.clabel(cs, fmt=lambda v: I.pct(v * 100, 0), fontsize=7)
+        MK.tag_clabels(ax.clabel(cs, fmt=lambda v: I.pct(v * 100, 0), fontsize=7))
         um = r["umbra"].reshape(LON.shape).astype(float)
         if um.any():
             ax.contourf(LON, LAT, um, levels=[0.5, 1.5], colors=[NAVY], zorder=4)

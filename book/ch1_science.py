@@ -117,6 +117,67 @@ def fig_apparent_sizes():
     save(fig, CH, "apparent_diameters_2027", "تغير القطر الظاهري للشمس والقمر على مدار ٢٠٢٧ (محسوب).", "chart")
 
 
+def fig_moon_orbit():
+    """The Moon's elliptical orbit (perigee/apogee) and how its apparent size changes against the Sun's (computed)."""
+    ts, eph = besselian.ephemeris()
+    days = np.arange(0, 366, 0.05)
+    t = ts.utc(2027, 1, 1 + days)
+    e = eph["earth"].at(t)
+    dm = e.observe(eph["moon"]).distance().km
+    i_per, i_apo = int(np.argmin(dm)), int(np.argmax(dm))
+    t_ecl = ts.utc(2027, 8, 2, 10, 7)
+    d_ecl = eph["earth"].at(t_ecl).observe(eph["moon"]).distance().km
+    ds = eph["earth"].at(t_ecl).observe(eph["sun"]).distance().km
+    size = lambda d: np.degrees(2 * np.arcsin(1737.4 / d)) * 60
+    sun_size = np.degrees(2 * np.arcsin(696000 / ds)) * 60
+    fig = page(8.8, 6.6)
+    header(fig, "مدار القمر البيضاوي وتغير حجمه الظاهري", "يقترب القمر من الأرض ويبتعد عنها كل شهر، فيكبر ويصغر في سمائنا")
+    # left: orbit (eccentricity exaggerated for clarity)
+    ax = fig.add_axes([0.50, 0.12, 0.46, 0.70])
+    ax.set_aspect("equal")
+    ax.axis("off")
+    a_, e_ = 1.0, 0.30                       # drawing ellipse; the real eccentricity is about 0.055
+    th = np.linspace(0, 2 * np.pi, 400)
+    r = a_ * (1 - e_ ** 2) / (1 + e_ * np.cos(th))
+    ax.plot(r * np.cos(th), r * np.sin(th), color=BLUE[8], lw=1.6)
+    ax.add_patch(plt.Circle((0, 0), 0.09, fc="#2a78d6", ec="white", zorder=4))
+    ax.text(0, -0.17, "الأرض", ha="center", va="top", fontsize=10)
+    rp, ra = a_ * (1 - e_), a_ * (1 + e_)
+    for x, lab, d in [(rp, "الحضيض (Perigee)", dm[i_per]), (-ra, "الأوج (Apogee)", dm[i_apo])]:
+        ax.add_patch(plt.Circle((x, 0), 0.055 if x > 0 else 0.045, fc="#c9ccd3", ec=INK2, zorder=4))
+        ax.text(x, 0.2 if x > 0 else 0.12, lab, ha="center", fontsize=9.6, fontweight="bold", color=NAVY)
+        ax.text(x, -0.12, A(f"{d:,.0f}") + " كم", ha="center", va="top", fontsize=9, color=INK2)
+    ax.plot([-ra, rp], [0, 0], color=MUTED, lw=0.7, ls="--")
+    # position on eclipse day: near perigee
+    nu = np.arccos(np.clip((a_ * (1 - e_ ** 2) / ((d_ecl - dm[i_per]) / (dm[i_apo] - dm[i_per]) * (ra - rp) + rp) - 1) / e_, -1, 1))
+    rr = a_ * (1 - e_ ** 2) / (1 + e_ * np.cos(nu))
+    ax.add_patch(plt.Circle((rr * np.cos(nu), rr * np.sin(nu)), 0.05, fc=RED, ec="white", zorder=5))
+    ax.annotate("القمر يوم ٢ أغسطس ٢٠٢٧\n" + A(f"{d_ecl:,.0f}") + " كم — قرب الحضيض", (rr * np.cos(nu), rr * np.sin(nu)),
+                xytext=(0.25, 0.86), fontsize=9.2, color=RED, ha="right", arrowprops=dict(arrowstyle="-", color=RED))
+    ax.set_xlim(-1.45, 0.95)
+    ax.set_ylim(-1.05, 1.05)
+    ax.text(-0.25, -1.02, "الشكل البيضاوي مبالغ فيه للتوضيح (الاختلاف المركزي الحقيقي ≈ ٠٫٠٥٥)", ha="center", fontsize=8,
+            color=MUTED)
+    # right: apparent sizes to scale against the Sun
+    bx = fig.add_axes([0.03, 0.16, 0.44, 0.62])
+    bx.set_aspect("equal")
+    bx.axis("off")
+    k = 1 / 90.0
+    cases = [(size(dm[i_per]), "عند الحضيض", "كسوف كلي"), (size(d_ecl), "يوم ٢ أغسطس ٢٠٢٧", "كلي طويل"),
+             (size(dm[i_apo]), "عند الأوج", "كسوف حلقي")]
+    for j, (m, lab, res) in enumerate(cases):
+        y = 0.85 - j * 0.85
+        bx.add_patch(plt.Circle((-0.40, y), sun_size / 2 * k, fc=SUN, ec="none", alpha=0.95, zorder=2, clip_on=False))
+        bx.add_patch(plt.Circle((-0.40, y), m / 2 * k, fc="#1f2a3a", ec="none", alpha=0.92, zorder=3, clip_on=False))
+        bx.text(0.62, y + 0.12, lab, ha="right", fontsize=10, fontweight="bold", color=NAVY)
+        bx.text(0.62, y - 0.05, f"القمر {A(f'{m:.1f}')}′ والشمس {A(f'{sun_size:.1f}')}′", ha="right", fontsize=8.6, color=INK2)
+        bx.text(0.62, y - 0.20, res, ha="right", fontsize=9.6, color=RED if "كلي" in res else SUN_DEEP, fontweight="bold")
+    bx.set_xlim(-0.6, 0.65)
+    bx.set_ylim(-1.15, 1.15)
+    footer(fig, SRC + ". الأحجام الظاهرية في اللوحة اليسرى بالمقياس الحقيقي؛ ′ = دقيقة قوسية.")
+    save(fig, CH, "moon_orbit_apparent_size", "مدار القمر البيضاوي وتغير قطره الظاهري بين الحضيض والأوج مقارنةً بالشمس (محسوب).")
+
+
 # ------------------------------------------------------------------ 4 shadow geometry
 def fig_shadows():
     """Total vs annular eclipse: Sun above, Moon, cones of umbra/penumbra/antumbra reaching Earth (not to scale)."""
@@ -347,7 +408,7 @@ def fig_eclipse_calendar(cat, y0=2022, y1=2045):
 
 
 def fig_contacts():
-    fig = page(8.6, 4.2, NAVY)
+    fig = page(8.6, 4.6, NAVY)
     ax = canvas(fig)
     header(fig, "التماسات الأربعة: مراحل الكسوف الكلي", color="white")
     labels = [("التماس الأول", "بداية الكسوف الجزئي", -1.0), ("", "", -0.55), ("التماس الثاني", "بداية الكلية", -0.005),
@@ -368,8 +429,8 @@ def fig_contacts():
             ax.add_patch(Circ(ax, (cx + r * 0.75, cy + r * 0.66 * ax._asp), r * 0.12, fc="white", zorder=7))
         ax.text(cx, cy - r * ax._asp - 0.07, a, ha="center", color="white", fontsize=9.5, fontweight="bold")
         ax.text(cx, cy - r * ax._asp - 0.13, b, ha="center", color="#c9d3e3", fontsize=8.5)
-    arrow(ax, 0.95, 0.82, 0.05, 0.82, color="#9ec5f4")
-    ax.text(0.5, 0.85, "اتجاه الزمن", ha="center", color="#9ec5f4", fontsize=9.5)
+    arrow(ax, 0.95, 0.73, 0.05, 0.73, color="#9ec5f4")
+    ax.text(0.5, 0.755, "اتجاه الزمن", ha="center", color="#9ec5f4", fontsize=9.5)
     save(fig, CH, "four_contacts", "التماسات الأربعة للكسوف الكلي من البداية إلى النهاية.")
 
 
@@ -798,52 +859,89 @@ BRIGHT_STARS = [  # name, RA hours, Dec deg (J2000), magnitude
 
 
 def fig_sky_at_totality():
+    """Sky over Luxor at mid-totality: looking up, north at top, east on the LEFT (computed with DE421)."""
     from skyfield.api import Star, wgs84
+    from skyfield.magnitudelib import planetary_magnitude
     ts, eph = besselian.ephemeris()
     t = ts.ut1(2027, 8, 2, 10, 5, 19)
     obs = (eph["earth"] + wgs84.latlon(25.6872, 32.6396)).at(t)
     sun = obs.observe(eph["sun"]).apparent()
     sa, sz, _ = sun.altaz()
-    fig = page(8.0, 8.0, "#06101f")
-    header(fig, "سماء الأقصر لحظة ذروة الكلية", "١٣:٠٥ بتوقيت مصر الصيفي — الكواكب والنجوم الساطعة حول الشمس المحجوبة",
+    BG = "#0b1a33"
+    fig = page(8.2, 10.2, "#06101f")
+    header(fig, "سماء الأقصر لحظة ذروة الكلية", "١٣:٠٥ بتوقيت مصر الصيفي — منظر إلى أعلى: الشمال فوق والشرق يسارًا",
            color="white", sub_color="#c9d3e3")
-    ax = fig.add_axes([0.10, 0.07, 0.80, 0.74], projection="polar")
-    ax.set_facecolor("#0b1a33")
+    ax = fig.add_axes([0.09, 0.265, 0.82, 0.59], projection="polar")
+    ax.set_facecolor(BG)
     ax.set_theta_zero_location("N")
-    ax.set_theta_direction(1)   # east to the left when looking up (sky chart convention)
-    ax.set_rlim(0, 62)
-    ax.set_yticks([20, 40, 60])
+    ax.set_theta_direction(1)            # azimuth increases counter-clockwise: east on the left (looking up)
+    ax.set_rlim(0, 80)
+    ax.set_yticks([30, 60])
     ax.set_yticklabels([])
     ax.grid(color="#2a3d5c", lw=0.6)
     ax.set_xticks(np.radians([0, 90, 180, 270]))
     ax.set_xticklabels(["شمال", "شرق", "جنوب", "غرب"], color="#c9d3e3", fontsize=11)
+    for r, lab in [(30, "٦٠°"), (60, "٣٠°")]:
+        ax.text(np.radians(340), r, lab, color="#6c7d99", fontsize=8, ha="center", va="center")
 
-    def plot(alt, az, **kw):
-        ax.plot(np.radians(az), 90 - alt, **kw)
+    def pos(alt, az):
+        return np.radians(az), 90 - alt
 
-    plot(sa.degrees, sz.degrees, marker="o", ms=16, color="black", mec=CORONA, mew=2.5, zorder=5)
-    ax.text(np.radians(sz.degrees), 90 - sa.degrees - 3.5, "الشمس", color=CORONA, ha="center", va="top", fontsize=11,
-            path_effects=halo(2.5, "#0b1a33"))
-    planets = [("venus", "الزهرة", "#fff4c2", 11), ("mercury", "عطارد", "#f0c987", 7), ("mars", "المريخ", "#ff8a65", 7),
-               ("jupiter barycenter", "المشتري", "#ffe8c2", 9), ("saturn barycenter", "زحل", "#e8d8a8", 7)]
-    offs = {"venus": (14, -16), "mercury": (16, 10), "mars": (0, 12), "jupiter barycenter": (-6, 14),
-            "saturn barycenter": (0, 12)}
-    for key, name, col, ms in planets:
-        a, z, _ = obs.observe(eph[key]).apparent().altaz()
-        if 90 - a.degrees < 60:
-            plot(a.degrees, z.degrees, marker="o", ms=ms, color=col, zorder=6)
-            ax.annotate(name, (np.radians(z.degrees), 90 - a.degrees), xytext=offs[key], textcoords="offset points",
-                        color=col, fontsize=11.5, ha="center", zorder=7, fontweight="bold",
-                        path_effects=halo(2.5, "#0b1a33"))
+    th, rr = pos(sa.degrees, sz.degrees)
+    ax.plot(th, rr, marker="o", ms=15, color="black", mec=CORONA, mew=3, zorder=8)
+    ax.annotate("الشمس المكسوفة", (th, rr), xytext=(-25, -60), textcoords="offset points", color=CORONA, fontsize=10.5,
+                ha="center", zorder=9, path_effects=halo(2.5, BG), arrowprops=dict(arrowstyle="-", color=CORONA, lw=0.8))
+    # bright stars first (labels small, below the marker)
     for name, ra, dec, mag in BRIGHT_STARS:
-        s = Star(ra_hours=ra, dec_degrees=dec)
-        a, z, _ = obs.observe(s).apparent().altaz()
-        if a.degrees > 30:
-            plot(a.degrees, z.degrees, marker="*", ms=max(5, 12 - 2.5 * mag), color="white", zorder=6)
-            ax.text(np.radians(z.degrees), 90 - a.degrees - 3.0, name, color="#c9d3e3", fontsize=9, ha="center",
-                    va="top", path_effects=halo(2.5, "#0b1a33"))
-    fig.text(0.5, 0.02, "مركز الدائرة سمت الرأس، والدائرة الخارجية على ارتفاع ٢٨° فوق الأفق. لاحظ أن الشمس تكاد تكون فوق الرأس (ارتفاعها ≈ ٨٢°).",
-             ha="center", color="#c9d3e3", fontsize=9)
+        a, z, _ = obs.observe(Star(ra_hours=ra, dec_degrees=dec)).apparent().altaz()
+        if a.degrees > 12:
+            th, rr = pos(a.degrees, z.degrees)
+            ax.plot(th, rr, marker="*", ms=max(5, 12 - 2.5 * mag), color="white", zorder=6)
+            if name == "رأس التوأم المقدم":
+                continue
+            if name == "رأس التوأم المؤخر":   # beside the star, clear of Mercury's and Venus's leader lines
+                ax.annotate(name, (th, rr), xytext=(8, 0), textcoords="offset points", color="#9aa6b8", fontsize=8.4,
+                            ha="left", va="center", zorder=6, path_effects=halo(2.5, BG))
+                continue
+            ax.annotate(name, (th, rr), xytext=(0, -9), textcoords="offset points", color="#9aa6b8", fontsize=8.4,
+                        ha="center", va="top", zorder=6, path_effects=halo(2.5, BG))
+    planets = [("venus", "الزهرة", "#fff4c2", 12, (-40, 55)), ("mercury", "عطارد", "#f0c987", 8, (58, -30)),
+               ("mars", "المريخ", "#ff8a65", 8, (-30, 26)), ("jupiter barycenter", "المشتري", "#ffe8c2", 10, (-46, 42)),
+               ("saturn barycenter", "زحل", "#e8d8a8", 8, (0, 20))]
+    rows = []
+    for key, name, col, ms, off in planets:
+        app = obs.observe(eph[key]).apparent()
+        a, z, _ = app.altaz()
+        sep = app.separation_from(sun).degrees
+        try:
+            mag = float(planetary_magnitude(app))
+        except Exception:
+            mag = float("nan")
+        side = "غرب" if ((z.degrees - sz.degrees + 540) % 360 - 180) > 0 else "شرق"   # azimuth grows towards the west in the south
+        rows.append((name, a.degrees, z.degrees, sep, mag, side, col))
+        if a.degrees > 10:
+            th, rr = pos(a.degrees, z.degrees)
+            ax.plot(th, rr, marker="o", ms=ms, color=col, mec="white", mew=0.6, zorder=7)
+            ax.annotate(name, (th, rr), xytext=off, textcoords="offset points", color=col, fontsize=12, ha="center",
+                        va="center", fontweight="bold", zorder=9, path_effects=halo(2.5, BG),
+                        arrowprops=dict(arrowstyle="-", color=col, lw=0.9, shrinkA=0, shrinkB=4))
+    # table of planets
+    tab = fig.add_axes([0.06, 0.05, 0.88, 0.17])
+    tab.axis("off")
+    cols = [(0.97, "الكوكب"), (0.78, "الارتفاع"), (0.60, "السمت"), (0.40, "البعد عن الشمس"), (0.16, "القدر")]
+    for x, c in cols:
+        tab.text(x, 0.92, c, ha="right", va="center", color=SUN, fontsize=10, fontweight="bold")
+    for i, (name, alt, az, sep, mag, side, col) in enumerate(rows):
+        y = 0.74 - i * 0.17
+        vis = alt > 0
+        tab.text(0.97, y, name, ha="right", va="center", color=col, fontsize=10, fontweight="bold")
+        tab.text(0.78, y, (A(f"{alt:.0f}") + "°") if vis else "تحت الأفق", ha="right", va="center", color="white", fontsize=9.6)
+        tab.text(0.60, y, A(f"{az:.0f}") + "°" if vis else "—", ha="right", va="center", color="white", fontsize=9.6)
+        tab.text(0.40, y, f"{A(f'{sep:.0f}')}° {side} الشمس", ha="right", va="center", color="white", fontsize=9.6)
+        tab.text(0.16, y, A(f"{mag:+.1f}").replace("+", "+") if np.isfinite(mag) else "—", ha="right", va="center",
+                 color="white", fontsize=9.6)
+    fig.text(0.5, 0.022, "مركز الدائرة سمت الرأس، والحافة على ارتفاع ١٠° فوق الأفق. السمت يُقاس من الشمال نحو الشرق. "
+             "حُسبت المواقع من تقويم JPL DE421.", ha="center", color="#8a96a8", fontsize=8.2)
     save(fig, CH, "sky_during_totality_luxor", "خريطة سماء الأقصر لحظة ذروة الكلية: مواقع الكواكب والنجوم الساطعة (محسوبة).", "chart")
 
 
@@ -1085,6 +1183,7 @@ def main():
     fig_coincidence()
     fig_scale()
     fig_apparent_sizes()
+    fig_moon_orbit()
     fig_shadows()
     fig_types()
     fig_solar_vs_lunar()

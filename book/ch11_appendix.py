@@ -139,7 +139,8 @@ def world_panel(ax, r, B, track):
     ax.contourf(LON, LAT, mag, levels=[0.001, 0.25, 0.5, 0.75, 2], colors=["#fbe1c4", "#f4ba78", "#e88a2c", "#b55a12"],
                 alpha=0.55, zorder=2)
     cs = ax.contour(LON, LAT, mag, levels=[0.25, 0.5, 0.75], colors=ORANGE[-1], linewidths=0.5, zorder=3)
-    ax.clabel(cs, fmt=lambda v: A(f"{v * 100:.0f}") + "٪", fontsize=5.5)
+    MK.tag_clabels(ax.clabel(cs, fmt=lambda v: A(f"{v * 100:.0f}") + "٪", fontsize=5.5))
+    MK.declutter(ax)
     if track is not None:
         lac, loc, ln, on, ls, os_ = track
         col = KIND_COL[r["kind"]]
@@ -245,7 +246,7 @@ def fig_region_paths(rows, tracks):
         k += 1
     for n, la, lo in REGION_CITIES:
         ax.plot(lo, la, "o", ms=3.5, color=INK, zorder=7)
-        ax.text(lo, la - 1.3, n, fontsize=7.6, ha="center", va="top", color=INK2, path_effects=halo(), zorder=7)
+        MK.place_label(ax, n, (lo, la), size=7.6, color=INK2, prefer=5, zorder=7)
     header(fig, f"مسارات الكسوفات المركزية فوق أفريقيا والشرق الأوسط {A(Y0)}–{A(Y1)}",
            "الأحمر كلي، والبرتقالي حلقي، والبنفسجي هجين — أشرطة بعرض مسار الظل الحقيقي")
     footer(fig, SRC + ".")
@@ -255,7 +256,7 @@ def fig_region_paths(rows, tracks):
 def fig_region_detail(r, B, track):
     lon0, lon1, lat0, lat1 = REGION
     fig = plt.figure(figsize=(8.0, 8.2), facecolor=PAPER)
-    ax = fig.add_axes([0.04, 0.115, 0.86, 0.71])
+    ax = fig.add_axes([0.04, 0.135, 0.86, 0.69])
     MK.base(ax, lon0, lon1, lat0, lat1, highlight=("EGY",), admin1=None)
     MK.field(ax, B, lon0, lon1, lat0, lat1, n=260)
     MK.path(ax, B, color=NAVY)
@@ -268,7 +269,7 @@ def fig_region_detail(r, B, track):
            f" | المدة {I.fmt_dur(r['ge_dur'])}{sar}"
     fig.text(0.965, 0.84, info, ha="right", fontsize=8.8, color=INK2)
     eg = r["egypt"]
-    fig.text(0.965, 0.042, "في مصر: " + " | ".join(
+    fig.text(0.965, 0.068, "في مصر: " + " | ".join(
         f"{n} {pct(v['obsc']) if v['obsc'] > 0 and v['alt'] > 0 else 'لا يُرى'}" for n, v in eg.items()),
         ha="right", fontsize=8.8, color=INK)
     footer(fig, SRC + ".")
@@ -310,7 +311,7 @@ def fig_table(rows, part, nparts):
             ax.text(x - 0.005, yc, v, ha="right", va="center", fontsize=8.4,
                     color=KIND_COL[r["kind"]] if x == 0.80 else (RED if x == 0.10 and v != "—" else INK),
                     fontweight="bold" if x in (0.965, 0.80) else "normal")
-    footer(fig, SRC + ". قيم إسبيناك من الملحق أ في «Totality» (٢٠٢٤)؛ المدة عند نقطة أعظم كسوف، والثواني مقطوعة. "
+    footer(fig, SRC + ". قيم إسبيناك من الملحق أ في «Totality» (٢٠٢٤)؛ المدة عند نقطة أعظم كسوف، والثواني مقرّبة. "
            "* غير مركزي: يمسّ الظل الأرض قرب القطب دون خط مركز.")
     save(fig, CH, f"eclipses_table_{part}", f"جدول كسوفات الشمس {A(Y0)}–{A(Y1)} ({A(part)} من {A(nparts)}) مع المقارنة بقيم إسبيناك.")
 

@@ -13,14 +13,14 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 FIG = os.path.join(HERE, "figures")
 CHAPTERS = ["ch1_science.py", "ch2_history.py", "ch3_event2027.py", "ch4_observing.py", "ch5_photography.py",
-            "ch6_maps.py", "ch8_world_history.py", "ch9_experiments.py", "ch10_apps.py", "ch11_appendix.py"]
+            "ch6_maps.py", "ch8_world_history.py", "ch9_experiments.py", "ch10_apps.py", "ch11_appendix.py", "ch12_arab.py"]
 # order of chapters in the book (source chapter ids); figures are numbered by book position
-BOOK_ORDER = [1, 8, 2, 3, 4, 9, 5, 10, 6, 7, 11]
-ORD_AR = ["الأول", "الثاني", "الثالث", "الرابع", "الخامس", "السادس", "السابع", "الثامن", "التاسع", "العاشر", "الحادي عشر"]
+BOOK_ORDER = [1, 8, 2, 3, 4, 9, 5, 10, 12, 6, 7, 11]
+ORD_AR = ["الأول", "الثاني", "الثالث", "الرابع", "الخامس", "السادس", "السابع", "الثامن", "التاسع", "العاشر", "الحادي عشر", "الثاني عشر"]
 NAMES = {1: "الأساس العلمي للكسوف", 8: "توثيق الكسوف عبر التاريخ", 2: "الكسوف في تاريخ مصر",
          3: "كسوف ٢ أغسطس ٢٠٢٧", 4: "الرصد الآمن", 9: "تجارب علمية تمهيدية", 5: "تصوير الكسوف",
          10: "تطبيقات وأدوات التخطيط", 6: "خرائط إضافية", 7: "الأطلس — ٤١ خريطة بالعربية",
-         11: "ملحق: كل كسوفات الشمس ٢٠٢٤–٢٠٤٥"}
+         11: "ملحق: كل كسوفات الشمس ٢٠٢٤–٢٠٤٥", 12: "الكسوف في المدن العربية: مواعيد وخرائط ومواقع"}
 TITLES = {src: (NAMES[src] if src == 11 else f"الفصل {ORD_AR[i]}: {NAMES[src]}") for i, src in enumerate(BOOK_ORDER)}
 
 
@@ -89,7 +89,7 @@ def arabic_maps_catalogue():
 def write_index():
     sys.path.insert(0, ROOT)
     cat = []
-    for n in [1, 2, 3, 4, 5, 6, 8, 9, 10, 11]:
+    for n in [1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12]:
         p = os.path.join(FIG, f"catalogue_ch{n}.json")
         cat += json.load(open(p, encoding="utf-8"))
     cat += arabic_maps_catalogue()

@@ -62,9 +62,9 @@ def fig_golden_rule():
     ax.text(0.5, 0.62, "!", ha="center", va="center", fontsize=60, color="#2a0d0b", fontweight="bold",
             fontfamily=["DejaVu Sans"], zorder=6)
     ax.text(0.5, 0.34, "القاعدة الذهبية", ha="center", color=SUN, fontsize=22, fontweight="bold", fontfamily=TITLE)
-    ax.text(0.5, 0.25, "لا تنظر إلى الشمس أبدًا بالعين المجردة أو عبر عدسة أو منظار\nإلا من خلال مرشّح شمسي معتمد",
-            ha="center", va="top", color="white", fontsize=13, linespacing=1.6)
-    ax.text(0.5, 0.05, "الاستثناء الوحيد: دقائق الكلية التامة داخل مسار الكسوف الكلي", ha="center", color="#ffb4a8",
+    ax.text(0.5, 0.27, "لا تنظر إلى الشمس أبدًا بالعين المجردة أو عبر عدسة أو منظار\nإلا من خلال مرشّح شمسي معتمد",
+            ha="center", va="top", color="white", fontsize=13, linespacing=1.45)
+    ax.text(0.5, 0.035, "الاستثناء الوحيد: دقائق الكلية التامة داخل مسار الكسوف الكلي", ha="center", color="#ffb4a8",
             fontsize=10.5)
     save(fig, CH, "golden_rule", "القاعدة الذهبية لرصد الشمس بأمان.")
 
@@ -250,6 +250,7 @@ def fig_where_to_watch():
         left = n in ("سوهاج", "برنيس")
         ax.annotate(f"{n}: {I.fmt_dur(c['duration_s'])}\n{why}", (lo, la), xytext=(-10 if left else 10, 2),
                     textcoords="offset points", ha="right" if left else "left", fontsize=9, path_effects=halo(), zorder=10)
+    MK.declutter(ax)
     header(fig, "أين تشاهد الكلية في مصر؟", "مواقع مقترحة داخل المسار: مدة طويلة وخدمات وأفق مفتوح")
     footer(fig, "اختر موقعًا قريبًا من خط المركز (الخط الأحمر المتقطع) لتحصل على أطول مدة. الأرقام محسوبة.")
     save(fig, CH, "where_to_watch_egypt", "مواقع مقترحة لمشاهدة الكسوف الكلي في مصر ومدة الكلية فيها (محسوبة).", "map")

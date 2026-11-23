@@ -27,7 +27,7 @@
   "chapter": 2,
   "number": "2-4",
   "number_ar": "٤-٢",
-  "file": "figures/ch2/fig_2_04_novel_akhenaten_1338bc.png",
+  "file": "figures/ch2/fig_2_04_history_akhenaten_1338bc.png",
   "caption": "كسوف ١٤ مايو ١٣٣٨ ق.م الكلي فوق تل العمارنة مع نطاق عدم اليقين في ΔT (محسوب).",
   "kind": "map"
  },
@@ -35,7 +35,7 @@
   "chapter": 2,
   "number": "2-5",
   "number_ar": "٥-٢",
-  "file": "figures/ch2/fig_2_05_novel_dendera_eclipses.png",
+  "file": "figures/ch2/fig_2_05_history_dendera_eclipses.png",
   "caption": "كسوف ٥١ ق.م وخسوف ٥٢ ق.م المقروءان في سقف دندرة (محسوبان).",
   "kind": "map"
  },
@@ -75,7 +75,7 @@
   "chapter": 2,
   "number": "2-10",
   "number_ar": "١٠-٢",
-  "file": "figures/ch2/fig_2_10_novel_eclipse_993.png",
+  "file": "figures/ch2/fig_2_10_history_eclipse_993.png",
   "caption": "كسوف ٢٠ أغسطس ٩٩٣م الكلي قبالة ساحل مصر الشمالي كما رُصد من القاهرة (محسوب).",
   "kind": "map"
  },
@@ -83,7 +83,7 @@
   "chapter": 2,
   "number": "2-11",
   "number_ar": "١١-٢",
-  "file": "figures/ch2/fig_2_11_novel_eclipse_1004.png",
+  "file": "figures/ch2/fig_2_11_history_eclipse_1004.png",
   "caption": "كسوف ٢٤ يناير ١٠٠٤م الهجين: غروب الشمس مكسوفة في القاهرة (محسوب).",
   "kind": "map"
  },
@@ -91,7 +91,7 @@
   "chapter": 2,
   "number": "2-12",
   "number_ar": "١٢-٢",
-  "file": "figures/ch2/fig_2_12_novel_lunar_cairo.png",
+  "file": "figures/ch2/fig_2_12_history_lunar_cairo.png",
   "caption": "خسوفات القمر في ٩٧٩ و٩٨١ و١٠٠٢م كما رُئيت من القاهرة (محسوبة).",
   "kind": "infographic"
  },
@@ -99,8 +99,8 @@
   "chapter": 2,
   "number": "2-13",
   "number_ar": "١٣-٢",
-  "file": "figures/ch2/fig_2_13_novel_eclipses_table.png",
-  "caption": "الكسوفات والخسوفات الحقيقية في رواية «أرصاد وأطوار» مقارنةً بالحساب.",
+  "file": "figures/ch2/fig_2_13_history_eclipses_table.png",
+  "caption": "كسوفات وخسوفات في تاريخ مصر مقارنةً بالحساب الحديث.",
   "kind": "infographic"
  },
  {

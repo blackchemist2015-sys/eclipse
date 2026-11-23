@@ -1,0 +1,146 @@
+[
+ {
+  "chapter": 12,
+  "number": "12-1",
+  "number_ar": "١-١٢",
+  "file": "figures/ch12/fig_12_01_arab_world_overview.png",
+  "caption": "الكسوف في العالم العربي: مسار الكلية ونسب الاحتجاب في العواصم (محسوب).",
+  "kind": "map"
+ },
+ {
+  "chapter": 12,
+  "number": "12-2",
+  "number_ar": "٢-١٢",
+  "file": "figures/ch12/fig_12_02_arab_total_table_1.png",
+  "caption": "مواعيد الكسوف الكلي في المدن العربية (محسوب).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 12,
+  "number": "12-3",
+  "number_ar": "٣-١٢",
+  "file": "figures/ch12/fig_12_03_arab_total_table_2.png",
+  "caption": "مواعيد الكسوف الكلي في المدن العربية (محسوب).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 12,
+  "number": "12-4",
+  "number_ar": "٤-١٢",
+  "file": "figures/ch12/fig_12_04_arab_partial_table_1.png",
+  "caption": "مواعيد الكسوف الجزئي في المدن العربية (محسوب).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 12,
+  "number": "12-5",
+  "number_ar": "٥-١٢",
+  "file": "figures/ch12/fig_12_05_arab_partial_table_2.png",
+  "caption": "مواعيد الكسوف الجزئي في المدن العربية (محسوب).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 12,
+  "number": "12-6",
+  "number_ar": "٦-١٢",
+  "file": "figures/ch12/fig_12_06_strip_map_01.png",
+  "caption": "خريطة مسار الكلية ١: مضيق جبل طارق وشمال المغرب (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 12,
+  "number": "12-7",
+  "number_ar": "٧-١٢",
+  "file": "figures/ch12/fig_12_07_strip_map_02.png",
+  "caption": "خريطة مسار الكلية ٢: الجزائر (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 12,
+  "number": "12-8",
+  "number_ar": "٨-١٢",
+  "file": "figures/ch12/fig_12_08_strip_map_03.png",
+  "caption": "خريطة مسار الكلية ٣: تونس وغرب ليبيا (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 12,
+  "number": "12-9",
+  "number_ar": "٩-١٢",
+  "file": "figures/ch12/fig_12_09_strip_map_04.png",
+  "caption": "خريطة مسار الكلية ٤: ليبيا (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 12,
+  "number": "12-10",
+  "number_ar": "١٠-١٢",
+  "file": "figures/ch12/fig_12_10_strip_map_05.png",
+  "caption": "خريطة مسار الكلية ٥: غرب مصر: سيوة والواحات (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 12,
+  "number": "12-11",
+  "number_ar": "١١-١٢",
+  "file": "figures/ch12/fig_12_11_strip_map_06.png",
+  "caption": "خريطة مسار الكلية ٦: وادي النيل: من المنيا إلى أسوان (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 12,
+  "number": "12-12",
+  "number_ar": "١٢-١٢",
+  "file": "figures/ch12/fig_12_12_strip_map_07.png",
+  "caption": "خريطة مسار الكلية ٧: البحر الأحمر وغرب السعودية (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 12,
+  "number": "12-13",
+  "number_ar": "١٣-١٢",
+  "file": "figures/ch12/fig_12_13_strip_map_08.png",
+  "caption": "خريطة مسار الكلية ٨: جنوب السعودية واليمن والقرن الأفريقي (محسوبة).",
+  "kind": "map"
+ },
+ {
+  "chapter": 12,
+  "number": "12-14",
+  "number_ar": "١٤-١٢",
+  "file": "figures/ch12/fig_12_14_august_weather_path.png",
+  "caption": "متوسط الغيوم والحرارة في أغسطس ومدة الكلية في عشرين مدينة على المسار.",
+  "kind": "chart"
+ },
+ {
+  "chapter": 12,
+  "number": "12-15",
+  "number_ar": "١٥-١٢",
+  "file": "figures/ch12/fig_12_15_egypt_viewing_sites_1.png",
+  "caption": "مواقع مقترحة لرصد الكسوف في مصر مع مواعيدها (١ من ٢).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 12,
+  "number": "12-16",
+  "number_ar": "١٦-١٢",
+  "file": "figures/ch12/fig_12_16_egypt_viewing_sites_2.png",
+  "caption": "مواقع مقترحة لرصد الكسوف في مصر مع مواعيدها (٢ من ٢).",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 12,
+  "number": "12-17",
+  "number_ar": "١٧-١٢",
+  "file": "figures/ch12/fig_12_17_egypt_pros_cons.png",
+  "caption": "مزايا رصد الكسوف في مصر وتحدياته.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 12,
+  "number": "12-18",
+  "number_ar": "١٨-١٢",
+  "file": "figures/ch12/fig_12_18_travel_tips_egypt.png",
+  "caption": "نصائح عملية للسفر والرصد في مصر يوم الكسوف.",
+  "kind": "infographic"
+ }
+]

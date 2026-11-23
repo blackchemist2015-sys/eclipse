@@ -87,7 +87,57 @@ def header(fig, title, subtitle=None, y=0.965, size=17, color=INK, sub_color=INK
 
 def footer(fig, note="", color=MUTED):
     if note:
-        fig.text(0.965, 0.018, note, ha="right", va="bottom", fontsize=7.2, color=color, fontfamily=SANS)
+        fig.text(0.965, 0.018, note, ha="right", va="bottom", fontsize=7.2, color=color, fontfamily=SANS, gid="footer")
+
+
+def make_room_for_footer(fig, gap_px=6):
+    """If the footer line collides with anything above it, grow the figure at the bottom so it sits alone."""
+    foot = [t for t in fig.texts if t.get_gid() == "footer" and t.get_text().strip()]
+    if not foot:
+        return
+    fig.canvas.draw()
+    r = fig.canvas.get_renderer()
+    ftop = max(t.get_window_extent(r).y1 for t in foot)
+    lows = []
+    for ax in fig.axes:
+        if not ax.get_visible():
+            continue
+        if ax.axison:
+            lows.append(ax.get_tightbbox(r).y0)
+        for t in ax.texts:
+            if t.get_visible() and t.get_text().strip():
+                lows.append(t.get_window_extent(r).y0)
+    for t in fig.texts:
+        if t.get_gid() != "footer" and t.get_visible() and t.get_text().strip():
+            lows.append(t.get_window_extent(r).y0)
+    if not lows:
+        return
+    need = ftop + gap_px - min(lows)
+    if need <= 0:
+        return
+    W, H = fig.get_size_inches()
+    dh = need / fig.dpi
+    H2 = H + dh
+    k = H / H2
+    off = dh / H2
+    for ax in fig.axes:
+        x0, y0, w, h = ax.get_position().bounds
+        ax.set_position([x0, y0 * k + off, w, h * k])
+    for t in fig.texts:
+        if t.get_gid() == "footer":
+            continue
+        x, y = t.get_position()
+        t.set_position((x, y * k + off))
+    for ln in fig.lines:
+        xs, ys = ln.get_data()
+        ln.set_data(xs, [y * k + off for y in ys])
+    for pa in fig.patches:
+        try:
+            x, y = pa.get_xy()
+            pa.set_xy((x, y * k + off))
+        except Exception:
+            pass
+    fig.set_size_inches(W, H2, forward=True)
 
 
 def wrap(text, width):
@@ -137,6 +187,51 @@ def halo(w=2.5, c="white"):
     return [pe.withStroke(linewidth=w, foreground=c)]
 
 
+def check_overlaps(fig, name):
+    """Report pairs of visible texts whose boxes overlap noticeably, and texts that leave the page (set CHECK_OVERLAP=1)."""
+    if not os.environ.get("CHECK_OVERLAP"):
+        return
+    fig.canvas.draw()
+    r = fig.canvas.get_renderer()
+    W, H = fig.canvas.get_width_height()
+    items = []
+    for t in fig.texts + [t for ax in fig.axes for t in ax.texts]:
+        if not t.get_visible() or not t.get_text().strip():
+            continue
+        try:
+            bb = t.get_window_extent(r)
+        except Exception:
+            continue
+        items.append((t.get_text().strip().replace("\n", " ")[:40], bb))
+    for ax in fig.axes:
+        if not ax.axison or not ax.get_visible():
+            continue
+        x0, x1 = sorted(ax.get_xlim())
+        y0, y1 = sorted(ax.get_ylim())
+        for t in ax.get_xticklabels():
+            if t.get_visible() and t.get_text().strip() and x0 - 1e-9 <= t.get_position()[0] <= x1 + 1e-9:
+                items.append(("tick:" + t.get_text()[:12], t.get_window_extent(r)))
+        for t in ax.get_yticklabels():
+            if t.get_visible() and t.get_text().strip() and y0 - 1e-9 <= t.get_position()[1] <= y1 + 1e-9:
+                items.append(("tick:" + t.get_text()[:12], t.get_window_extent(r)))
+    out = []
+    for i in range(len(items)):
+        a, ba = items[i]
+        if ba.x0 < -2 or ba.x1 > W + 2 or ba.y0 < -2 or ba.y1 > H + 2:
+            out.append(f"  OFF-PAGE: {a}")
+        for j in range(i + 1, len(items)):
+            b, bb = items[j]
+            w = min(ba.x1, bb.x1) - max(ba.x0, bb.x0)
+            h = min(ba.y1, bb.y1) - max(ba.y0, bb.y0)
+            if w > 0 and h > 0:
+                small = min(ba.width * ba.height, bb.width * bb.height) or 1
+                if w * h / small > 0.25 and not (a.startswith("tick:") and b.startswith("tick:")):
+                    out.append(f"  {a}  <>  {b}  ({w * h / small:.0%})")
+    if out:
+        with open(os.path.join(ROOT, "results", "overlaps.log"), "a", encoding="utf-8") as f:
+            f.write(name + "\n" + "\n".join(out[:12]) + "\n")
+
+
 def save(fig, chapter, slug, caption, kind="infographic"):
     n = _counters.get(chapter, 0) + 1
     _counters[chapter] = n
@@ -144,6 +239,8 @@ def save(fig, chapter, slug, caption, kind="infographic"):
     os.makedirs(d, exist_ok=True)
     fname = f"fig_{chapter}_{n:02d}_{slug}.png"
     path = os.path.join(d, fname)
+    make_room_for_footer(fig)
+    check_overlaps(fig, fname)
     fig.savefig(path, dpi=DPI, facecolor=fig.get_facecolor())
     plt.close(fig)
     CATALOGUE.append(dict(chapter=chapter, number=f"{chapter}-{n}", number_ar=A(f"{n}") + "-" + A(f"{chapter}"),

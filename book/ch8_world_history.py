@@ -68,9 +68,9 @@ def fig_media():
         y = 0.74 - r * 0.18
         card(ax, x - 0.45, y - 0.075, 0.45, 0.15)
         number_badge(ax, x - 0.035, y + 0.035, i + 1)
-        ax.text(x - 0.07, y + 0.035, t, ha="right", va="center", fontsize=11.5, fontweight="bold", fontfamily=TITLE,
+        ax.text(x - 0.07, y + 0.045, t, ha="right", va="center", fontsize=11.5, fontweight="bold", fontfamily=TITLE,
                 color=NAVY)
-        ax.text(x - 0.03, y - 0.03, wrap(d, 44), ha="right", va="center", fontsize=9.4, linespacing=1.35)
+        ax.text(x - 0.03, y - 0.04, wrap(d, 46), ha="right", va="center", fontsize=9.2, linespacing=1.3)
     save(fig, CH, "documentation_media", "وسائل توثيق الكسوف عبر العصور من ألواح الطين إلى المراصد الفضائية.")
 
 
@@ -96,23 +96,41 @@ def hist_map(y, m, d, h, title, sub, slug, cap, bounds, pts):
 
 
 def fig_eddington():
-    fig = page(8.6, 5.0, NAVY)
+    fig = page(8.6, 6.4, NAVY)
     ax = canvas(fig)
     header(fig, "١٩١٩: الكسوف الذي اختبر أينشتاين", "الشمس تحني ضوء النجوم المارّ قربها فتبدو النجوم مزاحة عن مواقعها",
            color="white", sub_color="#c9d3e3")
-    cx, cy, r = 0.45, 0.42, 0.06
+    cx, cy, r = 0.45, 0.52, 0.05
     corona(ax, cx, cy, r, extent=0.5, strength=0.8)
     moon_disk(ax, cx, cy, r * 1.02, color="#05080f")
-    ax.plot([0.95, cx + 0.005], [cy + 0.30, cy + r * ax._asp + 0.02], color="#9ec5f4", lw=1.6)
-    ax.plot([cx + 0.005, 0.05], [cy + r * ax._asp + 0.02, cy - 0.02], color="#9ec5f4", lw=1.6)
-    ax.plot([0.95, 0.05], [cy + 0.30, cy - 0.08], color="#9ec5f4", lw=1, ls="--", alpha=0.6)
-    ax.plot(0.95, cy + 0.30, "*", ms=16, color="white")
-    ax.plot(0.95, cy + 0.36, "*", ms=11, color="#9ec5f4", alpha=0.6)
-    ax.text(0.93, cy + 0.40, "الموقع الظاهري", color="#9ec5f4", ha="right", fontsize=9)
+    # light from the star travels straight, bends sharply as it grazes the Sun, then travels straight to Earth
+    S = np.array([0.93, cy + 0.12])
+    P = np.array([cx, cy + r * ax._asp + 0.035])
+    O = np.array([0.06, cy - 0.06])
+    d1, d2 = (P - S) / np.linalg.norm(P - S), (O - P) / np.linalg.norm(O - P)
+    q1, q2 = P - d1 * 0.07, P + d2 * 0.07                       # fillet: smooth bend around P
+    u = np.linspace(0, 1, 60)[:, None]
+    bend = (1 - u) ** 2 * q1 + 2 * (1 - u) * u * P + u ** 2 * q2
+    curve = np.vstack([S, q1, bend, q2, O])
+    ax.plot(curve[:, 0], curve[:, 1], color="#ffd27a", lw=2.2, zorder=6)
+    for a0, b0 in [(S, q1), (q2, O)]:
+        m = a0 + 0.55 * (b0 - a0)
+        ax.annotate("", m, m - 0.04 * (b0 - a0) / np.linalg.norm(b0 - a0),
+                    arrowprops=dict(arrowstyle="-|>", color="#ffd27a", lw=1.6), zorder=6)
+    # the observer looks back along the arriving ray: the star appears displaced away from the Sun
+    A_ = O + (-d2) * (S[0] - O[0]) / (-d2[0])
+    ax.plot([O[0], A_[0]], [O[1], A_[1]], color="#9ec5f4", lw=1.2, ls="--", zorder=5)
+    ax.plot([O[0], S[0]], [O[1], S[1]], color="white", lw=0.8, ls=":", alpha=0.55, zorder=5)
+    ax.plot(*S, "*", ms=16, color="white", zorder=7)
+    ax.plot(*A_, "*", ms=13, color="#9ec5f4", alpha=0.8, zorder=7)
+    ax.text(S[0] - 0.01, S[1] - 0.045, "الموقع الحقيقي للنجم", color="white", ha="right", va="top", fontsize=9)
+    ax.text(A_[0] - 0.035, A_[1] + 0.005, "الموقع الظاهري (أبعد عن الشمس)", color="#9ec5f4", ha="right", va="center", fontsize=9)
+    ax.text(0.60, S[1] - 0.065, "مسار الضوء ينحني عند مروره بجوار الشمس", color="#ffd27a", ha="center", fontsize=9.2)
+    ax.text(0.27, cy + 0.12, "اتجاه النظر", color="#9ec5f4", ha="center", fontsize=8.6, rotation=10)
     ax.text(0.05, cy - 0.12, "الأرض (الراصد)", color="white", fontsize=10)
-    para(ax, 0.95, 0.27, "تنبأت النسبية العامة بانحراف قدره ١٫٧٥ ثانية قوسية لضوء نجم يمر بحافة الشمس، وهو ضعف ما تعطيه "
+    para(ax, 0.95, 0.30, "تنبأت النسبية العامة بانحراف قدره ١٫٧٥ ثانية قوسية لضوء نجم يمر بحافة الشمس، وهو ضعف ما تعطيه "
          "فيزياء نيوتن. في ٢٩ مايو ١٩١٩ صوّرت بعثتا إدنغتون ودايسون في جزيرة برينسيبي وفي سوبرال بالبرازيل نجوم عنقود "
-         "القلائص (الهيادس) القريبة من الشمس أثناء الكلية، فجاءت النتائج أقرب إلى تنبؤ أينشتاين.", width=82, size=9.8, color="#e6ebf2")
+         "القلائص (الهيادس) القريبة من الشمس أثناء الكلية، فجاءت النتائج أقرب إلى تنبؤ أينشتاين.", width=104, size=9.8, color="#e6ebf2")
     footer(fig, "رسم تخطيطي مبالغ فيه؛ الانحراف الحقيقي أصغر من عرض شعرة على بعد عشرة أمتار.", color="#8a96a8")
     save(fig, CH, "eddington_1919", "تجربة إدنغتون ١٩١٩: انحناء ضوء النجوم قرب الشمس أثناء الكسوف.")
 
@@ -225,8 +243,13 @@ def fig_historic_paths():
         j = fin[-1] if k % 2 == 0 else fin[0]
         txt = lab if hl else lab.split()[0]
         ax.plot(lo[j], la[j], "o", ms=5, color=col, zorder=6)
-        ax.text(lo[j], la[j] - 3.2 if la[j] > 0 else la[j] + 2.2, txt, color=col, fontsize=8.4 if not hl else 9.2,
-                fontweight="bold", ha="center", path_effects=halo(), zorder=7)
+        # label the chosen end of the path; if every spot there is taken, try the other end
+        for jj in (j, fin[0] if j == fin[-1] else fin[-1]):
+            if MK.place_label(ax, txt, (lo[jj], la[jj]), size=8.4 if not hl else 9.2, color=col, prefer=5,
+                              fontweight="bold", zorder=7) is not None:
+                if jj != j:
+                    ax.plot(lo[jj], la[jj], "o", ms=5, color=col, zorder=6)
+                break
     ax.set_xticks([])
     ax.set_yticks([])
     header(fig, "مسارات كسوفات صنعت التاريخ", "خطوط المركز لكسوفات كلية وحلقية شهيرة منذ ١٧١٥، وبالأحمر الكسوفات التي عبرت مصر")

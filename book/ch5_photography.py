@@ -169,7 +169,8 @@ def fig_sun_path_plan(name, la, lo, slug):
     ax.axis("off")
     for zz in (10, 20, 30):
         ax.add_patch(plt.Circle((0, 0), zz, fc="none", ec=LINE, lw=0.8))
-        ax.text(0, -zz - 1.2, A(90 - zz) + "°", ha="center", va="top", fontsize=8, color=MUTED)
+        # on the northern side (the Sun's path lies to the south), clear of the time labels and «جنوب»
+        ax.text(0.34 * zz, 0.94 * zz + 0.5, A(90 - zz) + "°", ha="center", va="bottom", fontsize=8, color=MUTED)
     ax.plot(0, 0, "+", color=MUTED, ms=10)
     ax.text(0.8, 0.8, "سمت الرأس", fontsize=8.5, color=MUTED)
     for lab, (x, y) in [("شمال", (0, 33)), ("جنوب", (0, -34.5)), ("شرق", (-34, 0)), ("غرب", (34, 0))]:

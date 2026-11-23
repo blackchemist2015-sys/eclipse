@@ -188,7 +188,7 @@ def diag_light():
     arrow(ax, 0.40, 0.66, 0.40, 0.86, color=BLUE[9])
     lab(ax, 0.40, 0.89, "سمت الرأس (Zenith)", 8.8, color=BLUE[9])
     lab(ax, 0.5, 0.30, "حامل ثابت\n(Tripod)", 8.6)
-    ax2 = fig.add_axes([0.44, 0.15, 0.50, 0.62])
+    ax2 = fig.add_axes([0.42, 0.15, 0.46, 0.62])
     ax2.semilogy(t + UTC, E, color=NAVY, lw=2.2)
     for v, txt in [(1e5, "شمس الظهيرة ≈ ١٠٠ ألف لوكس"), (500, "مكتب مضاء ≈ ٥٠٠ لوكس"), (10, "شفق مدني ≈ ١٠ لوكس")]:
         ax2.axhline(v, color=MUTED, ls=":", lw=1)
@@ -196,7 +196,7 @@ def diag_light():
     i99 = int(np.argmin(np.abs(ob[: np.argmax(ob)] - 0.99)))
     ax2.plot(t[i99] + UTC, E[i99], "o", color=SUN_DEEP)
     ax2.annotate("احتجاب ٩٩٪ وما زال الضوء\n≈ " + A(f"{E[i99]:,.0f}") + " لوكس: لا تنزع النظارة!", (t[i99] + UTC, E[i99]),
-                 xytext=(t[i99] + UTC - 1.15, E[i99] * 0.07), fontsize=8.4, color=SUN_DEEP,
+                 xytext=(t[i99] + UTC - 1.25, 40), fontsize=8.4, color=SUN_DEEP,
                  arrowprops=dict(arrowstyle="-", color=SUN_DEEP))
     ax2.axvspan(c["c2"] + UTC, c["c3"] + UTC, color=NAVY, alpha=0.15)
     ax2.set_ylim(2, 3e5)

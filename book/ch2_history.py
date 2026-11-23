@@ -69,7 +69,7 @@ def fig_timeline(next_luxor=None):
 def text_card(title, sub, paras, slug, caption, dark=False, icon=None, h=None):
     W = 62
     lines = [wrap(p, W).count("\n") + 1 for p in paras]
-    LH, GAP = 0.31, 0.22
+    LH, GAP = 0.345, 0.24
     body = sum(n * LH + GAP for n in lines)
     h = max(h or 0, 1.55 + body + (1.3 if icon else 0.4))
     fig = page(7.4, h, NAVY if dark else PAPER)
@@ -91,7 +91,7 @@ def icon_ra(ax):
 
 
 def fig_ibn_haytham_camera():
-    fig = page(8.0, 5.0)
+    fig = page(8.0, 5.6)
     ax = canvas(fig)
     header(fig, "ابن الهيثم وصورة الكسوف", "الضوء المار من ثقب صغير يرسم هلال الشمس المكسوفة مقلوبًا على الجدار")
     sun = sun_disk(ax, 0.88, 0.50, 0.05)
@@ -103,11 +103,11 @@ def fig_ibn_haytham_camera():
     ax.add_patch(plt.Rectangle((0.10, 0.15), 0.01, 0.62, fc="#d8d4ca", transform=ax.transAxes))
     s2 = sun_disk(ax, 0.17, 0.47, 0.045, glow=False)
     moon_disk(ax, 0.19, 0.45, 0.045, color=PAPER, clip=s2)
-    ax.text(0.506, 0.82, "ثقب صغير", ha="center", fontsize=10)
-    ax.text(0.17, 0.82, "صورة مقلوبة", ha="center", fontsize=10)
-    ax.text(0.88, 0.82, "الشمس المكسوفة", ha="center", fontsize=10)
-    para(ax, 0.5, 0.14, "درس الحسن بن الهيثم (ت. نحو ١٠٤٠م) هذه الظاهرة في القاهرة، ووضع فيها رسالته «مقالة في صورة "
-         "الكسوف»، وهي أصل فكرة «الحجرة المظلمة» (الكاميرا).", width=80, size=9.6, ha="center")
+    ax.text(0.506, 0.795, "ثقب صغير", ha="center", fontsize=10)
+    ax.text(0.17, 0.795, "صورة مقلوبة", ha="center", fontsize=10)
+    ax.text(0.88, 0.70, "الشمس المكسوفة", ha="center", fontsize=10)
+    para(ax, 0.5, 0.115, "درس الحسن بن الهيثم (ت. نحو ١٠٤٠م) هذه الظاهرة في القاهرة، ووضع فيها رسالته «مقالة في صورة "
+         "الكسوف»، وهي أصل فكرة «الحجرة المظلمة» (الكاميرا).", width=115, size=9.4, ha="center", linespacing=1.35)
     save(fig, CH, "ibn_al_haytham_camera", "مبدأ الحجرة المظلمة الذي درسه ابن الهيثم لرصد صورة الكسوف.")
 
 
@@ -192,9 +192,9 @@ def fig_egypt_paths(cat):
         ax.plot(lo, la, color=col, lw=1.6 if y != 2027 else 2.4, zorder=3)
         m = (lo > lon0 + 1) & (lo < lon1 - 1) & (la > lat0 + 1) & (la < lat1 - 1)
         if m.any():
-            j = np.where(m)[0][len(np.where(m)[0]) // 3]
-            ax.text(lo[j], la[j] + 0.5, A(y) + ("\n(حلقي)" if r["kind"] == "annular" else ""), color=col, fontsize=9,
-                    fontweight="bold", ha="center", path_effects=halo(), zorder=7)
+            MK.label_along(ax, np.where(m, lo, np.nan), np.where(m, la, np.nan),
+                           A(y) + ("\n(حلقي)" if r["kind"] == "annular" else ""), dy=0.5, color=col, fontsize=9,
+                           fontweight="bold", ha="center", path_effects=halo(), zorder=7)
         rows.append((r, ec))
     header(fig, "الكسوفات المركزية التي عبرت مصر ١٩٠١–٢٠٥٠", "مسارات الكسوف الكلي والحلقي فوق مصر وما حولها (محسوبة)")
     footer(fig, SRC + " من تقويم JPL DE421.")
@@ -272,7 +272,7 @@ def fig_cairo_luxor_series(cat):
         style_axes(ax)
         arabic_ticks(ax, fmt="{:.0f}")
         mirror_y(ax)
-        ax.text(0.01, 0.92, f"{A(len(xs))} كسوفًا", transform=ax.transAxes, fontsize=9, color=INK2)
+        ax.text(0.99, 0.93, f"{A(len(xs))} كسوفًا", transform=ax.transAxes, fontsize=9, color=INK2, ha="right")
     footer(fig, SRC + " من تقويم JPL DE421.")
     save(fig, CH, "cairo_luxor_all_eclipses", "نسبة الاحتجاب في القاهرة والأقصر لكل كسوف ١٩٠١–٢٠٥٠ (محسوبة).", "chart")
     return rows
@@ -289,15 +289,23 @@ def fig_historic_timeline(hist):
         extra.append(r)
     for k, n in enumerate(names):
         ax.axhline(k, color=LINE, lw=1)
+        pts = []
         for r in hist + extra:
             tot = is_total(r, n)
             ann = is_annular(r, n)
-            if not (tot or ann):
-                continue
-            x = r["date"][0] + (r["date"][1] - 0.5) / 12
-            ax.plot(x, k, "o", ms=9, color=RED if r["date"][0] == 2027 else (BLUE[9] if tot else SUN_DEEP),
-                    mec="white", zorder=3)
-            ax.text(x, k + 0.22, A(r["date"][0]), ha="center", fontsize=7.5, color=INK2, rotation=90 if False else 0)
+            if tot or ann:
+                pts.append((r["date"][0] + (r["date"][1] - 0.5) / 12, r["date"][0], tot))
+        pts = sorted(set(pts))
+        last_up, last_dn = -1e9, -1e9
+        for x, yr, tot in pts:
+            ax.plot(x, k, "o", ms=9, color=RED if yr == 2027 else (BLUE[9] if tot else SUN_DEEP), mec="white", zorder=3)
+            # years closer than the width of a label alternate above / below the line
+            if x - last_up >= 24:
+                ax.text(x, k + 0.2, A(yr), ha="center", va="bottom", fontsize=7.5, color=INK2)
+                last_up = x
+            elif x - last_dn >= 24:
+                ax.text(x, k - 0.2, A(yr), ha="center", va="top", fontsize=7.5, color=INK2)
+                last_dn = x
     ax.set_yticks(range(4))
     ax.set_yticklabels(names, fontsize=11)
     ax.yaxis.tick_right()

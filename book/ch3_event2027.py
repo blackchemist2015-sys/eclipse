@@ -246,7 +246,7 @@ def fig_light_curves(rows):
     mirror_y(ax)
     ax.legend(loc="center left", bbox_to_anchor=(0.0, 0.42), frameon=False, fontsize=10)
     lux = circ_city(25.6872, 32.6396)["duration_s"]
-    ax.annotate("الكلية في الأقصر:\nالضوء صفر ٪ لمدة " + I.fmt_dur(lux, long=True), (13.09, 0), xytext=(14.05, 38), fontsize=9,
+    ax.annotate("الكلية في الأقصر:\nالضوء صفر ٪ لمدة " + I.fmt_dur(lux, long=True), (13.09, 0), xytext=(13.55, 22), fontsize=9, ha="left",
                 arrowprops=dict(arrowstyle="-", color=NAVY))
     footer(fig, SRC + "؛ المقصود نسبة مساحة القرص الظاهرة، والإضاءة الفعلية تنخفض بنسبة مشابهة.")
     save(fig, CH, "light_curves", "منحنى نسبة قرص الشمس الظاهر مع الزمن في الأقصر وأسوان والقاهرة والإسكندرية (محسوب).", "chart")
@@ -270,23 +270,30 @@ def fig_why_9999_isnt_total():
 
 
 def fig_c2_along_nile(rows):
-    sel = [r for r in rows if r["duration_s"] > 0]
-    fig = page(8.4, 5.2)
-    header(fig, "الظل يجتاح وادي النيل", "توقيت بداية الكلية (التماس الثاني) في المدن داخل المسار، حسب خط العرض")
-    ax = fig.add_axes([0.08, 0.13, 0.80, 0.64])
-    ax.scatter([r["c2"] + UTC for r in sel], [r["la"] for r in sel], s=[r["duration_s"] / 4 for r in sel], c=BLUE[9],
-               alpha=0.8, edgecolor="white")
-    for r in sel:
-        ax.text(r["c2"] + UTC + 0.004, r["la"] + 0.05, r["name"], fontsize=8.2)
-    xt = np.arange(12.70, 13.30, 0.05)
+    sel = sorted([r for r in rows if r["duration_s"] > 0], key=lambda r: r["c2"])
+    n = len(sel)
+    fig = page(8.4, 2.2 + 0.24 * n)
+    header(fig, "الظل يجتاح وادي النيل", "توقيت بداية الكلية (التماس الثاني) في المدن داخل المسار، مرتّبة من الأسبق إلى الأحدث")
+    top = 1 - 1.45 / (2.2 + 0.24 * n)
+    ax = fig.add_axes([0.06, 0.75 / (2.2 + 0.24 * n), 0.62, top - 0.75 / (2.2 + 0.24 * n)])
+    y = np.arange(n)[::-1]
+    x = np.array([r["c2"] + UTC for r in sel])
+    ax.hlines(y, x.min() - 0.01, x, color=LINE, lw=0.8, zorder=1)
+    ax.scatter(x, y, s=[r["duration_s"] / 3.2 for r in sel], c=BLUE[9], alpha=0.85, edgecolor="white", zorder=3)
+    for yi, xi, r in zip(y, x, sel):
+        ax.text(xi + 0.006, yi, I.fmt_dur(r["duration_s"]), fontsize=7.6, color=INK2, va="center", ha="left")
+    ax.set_yticks(y)
+    ax.set_yticklabels([r["name"] + "  " + A(f"{r['la']:.1f}") + "°" for r in sel], fontsize=8.4)
+    ax.yaxis.tick_right()
+    ax.set_ylim(-0.7, n - 0.3)
+    ax.set_xlim(x.min() - 0.01, x.max() + 0.06)
+    xt = np.arange(np.floor(x.min() * 20) / 20, x.max() + 0.06, 0.05)
     ax.set_xticks(xt)
-    ax.set_xticklabels([I.fmt_time(x, seconds=False) for x in xt], fontsize=8)
-    ax.set_ylabel("خط العرض (° شمالًا)")
+    ax.set_xticklabels([I.fmt_time(v, seconds=False) for v in xt], fontsize=8)
     style_axes(ax)
-    arabic_ticks(ax, x=False)
-    mirror_y(ax)
-    footer(fig, SRC + "؛ حجم الدائرة يتناسب مع مدة الكلية.")
-    save(fig, CH, "c2_times_egypt", "توقيت بداية الكلية في المدن المصرية حسب خط العرض (محسوب).", "chart")
+    ax.tick_params(axis="y", length=0)
+    footer(fig, SRC + "؛ بجانب اسم المدينة خط عرضها، وبجانب النقطة مدة الكلية؛ حجم الدائرة يتناسب مع المدة.")
+    save(fig, CH, "c2_times_egypt", "توقيت بداية الكلية في المدن المصرية مرتبة زمنيًا (محسوب).", "chart")
 
 
 def fig_sun_position(rows):
@@ -295,14 +302,20 @@ def fig_sun_position(rows):
     fig = page(8.4, 5.6)
     header(fig, "أين أنظر؟ موقع الشمس لحظة الذروة", "ارتفاع الشمس واتجاهها في مدن مصرية — الشمس قريبة جدًا من سمت الرأس")
     ax = fig.add_axes([0.08, 0.12, 0.80, 0.66])
+    labels = []
     for r in rows:
         if not r["own"]:
             continue
         t = ts.ut1(2027, 8, 2, 0, 0, r["tmax"] * 3600)
         a, z, _ = (eph["earth"] + wgs84.latlon(r["la"], r["lo"])).at(t).observe(eph["sun"]).apparent().altaz()
         ax.plot(z.degrees, a.degrees, "o", ms=7, color=NAVY if r["duration_s"] > 0 else SUN_DEEP, mec="white")
-        ax.annotate(r["name"], (z.degrees, a.degrees), xytext=(4, 4), textcoords="offset points", fontsize=8,
-                    path_effects=halo())
+        labels.append((r["name"], (z.degrees, a.degrees)))
+    ax.margins(0.08)
+    ax.autoscale_view()
+    ax.set_xlim(*ax.get_xlim())
+    ax.set_ylim(*ax.get_ylim())
+    for name, xy in labels:
+        MK.place_label(ax, name, xy, size=8)
     ax.set_xlabel("الاتجاه (السمت) بالدرجات: ١٨٠ = الجنوب")
     ax.set_ylabel("الارتفاع فوق الأفق (°)")
     style_axes(ax)
@@ -353,11 +366,11 @@ def fig_longest_totality():
     LON, LAT = np.meshgrid(np.linspace(lon0, lon1, 900), np.linspace(lat0, lat1, 640))
     d = C.local_circumstances(B, LAT.ravel(), LON.ravel())["duration_s"].reshape(LON.shape)
     d = np.where(d > 0, d, np.nan)
-    lv = [0, 300, 345, 360, 370, 376, 380, 382, 383, 400]
+    lv = [0, 300, 345, 360, 370, 376, 380, 381.5, 382.5, 400]
     cols = [BLUE[1], BLUE[2], BLUE[3], BLUE[4], BLUE[5], BLUE[7], BLUE[9], BLUE[11], RED]
     ax.contourf(LON, LAT, d, levels=lv, colors=cols, alpha=0.8, zorder=3)
-    cs = ax.contour(LON, LAT, d, levels=[300, 345, 360, 370, 376, 380, 382], colors="white", linewidths=0.5, zorder=3.6)
-    ax.clabel(cs, fmt=lambda v: I.fmt_dur(v), fontsize=7)
+    cs = ax.contour(LON, LAT, d, levels=[300, 345, 360, 370, 376, 380], colors="white", linewidths=0.5, zorder=3.6)
+    MK.tag_clabels(ax.clabel(cs, fmt=lambda v: I.fmt_dur(v), fontsize=7))
     MK.path(ax, B, -1.7, 1.95)
     t = np.linspace(-0.5, 0.5, 40001)
     la, lo = C.central_line(B, t)
@@ -379,14 +392,14 @@ def fig_longest_totality():
         rr = C.local_circumstances(B, np.array([la0]), np.array([lo0]))
         ax.plot(lo0, la0, "o", ms=4.5, mfc=INK, mec="white", mew=1, zorder=9)
         right = n in ("Qena", "Qus", "Tahta", "Asyut")
-        ax.annotate(I.place(n).split(" (")[0] + " " + I.fmt_dur(rr["duration_s"][0]), (lo0, la0),
-                    xytext=(5 if right else -5, 3), textcoords="offset points", ha="left" if right else "right",
-                    fontsize=8.2, path_effects=halo(), zorder=10)
+        MK.place_label(ax, I.place(n).split(" (")[0] + " " + I.fmt_dur(rr["duration_s"][0]), (lo0, la0), size=8.2,
+                       prefer=1 if right else 0, zorder=10)
+    MK.declutter(ax)
     header(fig, "أين تبلغ الكلية أقصى مدتها؟",
            "النجمة: أطول مدة (غرب النيل) | المعيَّن: لحظة أعظم كسوف (الصحراء الشرقية) | الأحمر: نطاق ٦ د ٢٣ ث")
-    footer(fig, "الثواني مقطوعة لا مقرَّبة (٣٨٢٫٧ ث تُكتب ٦ د ٢٢ ث)؛ نطاق ٦ د ٢٣ ث شريط عرضه بضعة كيلومترات حول خط المركز، "
-           "وكل المدن دونه.\n" + SRC + ".")
-    save(fig, CH, "longest_totality_point", "أطول مدة للكلية (٦ د ٢٣ ث) ونقطة أعظم كسوف (٦ د ٢٢ ث) وترتيب المدن (محسوبة).", "map")
+    footer(fig, "الثواني مقرّبة إلى أقرب ثانية (٣٨٢٫٧ ث = ٦ د ٢٣ ث)؛ الشريط الأحمر: حيث تبلغ الكلية ٦ د ٢٣ ث حول خط المركز.\n"
+           + SRC + ".")
+    save(fig, CH, "longest_totality_point", "أطول مدة للكلية ونقطة أعظم كسوف (كلتاهما ٦ د ٢٣ ث) وترتيب المدن (محسوبة).", "map")
 
 
 def fig_city_card(r):
