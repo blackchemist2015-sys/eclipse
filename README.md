@@ -11,41 +11,41 @@ This repository computes the 2 August 2027 total solar eclipse from first princi
 | Date | Monday 2 August 2027 |
 | Type | Total (Saros 136) |
 | Greatest duration on the central line | 6m 23s (383.1 s) at 26.816N 31.143E, 10:00:17 UT, Sun altitude 80.9° — Western Desert ~36 km west of Tahta (Sohag) |
-| Greatest eclipse | 25.502N 33.196E, 10:06:34 UT, totality 382.5 s (6m 22s) — Eastern Desert ~60 km east of Luxor |
+| Greatest eclipse | 25.502N 33.196E, 10:06:34 UT, totality 382.5 s (6m 23s) — Eastern Desert ~60 km east of Luxor |
 | Central line on Earth | from 08:25:02 to 11:48:11 UT |
 | Maximum path width | 259 km |
 | Countries in the path of totality | Spain, Gibraltar, Morocco, Algeria, Tunisia, Libya, Egypt, the Halaib Triangle (administered by Egypt, claimed by Sudan; Natural Earth draws it as Sudan), Saudi Arabia, Yemen, Somalia (Somaliland/Puntland) |
 
-All 2027 computations use NASA's published Besselian elements (F. Espenak, ΔT = 76 s); NASA lists greatest duration 6m 23.2s at 26°48.8'N 31°08.0'E and greatest eclipse 6m 22.7s at 25°30.4'N 33°10.8'E. An independent fit from JPL DE421 agrees within 0.3 s. Seconds are **truncated**, not rounded, as in NASA's tables (382.7 s → 6m 22s), so every Egyptian city gets at most 6m 22s; only a strip a few km wide along the central line reaches 6m 23s.
+All 2027 computations use NASA's published Besselian elements (F. Espenak, ΔT = 76 s); NASA lists greatest duration 6m 23.2s at 26°48.8'N 31°08.0'E and greatest eclipse 6m 22.7s at 25°30.4'N 33°10.8'E. An independent fit from JPL DE421 agrees within 0.3 s. Seconds are rounded to the nearest second, as in NASA's and Espenak's tables, so both the point of greatest duration and the point of greatest eclipse read 6m 23s. Nag Hammadi also reaches 6m 23s; Sohag gets 6m 22s and Luxor 6m 20s. The "Other countries" table matches Espenak's 2024 guide to within a second (Tangier 4m 50s, Benghazi 6m 09s, Jeddah 6m 00s).
 
 ## Egypt — city by city (local time EEST = UT+3)
 
 | City | Governorate | Type | Partial begins | Totality begins | Maximum | Totality ends | Partial ends | Totality | Obscuration | Sun alt. |
 |---|---|---|---|---|---|---|---|---|---|---|
-| Nag Hammadi | Qena | total | 11:38:51 | 13:00:33 | 13:03:44 | 13:06:56 | 14:25:07 | 6m 22s | 100.00% | 81.6° |
+| Nag Hammadi | Qena | total | 11:38:51 | 13:00:33 | 13:03:44 | 13:06:56 | 14:25:07 | 6m 23s | 100.00% | 81.6° |
 | Sohag | Sohag | total | 11:37:07 | 12:58:38 | 13:01:49 | 13:05:00 | 14:23:19 | 6m 22s | 100.00% | 81.2° |
 | Abydos (El Balyana) | Sohag | total | 11:38:00 | 12:59:41 | 13:02:52 | 13:06:02 | 14:24:21 | 6m 21s | 100.00% | 81.5° |
 | Qus | Qena | total | 11:40:07 | 13:01:51 | 13:05:01 | 13:08:12 | 14:26:12 | 6m 21s | 100.00% | 81.5° |
 | Berenice | Red Sea | total | 11:48:31 | 13:10:34 | 13:13:45 | 13:16:54 | 14:33:58 | 6m 20s | 100.00% | 80.8° |
 | Luxor | Luxor | total | 11:40:07 | 13:01:58 | 13:05:08 | 13:08:18 | 14:26:25 | 6m 20s | 100.00% | 81.8° |
-| Tahta | Sohag | total | 11:36:28 | 12:57:56 | 13:01:06 | 13:04:16 | 14:22:37 | 6m 19s | 100.00% | 81.0° |
-| Bawiti (Bahariya Oasis) | Giza | total | 11:29:26 | 12:50:10 | 12:53:19 | 12:56:28 | 14:15:23 | 6m 17s | 100.00% | 78.7° |
-| El Hayz (Bahariya) | Giza | total | 11:29:14 | 12:50:08 | 12:53:17 | 12:56:25 | 14:15:32 | 6m 16s | 100.00% | 78.9° |
-| Mandisha (Bahariya) | Giza | total | 11:29:35 | 12:50:19 | 12:53:27 | 12:56:35 | 14:15:30 | 6m 15s | 100.00% | 78.7° |
+| Tahta | Sohag | total | 11:36:28 | 12:57:56 | 13:01:06 | 13:04:16 | 14:22:37 | 6m 20s | 100.00% | 81.0° |
+| Bawiti (Bahariya Oasis) | Giza | total | 11:29:26 | 12:50:10 | 12:53:19 | 12:56:28 | 14:15:23 | 6m 18s | 100.00% | 78.7° |
+| El Hayz (Bahariya) | Giza | total | 11:29:14 | 12:50:08 | 12:53:17 | 12:56:25 | 14:15:32 | 6m 17s | 100.00% | 78.9° |
+| Mandisha (Bahariya) | Giza | total | 11:29:35 | 12:50:19 | 12:53:27 | 12:56:35 | 14:15:30 | 6m 16s | 100.00% | 78.7° |
 | Dendera | Qena | total | 11:39:40 | 13:01:21 | 13:04:28 | 13:07:35 | 14:25:38 | 6m 14s | 100.00% | 81.4° |
-| Armant | Luxor | total | 11:39:58 | 13:01:55 | 13:05:02 | 13:08:08 | 14:26:23 | 6m 13s | 100.00% | 81.9° |
-| Qena | Qena | total | 11:39:45 | 13:01:27 | 13:04:33 | 13:07:38 | 14:25:41 | 6m 11s | 100.00% | 81.3° |
+| Armant | Luxor | total | 11:39:58 | 13:01:55 | 13:05:02 | 13:08:08 | 14:26:23 | 6m 14s | 100.00% | 81.9° |
+| Qena | Qena | total | 11:39:45 | 13:01:27 | 13:04:33 | 13:07:38 | 14:25:41 | 6m 12s | 100.00% | 81.3° |
 | Asyut | Asyut | total | 11:35:23 | 12:56:46 | 12:59:49 | 13:02:53 | 14:21:22 | 6m 07s | 100.00% | 80.6° |
-| Esna | Luxor | total | 11:40:24 | 13:02:43 | 13:05:36 | 13:08:28 | 14:27:00 | 5m 44s | 100.00% | 82.2° |
+| Esna | Luxor | total | 11:40:24 | 13:02:43 | 13:05:36 | 13:08:28 | 14:27:00 | 5m 45s | 100.00% | 82.2° |
 | Shalateen | Red Sea | total | 11:49:54 | 13:12:35 | 13:15:23 | 13:18:11 | 14:35:38 | 5m 36s | 100.00% | 80.9° |
 | Marsa Alam | Red Sea | total | 11:45:45 | 13:07:54 | 13:10:40 | 13:13:25 | 14:31:00 | 5m 31s | 100.00% | 80.8° |
 | Edfu | Aswan | total | 11:41:30 | 13:04:01 | 13:06:47 | 13:09:31 | 14:28:05 | 5m 30s | 100.00% | 82.3° |
-| Siwa | Matrouh | total | 11:22:05 | 12:42:26 | 12:45:11 | 12:47:55 | 14:07:57 | 5m 28s | 100.00% | 75.5° |
+| Siwa | Matrouh | total | 11:22:05 | 12:42:26 | 12:45:11 | 12:47:55 | 14:07:57 | 5m 29s | 100.00% | 75.5° |
 | Mallawi | Minya | total | 11:34:07 | 12:55:34 | 12:58:17 | 13:01:00 | 14:19:48 | 5m 25s | 100.00% | 80.0° |
 | Minya | Minya | total | 11:33:34 | 12:55:28 | 12:57:32 | 12:59:37 | 14:18:58 | 4m 09s | 100.00% | 79.6° |
 | Kom Ombo | Aswan | total | 11:42:16 | 13:06:04 | 13:07:44 | 13:09:25 | 14:29:06 | 3m 21s | 100.00% | 82.6° |
-| Daraw | Aswan | total | 11:42:19 | 13:06:20 | 13:07:48 | 13:09:16 | 14:29:10 | 2m 55s | 100.00% | 82.7° |
-| El Quseir | Red Sea | total | 11:43:12 | 13:06:30 | 13:07:46 | 13:09:02 | 14:28:10 | 2m 31s | 100.00% | 80.6° |
+| Daraw | Aswan | total | 11:42:19 | 13:06:20 | 13:07:48 | 13:09:16 | 14:29:10 | 2m 56s | 100.00% | 82.7° |
+| El Quseir | Red Sea | total | 11:43:12 | 13:06:30 | 13:07:46 | 13:09:02 | 14:28:10 | 2m 32s | 100.00% | 80.6° |
 | Aswan | Aswan | partial | 11:42:42 | — | 13:08:17 | — | 14:29:42 | — | 99.81% | 82.9° |
 | Farafra | New Valley | partial | 11:28:49 | — | 12:53:16 | — | 14:16:00 | — | 99.69% | 79.5° |
 | Safaga | Red Sea | partial | 11:41:46 | — | 13:06:04 | — | 14:26:28 | — | 99.62% | 80.3° |
@@ -80,59 +80,59 @@ The per-governorate summary is in [`results/egypt_governorates.csv`](results/egy
 
 | Country | City | Local max | Totality | Sun alt. |
 |---|---|---|---|---|
-| Spain | Cádiz | 10:46:53 (UT+2) | 2m 54s | 37.4° |
-| Spain | Málaga | 10:49:06 (UT+2) | 1m 50s | 39.4° |
-| Spain | Tarifa | 10:47:28 (UT+2) | 4m 39s | 38.2° |
-| Spain | Algeciras | 10:47:41 (UT+2) | 4m 26s | 38.3° |
-| Spain | Jerez de la Frontera | 10:47:07 (UT+2) | 1m 39s | 37.6° |
-| Spain | Ceuta | 10:47:46 (UT+2) | 4m 48s | 38.5° |
-| Spain | Melilla | 10:50:31 (UT+2) | 4m 33s | 41.0° |
-| Spain | Marbella | 10:48:29 (UT+2) | 3m 17s | 38.9° |
-| Gibraltar | Gibraltar | 10:47:49 (UT+2) | 4m 27s | 38.4° |
-| Morocco | Tangier | 09:47:07 (UT+1) | 4m 50s | 37.9° |
-| Morocco | Tetouan | 09:47:36 (UT+1) | 4m 51s | 38.4° |
-| Morocco | Chefchaouen | 09:47:36 (UT+1) | 4m 13s | 38.5° |
-| Morocco | Al Hoceima | 09:49:15 (UT+1) | 4m 26s | 39.9° |
-| Morocco | Nador | 09:50:30 (UT+1) | 4m 15s | 41.0° |
-| Morocco | Larache | 09:46:33 (UT+1) | 4m 18s | 37.6° |
-| Morocco | Oujda | 09:51:44 (UT+1) | 1m 01s | 42.2° |
-| Algeria | Oran | 09:53:40 (UT+1) | 5m 08s | 43.4° |
-| Algeria | Tlemcen | 09:52:35 (UT+1) | 3m 11s | 42.8° |
-| Algeria | Sétif | 10:02:32 (UT+1) | 3m 23s | 49.8° |
-| Algeria | Batna | 10:03:46 (UT+1) | 5m 16s | 50.9° |
-| Algeria | Biskra | 10:03:06 (UT+1) | 5m 02s | 50.6° |
-| Algeria | Mostaganem | 09:54:41 (UT+1) | 5m 02s | 44.2° |
-| Algeria | Chlef | 09:56:28 (UT+1) | 4m 34s | 45.5° |
-| Algeria | Tébessa | 10:06:58 (UT+1) | 5m 11s | 53.0° |
-| Algeria | Djelfa | 09:59:13 (UT+1) | 3m 25s | 47.9° |
-| Tunisia | Sfax | 10:11:39 (UT+1) | 5m 39s | 56.2° |
-| Tunisia | Kairouan | 10:10:14 (UT+1) | 2m 41s | 55.1° |
-| Tunisia | Gabès | 10:10:45 (UT+1) | 4m 06s | 55.8° |
-| Tunisia | Djerba (Houmt Souk) | 10:12:07 (UT+1) | 4m 41s | 56.7° |
-| Tunisia | Gafsa | 10:08:18 (UT+1) | 5m 09s | 54.1° |
-| Tunisia | Tozeur | 10:07:17 (UT+1) | 1m 46s | 53.6° |
-| Tunisia | Kasserine | 10:08:13 (UT+1) | 5m 27s | 53.9° |
-| Libya | Benghazi | 11:30:58 (UT+2) | 6m 09s | 67.8° |
-| Libya | Al Jaghbub | 11:42:35 (UT+2) | 5m 40s | 74.1° |
-| Sudan (north-east) | Halaib | 12:19:13 (UT+2) | 5m 18s | 79.7° |
-| Saudi Arabia | Jeddah | 13:25:24 (UT+3) | 5m 58s | 76.3° |
-| Saudi Arabia | Mecca | 13:26:49 (UT+3) | 5m 05s | 75.4° |
-| Saudi Arabia | Taif | 13:28:03 (UT+3) | 3m 49s | 74.7° |
-| Saudi Arabia | Abha | 13:37:19 (UT+3) | 6m 03s | 70.7° |
-| Saudi Arabia | Al Bahah | 13:32:13 (UT+3) | 5m 09s | 72.9° |
-| Saudi Arabia | Najran | 13:41:26 (UT+3) | 5m 10s | 68.1° |
-| Saudi Arabia | Jizan | 13:39:50 (UT+3) | 3m 06s | 70.0° |
-| Saudi Arabia | Al Lith | 13:29:49 (UT+3) | 6m 10s | 74.5° |
-| Saudi Arabia | Al Qunfudhah | 13:33:09 (UT+3) | 5m 58s | 73.1° |
-| Saudi Arabia | Khamis Mushait | 13:37:34 (UT+3) | 5m 59s | 70.5° |
-| Yemen | Sana'a | 13:45:23 (UT+3) | 2m 26s | 66.9° |
-| Yemen | Marib | 13:47:04 (UT+3) | 5m 44s | 65.5° |
-| Yemen | Ataq | 13:51:05 (UT+3) | 5m 47s | 62.9° |
-| Yemen | Sa'dah | 13:41:48 (UT+3) | 5m 55s | 68.4° |
-| Somalia (Puntland & Somaliland) | Bosaso | 14:00:14 (UT+3) | 4m 04s | 57.8° |
-| Somalia (Puntland & Somaliland) | Hafun | 14:04:31 (UT+3) | 5m 26s | 54.6° |
-| Somalia (Puntland & Somaliland) | Caluula | 14:01:13 (UT+3) | 4m 14s | 56.2° |
-| Somalia (Puntland & Somaliland) | Iskushuban | 14:03:23 (UT+3) | 3m 45s | 55.8° |
+| Spain | Cádiz | 10:46:44 (UT+2) | 2m 53s | 37.4° |
+| Spain | Málaga | 10:48:57 (UT+2) | 1m 50s | 39.3° |
+| Spain | Tarifa | 10:47:19 (UT+2) | 4m 38s | 38.1° |
+| Spain | Algeciras | 10:47:32 (UT+2) | 4m 26s | 38.3° |
+| Spain | Jerez de la Frontera | 10:46:58 (UT+2) | 1m 38s | 37.6° |
+| Spain | Ceuta | 10:47:37 (UT+2) | 4m 48s | 38.4° |
+| Spain | Melilla | 10:50:22 (UT+2) | 4m 33s | 41.0° |
+| Spain | Marbella | 10:48:20 (UT+2) | 3m 17s | 38.9° |
+| Gibraltar | Gibraltar | 10:47:40 (UT+2) | 4m 27s | 38.4° |
+| Morocco | Tangier | 09:46:58 (UT+1) | 4m 50s | 37.9° |
+| Morocco | Tetouan | 09:47:27 (UT+1) | 4m 51s | 38.4° |
+| Morocco | Chefchaouen | 09:47:27 (UT+1) | 4m 13s | 38.5° |
+| Morocco | Al Hoceima | 09:49:06 (UT+1) | 4m 26s | 39.9° |
+| Morocco | Nador | 09:50:21 (UT+1) | 4m 15s | 41.0° |
+| Morocco | Larache | 09:46:24 (UT+1) | 4m 19s | 37.6° |
+| Morocco | Oujda | 09:51:35 (UT+1) | 1m 01s | 42.1° |
+| Algeria | Oran | 09:53:31 (UT+1) | 5m 08s | 43.4° |
+| Algeria | Tlemcen | 09:52:26 (UT+1) | 3m 11s | 42.8° |
+| Algeria | Sétif | 10:02:22 (UT+1) | 3m 24s | 49.8° |
+| Algeria | Batna | 10:03:36 (UT+1) | 5m 16s | 50.8° |
+| Algeria | Biskra | 10:02:57 (UT+1) | 5m 02s | 50.5° |
+| Algeria | Mostaganem | 09:54:32 (UT+1) | 5m 02s | 44.1° |
+| Algeria | Chlef | 09:56:18 (UT+1) | 4m 34s | 45.4° |
+| Algeria | Tébessa | 10:06:48 (UT+1) | 5m 12s | 53.0° |
+| Algeria | Djelfa | 09:59:04 (UT+1) | 3m 25s | 47.8° |
+| Tunisia | Sfax | 10:11:29 (UT+1) | 5m 40s | 56.2° |
+| Tunisia | Kairouan | 10:10:04 (UT+1) | 2m 44s | 55.0° |
+| Tunisia | Gabès | 10:10:35 (UT+1) | 4m 05s | 55.8° |
+| Tunisia | Djerba (Houmt Souk) | 10:11:57 (UT+1) | 4m 40s | 56.6° |
+| Tunisia | Gafsa | 10:08:08 (UT+1) | 5m 08s | 54.1° |
+| Tunisia | Tozeur | 10:07:07 (UT+1) | 1m 42s | 53.5° |
+| Tunisia | Kasserine | 10:08:03 (UT+1) | 5m 27s | 53.9° |
+| Libya | Benghazi | 11:30:47 (UT+2) | 6m 09s | 67.8° |
+| Libya | Al Jaghbub | 11:42:25 (UT+2) | 5m 38s | 74.1° |
+| Sudan (north-east) | Halaib | 12:19:03 (UT+2) | 5m 14s | 79.8° |
+| Saudi Arabia | Jeddah | 13:25:14 (UT+3) | 6m 00s | 76.4° |
+| Saudi Arabia | Mecca | 13:26:39 (UT+3) | 5m 09s | 75.5° |
+| Saudi Arabia | Taif | 13:27:53 (UT+3) | 3m 56s | 74.7° |
+| Saudi Arabia | Abha | 13:37:10 (UT+3) | 6m 03s | 70.8° |
+| Saudi Arabia | Al Bahah | 13:32:03 (UT+3) | 5m 12s | 72.9° |
+| Saudi Arabia | Najran | 13:41:16 (UT+3) | 5m 14s | 68.1° |
+| Saudi Arabia | Jizan | 13:39:40 (UT+3) | 2m 56s | 70.0° |
+| Saudi Arabia | Al Lith | 13:29:39 (UT+3) | 6m 11s | 74.6° |
+| Saudi Arabia | Al Qunfudhah | 13:32:59 (UT+3) | 5m 57s | 73.1° |
+| Saudi Arabia | Khamis Mushait | 13:37:24 (UT+3) | 6m 00s | 70.5° |
+| Yemen | Sana'a | 13:45:13 (UT+3) | 2m 13s | 67.0° |
+| Yemen | Marib | 13:46:54 (UT+3) | 5m 43s | 65.5° |
+| Yemen | Ataq | 13:50:55 (UT+3) | 5m 47s | 63.0° |
+| Yemen | Sa'dah | 13:41:38 (UT+3) | 5m 54s | 68.4° |
+| Somalia (Puntland & Somaliland) | Bosaso | 14:00:05 (UT+3) | 3m 58s | 57.8° |
+| Somalia (Puntland & Somaliland) | Hafun | 14:04:22 (UT+3) | 5m 26s | 54.6° |
+| Somalia (Puntland & Somaliland) | Caluula | 14:01:03 (UT+3) | 4m 18s | 56.3° |
+| Somalia (Puntland & Somaliland) | Iskushuban | 14:03:14 (UT+3) | 3m 39s | 55.8° |
 
 The full table, including partial-eclipse cities, is in [`results/local_circumstances_all_cities.csv`](results/local_circumstances_all_cities.csv).
 

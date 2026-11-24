@@ -137,8 +137,8 @@ def fmt_hms(hours, offset=0.0, seconds=True):
 def fmt_dur(sec):
     if not np.isfinite(sec) or sec <= 0:
         return "—"
-    # whole seconds are truncated (as in NASA's tables): 6m 22.7s is shown as 6m 22s
-    m, s = divmod(int(sec + 1e-6), 60)
+    # rounded to the nearest second, as in NASA's and Espenak's published tables (6m 22.7s -> 6m 23s)
+    m, s = divmod(int(sec + 0.5), 60)
     return f"{m}m {s:02d}s"
 
 

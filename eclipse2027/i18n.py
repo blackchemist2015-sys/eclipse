@@ -109,7 +109,7 @@ def ar_count(n, one, two, few, many):
 def fmt_dur(sec, long=False):
     if sec is None or not np.isfinite(sec) or sec <= 0:
         return "—"
-    m, s = divmod(int(sec + 1e-6), 60)  # truncated, never rounded up
+    m, s = divmod(int(sec + 0.5), 60)  # nearest second, as in NASA/Espenak tables
     if is_ar():
         if long:
             mm = ar_count(m, "دقيقة واحدة", "دقيقتان", "دقائق", "دقيقة")
