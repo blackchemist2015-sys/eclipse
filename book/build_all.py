@@ -28,8 +28,8 @@ TITLES = {src: (NAMES[src] if src == 11 else f"الفصل {ORD_AR[i]}: {NAMES[sr
 EXCLUDE = set("""
 fig_1_28_central_paths_1951_2000 fig_1_41_nasa_iss_transit fig_1_42_nasa_citizen_science fig_1_43_nasa_orion
 fig_1_44_nasa_viewing fig_1_47_open_sdo_flare_earth_scale
-fig_8_03_eclipse_763bc_assyria fig_8_05_eclipse_1715_halley fig_8_06_eclipse_1851_first_photo fig_8_07_eclipse_1868_helium
-fig_8_09_eclipse_1919_eddington fig_8_11_eclipse_1973_concorde fig_8_12_eclipse_431bc_athens fig_8_14_delta_t_curve
+fig_8_03_eclipse_763bc_assyria fig_8_06_eclipse_1851_first_photo
+fig_8_11_eclipse_1973_concorde fig_8_12_eclipse_431bc_athens fig_8_14_delta_t_curve
 fig_2_09_eclipse_978 fig_2_11_history_eclipse_1004 fig_2_12_history_lunar_cairo fig_2_15_eclipse_1882_comet_tewfik
 fig_2_18_eclipse_2006_story fig_2_20_central_eclipses_egypt_table fig_2_21_cairo_luxor_all_eclipses
 fig_2_22_central_eclipses_four_cities_1000_2050 fig_2_25_monuments_map
@@ -47,11 +47,12 @@ fig_6_05_governorate_minya fig_6_06_governorate_aswan fig_6_09_governorate_matro
 fig_6_12_governorate_faiyum fig_6_13_governorate_cairo fig_6_14_governorate_south_sinai fig_6_18_delta_cairo
 fig_6_19_sinai fig_6_20_egypt_shadow_1275 fig_6_21_egypt_shadow_1285 fig_6_22_egypt_shadow_1295
 fig_6_23_egypt_shadow_1305 fig_6_24_egypt_shadow_1315 fig_6_25_egypt_shadow_1325
-fig_11_06_region_2026_08_12 fig_11_07_region_2027_02_06 fig_11_08_region_2027_08_02 fig_11_09_region_2028_01_26
-fig_11_10_region_2030_06_01 fig_11_11_region_2030_11_25 fig_11_12_region_2031_05_21 fig_11_13_region_2034_03_20
-fig_11_14_region_2038_01_05 fig_11_15_region_2038_07_02 fig_11_16_region_2041_04_30
+fig_11_06_region_2026_08_12 fig_11_08_region_2027_08_02
+fig_11_11_region_2030_11_25 fig_11_12_region_2031_05_21
+fig_11_14_region_2038_01_05 fig_11_15_region_2038_07_02
 """.split())
-ATLAS_KEEP = ("01_", "02_", "03_", "04_", "10_", "15_", "16_")   # the other atlas maps repeat chapter 4, 9 and 10 maps
+ATLAS_KEEP = ("01_", "02_", "03_", "04_", "10_", "15_", "16_",          # general maps; Arab countries are in chapter 9
+              "17_", "20_", "25_", "28_", "34_", "39_", "41_")             # a selection of Egyptian city maps with phases
 
 
 def renumber(cat):
