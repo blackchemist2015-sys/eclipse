@@ -4,8 +4,8 @@ of the path of totality (computed from NASA's Besselian elements), in the manner
 import numpy as np
 
 import mapkit as MK
-from common import (A, BLUE, INK, INK2, LINE, MUTED, NAVY, PAPER, RED, ROOT, SUN, SUN_DEEP, TITLE, canvas, footer,
-                    halo, header, page, plt, save, write_catalogue)
+from common import (A, BLUE, INK, INK2, LINE, MUTED, NAVY, PAPER, RED, ROOT, SUN, SUN_DEEP, TITLE, canvas, card,
+                    footer, halo, header, number_badge, page, para, plt, save, wrap, write_catalogue)
 from eclipse2027 import besselian, circumstances as C, i18n as I
 
 CH = 12
@@ -386,6 +386,233 @@ def fig_travel():
     footer(fig, "مقتبس بتصرف من دليل جيمي وجيل كارتر (٢٠٢٦) ودليل فريد إسبيناك (٢٠٢٤).")
     save(fig, CH, "travel_tips_egypt", "نصائح عملية للسفر والرصد في مصر يوم الكسوف.")
 
+# ------------------------------------------------------------------ famous sites inside and outside the path (computed)
+LANDMARKS = [("معبد الكرنك", 25.7188, 32.6573), ("وادي الملوك", 25.7402, 32.6014), ("معبد الأقصر", 25.6995, 32.6391),
+             ("معبد دندرة", 26.1418, 32.6703), ("معبد سيتي الأول بأبيدوس", 26.1850, 31.9190), ("أخميم", 26.5627, 31.7473),
+             ("معبد إسنا", 25.2934, 32.5543), ("معبد إدفو", 24.9779, 32.8734), ("معبد كوم أمبو", 24.4521, 32.9284),
+             ("تل العمارنة", 27.6450, 30.8970), ("الواحات البحرية", 28.3490, 28.8650), ("معبد الوحي بسيوة", 29.2006, 25.5469),
+             ("مرسى علم", 25.0676, 34.8790),
+             ("أهرامات الجيزة", 29.9792, 31.1342), ("سقارة", 29.8713, 31.2165), ("قلعة قايتباي بالإسكندرية", 31.2140, 29.8856),
+             ("معبد فيلة بأسوان", 24.0254, 32.8844), ("أبو سمبل", 22.3372, 31.6258), ("الغردقة", 27.2579, 33.8116),
+             ("شرم الشيخ", 27.9158, 34.3300), ("دير سانت كاترين", 28.5559, 33.9760)]
+
+
+def fig_landmarks():
+    la = np.array([q[1] for q in LANDMARKS])
+    lo = np.array([q[2] for q in LANDMARKS])
+    r = C.local_circumstances(B, la, lo)
+    rows = [(n, float(r["duration_s"][k]), float(r["obscuration"][k]) * 100) for k, (n, _, _) in enumerate(LANDMARKS)]
+    inside = sorted([q for q in rows if q[1] > 0], key=lambda q: -q[1])
+    outside = sorted([q for q in rows if q[1] <= 0], key=lambda q: -q[2])
+    n = len(inside) + len(outside)
+    H = 2.6 + 0.30 * n
+    fig = page(8.6, H)
+    header(fig, "معالم مصر داخل مسار الكلية وخارجه",
+           "مدة الكلية عند المعالم الواقعة في المسار، ونسبة تغطية الشمس عند المعالم خارجه (محسوبة)")
+    top, bot = 1 - 1.35 / H, 0.75 / H
+    gap = 0.55 / H
+    h_in = (top - bot - gap) * len(inside) / n
+    h_out = (top - bot - gap) * len(outside) / n
+    a1 = fig.add_axes([0.06, top - h_in, 0.58, h_in])
+    a2 = fig.add_axes([0.06, bot, 0.58, h_out])
+    y = np.arange(len(inside))[::-1]
+    a1.barh(y, [q[1] / 60 for q in inside], color=BLUE[8], height=0.62)
+    for yi, q in zip(y, inside):
+        a1.text(q[1] / 60 + 0.08, yi, I.fmt_dur(q[1]), va="center", ha="left", fontsize=8.6, color=NAVY)
+    a1.set_yticks(y)
+    a1.set_yticklabels([q[0] for q in inside], fontsize=9.2)
+    a1.yaxis.tick_right()
+    a1.set_xlim(0, 7.6)
+    a1.set_xticks(range(0, 8))
+    a1.set_xticklabels([A(v) for v in range(0, 8)], fontsize=8)
+    a1.set_title("داخل المسار: مدة الكلية (دقائق)", loc="right", fontsize=10.5, fontweight="bold", color=NAVY)
+    y2 = np.arange(len(outside))[::-1]
+    a2.barh(y2, [q[2] for q in outside], color=SUN_DEEP, height=0.62)
+    for yi, q in zip(y2, outside):
+        a2.text(q[2] + 1, yi, I.pct(q[2]), va="center", ha="left", fontsize=8.6, color=INK2)
+    a2.set_yticks(y2)
+    a2.set_yticklabels([q[0] for q in outside], fontsize=9.2)
+    a2.yaxis.tick_right()
+    a2.set_xlim(0, 118)
+    a2.set_xticks([0, 25, 50, 75, 100])
+    a2.set_xticklabels([A(v) + "٪" for v in (0, 25, 50, 75, 100)], fontsize=8)
+    a2.set_title("خارج المسار: جزئي فقط — لا هالة ولا ظلام، والنظارة طوال الوقت", loc="right", fontsize=10.5, fontweight="bold",
+                 color=SUN_DEEP)
+    for ax in (a1, a2):
+        for s_ in ("top", "left"):
+            ax.spines[s_].set_visible(False)
+        ax.tick_params(axis="y", length=0)
+        ax.grid(axis="x", color=LINE, lw=0.7)
+        ax.set_axisbelow(True)
+    footer(fig, SRC + ". إن كانت رحلتك النيلية تنتهي في أسوان فتأكد أن برنامجها يتوقف يوم الكسوف داخل المسار قرب الأقصر.")
+    save(fig, CH, "egypt_landmarks_in_out", "معالم مصر الشهيرة داخل مسار الكلية وخارجه: مدة الكلية أو نسبة التغطية (محسوبة).",
+         "chart")
+
+
+# ------------------------------------------------------------------ heat on eclipse day
+def heat_index_c(t_c, rh):
+    """NOAA heat index (Rothfusz regression with the usual adjustments), °C in and out."""
+    T = t_c * 9 / 5 + 32
+    simple = 0.5 * (T + 61.0 + (T - 68.0) * 1.2 + rh * 0.094)
+    hi = (-42.379 + 2.04901523 * T + 10.14333127 * rh - 0.22475541 * T * rh - 6.83783e-3 * T * T
+          - 5.481717e-2 * rh * rh + 1.22874e-3 * T * T * rh + 8.5282e-4 * T * rh * rh - 1.99e-6 * T * T * rh * rh)
+    adj_lo = np.where((rh < 13) & (T >= 80) & (T <= 112), -((13 - rh) / 4) * np.sqrt(np.clip(17 - np.abs(T - 95), 0, None) / 17), 0)
+    adj_hi = np.where((rh > 85) & (T >= 80) & (T <= 87), ((rh - 85) / 10) * ((87 - T) / 5), 0)
+    hi = np.where((simple + T) / 2 < 80, simple, hi + adj_lo + adj_hi)
+    return (hi - 32) * 5 / 9
+
+
+def fig_heat_index():
+    from matplotlib.colors import BoundaryNorm, ListedColormap
+    t = np.arange(30, 47.01, 0.25)
+    rh = np.arange(5, 80.01, 0.5)
+    TT, RR = np.meshgrid(t, rh)
+    HI = heat_index_c(TT, RR)
+    fig = page(8.6, 6.6)
+    header(fig, "الحرارة المحسوسة: الرطوبة تصنع الفرق",
+           "ما يشعر به الجسم عند كل درجة حرارة ورطوبة نسبية (مؤشر الحرارة، Heat index) — محسوب بمعادلة الهيئة الأمريكية للمحيطات والغلاف الجوي")
+    ax = fig.add_axes([0.11, 0.17, 0.68, 0.62])
+    lv = [20, 27, 32, 41, 54, 80]
+    cols = ["#fdf1c7", "#f8d27a", "#f0a041", "#d9622b", "#9e1f1f"]
+    ax.contourf(TT, RR, HI, levels=lv, colors=cols)
+    cs = ax.contour(TT, RR, HI, levels=[35, 40, 45, 50], colors="white", linewidths=0.7)
+    ax.clabel(cs, fmt=lambda v: A(f"{v:.0f}") + "°", fontsize=8)
+    # Luxor in August: dry desert heat (about 40-42 °C, relative humidity 10-20 %)
+    ax.add_patch(plt.Rectangle((40, 10), 2, 10, fc="none", ec=NAVY, lw=1.8, zorder=5))
+    ax.annotate("ظهيرة الأقصر في أغسطس\n(جاف: رطوبة ١٠–٢٠٪)", (41, 20), xytext=(36.2, 33), fontsize=9, color=NAVY,
+                fontweight="bold", ha="center", path_effects=halo(),
+                arrowprops=dict(arrowstyle="-", color=NAVY, lw=0.9), zorder=6)
+    ax.annotate("الساحل الرطب (مثل جدة):\nحرارة أقل ورطوبة أعلى،\nوإحساس أشد", (37.5, 62), xytext=(33.0, 70), fontsize=9,
+                color=NAVY, fontweight="bold", ha="center", path_effects=halo(), zorder=6)
+    ax.set_xlabel("درجة حرارة الهواء (°م)")
+    ax.set_ylabel("الرطوبة النسبية (٪)")
+    ax.set_xticks(range(30, 48, 2))
+    ax.set_xticklabels([A(v) for v in range(30, 48, 2)])
+    ax.set_yticks(range(10, 81, 10))
+    ax.set_yticklabels([A(v) for v in range(10, 81, 10)])
+    # legend of danger bands
+    lx = fig.add_axes([0.83, 0.25, 0.14, 0.46])
+    lx.axis("off")
+    bands = [("حذر", "٢٧–٣٢°"), ("حذر شديد", "٣٢–٤١°"), ("خطر", "٤١–٥٤°"), ("خطر بالغ", "فوق ٥٤°")]
+    for k, ((nm, rg), c) in enumerate(zip(bands, cols[1:])):
+        yy = 0.9 - k * 0.24
+        lx.add_patch(plt.Rectangle((0.62, yy - 0.07), 0.3, 0.14, fc=c, ec="none", transform=lx.transAxes))
+        lx.text(0.56, yy + 0.03, nm, ha="right", va="center", fontsize=9.2, fontweight="bold", color=INK)
+        lx.text(0.56, yy - 0.05, rg, ha="right", va="center", fontsize=8.2, color=INK2)
+    footer(fig, "مؤشر الحرارة: معادلة روثفوز (NOAA) محسوبة بالمؤلف؛ نطاق الأقصر من دليل أودن كسترل (٢٠٢٦) وبيانات المناخ. "
+                "في الشمس المباشرة يزيد الإحساس بالحرارة عدة درجات أخرى.")
+    save(fig, CH, "heat_index_chart", "مؤشر الحرارة المحسوسة بحسب درجة الحرارة والرطوبة، وموقع ظهيرة الأقصر في أغسطس (محسوب).",
+         "chart")
+
+
+def fig_heat_illness():
+    fig = page(8.6, 6.4)
+    ax = canvas(fig)
+    header(fig, "الإجهاد الحراري وضربة الشمس: اعرف الفرق",
+           "ساعات الانتظار في شمس أغسطس أخطر على الجسم من الكسوف نفسه — والوقاية أسهل من العلاج")
+    cols = [(0.52, "الإجهاد الحراري", "Heat exhaustion", SUN_DEEP,
+             ["تعرّق غزير وجلد بارد رطب", "ضعف ودوار وصداع", "غثيان وتشنّج العضلات", "نبض سريع ضعيف"],
+             ["انقله إلى الظل أو مكان مكيّف", "فكّ الملابس الضيقة", "رشفات ماء أو محلول أملاح", "بلّل الجلد بالماء"]),
+            (0.04, "ضربة الشمس", "Heat stroke — حالة طارئة", RED,
+             ["حرارة الجسم مرتفعة جدًا", "جلد ساخن جاف وقد يتوقف التعرق", "ارتباك أو هذيان", "نبض سريع قوي، وقد يفقد الوعي"],
+             ["اطلب الإسعاف فورًا", "برّده بكل وسيلة: ماء وظل وتهوية", "لا تعطه ماءً إن كان فاقد الوعي",
+              "ابقَ معه حتى يصل الإسعاف"])]
+    for x, t1, t2, c, signs, acts in cols:
+        card(ax, x, 0.275, 0.44, 0.545, fc="white", ec=c, lw=1.6)
+        ax.add_patch(plt.Rectangle((x, 0.74), 0.44, 0.08, fc=c, ec="none", transform=ax.transAxes))
+        ax.text(x + 0.42, 0.78, t1, ha="right", va="center", fontsize=13, fontweight="bold", color="white")
+        ax.text(x + 0.02, 0.78, t2, ha="left", va="center", fontsize=8.6, color="white")
+        ax.text(x + 0.42, 0.70, "العلامات", ha="right", fontsize=10, fontweight="bold", color=c)
+        for k, sg in enumerate(signs):
+            ax.text(x + 0.42, 0.655 - k * 0.042, "• " + sg, ha="right", va="center", fontsize=9.4, color=INK)
+        ax.text(x + 0.42, 0.475, "ماذا تفعل؟", ha="right", fontsize=10, fontweight="bold", color=c)
+        for k, sg in enumerate(acts):
+            ax.text(x + 0.42, 0.432 - k * 0.039, "• " + sg, ha="right", va="center", fontsize=9.4, color=INK)
+    tips = ("الوقاية: اشرب قبل أن تعطش وعلى فترات منتظمة • أضف أملاحًا (مشروب أملاح أو وجبة مالحة) • "
+            "قلّل الكافيين • البس ملابس فاتحة واسعة وقبعة عريضة • احمل ظلك معك (مظلة أو خيمة شمسية) • "
+            "انتبه أكثر للأطفال وكبار السن ومرضى القلب ومن يتناول مدرّات البول")
+    para(ax, 0.96, 0.225, tips, width=95, size=9.6, color=NAVY)
+    footer(fig, "مبني على إرشادات المراكز الأمريكية لمكافحة الأمراض (CDC) كما يلخصها دليل أودن كسترل (٢٠٢٦)، بتصرف. ليس بديلًا عن المشورة الطبية.")
+    save(fig, CH, "heat_illness_card", "علامات الإجهاد الحراري وضربة الشمس وما يجب فعله في كل منهما.")
+
+
+# ------------------------------------------------------------------ the morning decision: move or stay?
+def fig_backup_plan():
+    r = C.local_circumstances(B, np.array([25.6872]), np.array([32.6396]))
+    c1 = float(r["c1"][0]) + 3
+    fig = page(8.6, 8.0)
+    ax = canvas(fig)
+    header(fig, "الخطة البديلة: هل تنتقل صباح الكسوف أم تبقى؟",
+           "قرار يُتخذ بهدوء قبل الرحلة لا تحت ضغط الصباح — مثال من الأقصر حيث تبدأ المرحلة الجزئية "
+           + I.fmt_time(c1, seconds=False))
+    steps = [("قبل الرحلة", "اختر موقعًا رئيسيًا وموقعين بديلين داخل البلد نفسه، تصلها طرق مختلفة، وحدّد مسبقًا ساعة القرار."),
+             ("مساء ١ أغسطس", "اطّلع على التوقعات قصيرة المدى: قراءة أولية فقط، لا قرار نهائي."),
+             ("صباح ٢ أغسطس", "صور الأقمار الصناعية المرئية تتاح بعد الشروق؛ والكسوف في مصر بعد الظهر فلديك وقت أطول للتقييم."),
+             ("ساعة القرار", "التزم بها: الانتظار «لتحديث أخير» قد يُضيّع فرصة الانتقال كلها.")]
+    y = 0.80
+    for k, (h, t) in enumerate(steps):
+        number_badge(ax, 0.94, y, k + 1, color=NAVY)
+        ax.text(0.90, y + 0.012, h, ha="right", va="center", fontsize=11, fontweight="bold", color=NAVY)
+        ax.text(0.90, y - 0.026, t, ha="right", va="center", fontsize=9.4, color=INK)
+        if k < len(steps) - 1:
+            ax.plot([0.94, 0.94], [y - 0.03, y - 0.075], color=LINE, lw=2, transform=ax.transAxes)
+        y -= 0.10
+    # the four questions
+    card(ax, 0.05, 0.14, 0.90, 0.30, fc="white", ec=LINE)
+    ax.text(0.93, 0.405, "قبل أن تتحرك اسأل نفسك أربعة أسئلة:", ha="right", fontsize=11, fontweight="bold", color=RED)
+    qs = ["هل الموقع البديل أصفى فعلًا بحسب صور الأقمار الصناعية، لا بحسب الأمل؟",
+          "هل الطريق إليه سالك، مع أن آلافًا غيرك قد يفكرون في الشيء نفسه؟",
+          "هل ستصل قبل التماس الأول بهامش مريح؟",
+          "ما خطتك إن تعطلت في الطريق؟"]
+    for k, q in enumerate(qs):
+        ax.text(0.91, 0.355 - k * 0.045, f"{A(k + 1)}. {q}", ha="right", va="center", fontsize=9.6, color=INK)
+    ax.text(0.93, 0.17, "إن كانت إجابة أي سؤال غامضة أو سلبية فابقَ في مكانك: كسوف خلف سحب خفيفة أفضل من كلية تفوتك في زحام الطريق.",
+            ha="right", va="center", fontsize=9.6, fontweight="bold", color=NAVY)
+    ax.text(0.5, 0.085, "لا تخطط لعبور حدود دولية صباح الكسوف بحثًا عن طقس أفضل.", ha="center", fontsize=10,
+            fontweight="bold", color=RED)
+    footer(fig, "مبادئ مقتبسة بتصرف من دليل أودن كسترل (٢٠٢٦)؛ موعد التماس الأول في الأقصر من حسابات المؤلف.")
+    save(fig, CH, "backup_plan_decision", "الخطة البديلة صباح الكسوف: خطوات القرار والأسئلة الأربعة قبل الانتقال.")
+
+
+# ------------------------------------------------------------------ eclipse day hour by hour in Luxor (computed)
+def fig_day_plan():
+    from skyfield.api import wgs84
+    la, lo = 25.6872, 32.6396
+    r = C.local_circumstances(B, np.array([la]), np.array([lo]))
+    c1, c2, mx, c3, c4 = (float(r[k][0]) + 3 for k in ("c1", "c2", "tmax", "c3", "c4"))
+    ts, eph = besselian.ephemeris()
+    hrs = np.arange(4.0, 8.0, 1 / 120)
+    t = ts.ut1(2027, 8, 2, 0, 0, (hrs - 3) * 3600)
+    alt = (eph["earth"] + wgs84.latlon(la, lo)).at(t).observe(eph["sun"]).apparent().altaz()[0].degrees
+    sunrise = float(hrs[np.argmax(alt > -0.833)])
+    ev = [(c1 - 2.5, "قبل التماس الأول بساعتين على الأقل", "الوصول إلى موقع الرصد: ثبّت الحامل، وزّع النظارات، واتفق مع مجموعتك على نقطة لقاء.", INK2),
+          (sunrise, "الشروق", "أول صور الأقمار الصناعية المرئية: راجع السماء والتوقعات وطبّق خطة القرار.", INK2),
+          (c1, "التماس الأول", "انبعاج صغير في حافة الشمس — بالنظارة فقط. اشرب الماء وجدّد واقي الشمس.", SUN_DEEP),
+          (c2 - 0.5, "قبل الكلية بنحو ٣٠ دقيقة", "الضوء يبهت والظلال تحدّ والحرارة تبدأ في الانخفاض: انتقل من المتابعة إلى الاستعداد.", SUN_DEEP),
+          (c2 - 5 / 60, "قبل الكلية بخمس دقائق", "أوقف اللقطات الروتينية، واضبط إعدادات الكلية، وذكّر الجميع: النظارة تبقى حتى يختفي الضوء.", SUN_DEEP),
+          (c2, "بداية الكلية", "اختفاء آخر نقطة في الخاتم الماسي: انزع النظارة ومرشّح الكاميرا. انظر إلى الهالة والأفق.", NAVY),
+          (c3 - 0.5 / 60, "قبل نهاية الكلية بـ٣٠ ثانية", "تنبيه اهتزاز هادئ في الهاتف بدل التحديق في الساعة.", NAVY),
+          (c3, "نهاية الكلية", "أول وميض للضوء: النظارة والمرشّح فورًا، بلا تأخير ولو ثانية.", RED),
+          (c4, "التماس الأخير", "تفقّد المكان لئلا تنسى مرشّحًا أو غطاء عدسة، وانتظر قليلًا حتى يخف زحام الطرق.", INK2)]
+    ev.sort(key=lambda e: e[0])
+    H = 1.9 + 0.72 * len(ev)
+    fig = page(8.6, H)
+    ax = canvas(fig)
+    header(fig, "يوم الكسوف في الأقصر ساعةً بساعة",
+           f"مواعيد محسوبة بتوقيت مصر الصيفي — الكلية {I.fmt_time(c2)} إلى {I.fmt_time(c3)} ({I.fmt_dur(float(r['duration_s'][0]))})")
+    y0, step = 1 - 1.45 / H, 0.72 / H
+    ax.plot([0.80, 0.80], [y0 + 0.2 / H, y0 - step * (len(ev) - 1) - 0.1 / H], color=LINE, lw=3, transform=ax.transAxes)
+    for k, (tt, h, d, c) in enumerate(ev):
+        y = y0 - k * step
+        ax.add_patch(plt.Circle((0.80, y), 0.014, transform=ax.transAxes, fc=c, ec="white", lw=1.5, zorder=4))
+        ax.text(0.83, y, I.fmt_time(tt, seconds=c in (NAVY, RED)) if "بساعتين" not in h else "≈ " + I.fmt_time(tt, seconds=False),
+                ha="left", va="center", fontsize=11, fontweight="bold", color=c)
+        ax.text(0.77, y + 0.13 / H, h, ha="right", va="center", fontsize=10.5, fontweight="bold", color=c)
+        ax.text(0.77, y - 0.17 / H, d, ha="right", va="center", fontsize=9.1, color=INK)
+    footer(fig, SRC + "؛ الشروق من تقويم JPL DE421. ترتيب الخطوات مستوحى بتصرف من «خطة الحقل» في دليل أودن كسترل (٢٠٢٦).")
+    save(fig, CH, "eclipse_day_luxor", "يوم الكسوف في الأقصر ساعةً بساعة: المواعيد المحسوبة وما تفعله عند كل مرحلة.")
+
+
 
 def main():
     rows = compute()
@@ -401,6 +628,11 @@ def main():
     fig_sites(2)
     fig_pros_cons()
     fig_travel()
+    fig_landmarks()
+    fig_heat_index()
+    fig_heat_illness()
+    fig_backup_plan()
+    fig_day_plan()
     write_catalogue("ch12")
 
 

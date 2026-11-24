@@ -142,5 +142,45 @@
   "file": "figures/ch12/fig_12_18_travel_tips_egypt.png",
   "caption": "نصائح عملية للسفر والرصد في مصر يوم الكسوف.",
   "kind": "infographic"
+ },
+ {
+  "chapter": 12,
+  "number": "12-19",
+  "number_ar": "١٩-١٢",
+  "file": "figures/ch12/fig_12_19_egypt_landmarks_in_out.png",
+  "caption": "معالم مصر الشهيرة داخل مسار الكلية وخارجه: مدة الكلية أو نسبة التغطية (محسوبة).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 12,
+  "number": "12-20",
+  "number_ar": "٢٠-١٢",
+  "file": "figures/ch12/fig_12_20_heat_index_chart.png",
+  "caption": "مؤشر الحرارة المحسوسة بحسب درجة الحرارة والرطوبة، وموقع ظهيرة الأقصر في أغسطس (محسوب).",
+  "kind": "chart"
+ },
+ {
+  "chapter": 12,
+  "number": "12-21",
+  "number_ar": "٢١-١٢",
+  "file": "figures/ch12/fig_12_21_heat_illness_card.png",
+  "caption": "علامات الإجهاد الحراري وضربة الشمس وما يجب فعله في كل منهما.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 12,
+  "number": "12-22",
+  "number_ar": "٢٢-١٢",
+  "file": "figures/ch12/fig_12_22_backup_plan_decision.png",
+  "caption": "الخطة البديلة صباح الكسوف: خطوات القرار والأسئلة الأربعة قبل الانتقال.",
+  "kind": "infographic"
+ },
+ {
+  "chapter": 12,
+  "number": "12-23",
+  "number_ar": "٢٣-١٢",
+  "file": "figures/ch12/fig_12_23_eclipse_day_luxor.png",
+  "caption": "يوم الكسوف في الأقصر ساعةً بساعة: المواعيد المحسوبة وما تفعله عند كل مرحلة.",
+  "kind": "infographic"
  }
 ]

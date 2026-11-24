@@ -19,9 +19,39 @@ BOOK_ORDER = [1, 8, 2, 3, 4, 9, 5, 10, 12, 6, 7, 11]
 ORD_AR = ["الأول", "الثاني", "الثالث", "الرابع", "الخامس", "السادس", "السابع", "الثامن", "التاسع", "العاشر", "الحادي عشر", "الثاني عشر"]
 NAMES = {1: "الأساس العلمي للكسوف", 8: "توثيق الكسوف عبر التاريخ", 2: "الكسوف في تاريخ مصر",
          3: "كسوف ٢ أغسطس ٢٠٢٧", 4: "الرصد الآمن", 9: "تجارب علمية تمهيدية", 5: "تصوير الكسوف",
-         10: "تطبيقات وأدوات التخطيط", 6: "خرائط إضافية", 7: "الأطلس — ٤١ خريطة بالعربية",
+         10: "تطبيقات وأدوات التخطيط", 6: "خرائط إضافية", 7: "الأطلس: خرائط المسار ومصر",
          11: "ملحق: كل كسوفات الشمس ٢٠٢٤–٢٠٤٥", 12: "الكسوف في المدن العربية: مواعيد وخرائط ومواقع"}
 TITLES = {src: (NAMES[src] if src == 11 else f"الفصل {ORD_AR[i]}: {NAMES[src]}") for i, src in enumerate(BOOK_ORDER)}
+
+# Figures left out of the book to keep it under 250 pages (they are still drawn; the text that introduced them moves to
+# the next figure kept in the same chapter). Keys are file names without extension.
+EXCLUDE = set("""
+fig_1_28_central_paths_1951_2000 fig_1_41_nasa_iss_transit fig_1_42_nasa_citizen_science fig_1_43_nasa_orion
+fig_1_44_nasa_viewing fig_1_47_open_sdo_flare_earth_scale
+fig_8_03_eclipse_763bc_assyria fig_8_05_eclipse_1715_halley fig_8_06_eclipse_1851_first_photo fig_8_07_eclipse_1868_helium
+fig_8_09_eclipse_1919_eddington fig_8_11_eclipse_1973_concorde fig_8_12_eclipse_431bc_athens fig_8_14_delta_t_curve
+fig_2_09_eclipse_978 fig_2_11_history_eclipse_1004 fig_2_12_history_lunar_cairo fig_2_15_eclipse_1882_comet_tewfik
+fig_2_18_eclipse_2006_story fig_2_20_central_eclipses_egypt_table fig_2_21_cairo_luxor_all_eclipses
+fig_2_22_central_eclipses_four_cities_1000_2050 fig_2_25_monuments_map
+fig_3_05_shadow_0850 fig_3_08_shadow_0975 fig_3_11_shadow_1025 fig_3_12_shadow_1050 fig_3_14_shadow_1150
+fig_3_30_city_card_minya fig_3_31_city_card_beni_suef fig_3_32_city_card_faiyum fig_3_34_city_card_giza
+fig_3_36_city_card_hurghada fig_3_37_city_card_safaga fig_3_38_city_card_el_quseir fig_3_40_city_card_kharga
+fig_3_41_city_card_mut_dakhla_oasis fig_3_42_city_card_edfu fig_3_43_city_card_kom_ombo fig_3_44_city_card_esna
+fig_3_45_city_card_abu_simbel fig_3_46_city_card_sharm_el_sheikh fig_3_47_city_card_siwa fig_3_49_city_card_berenice
+fig_4_10_glasses_timeline_sohag fig_4_12_glasses_timeline_aswan fig_4_13_glasses_timeline_asyut
+fig_4_14_glasses_timeline_hurghada fig_4_18_heat_safety fig_4_19_where_to_watch_egypt
+fig_5_08_exposure_table_f80 fig_5_09_exposure_table_f110 fig_5_13_tripod_drift_limit fig_5_15_totality_plan_sohag
+fig_5_17_sequence_plan_cairo fig_5_18_sequence_plan_aswan fig_5_19_sequence_plan_hurghada fig_5_20_wide_angle_needed
+fig_5_24_processing_workflow fig_5_27_vibration_free fig_5_29_camera_types
+fig_6_05_governorate_minya fig_6_06_governorate_aswan fig_6_09_governorate_matrouh fig_6_11_governorate_beni_suef
+fig_6_12_governorate_faiyum fig_6_13_governorate_cairo fig_6_14_governorate_south_sinai fig_6_18_delta_cairo
+fig_6_19_sinai fig_6_20_egypt_shadow_1275 fig_6_21_egypt_shadow_1285 fig_6_22_egypt_shadow_1295
+fig_6_23_egypt_shadow_1305 fig_6_24_egypt_shadow_1315 fig_6_25_egypt_shadow_1325
+fig_11_06_region_2026_08_12 fig_11_07_region_2027_02_06 fig_11_08_region_2027_08_02 fig_11_09_region_2028_01_26
+fig_11_10_region_2030_06_01 fig_11_11_region_2030_11_25 fig_11_12_region_2031_05_21 fig_11_13_region_2034_03_20
+fig_11_14_region_2038_01_05 fig_11_15_region_2038_07_02 fig_11_16_region_2041_04_30
+""".split())
+ATLAS_KEEP = ("01_", "02_", "03_", "04_", "10_", "15_", "16_")   # the other atlas maps repeat chapter 4, 9 and 10 maps
 
 
 def renumber(cat):
@@ -68,7 +98,7 @@ def arabic_maps_catalogue():
     from eclipse2027.maps import slug
     I.set_lang("ar")
     out = []
-    files = sorted(f for f in os.listdir(os.path.join(ROOT, "maps_ar")) if f.endswith(".png"))
+    files = sorted(f for f in os.listdir(os.path.join(ROOT, "maps_ar")) if f.endswith(".png") and f.startswith(ATLAS_KEEP))
     city_by_slug = {slug(n): n for n, *_ in EGYPT_CITIES}
     for k, f in enumerate(files, 1):
         key = f[3:-4]
@@ -93,6 +123,7 @@ def write_index():
         p = os.path.join(FIG, f"catalogue_ch{n}.json")
         cat += json.load(open(p, encoding="utf-8"))
     cat += arabic_maps_catalogue()
+    cat = [c for c in cat if os.path.splitext(os.path.basename(c["file"]))[0] not in EXCLUDE]
     cat = renumber(cat)
     json.dump(cat, open(os.path.join(HERE, "catalogue.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     kinds = {"map": "خريطة", "chart": "رسم بياني", "infographic": "إنفوجرافيك", "photo": "صورة"}

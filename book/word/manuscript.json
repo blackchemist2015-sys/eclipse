@@ -10,7 +10,7 @@
    "p",
    [
     [
-     "في ظهيرة الإثنين الثاني من أغسطس عام ٢٠٢٧ يمر ظل القمر فوق صعيد مصر، فيتحول النهار إلى ليل لبضع دقائق، وتظهر هالة الشمس الفضية حول قرص مظلم في كبد السماء. وهو كسوف من أطول الكسوفات الكلية في القرن الحادي والعشرين: تبلغ مدته العظمى ست دقائق وثلاثًا وعشرين ثانية، عند نقطة أطول مدة غرب النيل بمحافظة سوهاج وعند نقطة أعظم كسوف في الصحراء الشرقية قرب الأقصر، والشمس شبه عمودية",
+     "في ظهيرة الإثنين الثاني من أغسطس عام ٢٠٢٧ يمر ظل القمر فوق صعيد مصر، فيتحول النهار إلى ليل لبضع دقائق، وتظهر هالة الشمس الفضية حول قرص مظلم في كبد السماء. وهو كسوف من أطول الكسوفات الكلية في القرن الحادي والعشرين: تبلغ مدته العظمى ست دقائق وثلاثًا وعشرين ثانية، عند نقطة أطول مدة في الصحراء غرب النيل قرب طهطا وعند نقطة أعظم كسوف في الصحراء الشرقية قرب الأقصر، والشمس شبه عمودية",
      false
     ],
     [
@@ -27,7 +27,7 @@
    "p",
    [
     [
-     "يقدّم هذا الكتاب الحدث في عشرة فصول: يبدأ بالأساس العلمي لظاهرة الكسوف، ثم يروي كيف وثّق البشر الكسوف عبر التاريخ، ثم تاريخ الكسوفات في مصر من الأسطورة إلى الحساب الدقيق، ثم يفصّل كسوف ٢٠٢٧ مدينةً مدينة، ويخصص فصولًا للرصد الآمن والتجارب العلمية والتصوير وتطبيقات التخطيط، وينتهي بخرائط إضافية وأطلس عربي كامل.",
+     "يقدّم هذا الكتاب الحدث في أحد عشر فصلًا وملحق: يبدأ بالأساس العلمي لظاهرة الكسوف، ثم يروي كيف وثّق البشر الكسوف عبر التاريخ، ثم تاريخ الكسوفات في مصر من الأسطورة إلى الحساب الدقيق، ثم يفصّل كسوف ٢٠٢٧ مدينةً مدينة، ويخصص فصولًا للرصد الآمن والتجارب العلمية والتصوير وتطبيقات التخطيط، ثم مواعيد الكسوف في المدن العربية والتخطيط ليوم الكسوف، وينتهي بخرائط إضافية وأطلس.",
      false
     ]
    ]
@@ -817,19 +817,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch1/fig_1_28_central_paths_1951_2000.png",
-     "number": "٢٨-١",
-     "caption": [
-      [
-       "خطوط مركز جميع الكسوفات الكلية والحلقية والهجينة ١٩٥١–٢٠٠٠ (محسوبة).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
      "file": "figures/ch1/fig_1_29_central_paths_2001_2050.png",
-     "number": "٢٩-١",
+     "number": "٢٨-١",
      "caption": [
       [
        "خطوط مركز جميع الكسوفات الكلية والحلقية والهجينة ٢٠٠١–٢٠٥٠ (محسوبة).",
@@ -853,7 +842,7 @@
     {
      "type": "figure",
      "file": "figures/ch1/fig_1_30_sky_during_totality_luxor.png",
-     "number": "٣٠-١",
+     "number": "٢٩-١",
      "caption": [
       [
        "خريطة سماء الأقصر لحظة ذروة الكلية: مواقع الكواكب والنجوم الساطعة (محسوبة).",
@@ -864,7 +853,7 @@
     {
      "type": "figure",
      "file": "figures/ch1/fig_1_31_light_levels.png",
-     "number": "٣١-١",
+     "number": "٣٠-١",
      "caption": [
       [
        "مقارنة تقريبية لشدة الإضاءة أثناء الكسوف الكلي بمواقف يومية.",
@@ -875,7 +864,7 @@
     {
      "type": "figure",
      "file": "figures/ch1/fig_1_32_what_changes.png",
-     "number": "٣٢-١",
+     "number": "٣١-١",
      "caption": [
       [
        "تغيرات بيئية يلاحظها الراصدون أثناء الكسوف الكلي.",
@@ -886,7 +875,7 @@
     {
      "type": "figure",
      "file": "figures/ch1/fig_1_33_future_of_eclipses.png",
-     "number": "٣٣-١",
+     "number": "٣٢-١",
      "caption": [
       [
        "ابتعاد القمر التدريجي ومستقبل الكسوفات الكلية.",
@@ -910,7 +899,7 @@
     {
      "type": "figure",
      "file": "figures/ch1/fig_1_34_nasa_diamond_ring.png",
-     "number": "٣٤-١",
+     "number": "٣٣-١",
      "caption": [
       [
        "الخاتم الماسي (Diamond Ring): صورة ناسا (NASA/Aubrey Gemignani).",
@@ -921,7 +910,7 @@
     {
      "type": "figure",
      "file": "figures/ch1/fig_1_35_nasa_baily_beads.png",
-     "number": "٣٥-١",
+     "number": "٣٤-١",
      "caption": [
       [
        "حبات بيلي (Baily's Beads): صورة ناسا (NASA/Aubrey Gemignani).",
@@ -932,7 +921,7 @@
     {
      "type": "figure",
      "file": "figures/ch1/fig_1_36_nasa_corona.png",
-     "number": "٣٦-١",
+     "number": "٣٥-١",
      "caption": [
       [
        "الهالة الشمسية (Corona): صورة ناسا (NASA/Aubrey Gemignani).",
@@ -943,7 +932,7 @@
     {
      "type": "figure",
      "file": "figures/ch1/fig_1_37_nasa_prominences.png",
-     "number": "٣٧-١",
+     "number": "٣٦-١",
      "caption": [
       [
        "الشواظ والكروموسفير (Prominences & Chromosphere): صورة ناسا (NASA/Keegan Barber).",
@@ -954,7 +943,7 @@
     {
      "type": "figure",
      "file": "figures/ch1/fig_1_38_nasa_partial_sequence.png",
-     "number": "٣٨-١",
+     "number": "٣٧-١",
      "caption": [
       [
        "مراحل الكسوف (Eclipse Sequence): صورة ناسا (NASA/Aubrey Gemignani).",
@@ -965,7 +954,7 @@
     {
      "type": "figure",
      "file": "figures/ch1/fig_1_39_nasa_iss_shadow.png",
-     "number": "٣٩-١",
+     "number": "٣٨-١",
      "caption": [
       [
        "ظل القمر من الفضاء (Umbra from the ISS): صورة ناسا (NASA/JSC (ISS Expedition 71)).",
@@ -976,54 +965,10 @@
     {
      "type": "figure",
      "file": "figures/ch1/fig_1_40_nasa_dscovr_shadow.png",
-     "number": "٤٠-١",
+     "number": "٣٩-١",
      "caption": [
       [
        "الظل من مليون ونصف كيلومتر (DSCOVR/EPIC): صورة ناسا (NASA/NOAA DSCOVR EPIC).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch1/fig_1_41_nasa_iss_transit.png",
-     "number": "٤١-١",
-     "caption": [
-      [
-       "محطة الفضاء تعبر الشمس (ISS Transit): صورة ناسا (NASA/Joel Kowsky).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch1/fig_1_42_nasa_citizen_science.png",
-     "number": "٤٢-١",
-     "caption": [
-      [
-       "علم المواطن: قياس الطقس أثناء الكسوف (Citizen Science): صورة ناسا (NASA/Michael DeMocker).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch1/fig_1_43_nasa_orion.png",
-     "number": "٤٣-١",
-     "caption": [
-      [
-       "الكسوف من مركبة أوريون (Artemis II): صورة ناسا (NASA/JSC (Artemis II)).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch1/fig_1_44_nasa_viewing.png",
-     "number": "٤٤-١",
-     "caption": [
-      [
-       "المشاهدة الآمنة (Safe Viewing): صورة ناسا (NASA/Aubrey Gemignani).",
        false
       ]
      ]
@@ -1044,7 +989,7 @@
     {
      "type": "figure",
      "file": "figures/ch1/fig_1_45_open_eso_lasilla_sequence.png",
-     "number": "٤٥-١",
+     "number": "٤٠-١",
      "caption": [
       [
        "كسوف من البداية إلى النهاية في صورة واحدة — ESO/P. Horálek.",
@@ -1055,7 +1000,7 @@
     {
      "type": "figure",
      "file": "figures/ch1/fig_1_46_open_eso_lasilla_totality.png",
-     "number": "٤٦-١",
+     "number": "٤١-١",
      "caption": [
       [
        "غروب في كل الاتجاهات (Horizon glow) — ESO/M. Zamani.",
@@ -1065,19 +1010,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch1/fig_1_47_open_sdo_flare_earth_scale.png",
-     "number": "٤٧-١",
-     "caption": [
-      [
-       "الشمس عن قرب: الأرض بالمقياس نفسه — NASA/SDO/AIA/GSFC.",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
      "file": "figures/ch1/fig_1_48_open_sdo_flare_2012.png",
-     "number": "٤٨-١",
+     "number": "٤٢-١",
      "caption": [
       [
        "توهج شمسي (Solar flare) — NASA/SDO/AIA.",
@@ -1088,7 +1022,7 @@
     {
      "type": "figure",
      "file": "figures/ch1/fig_1_49_open_trace_coronal_loops.png",
-     "number": "٤٩-١",
+     "number": "٤٣-١",
      "caption": [
       [
        "حلقات الهالة (Coronal loops) — NASA/TRACE.",
@@ -1099,7 +1033,7 @@
     {
      "type": "figure",
      "file": "figures/ch1/fig_1_50_open_soho_lasco_cme.png",
-     "number": "٥٠-١",
+     "number": "٤٤-١",
      "caption": [
       [
        "انبعاث كتلي إكليلي (Coronal mass ejection) — ESA/NASA SOHO LASCO.",
@@ -1253,7 +1187,7 @@
      "type": "p",
      "text": [
       [
-       "تعرض الخرائط التالية مسارات بعض أشهر الكسوفات في التاريخ، محسوبة بالأدوات نفسها التي حسبنا بها كسوف ٢٠٢٧. والمسارات القديمة جدًا تقريبية: فخطأ ساعة واحدة في تقدير ΔT يزيح المسار نحو ١٥ درجة طول، ولذلك يستعمل العلماء السجلات التاريخية نفسها لضبط ΔT.",
+       "تعرض الخريطة العالمية في آخر هذا الفصل مسارات بعض أشهر الكسوفات في التاريخ، محسوبة بالأدوات نفسها التي حسبنا بها كسوف ٢٠٢٧. والمسارات القديمة جدًا تقريبية: فخطأ ساعة واحدة في تقدير ΔT يزيح المسار نحو ١٥ درجة طول، ولذلك يستعمل العلماء السجلات التاريخية نفسها لضبط ΔT.",
        false
       ]
      ]
@@ -1269,33 +1203,11 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch8/fig_8_03_eclipse_763bc_assyria.png",
+     "file": "figures/ch8/fig_8_04_eclipse_585bc_thales.png",
      "number": "٣-٢",
      "caption": [
       [
-       "خريطة تقريبية لكسوف ٧٦٣ ق.م فوق بلاد آشور (محسوبة).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch8/fig_8_04_eclipse_585bc_thales.png",
-     "number": "٤-٢",
-     "caption": [
-      [
        "خريطة تقريبية لكسوف ٥٨٥ ق.م المنسوب إلى طاليس (محسوبة).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch8/fig_8_05_eclipse_1715_halley.png",
-     "number": "٥-٢",
-     "caption": [
-      [
-       "مسار كسوف ١٧١٥ الذي تنبأ به إدموند هالي (محسوب).",
        false
       ]
      ]
@@ -1339,30 +1251,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch8/fig_8_06_eclipse_1851_first_photo.png",
-     "number": "٦-٢",
-     "caption": [
-      [
-       "مسار كسوف ١٨٥١ الذي التُقطت فيه أول صورة للكلية (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch8/fig_8_07_eclipse_1868_helium.png",
-     "number": "٧-٢",
-     "caption": [
-      [
-       "مسار كسوف ١٨٦٨ في الهند وجنوب شرق آسيا (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
      "file": "figures/ch8/fig_8_08_helium_1868.png",
-     "number": "٨-٢",
+     "number": "٤-٢",
      "caption": [
       [
        "اكتشاف خط الهيليوم في طيف الشمس أثناء كسوف ١٨٦٨.",
@@ -1393,19 +1283,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch8/fig_8_09_eclipse_1919_eddington.png",
-     "number": "٩-٢",
-     "caption": [
-      [
-       "مسار كسوف ١٩١٩ وموقعا بعثتي إدنغتون ودايسون (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
      "file": "figures/ch8/fig_8_10_eddington_1919.png",
-     "number": "١٠-٢",
+     "number": "٥-٢",
      "caption": [
       [
        "تجربة إدنغتون ١٩١٩: انحناء ضوء النجوم قرب الشمس أثناء الكسوف.",
@@ -1438,49 +1317,6 @@
       ],
       [
        " الداخلية القريبة من سطح الشمس بوضوح لا تبلغه معظم الأجهزة.",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch8/fig_8_11_eclipse_1973_concorde.png",
-     "number": "١١-٢",
-     "caption": [
-      [
-       "مسار كسوف ١٩٧٣ الطويل عبر أفريقيا (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "h2",
-     "text": "كسوف ثوسيديدس"
-    },
-    {
-     "type": "p",
-     "text": [
-      [
-       "ذكر المؤرخ الأثيني ثوسيديدس كسوفًا في صيف السنة الأولى من حرب البيلوبونيز. ويُظهر حسابنا أنه كسوف حلقي",
-       false
-      ],
-      [
-       " (Annular eclipse)",
-       true
-      ],
-      [
-       " وقع في ٣ أغسطس ٤٣١ ق.م، ورآه أهل أثينا جزئيًا بنسبة احتجاب تقارب ٨٣٪ — وهو ما يوافق ملاحظة قديمة بأنه لم يكن كليًا.",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch8/fig_8_12_eclipse_431bc_athens.png",
-     "number": "١٢-٢",
-     "caption": [
-      [
-       "خريطة تقريبية لكسوف ٤٣١ ق.م الحلقي (محسوبة).",
        false
       ]
      ]
@@ -1523,7 +1359,7 @@
     {
      "type": "figure",
      "file": "figures/ch8/fig_8_13_ancient_records_table.png",
-     "number": "١٣-٢",
+     "number": "٦-٢",
      "caption": [
       [
        "جدول بأشهر سجلات الكسوف المكتوبة في العالم القديم.",
@@ -1546,19 +1382,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch8/fig_8_14_delta_t_curve.png",
-     "number": "١٤-٢",
-     "caption": [
-      [
-       "منحنى فرق التوقيت ΔT عبر ثلاثة آلاف عام وأثره على مواقع الكسوفات القديمة (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
      "file": "figures/ch8/fig_8_15_historic_paths_world.png",
-     "number": "١٥-٢",
+     "number": "٧-٢",
      "caption": [
       [
        "خريطة عالمية لمسارات كسوفات ذات أهمية تاريخية ١٧١٥–٢٠٢٧ (محسوبة).",
@@ -1575,7 +1400,6 @@
     "عصر التصوير والطيف",
     "الكسوف يختبر أينشتاين",
     "من الطائرات إلى الفضاء",
-    "كسوف ثوسيديدس",
     "سجلات مكتوبة قبل التلسكوب",
     "الكسوف في التنجيم: معتقد قديم لا علم",
     "فرق التوقيت ΔT"
@@ -1768,25 +1592,6 @@
      ]
     },
     {
-     "type": "figure",
-     "file": "figures/ch2/fig_2_09_eclipse_978.png",
-     "number": "٩-٣",
-     "caption": [
-      [
-       "خريطة الكسوف الحلقي",
-       false
-      ],
-      [
-       " (Annular eclipse)",
-       true
-      ],
-      [
-       " سنة ٩٧٨م (محسوبة تقريبيًا).",
-       false
-      ]
-     ]
-    },
-    {
      "type": "h2",
      "text": "سماء القاهرة الفاطمية"
     },
@@ -1828,7 +1633,7 @@
     {
      "type": "figure",
      "file": "figures/ch2/fig_2_10_history_eclipse_993.png",
-     "number": "١٠-٣",
+     "number": "٩-٣",
      "caption": [
       [
        "كسوف ٢٠ أغسطس ٩٩٣م الكلي قبالة ساحل مصر الشمالي كما رُصد من القاهرة (محسوب).",
@@ -1838,30 +1643,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch2/fig_2_11_history_eclipse_1004.png",
-     "number": "١١-٣",
-     "caption": [
-      [
-       "كسوف ٢٤ يناير ١٠٠٤م الهجين: غروب الشمس مكسوفة في القاهرة (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch2/fig_2_12_history_lunar_cairo.png",
-     "number": "١٢-٣",
-     "caption": [
-      [
-       "خسوفات القمر في ٩٧٩ و٩٨١ و١٠٠٢م كما رُئيت من القاهرة (محسوبة).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
      "file": "figures/ch2/fig_2_13_history_eclipses_table.png",
-     "number": "١٣-٣",
+     "number": "١٠-٣",
      "caption": [
       [
        "كسوفات وخسوفات في تاريخ مصر مقارنةً بالحساب الحديث.",
@@ -1872,7 +1655,7 @@
     {
      "type": "figure",
      "file": "figures/ch2/fig_2_14_eclipse_1882_sohag.png",
-     "number": "١٤-٣",
+     "number": "١١-٣",
      "caption": [
       [
        "خريطة كسوف ١٨٨٢ الكلي فوق سوهاج (محسوبة).",
@@ -1882,19 +1665,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch2/fig_2_15_eclipse_1882_comet_tewfik.png",
-     "number": "١٥-٣",
-     "caption": [
-      [
-       "كسوف ١٨٨٢ في سوهاج واكتشاف مذنب توفيق.",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
      "file": "figures/ch2/fig_2_16_eclipse_1905.png",
-     "number": "١٦-٣",
+     "number": "١٢-٣",
      "caption": [
       [
        "خريطة كسوف ١٩٠٥ الكلي فوق جنوب مصر (محسوبة).",
@@ -1905,21 +1677,10 @@
     {
      "type": "figure",
      "file": "figures/ch2/fig_2_17_eclipse_2006_salloum.png",
-     "number": "١٧-٣",
+     "number": "١٣-٣",
      "caption": [
       [
        "خريطة كسوف ٢٠٠٦ الكلي فوق السلوم وشمال غرب مصر (محسوبة).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch2/fig_2_18_eclipse_2006_story.png",
-     "number": "١٨-٣",
-     "caption": [
-      [
-       "كسوف السلوم ٢٠٠٦ مقارنة بكسوف ٢٠٢٧.",
        false
       ]
      ]
@@ -1940,7 +1701,7 @@
     {
      "type": "figure",
      "file": "figures/ch2/fig_2_19_central_paths_egypt_1901_2050.png",
-     "number": "١٩-٣",
+     "number": "١٤-٣",
      "caption": [
       [
        "مسارات الكسوفات الكلية والحلقية التي عبرت مصر ١٩٠١–٢٠٥٠ (محسوبة).",
@@ -1950,49 +1711,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch2/fig_2_20_central_eclipses_egypt_table.png",
-     "number": "٢٠-٣",
-     "caption": [
-      [
-       "جدول الكسوفات المركزية فوق مصر ١٩٠١–٢٠٥٠ (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch2/fig_2_21_cairo_luxor_all_eclipses.png",
-     "number": "٢١-٣",
-     "caption": [
-      [
-       "نسبة الاحتجاب",
-       false
-      ],
-      [
-       " (Obscuration)",
-       true
-      ],
-      [
-       " في القاهرة والأقصر لكل كسوف ١٩٠١–٢٠٥٠ (محسوبة).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch2/fig_2_22_central_eclipses_four_cities_1000_2050.png",
-     "number": "٢٢-٣",
-     "caption": [
-      [
-       "الكسوفات الكلية والحلقية فوق القاهرة والإسكندرية والأقصر وأسوان منذ ١٠٠٠م (محسوبة).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
      "file": "figures/ch2/fig_2_23_last_total_eclipse_cities.png",
-     "number": "٢٣-٣",
+     "number": "١٥-٣",
      "caption": [
       [
        "آخر كسوف كلي",
@@ -2024,7 +1744,7 @@
     {
      "type": "figure",
      "file": "figures/ch2/fig_2_24_monuments_durations.png",
-     "number": "٢٤-٣",
+     "number": "١٦-٣",
      "caption": [
       [
        "مدة الكلية",
@@ -2036,25 +1756,6 @@
       ],
       [
        " عند المواقع الأثرية المصرية في ٢٠٢٧ (محسوبة).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch2/fig_2_25_monuments_map.png",
-     "number": "٢٥-٣",
-     "caption": [
-      [
-       "خريطة المواقع الأثرية في وادي النيل داخل مسار الكلية",
-       false
-      ],
-      [
-       " (Path of totality)",
-       true
-      ],
-      [
-       " ومدتها (محسوبة).",
        false
       ]
      ]
@@ -2077,7 +1778,7 @@
    "intro": [
     [
      [
-      "يبدأ الظل رحلته فجرًا في المحيط الأطلسي، ثم يعبر مضيق جبل طارق وشمال المغرب والجزائر وتونس وليبيا، ويبلغ ذروته فوق صعيد مصر قرب الظهر، ثم يعبر البحر الأحمر إلى السعودية واليمن والصومال، لينتهي في المحيط الهندي. يعرض هذا الفصل الحدث بالأرقام، ويتتبع الظل ربع ساعة بربع ساعة، ثم يقدم بطاقة لكل مدينة مصرية رئيسية.",
+      "يبدأ الظل رحلته فجرًا في المحيط الأطلسي، ثم يعبر مضيق جبل طارق وشمال المغرب والجزائر وتونس وليبيا، ويبلغ ذروته فوق صعيد مصر قرب الظهر، ثم يعبر البحر الأحمر إلى السعودية واليمن والصومال، لينتهي في المحيط الهندي. يعرض هذا الفصل الحدث بالأرقام، ويتتبع الظل ربع ساعة بربع ساعة، ثم يقدم بطاقات لأهم المدن المصرية؛ ومواعيد بقية المدن في جداول الملحق.",
       false
      ]
     ]
@@ -2170,19 +1871,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch3/fig_3_05_shadow_0850.png",
-     "number": "٥-٤",
-     "caption": [
-      [
-       "موقع ظل القمر الساعة ١١:٣٠ بتوقيت مصر (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
      "file": "figures/ch3/fig_3_06_shadow_0900.png",
-     "number": "٦-٤",
+     "number": "٥-٤",
      "caption": [
       [
        "موقع ظل القمر الساعة ١٢:٠٠ بتوقيت مصر (محسوب).",
@@ -2193,7 +1883,7 @@
     {
      "type": "figure",
      "file": "figures/ch3/fig_3_07_shadow_0950.png",
-     "number": "٧-٤",
+     "number": "٦-٤",
      "caption": [
       [
        "موقع ظل القمر الساعة ١٢:٣٠ بتوقيت مصر (محسوب).",
@@ -2203,19 +1893,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch3/fig_3_08_shadow_0975.png",
-     "number": "٨-٤",
-     "caption": [
-      [
-       "موقع ظل القمر الساعة ١٢:٤٥ بتوقيت مصر (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
      "file": "figures/ch3/fig_3_09_shadow_1000.png",
-     "number": "٩-٤",
+     "number": "٧-٤",
      "caption": [
       [
        "موقع ظل القمر الساعة ١٣:٠٠ بتوقيت مصر (محسوب).",
@@ -2226,7 +1905,7 @@
     {
      "type": "figure",
      "file": "figures/ch3/fig_3_10_shadow_1008.png",
-     "number": "١٠-٤",
+     "number": "٨-٤",
      "caption": [
       [
        "موقع ظل القمر الساعة ١٣:٠٥ بتوقيت مصر (محسوب).",
@@ -2236,44 +1915,11 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch3/fig_3_11_shadow_1025.png",
-     "number": "١١-٤",
-     "caption": [
-      [
-       "موقع ظل القمر الساعة ١٣:١٥ بتوقيت مصر (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch3/fig_3_12_shadow_1050.png",
-     "number": "١٢-٤",
-     "caption": [
-      [
-       "موقع ظل القمر الساعة ١٣:٣٠ بتوقيت مصر (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
      "file": "figures/ch3/fig_3_13_shadow_1100.png",
-     "number": "١٣-٤",
+     "number": "٩-٤",
      "caption": [
       [
        "موقع ظل القمر الساعة ١٤:٠٠ بتوقيت مصر (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch3/fig_3_14_shadow_1150.png",
-     "number": "١٤-٤",
-     "caption": [
-      [
-       "موقع ظل القمر الساعة ١٤:٣٠ بتوقيت مصر (محسوب).",
        false
       ]
      ]
@@ -2294,7 +1940,7 @@
     {
      "type": "figure",
      "file": "figures/ch3/fig_3_15_egypt_timetable_total.png",
-     "number": "١٥-٤",
+     "number": "١٠-٤",
      "caption": [
       [
        "جدول مواعيد الكسوف في المدن المصرية داخل مسار الكلية (محسوب).",
@@ -2305,7 +1951,7 @@
     {
      "type": "figure",
      "file": "figures/ch3/fig_3_16_egypt_timetable_partial.png",
-     "number": "١٦-٤",
+     "number": "١١-٤",
      "caption": [
       [
        "جدول مواعيد الكسوف في المدن المصرية خارج مسار الكلية (محسوب).",
@@ -2316,7 +1962,7 @@
     {
      "type": "figure",
      "file": "figures/ch3/fig_3_17_egypt_cities_totality.png",
-     "number": "١٧-٤",
+     "number": "١٢-٤",
      "caption": [
       [
        "مدة الكلية في المدن المصرية الواقعة داخل المسار (محسوبة).",
@@ -2327,7 +1973,7 @@
     {
      "type": "figure",
      "file": "figures/ch3/fig_3_18_egypt_cities_partial.png",
-     "number": "١٨-٤",
+     "number": "١٣-٤",
      "caption": [
       [
        "نسبة احتجاب الشمس في المدن المصرية الواقعة خارج مسار الكلية (محسوبة).",
@@ -2338,7 +1984,7 @@
     {
      "type": "figure",
      "file": "figures/ch3/fig_3_19_egypt_cities_gantt.png",
-     "number": "١٩-٤",
+     "number": "١٤-٤",
      "caption": [
       [
        "مخطط زمني لمراحل الكسوف في مدن مصرية مختارة (محسوب).",
@@ -2349,7 +1995,7 @@
     {
      "type": "figure",
      "file": "figures/ch3/fig_3_20_light_curves.png",
-     "number": "٢٠-٤",
+     "number": "١٥-٤",
      "caption": [
       [
        "منحنى نسبة قرص الشمس الظاهر مع الزمن في الأقصر وأسوان والقاهرة والإسكندرية (محسوب).",
@@ -2360,7 +2006,7 @@
     {
      "type": "figure",
      "file": "figures/ch3/fig_3_21_partial_vs_total.png",
-     "number": "٢١-٤",
+     "number": "١٦-٤",
      "caption": [
       [
        "مقارنة بين كسوف جزئي بنسبة ٩٤٫٨٪ و٩٩٫٨٪ والكسوف الكلي",
@@ -2379,7 +2025,7 @@
     {
      "type": "figure",
      "file": "figures/ch3/fig_3_22_c2_times_egypt.png",
-     "number": "٢٢-٤",
+     "number": "١٧-٤",
      "caption": [
       [
        "توقيت بداية الكلية في المدن المصرية مرتبة زمنيًا (محسوب).",
@@ -2390,7 +2036,7 @@
     {
      "type": "figure",
      "file": "figures/ch3/fig_3_23_sun_position_cities.png",
-     "number": "٢٣-٤",
+     "number": "١٨-٤",
      "caption": [
       [
        "ارتفاع الشمس واتجاهها لحظة الذروة في المدن المصرية (محسوب).",
@@ -2406,7 +2052,7 @@
      "type": "p",
      "text": [
       [
-       "تنشر ناسا لكل كسوف نقطتين مميزتين يكثر الخلط بينهما. الأولى نقطة «أطول مدة»: ٦ دقائق و٢٣٫٢ ثانية عند ٢٦°٤٨٫٨′ شمالًا و٣١°٠٨٫٠′ شرقًا، في الصحراء غرب وادي النيل بمحافظة سوهاج، على بُعد نحو ٣٦ كيلومترًا غرب طهطا، في الساعة ١٣:٠٠:٢١ بتوقيت مصر الصيفي. والثانية نقطة «أعظم كسوف» (Greatest Eclipse)، أي اللحظة التي يمر فيها محور الظل",
+       "تنشر ناسا لكل كسوف نقطتين مميزتين يكثر الخلط بينهما. الأولى نقطة «أطول مدة»: ٦ دقائق و٢٣٫٢ ثانية عند ٢٦°٤٨٫٨′ شمالًا و٣١°٠٨٫٠′ شرقًا، في الصحراء غرب وادي النيل (قرب الحد بين سوهاج والوادي الجديد)، على بُعد نحو ٣٦ كيلومترًا غرب طهطا، في الساعة ١٣:٠٠:٢١ بتوقيت مصر الصيفي. والثانية نقطة «أعظم كسوف» (Greatest Eclipse)، أي اللحظة التي يمر فيها محور الظل",
        false
       ],
       [
@@ -2458,7 +2104,7 @@
      "type": "p",
      "text": [
       [
-       "لكل مدينة بطاقة تلخص ما سيراه أهلها: المدة أو نسبة الاحتجاب",
+       "لأهم المدن بطاقات تلخص ما سيراه أهلها: المدة أو نسبة الاحتجاب",
        false
       ],
       [
@@ -2474,7 +2120,7 @@
     {
      "type": "figure",
      "file": "figures/ch3/fig_3_24_longest_totality_point.png",
-     "number": "٢٤-٤",
+     "number": "١٩-٤",
      "caption": [
       [
        "أطول مدة للكلية ونقطة أعظم كسوف (كلتاهما ٦ د ٢٣ ث) وترتيب المدن (محسوبة).",
@@ -2485,7 +2131,7 @@
     {
      "type": "figure",
      "file": "figures/ch3/fig_3_25_city_card_luxor.png",
-     "number": "٢٥-٤",
+     "number": "٢٠-٤",
      "caption": [
       [
        "بطاقة الكسوف لمدينة الأقصر (محسوبة).",
@@ -2496,7 +2142,7 @@
     {
      "type": "figure",
      "file": "figures/ch3/fig_3_26_city_card_aswan.png",
-     "number": "٢٦-٤",
+     "number": "٢١-٤",
      "caption": [
       [
        "بطاقة الكسوف لمدينة أسوان (محسوبة).",
@@ -2507,7 +2153,7 @@
     {
      "type": "figure",
      "file": "figures/ch3/fig_3_27_city_card_qena.png",
-     "number": "٢٧-٤",
+     "number": "٢٢-٤",
      "caption": [
       [
        "بطاقة الكسوف لمدينة قنا (محسوبة).",
@@ -2518,7 +2164,7 @@
     {
      "type": "figure",
      "file": "figures/ch3/fig_3_28_city_card_sohag.png",
-     "number": "٢٨-٤",
+     "number": "٢٣-٤",
      "caption": [
       [
        "بطاقة الكسوف لمدينة سوهاج (محسوبة).",
@@ -2529,7 +2175,7 @@
     {
      "type": "figure",
      "file": "figures/ch3/fig_3_29_city_card_asyut.png",
-     "number": "٢٩-٤",
+     "number": "٢٤-٤",
      "caption": [
       [
        "بطاقة الكسوف لمدينة أسيوط (محسوبة).",
@@ -2539,41 +2185,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch3/fig_3_30_city_card_minya.png",
-     "number": "٣٠-٤",
-     "caption": [
-      [
-       "بطاقة الكسوف لمدينة المنيا (محسوبة).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch3/fig_3_31_city_card_beni_suef.png",
-     "number": "٣١-٤",
-     "caption": [
-      [
-       "بطاقة الكسوف لمدينة بني سويف (محسوبة).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch3/fig_3_32_city_card_faiyum.png",
-     "number": "٣٢-٤",
-     "caption": [
-      [
-       "بطاقة الكسوف لمدينة الفيوم (محسوبة).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
      "file": "figures/ch3/fig_3_33_city_card_cairo.png",
-     "number": "٣٣-٤",
+     "number": "٢٥-٤",
      "caption": [
       [
        "بطاقة الكسوف لمدينة القاهرة (محسوبة).",
@@ -2583,19 +2196,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch3/fig_3_34_city_card_giza.png",
-     "number": "٣٤-٤",
-     "caption": [
-      [
-       "بطاقة الكسوف لمدينة الجيزة (محسوبة).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
      "file": "figures/ch3/fig_3_35_city_card_alexandria.png",
-     "number": "٣٥-٤",
+     "number": "٢٦-٤",
      "caption": [
       [
        "بطاقة الكسوف لمدينة الإسكندرية (محسوبة).",
@@ -2605,41 +2207,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch3/fig_3_36_city_card_hurghada.png",
-     "number": "٣٦-٤",
-     "caption": [
-      [
-       "بطاقة الكسوف لمدينة الغردقة (محسوبة).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch3/fig_3_37_city_card_safaga.png",
-     "number": "٣٧-٤",
-     "caption": [
-      [
-       "بطاقة الكسوف لمدينة سفاجا (محسوبة).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch3/fig_3_38_city_card_el_quseir.png",
-     "number": "٣٨-٤",
-     "caption": [
-      [
-       "بطاقة الكسوف لمدينة القصير (محسوبة).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
      "file": "figures/ch3/fig_3_39_city_card_marsa_alam.png",
-     "number": "٣٩-٤",
+     "number": "٢٧-٤",
      "caption": [
       [
        "بطاقة الكسوف لمدينة مرسى علم (محسوبة).",
@@ -2649,110 +2218,11 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch3/fig_3_40_city_card_kharga.png",
-     "number": "٤٠-٤",
-     "caption": [
-      [
-       "بطاقة الكسوف لمدينة الخارجة (محسوبة).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch3/fig_3_41_city_card_mut_dakhla_oasis.png",
-     "number": "٤١-٤",
-     "caption": [
-      [
-       "بطاقة الكسوف لمدينة موط (واحة الداخلة) (محسوبة).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch3/fig_3_42_city_card_edfu.png",
-     "number": "٤٢-٤",
-     "caption": [
-      [
-       "بطاقة الكسوف لمدينة إدفو (محسوبة).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch3/fig_3_43_city_card_kom_ombo.png",
-     "number": "٤٣-٤",
-     "caption": [
-      [
-       "بطاقة الكسوف لمدينة كوم أمبو (محسوبة).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch3/fig_3_44_city_card_esna.png",
-     "number": "٤٤-٤",
-     "caption": [
-      [
-       "بطاقة الكسوف لمدينة إسنا (محسوبة).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch3/fig_3_45_city_card_abu_simbel.png",
-     "number": "٤٥-٤",
-     "caption": [
-      [
-       "بطاقة الكسوف لمدينة أبو سمبل (محسوبة).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch3/fig_3_46_city_card_sharm_el_sheikh.png",
-     "number": "٤٦-٤",
-     "caption": [
-      [
-       "بطاقة الكسوف لمدينة شرم الشيخ (محسوبة).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch3/fig_3_47_city_card_siwa.png",
-     "number": "٤٧-٤",
-     "caption": [
-      [
-       "بطاقة الكسوف لمدينة سيوة (محسوبة).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
      "file": "figures/ch3/fig_3_48_city_card_bawiti_bahariya_oasis.png",
-     "number": "٤٨-٤",
+     "number": "٢٨-٤",
      "caption": [
       [
        "بطاقة الكسوف لمدينة الباويطي (الواحات البحرية) (محسوبة).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch3/fig_3_49_city_card_berenice.png",
-     "number": "٤٩-٤",
-     "caption": [
-      [
-       "بطاقة الكسوف لمدينة برنيس (محسوبة).",
        false
       ]
      ]
@@ -2775,7 +2245,7 @@
    "intro": [
     [
      [
-      "الكسوف حدث آمن تمامًا لمن يتبع قواعد بسيطة، وخطِر على العين لمن يستهين بها. فضوء الشمس — حتى حين يُحجب ٩٩٪ منه — قادر على إتلاف الشبكية دون ألم. يجمع هذا الفصل قواعد السلامة المعتمدة دوليًا، ويحدد لكل مدينة متى تُلبس النظارة ومتى يجوز نزعها.",
+      "الكسوف حدث آمن تمامًا لمن يتبع قواعد بسيطة، وخطِر على العين لمن يستهين بها. فضوء الشمس — حتى حين يُحجب ٩٩٪ منه — قادر على إتلاف الشبكية دون ألم. يجمع هذا الفصل قواعد السلامة المعتمدة دوليًا، ويحدد بالمثال متى تُلبس النظارة ومتى يجوز نزعها داخل المسار وخارجه.",
       false
      ]
     ]
@@ -2956,55 +2426,11 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch4/fig_4_10_glasses_timeline_sohag.png",
+     "file": "figures/ch4/fig_4_11_glasses_timeline_cairo.png",
      "number": "١٠-٥",
      "caption": [
       [
-       "الخط الزمني لارتداء نظارة الكسوف في سوهاج (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch4/fig_4_11_glasses_timeline_cairo.png",
-     "number": "١١-٥",
-     "caption": [
-      [
        "الخط الزمني لارتداء نظارة الكسوف في القاهرة (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch4/fig_4_12_glasses_timeline_aswan.png",
-     "number": "١٢-٥",
-     "caption": [
-      [
-       "الخط الزمني لارتداء نظارة الكسوف في أسوان (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch4/fig_4_13_glasses_timeline_asyut.png",
-     "number": "١٣-٥",
-     "caption": [
-      [
-       "الخط الزمني لارتداء نظارة الكسوف في أسيوط (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch4/fig_4_14_glasses_timeline_hurghada.png",
-     "number": "١٤-٥",
-     "caption": [
-      [
-       "الخط الزمني لارتداء نظارة الكسوف في الغردقة (محسوب).",
        false
       ]
      ]
@@ -3016,7 +2442,7 @@
     {
      "type": "figure",
      "file": "figures/ch4/fig_4_15_myths_facts.png",
-     "number": "١٥-٥",
+     "number": "١١-٥",
      "caption": [
       [
        "خرافات شائعة عن الكسوف وتصحيحها.",
@@ -3027,7 +2453,7 @@
     {
      "type": "figure",
      "file": "figures/ch4/fig_4_16_checklist_day.png",
-     "number": "١٦-٥",
+     "number": "١٢-٥",
      "caption": [
       [
        "قائمة التجهيزات المقترحة ليوم الكسوف.",
@@ -3038,7 +2464,7 @@
     {
      "type": "figure",
      "file": "figures/ch4/fig_4_17_children_safety.png",
-     "number": "١٧-٥",
+     "number": "١٣-٥",
      "caption": [
       [
        "إرشادات سلامة الأطفال والمدارس أثناء الكسوف.",
@@ -3048,46 +2474,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch4/fig_4_18_heat_safety.png",
-     "number": "١٨-٥",
-     "caption": [
-      [
-       "إرشادات الوقاية من الحر أثناء متابعة الكسوف.",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch4/fig_4_19_where_to_watch_egypt.png",
-     "number": "١٩-٥",
-     "caption": [
-      [
-       "مواقع مقترحة لمشاهدة الكسوف الكلي",
-       false
-      ],
-      [
-       " (Total solar eclipse)",
-       true
-      ],
-      [
-       " في مصر ومدة الكلية",
-       false
-      ],
-      [
-       " (Duration of totality)",
-       true
-      ],
-      [
-       " فيها (محسوبة).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
      "file": "figures/ch4/fig_4_20_student_observation_sheet.png",
-     "number": "٢٠-٥",
+     "number": "١٤-٥",
      "caption": [
       [
        "نموذج ورقة رصد ميداني للطلاب أثناء الكسوف.",
@@ -3098,7 +2486,7 @@
     {
      "type": "figure",
      "file": "figures/ch4/fig_4_21_optics_rules.png",
-     "number": "٢١-٥",
+     "number": "١٥-٥",
      "caption": [
       [
        "قواعد استعمال المناظير والتلسكوبات لرصد الشمس.",
@@ -3635,30 +3023,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch5/fig_5_08_exposure_table_f80.png",
-     "number": "٨-٧",
-     "caption": [
-      [
-       "جدول أزمنة التعريض المقترحة لظواهر الكسوف عند الفتحة ⁦f/8⁩ (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch5/fig_5_09_exposure_table_f110.png",
-     "number": "٩-٧",
-     "caption": [
-      [
-       "جدول أزمنة التعريض المقترحة لظواهر الكسوف عند الفتحة ⁦f/11⁩ (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
      "file": "figures/ch5/fig_5_10_brightness_ladder.png",
-     "number": "١٠-٧",
+     "number": "٨-٧",
      "caption": [
       [
        "الفرق الكبير في سطوع ظواهر الكسوف الكلي (قيم Q).",
@@ -3673,7 +3039,7 @@
     {
      "type": "figure",
      "file": "figures/ch5/fig_5_11_sun_image_size.png",
-     "number": "١١-٧",
+     "number": "٩-٧",
      "caption": [
       [
        "قطر صورة الشمس على المستشعر حسب البعد البؤري (محسوب).",
@@ -3684,21 +3050,10 @@
     {
      "type": "figure",
      "file": "figures/ch5/fig_5_12_framing_guide.png",
-     "number": "١٢-٧",
+     "number": "١٠-٧",
      "caption": [
       [
        "مقارنة تأطير الشمس المكسوفة على مستشعرين وأبعاد بؤرية مختلفة (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch5/fig_5_13_tripod_drift_limit.png",
-     "number": "١٣-٧",
-     "caption": [
-      [
-       "أطول زمن تعريض على حامل ثابت قبل ظهور أثر حركة الشمس (محسوب).",
        false
       ]
      ]
@@ -3719,7 +3074,7 @@
     {
      "type": "figure",
      "file": "figures/ch5/fig_5_14_totality_plan_luxor.png",
-     "number": "١٤-٧",
+     "number": "١١-٧",
      "caption": [
       [
        "خطة التصوير خلال دقائق الكلية",
@@ -3737,55 +3092,11 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch5/fig_5_15_totality_plan_sohag.png",
-     "number": "١٥-٧",
-     "caption": [
-      [
-       "خطة التصوير خلال دقائق الكلية في سوهاج (محسوبة).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
      "file": "figures/ch5/fig_5_16_sequence_plan_luxor.png",
-     "number": "١٦-٧",
+     "number": "١٢-٧",
      "caption": [
       [
        "مسار الشمس ومراحل الكسوف في سماء الأقصر لتخطيط صورة متتابعة (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch5/fig_5_17_sequence_plan_cairo.png",
-     "number": "١٧-٧",
-     "caption": [
-      [
-       "مسار الشمس ومراحل الكسوف في سماء القاهرة لتخطيط صورة متتابعة (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch5/fig_5_18_sequence_plan_aswan.png",
-     "number": "١٨-٧",
-     "caption": [
-      [
-       "مسار الشمس ومراحل الكسوف في سماء أسوان لتخطيط صورة متتابعة (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch5/fig_5_19_sequence_plan_hurghada.png",
-     "number": "١٩-٧",
-     "caption": [
-      [
-       "مسار الشمس ومراحل الكسوف في سماء الغردقة لتخطيط صورة متتابعة (محسوب).",
        false
       ]
      ]
@@ -3795,24 +3106,13 @@
      "text": "الشمس فوق الرأس والتصوير الواسع"
     },
     {
-     "type": "figure",
-     "file": "figures/ch5/fig_5_20_wide_angle_needed.png",
-     "number": "٢٠-٧",
-     "caption": [
-      [
-       "مجال الرؤية الرأسي والعدسة اللازمة لتصوير الشمس مع المعالم الأرضية (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
      "type": "h2",
      "text": "نصائح عملية"
     },
     {
      "type": "figure",
      "file": "figures/ch5/fig_5_21_smartphone_tips.png",
-     "number": "٢١-٧",
+     "number": "١٣-٧",
      "caption": [
       [
        "نصائح تصوير الكسوف بالهاتف الذكي.",
@@ -3823,7 +3123,7 @@
     {
      "type": "figure",
      "file": "figures/ch5/fig_5_22_camera_setup.png",
-     "number": "٢٢-٧",
+     "number": "١٤-٧",
      "caption": [
       [
        "قائمة ضبط الكاميرا والتحضير للتصوير.",
@@ -3834,21 +3134,10 @@
     {
      "type": "figure",
      "file": "figures/ch5/fig_5_23_common_mistakes.png",
-     "number": "٢٣-٧",
+     "number": "١٥-٧",
      "caption": [
       [
        "أخطاء شائعة في تصوير الكسوف وكيف تتجنبها.",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch5/fig_5_24_processing_workflow.png",
-     "number": "٢٤-٧",
-     "caption": [
-      [
-       "خطوات معالجة صور الهالة الشمسية.",
        false
       ]
      ]
@@ -3886,7 +3175,7 @@
     {
      "type": "figure",
      "file": "figures/ch5/fig_5_25_site_selection.png",
-     "number": "٢٥-٧",
+     "number": "١٦-٧",
      "caption": [
       [
        "خطوات اختيار موقع التصوير (مقتبسة بتصرف من Allan Hall, 2017).",
@@ -3897,7 +3186,7 @@
     {
      "type": "figure",
      "file": "figures/ch5/fig_5_26_zenith_challenge.png",
-     "number": "٢٦-٧",
+     "number": "١٧-٧",
      "caption": [
       [
        "تحديات تصوير الكسوف والشمس قرب سمت الرأس في صعيد مصر.",
@@ -3907,33 +3196,11 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch5/fig_5_27_vibration_free.png",
-     "number": "٢٧-٧",
-     "caption": [
-      [
-       "طرق إطلاق الغالق دون اهتزاز (مقتبسة بتصرف من Allan Hall, 2017).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
      "file": "figures/ch5/fig_5_28_diy_filter_card.png",
-     "number": "٢٨-٧",
+     "number": "١٨-٧",
      "caption": [
       [
        "خطوات صنع حامل لرقائق المرشح الشمسي (مقتبسة بتصرف من Allan Hall, 2017).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch5/fig_5_29_camera_types.png",
-     "number": "٢٩-٧",
-     "caption": [
-      [
-       "مقارنة أنواع الكاميرات لتصوير الكسوف (مقتبسة بتصرف من Allan Hall, 2017).",
        false
       ]
      ]
@@ -4162,7 +3429,7 @@
     ],
     [
      [
-      "ويختم الفصل بمعلومات عملية لمن يخطط لرحلته: الطقس في أغسطس على امتداد المسار، ومواقع مقترحة للرصد في مصر مع مواعيدها، ومزايا الرصد في مصر وتحدياته، ونصائح السفر في الصيف المصري.",
+      "ويختم الفصل بمعلومات عملية لمن يخطط لرحلته: الطقس في أغسطس على امتداد المسار، ومواقع مقترحة للرصد في مصر مع مواعيدها، ومزايا الرصد في مصر وتحدياته، ونصائح السفر في الصيف المصري، ثم المعالم الأثرية داخل المسار وخارجه، والوقاية من الحرارة، والخطة البديلة إن ساء الطقس، وجدول يوم الكسوف ساعةً بساعة.",
       false
      ]
     ]
@@ -4432,6 +3699,135 @@
        false
       ]
      ]
+    },
+    {
+     "type": "h2",
+     "text": "داخل المسار وخارجه: معالم مصر"
+    },
+    {
+     "type": "p",
+     "text": [
+      [
+       "كثير من الزوار سيجمعون بين الكسوف وزيارة الآثار، فيحسن أن يعرفوا أي المعالم تقع داخل مسار الكلية. فالكرنك ووادي الملوك ودندرة وأبيدوس كلها في المسار بمدة تتجاوز ست دقائق، بينما تقع أهرامات الجيزة وسقارة والإسكندرية خارجه بنسبة تغطية تقارب ٩٥٪، وتبلغ النسبة في معبد فيلة بأسوان ٩٩٫٧٪ دون أن تصير كلية. فإن كانت رحلتك النيلية تنتهي في أسوان فتأكد أن برنامجها يتوقف يوم الكسوف داخل المسار.",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": [
+      [
+       "وتتداول بعض الأدلة السياحية أرقامًا تزيد على الحد الأقصى، كست دقائق وخمس وعشرين ثانية لنجع حمادي، أو تضع نقطة أعظم كسوف في محافظة الوادي الجديد. والصحيح بحسابنا المطابق لناسا أن أطول مدة في أي مكان ٦ دقائق و٢٣ ثانية، وأن نقطة أعظم كسوف تقع في الصحراء الشرقية شرق الأقصر (محافظة البحر الأحمر بحسب حدود Natural Earth)، وأن مدة نجع حمادي ٦ دقائق و٢٣ ثانية.",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "h2",
+     "text": "الحرارة يوم الكسوف"
+    },
+    {
+     "type": "p",
+     "text": [
+      [
+       "تحل الكلية في مصر نحو الواحدة ظهرًا، أي في أحرّ ساعات اليوم في واحدة من أحرّ مناطق المسار. لكن حرارة الأقصر جافة (رطوبة ١٠–٢٠٪ تقريبًا)، فيبرد العرق الجسم بكفاءة، بينما تجعل رطوبة ساحل البحر الأحمر — في جدة مثلًا — الإحساس بالحرارة أشد مع أن الحرارة المقيسة أقل. ويبين الشكل التالي «مؤشر الحرارة» المحسوب لكل درجة حرارة ورطوبة.",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch12/fig_12_19_egypt_landmarks_in_out.png",
+     "number": "١٩-٩",
+     "caption": [
+      [
+       "معالم مصر الشهيرة داخل مسار الكلية وخارجه: مدة الكلية أو نسبة التغطية (محسوبة).",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch12/fig_12_20_heat_index_chart.png",
+     "number": "٢٠-٩",
+     "caption": [
+      [
+       "مؤشر الحرارة المحسوسة بحسب درجة الحرارة والرطوبة، وموقع ظهيرة الأقصر في أغسطس (محسوب).",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "h2",
+     "text": "علامات الخطر"
+    },
+    {
+     "type": "p",
+     "text": [
+      [
+       "الانتظار ساعتين أو ثلاثًا في الشمس قبل الكلية أخطر على الجسم من الكسوف نفسه. ويلخص الشكل التالي الفرق بين الإجهاد الحراري الذي يكفيه الظل والماء، وضربة الشمس التي تستدعي الإسعاف فورًا.",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch12/fig_12_21_heat_illness_card.png",
+     "number": "٢١-٩",
+     "caption": [
+      [
+       "علامات الإجهاد الحراري وضربة الشمس وما يجب فعله في كل منهما.",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "h2",
+     "text": "الخطة البديلة"
+    },
+    {
+     "type": "p",
+     "text": [
+      [
+       "لا يضمن أي تخطيط سماءً صافية، لكنه يضمن قرارًا هادئًا. والقاعدة التي يكررها مطاردو الكسوف: قرّر قبل الرحلة أين تذهب إن ساء الطقس، وحدّد ساعة للقرار والتزم بها، ولا تنتقل إلا إذا كان التحسن مؤكدًا والطريق سالكًا والوقت كافيًا.",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch12/fig_12_22_backup_plan_decision.png",
+     "number": "٢٢-٩",
+     "caption": [
+      [
+       "الخطة البديلة صباح الكسوف: خطوات القرار والأسئلة الأربعة قبل الانتقال.",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "h2",
+     "text": "يومك ساعةً بساعة"
+    },
+    {
+     "type": "p",
+     "text": [
+      [
+       "يجمع الشكل الأخير ما في هذا الكتاب في جدول واحد ليوم الكسوف في الأقصر، بمواعيد محسوبة: متى تصل، ومتى تلبس النظارة ومتى تنزعها، ومتى تعيدها فورًا.",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch12/fig_12_23_eclipse_day_luxor.png",
+     "number": "٢٣-٩",
+     "caption": [
+      [
+       "يوم الكسوف في الأقصر ساعةً بساعة: المواعيد المحسوبة وما تفعله عند كل مرحلة.",
+       false
+      ]
+     ]
     }
    ],
    "src": 12,
@@ -4440,7 +3836,12 @@
     "نظرة على العالم العربي",
     "مواعيد الكسوف في المدن العربية",
     "مسار الكلية خريطةً خريطة",
-    "التخطيط للرحلة"
+    "التخطيط للرحلة",
+    "داخل المسار وخارجه: معالم مصر",
+    "الحرارة يوم الكسوف",
+    "علامات الخطر",
+    "الخطة البديلة",
+    "يومك ساعةً بساعة"
    ]
   },
   {
@@ -4449,7 +3850,15 @@
    "intro": [
     [
      [
-      "خرائط تفصيلية للمحافظات المصرية الواقعة في المسار أو قربه، وللأقاليم الكبرى، ثم سلسلة لقطات لظل القمر وهو يعبر مصر كل ست دقائق. في كل خريطة: اللون الأزرق لمدة الكلية",
+      "خرائط تفصيلية للمحافظات المصرية الواقعة في مسار الكلية",
+      false
+     ],
+     [
+      " (Path of totality)",
+      true
+     ],
+     [
+      "، ولساحل البحر الأحمر والواحات الغربية. في كل خريطة: اللون الأزرق لمدة الكلية",
       false
      ],
      [
@@ -4529,30 +3938,8 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch6/fig_6_05_governorate_minya.png",
-     "number": "٥-١٠",
-     "caption": [
-      [
-       "خريطة محافظة المنيا ومدة الكلية ونسبة الاحتجاب فيها (محسوبة).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch6/fig_6_06_governorate_aswan.png",
-     "number": "٦-١٠",
-     "caption": [
-      [
-       "خريطة محافظة أسوان ومدة الكلية ونسبة الاحتجاب فيها (محسوبة).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
      "file": "figures/ch6/fig_6_07_governorate_red_sea.png",
-     "number": "٧-١٠",
+     "number": "٥-١٠",
      "caption": [
       [
        "خريطة محافظة البحر الأحمر ومدة الكلية ونسبة الاحتجاب فيها (محسوبة).",
@@ -4563,7 +3950,7 @@
     {
      "type": "figure",
      "file": "figures/ch6/fig_6_08_governorate_new_valley.png",
-     "number": "٨-١٠",
+     "number": "٦-١٠",
      "caption": [
       [
        "خريطة محافظة الوادي الجديد ومدة الكلية ونسبة الاحتجاب فيها (محسوبة).",
@@ -4573,66 +3960,11 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch6/fig_6_09_governorate_matrouh.png",
-     "number": "٩-١٠",
-     "caption": [
-      [
-       "خريطة محافظة مطروح ومدة الكلية ونسبة الاحتجاب فيها (محسوبة).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
      "file": "figures/ch6/fig_6_10_governorate_giza.png",
-     "number": "١٠-١٠",
+     "number": "٧-١٠",
      "caption": [
       [
        "خريطة محافظة الجيزة ومدة الكلية ونسبة الاحتجاب فيها (محسوبة).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch6/fig_6_11_governorate_beni_suef.png",
-     "number": "١١-١٠",
-     "caption": [
-      [
-       "خريطة محافظة بني سويف ومدة الكلية ونسبة الاحتجاب فيها (محسوبة).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch6/fig_6_12_governorate_faiyum.png",
-     "number": "١٢-١٠",
-     "caption": [
-      [
-       "خريطة محافظة الفيوم ومدة الكلية ونسبة الاحتجاب فيها (محسوبة).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch6/fig_6_13_governorate_cairo.png",
-     "number": "١٣-١٠",
-     "caption": [
-      [
-       "خريطة محافظة القاهرة ومدة الكلية ونسبة الاحتجاب فيها (محسوبة).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch6/fig_6_14_governorate_south_sinai.png",
-     "number": "١٤-١٠",
-     "caption": [
-      [
-       "خريطة محافظة جنوب سيناء ومدة الكلية ونسبة الاحتجاب فيها (محسوبة).",
        false
       ]
      ]
@@ -4644,7 +3976,7 @@
     {
      "type": "figure",
      "file": "figures/ch6/fig_6_15_red_sea_coast.png",
-     "number": "١٥-١٠",
+     "number": "٨-١٠",
      "caption": [
       [
        "خريطة ساحل البحر الأحمر ومدة الكلية في مدنه (محسوبة).",
@@ -4655,7 +3987,7 @@
     {
      "type": "figure",
      "file": "figures/ch6/fig_6_16_bahariya_oasis.png",
-     "number": "١٦-١٠",
+     "number": "٩-١٠",
      "caption": [
       [
        "الواحات البحرية: مدة الكلية في الباويطي والحيز ومنديشة، وأطول مدة على خط المركز (محسوبة).",
@@ -4666,119 +3998,10 @@
     {
      "type": "figure",
      "file": "figures/ch6/fig_6_17_western_oases.png",
-     "number": "١٧-١٠",
+     "number": "١٠-١٠",
      "caption": [
       [
        "خريطة الواحات المصرية وكسوف ٢٠٢٧ (محسوبة).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch6/fig_6_18_delta_cairo.png",
-     "number": "١٨-١٠",
-     "caption": [
-      [
-       "نسبة الاحتجاب في الدلتا والقاهرة الكبرى (محسوبة).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "h2",
-     "text": "ظل القمر فوق مصر دقيقةً بدقيقة"
-    },
-    {
-     "type": "p",
-     "text": [
-      [
-       "ست لقطات تفصل بين كل منها ست دقائق، تُظهر الظل الكامل",
-       false
-      ],
-      [
-       " (Umbra)",
-       true
-      ],
-      [
-       " وهو يدخل من الصحراء الغربية عند سيوة ويخرج من ساحل البحر الأحمر.",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch6/fig_6_19_sinai.png",
-     "number": "١٩-١٠",
-     "caption": [
-      [
-       "نسبة الاحتجاب في سيناء ومدن القناة (محسوبة).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch6/fig_6_20_egypt_shadow_1275.png",
-     "number": "٢٠-١٠",
-     "caption": [
-      [
-       "موقع ظل القمر فوق مصر الساعة ١٢:٤٥ بتوقيت مصر (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch6/fig_6_21_egypt_shadow_1285.png",
-     "number": "٢١-١٠",
-     "caption": [
-      [
-       "موقع ظل القمر فوق مصر الساعة ١٢:٥١ بتوقيت مصر (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch6/fig_6_22_egypt_shadow_1295.png",
-     "number": "٢٢-١٠",
-     "caption": [
-      [
-       "موقع ظل القمر فوق مصر الساعة ١٢:٥٧ بتوقيت مصر (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch6/fig_6_23_egypt_shadow_1305.png",
-     "number": "٢٣-١٠",
-     "caption": [
-      [
-       "موقع ظل القمر فوق مصر الساعة ١٣:٠٣ بتوقيت مصر (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch6/fig_6_24_egypt_shadow_1315.png",
-     "number": "٢٤-١٠",
-     "caption": [
-      [
-       "موقع ظل القمر فوق مصر الساعة ١٣:٠٩ بتوقيت مصر (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch6/fig_6_25_egypt_shadow_1325.png",
-     "number": "٢٥-١٠",
-     "caption": [
-      [
-       "موقع ظل القمر فوق مصر الساعة ١٣:١٥ بتوقيت مصر (محسوب).",
        false
       ]
      ]
@@ -4788,25 +4011,24 @@
    "num": 10,
    "sections": [
     "المحافظات",
-    "الأقاليم",
-    "ظل القمر فوق مصر دقيقةً بدقيقة"
+    "الأقاليم"
    ]
   },
   {
    "label": "الفصل الحادي عشر",
-   "name": "الأطلس: إحدى وأربعون خريطة",
+   "name": "الأطلس: خرائط المسار ومصر",
    "intro": [
     [
      [
-      "يضم هذا الفصل الأطلس الكامل للكسوف: نظرة عالمية، وخريطة لكل دولة يعبرها مسار الكلية",
+      "يضم هذا الفصل خرائط عامة للكسوف: نظرة عالمية، وخريطة إقليمية، ومقطع على امتداد خط المركز",
       false
      ],
      [
-      " (Path of totality)",
+      " (Central line)",
       true
      ],
      [
-      "، وخرائط مصر، ثم خريطة مفصلة لخمس وعشرين مدينة مصرية تتضمن مراحل الكسوف كما تُرى منها وجدولًا بمواعيدها.",
+      "، وخريطتي إسبانيا ومصر، ثم خريطتي المحافظات ومواعيد التماس في مصر. أما خرائط الدول العربية التفصيلية فهي في فصل المدن العربية.",
       false
      ]
     ]
@@ -4822,7 +4044,15 @@
      "number": "١-١١",
      "caption": [
       [
-       "نظرة عالمية: مسار الكلية ونسب الاحتجاب ووقت الذروة",
+       "نظرة عالمية: مسار الكلية",
+       false
+      ],
+      [
+       " (Path of totality)",
+       true
+      ],
+      [
+       " ونسب الاحتجاب ووقت الذروة",
        false
       ]
      ]
@@ -4844,15 +4074,7 @@
      "number": "٣-١١",
      "caption": [
       [
-       "على امتداد خط المركز",
-       false
-      ],
-      [
-       " (Central line)",
-       true
-      ],
-      [
-       ": المدة وعرض المسار وارتفاع الشمس",
+       "على امتداد خط المركز: المدة وعرض المسار وارتفاع الشمس",
        false
       ]
      ]
@@ -4874,63 +4096,8 @@
     },
     {
      "type": "figure",
-     "file": "../maps_ar/05_country_gibraltar.png",
-     "number": "٥-١١",
-     "caption": [
-      [
-       "خريطة جبل طارق والمضيق: مسار الكلية ونسب الاحتجاب في المدن",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "../maps_ar/06_country_morocco.png",
-     "number": "٦-١١",
-     "caption": [
-      [
-       "خريطة المغرب: مسار الكلية ونسب الاحتجاب في المدن",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "../maps_ar/07_country_algeria.png",
-     "number": "٧-١١",
-     "caption": [
-      [
-       "خريطة الجزائر: مسار الكلية ونسب الاحتجاب في المدن",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "../maps_ar/08_country_tunisia.png",
-     "number": "٨-١١",
-     "caption": [
-      [
-       "خريطة تونس: مسار الكلية ونسب الاحتجاب في المدن",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "../maps_ar/09_country_libya.png",
-     "number": "٩-١١",
-     "caption": [
-      [
-       "خريطة ليبيا: مسار الكلية ونسب الاحتجاب في المدن",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
      "file": "../maps_ar/10_country_egypt.png",
-     "number": "١٠-١١",
+     "number": "٥-١١",
      "caption": [
       [
        "خريطة مصر: مسار الكلية ونسب الاحتجاب في المدن",
@@ -4940,56 +4107,8 @@
     },
     {
      "type": "figure",
-     "file": "../maps_ar/11_country_sudan.png",
-     "number": "١١-١١",
-     "caption": [
-      [
-       "خريطة السودان (الشمال الشرقي): مسار الكلية ونسب الاحتجاب في المدن",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "../maps_ar/12_country_saudi_arabia.png",
-     "number": "١٢-١١",
-     "caption": [
-      [
-       "خريطة المملكة العربية السعودية: مسار الكلية ونسب الاحتجاب في المدن",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "../maps_ar/13_country_yemen.png",
-     "number": "١٣-١١",
-     "caption": [
-      [
-       "خريطة اليمن: مسار الكلية ونسب الاحتجاب في المدن",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "../maps_ar/14_country_somalia.png",
-     "number": "١٤-١١",
-     "caption": [
-      [
-       "خريطة الصومال (بونتلاند وأرض الصومال): مسار الكلية ونسب الاحتجاب في المدن",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "h2",
-     "text": "خرائط مصر"
-    },
-    {
-     "type": "figure",
      "file": "../maps_ar/15_egypt_governorates_totality.png",
-     "number": "١٥-١١",
+     "number": "٦-١١",
      "caption": [
       [
        "مصر حسب المحافظات: أين يطول الكسوف الكلي",
@@ -5008,7 +4127,7 @@
     {
      "type": "figure",
      "file": "../maps_ar/16_egypt_contact_times.png",
-     "number": "١٦-١١",
+     "number": "٧-١١",
      "caption": [
       [
        "مصر: توقيت بداية الكسوف وذروته",
@@ -5018,282 +4137,7 @@
     },
     {
      "type": "h2",
-     "text": "خرائط المدن المصرية"
-    },
-    {
-     "type": "figure",
-     "file": "../maps_ar/17_egypt_city_luxor.png",
-     "number": "١٧-١١",
-     "caption": [
-      [
-       "خريطة مدينة الأقصر مع مراحل الكسوف وجدول المواعيد",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "../maps_ar/18_egypt_city_aswan.png",
-     "number": "١٨-١١",
-     "caption": [
-      [
-       "خريطة مدينة أسوان مع مراحل الكسوف وجدول المواعيد",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "../maps_ar/19_egypt_city_qena.png",
-     "number": "١٩-١١",
-     "caption": [
-      [
-       "خريطة مدينة قنا مع مراحل الكسوف وجدول المواعيد",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "../maps_ar/20_egypt_city_sohag.png",
-     "number": "٢٠-١١",
-     "caption": [
-      [
-       "خريطة مدينة سوهاج مع مراحل الكسوف وجدول المواعيد",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "../maps_ar/21_egypt_city_asyut.png",
-     "number": "٢١-١١",
-     "caption": [
-      [
-       "خريطة مدينة أسيوط مع مراحل الكسوف وجدول المواعيد",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "../maps_ar/22_egypt_city_minya.png",
-     "number": "٢٢-١١",
-     "caption": [
-      [
-       "خريطة مدينة المنيا مع مراحل الكسوف وجدول المواعيد",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "../maps_ar/23_egypt_city_beni_suef.png",
-     "number": "٢٣-١١",
-     "caption": [
-      [
-       "خريطة مدينة بني سويف مع مراحل الكسوف وجدول المواعيد",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "../maps_ar/24_egypt_city_faiyum.png",
-     "number": "٢٤-١١",
-     "caption": [
-      [
-       "خريطة مدينة الفيوم مع مراحل الكسوف وجدول المواعيد",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "../maps_ar/25_egypt_city_cairo.png",
-     "number": "٢٥-١١",
-     "caption": [
-      [
-       "خريطة مدينة القاهرة مع مراحل الكسوف وجدول المواعيد",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "../maps_ar/26_egypt_city_giza.png",
-     "number": "٢٦-١١",
-     "caption": [
-      [
-       "خريطة مدينة الجيزة مع مراحل الكسوف وجدول المواعيد",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "../maps_ar/27_egypt_city_alexandria.png",
-     "number": "٢٧-١١",
-     "caption": [
-      [
-       "خريطة مدينة الإسكندرية مع مراحل الكسوف وجدول المواعيد",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "../maps_ar/28_egypt_city_hurghada.png",
-     "number": "٢٨-١١",
-     "caption": [
-      [
-       "خريطة مدينة الغردقة مع مراحل الكسوف وجدول المواعيد",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "../maps_ar/29_egypt_city_safaga.png",
-     "number": "٢٩-١١",
-     "caption": [
-      [
-       "خريطة مدينة سفاجا مع مراحل الكسوف وجدول المواعيد",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "../maps_ar/30_egypt_city_el_quseir.png",
-     "number": "٣٠-١١",
-     "caption": [
-      [
-       "خريطة مدينة القصير مع مراحل الكسوف وجدول المواعيد",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "../maps_ar/31_egypt_city_marsa_alam.png",
-     "number": "٣١-١١",
-     "caption": [
-      [
-       "خريطة مدينة مرسى علم مع مراحل الكسوف وجدول المواعيد",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "../maps_ar/32_egypt_city_kharga.png",
-     "number": "٣٢-١١",
-     "caption": [
-      [
-       "خريطة مدينة الخارجة مع مراحل الكسوف وجدول المواعيد",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "../maps_ar/33_egypt_city_mut_dakhla_oasis.png",
-     "number": "٣٣-١١",
-     "caption": [
-      [
-       "خريطة مدينة موط (واحة الداخلة) مع مراحل الكسوف وجدول المواعيد",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "../maps_ar/34_egypt_city_edfu.png",
-     "number": "٣٤-١١",
-     "caption": [
-      [
-       "خريطة مدينة إدفو مع مراحل الكسوف وجدول المواعيد",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "../maps_ar/35_egypt_city_kom_ombo.png",
-     "number": "٣٥-١١",
-     "caption": [
-      [
-       "خريطة مدينة كوم أمبو مع مراحل الكسوف وجدول المواعيد",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "../maps_ar/36_egypt_city_esna.png",
-     "number": "٣٦-١١",
-     "caption": [
-      [
-       "خريطة مدينة إسنا مع مراحل الكسوف وجدول المواعيد",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "../maps_ar/37_egypt_city_abu_simbel.png",
-     "number": "٣٧-١١",
-     "caption": [
-      [
-       "خريطة مدينة أبو سمبل مع مراحل الكسوف وجدول المواعيد",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "../maps_ar/38_egypt_city_sharm_el_sheikh.png",
-     "number": "٣٨-١١",
-     "caption": [
-      [
-       "خريطة مدينة شرم الشيخ مع مراحل الكسوف وجدول المواعيد",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "../maps_ar/39_egypt_city_siwa.png",
-     "number": "٣٩-١١",
-     "caption": [
-      [
-       "خريطة مدينة سيوة مع مراحل الكسوف وجدول المواعيد",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "../maps_ar/40_egypt_city_bawiti_bahariya_oasis.png",
-     "number": "٤٠-١١",
-     "caption": [
-      [
-       "خريطة مدينة الباويطي (الواحات البحرية) مع مراحل الكسوف وجدول المواعيد",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "../maps_ar/41_egypt_city_berenice.png",
-     "number": "٤١-١١",
-     "caption": [
-      [
-       "خريطة مدينة برنيس مع مراحل الكسوف وجدول المواعيد",
-       false
-      ]
-     ]
+     "text": "خرائط مصر"
     }
    ],
    "src": 7,
@@ -5301,8 +4145,7 @@
    "sections": [
     "نظرة عالمية",
     "خرائط الدول",
-    "خرائط مصر",
-    "خرائط المدن المصرية"
+    "خرائط مصر"
    ]
   },
   {
@@ -5445,7 +4288,7 @@
      "type": "p",
      "text": [
       [
-       "تعرض الخريطة التالية أشرطة الكسوفات المركزية التي تعبر أفريقيا والشرق الأوسط بعرضها الحقيقي، تليها خريطة مفصلة لكل منها: مدة الكلية أو الحلقية بالأزرق، ونسبة تغطية الشمس بالبرتقالي، وقيمها في مدن مختارة من الدار البيضاء إلى طهران.",
+       "تعرض الخريطة التالية أشرطة الكسوفات المركزية التي تعبر أفريقيا والشرق الأوسط بعرضها الحقيقي، مع تاريخ كل منها ومدن مختارة من الدار البيضاء إلى طهران.",
        false
       ]
      ]
@@ -5457,127 +4300,6 @@
      "caption": [
       [
        "مسارات الكسوفات الكلية والحلقية فوق أفريقيا والشرق الأوسط ٢٠٢٤–٢٠٤٥ (محسوبة).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch11/fig_11_06_region_2026_08_12.png",
-     "number": "٦-١٢",
-     "caption": [
-      [
-       "كسوف ١٢ أغسطس ٢٠٢٦ كلي فوق أفريقيا والشرق الأوسط (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch11/fig_11_07_region_2027_02_06.png",
-     "number": "٧-١٢",
-     "caption": [
-      [
-       "كسوف ٦ فبراير ٢٠٢٧ حلقي فوق أفريقيا والشرق الأوسط (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch11/fig_11_08_region_2027_08_02.png",
-     "number": "٨-١٢",
-     "caption": [
-      [
-       "كسوف ٢ أغسطس ٢٠٢٧ كلي فوق أفريقيا والشرق الأوسط (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch11/fig_11_09_region_2028_01_26.png",
-     "number": "٩-١٢",
-     "caption": [
-      [
-       "كسوف ٢٦ يناير ٢٠٢٨ حلقي فوق أفريقيا والشرق الأوسط (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch11/fig_11_10_region_2030_06_01.png",
-     "number": "١٠-١٢",
-     "caption": [
-      [
-       "كسوف ١ يونيو ٢٠٣٠ حلقي فوق أفريقيا والشرق الأوسط (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch11/fig_11_11_region_2030_11_25.png",
-     "number": "١١-١٢",
-     "caption": [
-      [
-       "كسوف ٢٥ نوفمبر ٢٠٣٠ كلي فوق أفريقيا والشرق الأوسط (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch11/fig_11_12_region_2031_05_21.png",
-     "number": "١٢-١٢",
-     "caption": [
-      [
-       "كسوف ٢١ مايو ٢٠٣١ حلقي فوق أفريقيا والشرق الأوسط (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch11/fig_11_13_region_2034_03_20.png",
-     "number": "١٣-١٢",
-     "caption": [
-      [
-       "كسوف ٢٠ مارس ٢٠٣٤ كلي فوق أفريقيا والشرق الأوسط (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch11/fig_11_14_region_2038_01_05.png",
-     "number": "١٤-١٢",
-     "caption": [
-      [
-       "كسوف ٥ يناير ٢٠٣٨ حلقي فوق أفريقيا والشرق الأوسط (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch11/fig_11_15_region_2038_07_02.png",
-     "number": "١٥-١٢",
-     "caption": [
-      [
-       "كسوف ٢ يوليو ٢٠٣٨ حلقي فوق أفريقيا والشرق الأوسط (محسوب).",
-       false
-      ]
-     ]
-    },
-    {
-     "type": "figure",
-     "file": "figures/ch11/fig_11_16_region_2041_04_30.png",
-     "number": "١٦-١٢",
-     "caption": [
-      [
-       "كسوف ٣٠ أبريل ٢٠٤١ كلي فوق أفريقيا والشرق الأوسط (محسوب).",
        false
       ]
      ]
@@ -5614,7 +4336,7 @@
     {
      "type": "figure",
      "file": "figures/ch11/fig_11_17_world_eclipses_2024_2026.png",
-     "number": "١٧-١٢",
+     "number": "٦-١٢",
      "caption": [
       [
        "خرائط عالمية لكسوفات الشمس ٢٠٢٤–٢٠٢٦ (محسوبة).",
@@ -5625,7 +4347,7 @@
     {
      "type": "figure",
      "file": "figures/ch11/fig_11_18_world_eclipses_2027_2029.png",
-     "number": "١٨-١٢",
+     "number": "٧-١٢",
      "caption": [
       [
        "خرائط عالمية لكسوفات الشمس ٢٠٢٧–٢٠٢٩ (محسوبة).",
@@ -5636,7 +4358,7 @@
     {
      "type": "figure",
      "file": "figures/ch11/fig_11_19_world_eclipses_2029_2031.png",
-     "number": "١٩-١٢",
+     "number": "٨-١٢",
      "caption": [
       [
        "خرائط عالمية لكسوفات الشمس ٢٠٢٩–٢٠٣١ (محسوبة).",
@@ -5647,7 +4369,7 @@
     {
      "type": "figure",
      "file": "figures/ch11/fig_11_20_world_eclipses_2032_2034.png",
-     "number": "٢٠-١٢",
+     "number": "٩-١٢",
      "caption": [
       [
        "خرائط عالمية لكسوفات الشمس ٢٠٣٢–٢٠٣٤ (محسوبة).",
@@ -5658,7 +4380,7 @@
     {
      "type": "figure",
      "file": "figures/ch11/fig_11_21_world_eclipses_2035_2037.png",
-     "number": "٢١-١٢",
+     "number": "١٠-١٢",
      "caption": [
       [
        "خرائط عالمية لكسوفات الشمس ٢٠٣٥–٢٠٣٧ (محسوبة).",
@@ -5669,7 +4391,7 @@
     {
      "type": "figure",
      "file": "figures/ch11/fig_11_22_world_eclipses_2037_2039.png",
-     "number": "٢٢-١٢",
+     "number": "١١-١٢",
      "caption": [
       [
        "خرائط عالمية لكسوفات الشمس ٢٠٣٧–٢٠٣٩ (محسوبة).",
@@ -5680,7 +4402,7 @@
     {
      "type": "figure",
      "file": "figures/ch11/fig_11_23_world_eclipses_2040_2042.png",
-     "number": "٢٣-١٢",
+     "number": "١٢-١٢",
      "caption": [
       [
        "خرائط عالمية لكسوفات الشمس ٢٠٤٠–٢٠٤٢ (محسوبة).",
@@ -5691,7 +4413,7 @@
     {
      "type": "figure",
      "file": "figures/ch11/fig_11_24_world_eclipses_2043_2045.png",
-     "number": "٢٤-١٢",
+     "number": "١٣-١٢",
      "caption": [
       [
        "خرائط عالمية لكسوفات الشمس ٢٠٤٣–٢٠٤٥ (محسوبة).",
@@ -5816,6 +4538,7 @@
   "Littmann, M. & Espenak, F., Totality: The Great North American Eclipse of 2024 (Oxford University Press, 2024) — فكرة الملحق «أ» وقيمه المنشورة للمقارنة، وصور ESO وNASA المفتوحة الترخيص الواردة فيه.",
   "European Southern Observatory (ESO) — صورتا كسوف ٢ يوليو ٢٠١٩ فوق لاسيا (P. Horálek, M. Zamani)، بترخيص CC BY 4.0.",
   "Espenak, F., Guide for the Total Solar Eclipse of 2027 (Astropixels Publishing, 2024) — نمط خرائط المسار وجداول المدن للمقارنة، وجدول الطقس في أغسطس.",
+  "Kestrel, A., The 2027 Total Solar Eclipse: Your Companion to Choosing a Viewing Location, Planning Your Trip, Eclipse Photography, Weather, and Eye Safety (2026) — الخطة البديلة والاستعداد للحرارة وخطة يوم الكسوف، مقتبسة بتصرف ومدققة بالحساب.",
   "Carter, J. & Carter, G., Complete Guide to the Total Solar Eclipse 2027: Eclipse of the Century (2026) — مواقع الرصد المقترحة في مصر ونصائح السفر، مقتبسة بتصرف.",
   "Natural Earth — الحدود والأنهار في الخرائط (ملكية عامة).",
   "Hall, A., How to Take Pictures of an Eclipse: An Astrophotography Beginner's Guide (2017) — نصائح التصوير الميدانية، مُلخّصة بتصرف.",
