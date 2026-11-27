@@ -97,7 +97,7 @@ def declutter(ax, limit=0.15, first=()):
     rest = [t for t in ax.texts if t not in first]
     rank = {"label": 0, None: 1, "admin": 2, "clabel": 3}
     for t in list(first) + sorted(rest, key=lambda t: rank.get(t.get_gid(), 1)):
-        if not t.get_visible() or not t.get_text().strip():
+        if t.axes is None or not t.get_visible() or not t.get_text().strip():
             continue
         bb = t.get_window_extent(r)
         if any(_overlap(bb, o)[1] > limit for o in kept):

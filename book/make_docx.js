@@ -160,7 +160,7 @@ spec.chapters.forEach((ch, idx) => {
   if (ch.sections.length) {
     chapterChildren.push(para("في هذا الفصل", { size: 26, bold: true, font: HEAD, color: GOLD, before: 240, after: 80 }));
     ch.sections.forEach((h) => chapterChildren.push(para([run("◆  ", { size: 20, color: GOLD }), run(h, { size: 22, color: NAVY })],
-      { after: 30, align: AlignmentType.RIGHT })));
+      { after: 30, align: AlignmentType.START })));
   }
   // ---- content
   let first = true;
@@ -190,7 +190,7 @@ const appendixPortrait = [
   para("ملحق د: المصادر والمنهجية", { heading: HeadingLevel.HEADING_2, size: 32, bold: true, font: HEAD, color: NAVY, before: 400, after: 160, pageBreakBefore: true }),
   ...spec.method.map((t) => para(t, { size: 22 })),
   ...spec.sources.map((t, i) => para([run(String(i + 1).replace(/\d/g, (d) => "٠١٢٣٤٥٦٧٨٩"[d]) + ". ", { size: 22, bold: true }),
-    run(t, { size: 22 })], { after: 100, align: AlignmentType.RIGHT })),
+    run(t, { size: 22 })], { after: 100, align: AlignmentType.START })),
 ];
 const appendixLandscape = [
   para("ملحق أ: جدول مواعيد الكسوف في المدن المصرية", { heading: HeadingLevel.HEADING_2, size: 32, bold: true, font: HEAD, color: NAVY, after: 120 }),

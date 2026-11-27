@@ -153,73 +153,159 @@ STRIPS = [
 ]
 
 
+# road-map palette (in the manner of web road maps; all data are open: Natural Earth)
+RM_WATER, RM_LAND, RM_URBAN = "#aadaff", "#f4f1ea", "#e6e1d6"
+RM_MAJOR, RM_MAJOR_EDGE, RM_ROAD, RM_ROAD_EDGE = "#fdd17a", "#e3a33a", "#ffffff", "#cfc3ad"
+SEAS = [("البحر المتوسط", 17.0, 35.4), ("البحر المتوسط", 3.0, 37.6), ("البحر المتوسط", 27.5, 33.0),
+        ("المحيط الأطلسي", -7.4, 34.2), ("البحر الأحمر", 37.6, 21.6), ("البحر الأحمر", 34.8, 25.6),
+        ("خليج عدن", 47.5, 12.3), ("بحر العرب", 51.0, 15.2)]
+
+
 def strip_map(k, title, lon0, lon1, lat0, lat1, rows):
+    from matplotlib import patheffects as pe
     W = 8.6
     asp = (lon1 - lon0) * np.cos(np.radians(0.5 * (lat0 + lat1))) / (lat1 - lat0)
-    mh = 6.9 if asp < 1.25 else W * 0.86 / asp
-    H = mh + 1.9
+    mh = 7.2 if asp < 1.2 else W * 0.92 / asp
+    H = mh + 1.75
     fig = plt.figure(figsize=(W, H), facecolor=PAPER)
-    ax = fig.add_axes([0.05, 0.85 / H, 0.86, mh / H])
-    ax.set_facecolor(SEA)
-    ctr = MK.geo("countries_region").cx[lon0 - 3:lon1 + 3, lat0 - 3:lat1 + 3]
-    ctr.plot(ax=ax, color=[LANDC if a in ("EGY", "LBY", "TUN", "DZA", "MAR", "SAU", "YEM", "SOM", "SDN") else OTHER
-                           for a in ctr.ADM0_A3], edgecolor="#8f8a7c", linewidth=0.7, zorder=1)
+    ax = fig.add_axes([0.04, 0.8 / H, 0.92, mh / H])
+    ax.set_facecolor(RM_WATER)
+    sl = (slice(lon0 - 2, lon1 + 2), slice(lat0 - 2, lat1 + 2))
+    ctr = MK.geo("countries_region").cx[sl[0], sl[1]]
+    ctr.plot(ax=ax, color=RM_LAND, edgecolor="none", zorder=1)
+    ctr.boundary.plot(ax=ax, color="#9c8fb0", linewidth=1.0, linestyle=(0, (4, 2)), zorder=3)
+    MK.geo("urban_region").cx[sl[0], sl[1]].plot(ax=ax, color=RM_URBAN, edgecolor="none", zorder=1.5)
+    MK.geo("lakes10_region").cx[sl[0], sl[1]].plot(ax=ax, color=RM_WATER, edgecolor="none", zorder=1.6)
     try:
-        MK.geo("rivers_region").cx[lon0:lon1, lat0:lat1].plot(ax=ax, color="#5b9bd5", linewidth=1.0, zorder=2)
+        MK.geo("rivers_region").cx[sl[0], sl[1]].plot(ax=ax, color=RM_WATER, linewidth=1.6, zorder=1.7)
     except Exception:
         pass
-    # field of totality duration: lines of equal duration every minute
+    roads = MK.geo("roads_region").cx[sl[0], sl[1]]
+    major = roads[roads["type"].isin(["Major Highway"])]
+    minor = roads[roads["type"].isin(["Secondary Highway", "Road"])]
+    for g, edge, fill, w in ((minor, RM_ROAD_EDGE, RM_ROAD, 1.0), (major, RM_MAJOR_EDGE, RM_MAJOR, 1.7)):
+        if len(g):
+            g.plot(ax=ax, color=edge, linewidth=w + 0.9, zorder=2)
+            g.plot(ax=ax, color=fill, linewidth=w, zorder=2.1)
+    shields = []          # route numbers exist in the open data for Europe only, so none are drawn
+    # --- the eclipse path (computed)
     LON, LAT = np.meshgrid(np.linspace(lon0, lon1, 420), np.linspace(lat0, lat1, 320))
     r = C.local_circumstances(B, LAT.ravel(), LON.ravel())
     d = r["duration_s"].reshape(LON.shape)
     d = np.where(d > 0, d, np.nan)
     if np.isfinite(d).any():
-        ax.contourf(LON, LAT, d, levels=[0, 1e5], colors=["#3f7fd0"], alpha=0.16, zorder=3)
-        lv = [60, 120, 180, 240, 300, 330, 360, 375]
-        lv = [v for v in lv if v < np.nanmax(d)]
-        cs = ax.contour(LON, LAT, d, levels=lv, colors="#2f5f9e", linewidths=0.55, zorder=4)
-        MK.tag_clabels(ax.clabel(cs, fmt=lambda v: I.fmt_dur(v), fontsize=7))
-    # limits and central line
+        ax.contourf(LON, LAT, d, levels=[0, 1e5], colors=["#4a5a78"], alpha=0.16, zorder=4)
+        lv = [v for v in (60, 120, 180, 240, 300, 330, 360, 375) if v < np.nanmax(d)]
+        cs = ax.contour(LON, LAT, d, levels=lv, colors="#1f1f1d", linewidths=0.6, zorder=4.2)
+        MK.tag_clabels(ax.clabel(cs, fmt=lambda v: I.fmt_dur(v), fontsize=6.8))
     t = np.linspace(-1.75, 2.0, 1500)
     la, lo, ln, on, ls, os_ = C.path_limits(B, t)
-    ax.plot(on, ln, color=NAVY, lw=1.6, zorder=6)
-    ax.plot(os_, ls, color=NAVY, lw=1.6, zorder=6)
-    ax.plot(lo, la, color=RED, lw=1.3, zorder=6)
-    # time ticks across the path every 2 minutes UT
-    tt = np.arange(np.ceil((-1.75) * 30) / 30, 2.0, 1 / 30)
-    lac, loc, lnt, ont, lst, ost = C.path_limits(B, tt)
-    T0 = besselian.T0_UT_HOURS
-    ticks = []
-    for j in range(len(lac)):
-        if lon0 < loc[j] < lon1 and lat0 < lac[j] < lat1:
-            ax.plot([ont[j], ost[j]], [lnt[j], lst[j]], color="#555046", lw=0.5, zorder=5)
-            if j % 2 == 0 and lon0 < ont[j] < lon1 and lat0 < lnt[j] < lat1 - 0.04 * (lat1 - lat0):
-                ticks.append(ax.text(ont[j], lnt[j], I.fmt_time(tt[j] + T0, seconds=False), fontsize=7, color=INK2,
-                                     ha="center", va="bottom", rotation=0, path_effects=halo(2), zorder=8, clip_on=True))
-    # cities (limits fixed first so labels can be kept inside the map)
+    ax.plot(on, ln, color="#1b2a8f", lw=1.9, zorder=6)
+    ax.plot(os_, ls, color="#1b2a8f", lw=1.9, zorder=6)
+    ax.plot(lo, la, color=RED, lw=1.2, zorder=6)
     ax.set_xlim(lon0, lon1)
     ax.set_ylim(lat0, lat1)
     ax.set_aspect(1 / np.cos(np.radians(0.5 * (lat0 + lat1))))
-    MK.declutter(ax, first=ticks)
+    ax.apply_aspect()
+
+    def along(xs, ys, txt, frac, color, size, dy=0.0):
+        """Label written along a line, rotated to follow it on the page."""
+        m = (xs > lon0) & (xs < lon1) & (ys > lat0) & (ys < lat1)
+        idx = np.where(m)[0]
+        if len(idx) < 10:
+            return None
+        j = idx[int(frac * (len(idx) - 1))]
+        j2 = min(j + 5, len(xs) - 1)
+        p1 = ax.transData.transform((xs[j], ys[j]))
+        p2 = ax.transData.transform((xs[j2], ys[j2]))
+        ang = np.degrees(np.arctan2(p2[1] - p1[1], p2[0] - p1[0]))
+        if ang > 90:
+            ang -= 180
+        elif ang < -90:
+            ang += 180
+        return ax.text(xs[j], ys[j] + dy, txt, rotation=ang, rotation_mode="anchor", ha="center", va="bottom",
+                       fontsize=size, color=color, fontweight="bold", zorder=8, clip_on=True,
+                       path_effects=[pe.withStroke(linewidth=2.5, foreground="white")])
+    lines = [along(on, ln, "الحد الشمالي للكلية", 0.30, "#1b2a8f", 9.5),
+             along(os_, ls, "الحد الجنوبي للكلية", 0.70, "#1b2a8f", 9.5),
+             along(lo, la, "خط المركز", 0.86, RED, 8.5)]
+    # white time lines across the path every 4 minutes, labelled on the central line
+    T0 = besselian.T0_UT_HOURS
+    tt = np.arange(np.ceil(-1.75 * 15) / 15, 2.0, 1 / 15)
+    tt = tt[np.isfinite(C.central_line(B, tt)[0])]      # path_limits drops times with no central line
+    lac, loc, lnt, ont, lst, ost = C.path_limits(B, tt)
+    cr = C.local_circumstances(B, lac, loc)
+    labels = []
+    for j in range(len(tt)):
+        if lon0 + 0.03 * (lon1 - lon0) < loc[j] < lon1 - 0.03 * (lon1 - lon0) and lat0 < lac[j] < lat1:
+            ax.plot([ont[j], ost[j]], [lnt[j], lst[j]], color="white", lw=1.4, zorder=5.5, solid_capstyle="butt")
+            ax.plot(loc[j], lac[j], "o", ms=3.2, color="#1f1f1d", zorder=6.5)
+            txt = (f"{I.fmt_time(tt[j] + T0, seconds=False)} ت.ع\n{I.fmt_dur(float(cr['duration_s'][j]))}\n"
+                   f"{A(f'{float(cr['sun_alt_deg'][j]):.0f}')}°")
+            labels.append(ax.annotate(txt, (loc[j], lac[j]), xytext=(4, 4), textcoords="offset points", fontsize=7.4,
+                                      fontweight="bold", color="#1f1f1d", ha="left", va="bottom", zorder=9,
+                                      linespacing=1.0, path_effects=[pe.withStroke(linewidth=2.2, foreground="white")]))
+    # country and sea names
+    names = []
+    for _, row in ctr.iterrows():
+        pt = row.geometry.intersection(__import__("shapely").geometry.box(lon0, lat0, lon1, lat1))
+        if pt.is_empty or pt.area < 0.06 * (lon1 - lon0) * (lat1 - lat0):
+            continue
+        c = pt.representative_point()
+        names.append(ax.text(c.x, c.y, row["NAME_AR"], fontsize=15, color="#5b5650", style="italic", fontweight="bold",
+                             ha="center", va="center", zorder=3.5, alpha=0.75, gid="admin",
+                             path_effects=[pe.withStroke(linewidth=2.5, foreground="white")]))
+    for n, x, y in SEAS:
+        if lon0 + 0.5 < x < lon1 - 0.5 and lat0 + 0.3 < y < lat1 - 0.3:
+            names.append(ax.text(x, y, n, fontsize=13, color="#2b5f9e", style="italic", fontweight="bold",
+                                 ha="center", va="center", zorder=3.5, gid="admin"))
+    first = [t_ for t_ in lines + labels if t_ is not None]
+    MK.declutter(ax, first=first)
+    # computed cities (red dot inside totality) with duration or obscuration
     shown = [rr for rr in rows if lon0 < rr["lon"] < lon1 and lat0 < rr["lat"] < lat1 and rr["magnitude"] > 0]
-    shown.sort(key=lambda q: q["lon"])
-    for n_, rr in enumerate(shown):
-        if True:
-            inside = rr["duration_s"] > 0
-            ax.plot(rr["lon"], rr["lat"], "o", ms=4.5 if inside else 3.5, mfc=RED if inside else INK, mec="white",
-                    mew=0.8, zorder=9)
-            val = I.fmt_dur(rr["duration_s"]) if inside else I.pct(rr["obscuration"] * 100, 0)
-            MK.place_label(ax, f"{rr['name']}\n{val}", (rr["lon"], rr["lat"]), size=7.8, prefer=1, zorder=10)
-    MK.declutter(ax, first=ticks)
-    ax.xaxis.set_major_formatter(plt.FuncFormatter(lambda v, _: I.fmt_lon(v, 0)))
-    ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda v, _: I.fmt_lat(v, 0)))
-    ax.yaxis.tick_right()
-    ax.tick_params(labelsize=7.5)
+    for rr in sorted(shown, key=lambda q: -q["duration_s"]):
+        inside = rr["duration_s"] > 0
+        ax.plot(rr["lon"], rr["lat"], "o", ms=5, mfc=RED if inside else INK, mec="white", mew=0.9, zorder=9)
+        val = I.fmt_dur(rr["duration_s"]) if inside else I.pct(rr["obscuration"] * 100, 0)
+        MK.place_label(ax, f"{rr['name']}\n{val}", (rr["lon"], rr["lat"]), size=8.2, prefer=1, zorder=10,
+                       fontweight="bold")
+    # other towns from Natural Earth, Arabic over Latin name, largest first
+    known = [(rr["lat"], rr["lon"]) for rr in shown]
+    pl = MK.geo("places_region").cx[lon0:lon1, lat0:lat1]
+    pl = pl.sort_values("POP_MAX", ascending=False)
+    n_extra = 0
+    for _, q in pl.iterrows():
+        if n_extra >= 28:
+            break
+        x, y = q.geometry.x, q.geometry.y
+        if any(abs(y - a) < 0.12 and abs(x - b) < 0.12 for a, b in known) or not isinstance(q["NAME_AR"], str):
+            continue
+        ax.plot(x, y, "o", ms=2.6, color="#6b6a65", zorder=8)
+        if MK.place_label(ax, f"{q['NAME_AR']}\n{q['NAME']}", (x, y), size=6.6, color="#4a4a46", zorder=8) is not None:
+            n_extra += 1
+            known.append((y, x))
+    MK.declutter(ax, first=first + shields)
+    # scale bar (km) in the lower left
+    km = 100 if (lon1 - lon0) < 9 else 200
+    deg = km / (111.32 * np.cos(np.radians(lat0 + 0.08 * (lat1 - lat0))))
+    x0, y0 = lon0 + 0.04 * (lon1 - lon0), lat0 + 0.05 * (lat1 - lat0)
+    ax.plot([x0, x0 + deg], [y0, y0], color="#1f1f1d", lw=1.6, zorder=9, solid_capstyle="butt")
+    for xx in (x0, x0 + deg / 2, x0 + deg):
+        ax.plot([xx, xx], [y0, y0 + 0.012 * (lat1 - lat0)], color="#1f1f1d", lw=1.2, zorder=9)
+    ax.text(x0 + deg / 2, y0 + 0.018 * (lat1 - lat0), f"{A(km)} كم", ha="center", va="bottom", fontsize=8, zorder=9,
+            path_effects=[pe.withStroke(linewidth=2.2, foreground="white")])
+    ax.text(lon1 - 0.01 * (lon1 - lon0), lat0 + 0.012 * (lat1 - lat0), f"خريطة {A(k)}", ha="right", va="bottom",
+            fontsize=10, fontweight="bold", zorder=9, bbox=dict(boxstyle="square,pad=0.3", fc="white", ec="#1f1f1d", lw=0.6))
+    ax.set_xticks([])
+    ax.set_yticks([])
     ax.set_xlabel("")
     ax.set_ylabel("")
+    for s_ in ax.spines.values():
+        s_.set_color("#8a8984")
     header(fig, f"خريطة المسار {A(k)}: {title}",
-           "الخطان الأزرقان حدّا الكلية، والأحمر خط المركز؛ الخطوط العرضية كل دقيقتين بالتوقيت العالمي، والزرقاء الرفيعة خطوط تساوي مدة الكلية")
-    footer(fig, SRC + ". تحت كل مدينة مدة الكلية أو نسبة احتجاب الشمس؛ الأنهار: Natural Earth.")
+           "حدّا الكلية بالأزرق وخط المركز بالأحمر؛ الخطوط السوداء الرفيعة تساوي مدة الكلية كل دقيقة، والخطوط البيضاء موضع الظل كل ٤ دقائق")
+    footer(fig, "المسار: حسابات المؤلف (عناصر بِسِل لناسا). الطرق والمدن: Natural Earth. عند كل خط أبيض: الوقت (ت.ع)، "
+           "ومدة الكلية وارتفاع الشمس على خط المركز.")
     save(fig, CH, f"strip_map_{k:02d}", f"خريطة مسار الكلية {A(k)}: {title} (محسوبة).", "map")
 
 
