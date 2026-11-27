@@ -34,5 +34,11 @@
   "license": "ESA/NASA, free use with credit",
   "date": "2002-01-08",
   "source": "SOHO (ESA & NASA)"
+ },
+ "berkowski_1851": {
+  "credit": "يوهان يوليوس فريدريش بيركوفسكي، مرصد كونيغسبرغ",
+  "date": "1851-07-28",
+  "license": "ملكية عامة (Public domain)",
+  "note": "Daguerreotype of the total solar eclipse of 28 July 1851; supplied by the author"
  }
 }

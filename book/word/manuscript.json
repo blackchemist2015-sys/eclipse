@@ -1270,8 +1270,19 @@
     },
     {
      "type": "figure",
-     "file": "figures/ch8/fig_8_07_eclipse_1868_helium.png",
+     "file": "figures/ch8/fig_8_06_berkowski_1851_photo.png",
      "number": "٥-٢",
+     "caption": [
+      [
+       "أول صورة فوتوغرافية للكسوف الكلي: داجيروتايب بيركوفسكي، ٢٨ يوليو ١٨٥١ (ملكية عامة).",
+       false
+      ]
+     ]
+    },
+    {
+     "type": "figure",
+     "file": "figures/ch8/fig_8_07_eclipse_1868_helium.png",
+     "number": "٦-٢",
      "caption": [
       [
        "مسار كسوف ١٨٦٨ في الهند وجنوب شرق آسيا (محسوب).",
@@ -1282,7 +1293,7 @@
     {
      "type": "figure",
      "file": "figures/ch8/fig_8_08_helium_1868.png",
-     "number": "٦-٢",
+     "number": "٧-٢",
      "caption": [
       [
        "اكتشاف خط الهيليوم في طيف الشمس أثناء كسوف ١٨٦٨.",
@@ -1322,7 +1333,7 @@
     {
      "type": "figure",
      "file": "figures/ch8/fig_8_09_eclipse_1919_eddington.png",
-     "number": "٧-٢",
+     "number": "٨-٢",
      "caption": [
       [
        "مسار كسوف ١٩١٩ وموقعا بعثتي إدنغتون ودايسون (محسوب).",
@@ -1333,7 +1344,7 @@
     {
      "type": "figure",
      "file": "figures/ch8/fig_8_10_eddington_1919.png",
-     "number": "٨-٢",
+     "number": "٩-٢",
      "caption": [
       [
        "تجربة إدنغتون ١٩١٩: انحناء ضوء النجوم قرب الشمس أثناء الكسوف.",
@@ -1408,7 +1419,7 @@
     {
      "type": "figure",
      "file": "figures/ch8/fig_8_13_ancient_records_table.png",
-     "number": "٩-٢",
+     "number": "١٠-٢",
      "caption": [
       [
        "جدول بأشهر سجلات الكسوف المكتوبة في العالم القديم.",
@@ -1432,7 +1443,7 @@
     {
      "type": "figure",
      "file": "figures/ch8/fig_8_15_historic_paths_world.png",
-     "number": "١٠-٢",
+     "number": "١١-٢",
      "caption": [
       [
        "خريطة عالمية لمسارات كسوفات ذات أهمية تاريخية ١٧١٥–٢٠٢٧ (محسوبة).",

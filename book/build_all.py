@@ -28,7 +28,7 @@ TITLES = {src: (NAMES[src] if src == 11 else f"الفصل {ORD_AR[i]}: {NAMES[sr
 EXCLUDE = set("""
 fig_1_28_central_paths_1951_2000 fig_1_41_nasa_iss_transit fig_1_42_nasa_citizen_science fig_1_43_nasa_orion
 fig_1_44_nasa_viewing fig_1_47_open_sdo_flare_earth_scale
-fig_8_03_eclipse_763bc_assyria fig_8_06_eclipse_1851_first_photo
+fig_8_03_eclipse_763bc_assyria
 fig_8_11_eclipse_1973_concorde fig_8_12_eclipse_431bc_athens fig_8_14_delta_t_curve
 fig_2_09_eclipse_978 fig_2_11_history_eclipse_1004 fig_2_12_history_lunar_cairo fig_2_15_eclipse_1882_comet_tewfik
 fig_2_18_eclipse_2006_story fig_2_20_central_eclipses_egypt_table fig_2_21_cairo_luxor_all_eclipses

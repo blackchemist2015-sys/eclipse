@@ -2,7 +2,7 @@
 
 # رسوم كتاب «الكسوف الكلي للشمس — ٢ أغسطس ٢٠٢٧»
 
-تضم هذه المجموعة **216 شكلًا** جاهزة للطباعة (٢٢٠ نقطة في البوصة): إنفوجرافيك ورسوم بيانية وخرائط، وكل نصوصها بالعربية. أرقام كسوف ٢٠٢٧ محسوبة من عناصر بِسِل الرسمية المنشورة لدى ناسا (إسبيناك) مع تحقق مستقل من تقويم JPL DE421، والكسوفات التاريخية من DE421 ونظرية ERFA قبل عام ١٩٠٠. والثواني مقرّبة إلى أقرب ثانية كما في جداول ناسا وإسبيناك.
+تضم هذه المجموعة **217 شكلًا** جاهزة للطباعة (٢٢٠ نقطة في البوصة): إنفوجرافيك ورسوم بيانية وخرائط، وكل نصوصها بالعربية. أرقام كسوف ٢٠٢٧ محسوبة من عناصر بِسِل الرسمية المنشورة لدى ناسا (إسبيناك) مع تحقق مستقل من تقويم JPL DE421، والكسوفات التاريخية من DE421 ونظرية ERFA قبل عام ١٩٠٠. والثواني مقرّبة إلى أقرب ثانية كما في جداول ناسا وإسبيناك.
 
 صور ناسا المفتوحة للظواهر (الخاتم الماسي، حبات بيلي، الهالة، الشواظ…) تُنزَّل بالأمر `python scripts/fetch_nasa_images.py` ثم تُضاف إلى الفصل الأول تلقائيًا عند إعادة البناء. افتح [`index.html`](index.html) لتصفّح الأشكال مع أرقامها وتعليقاتها.
 
@@ -47,9 +47,9 @@ ECLIPSE_LANG=ar python -m eclipse2027.maps   # الخرائط الأربعون �
 
 ---
 
-**English summary.** These are 216 print-ready Arabic figures for a book about the 2027 eclipse, in eleven chapters and an appendix, including a chapter on eclipse times in about 80 Arab cities with eight strip maps of the path. The full list with captions is in `catalogue.json`, and every figure is shown in `index.html`.
+**English summary.** These are 217 print-ready Arabic figures for a book about the 2027 eclipse, in eleven chapters and an appendix, including a chapter on eclipse times in about 80 Arab cities with eight strip maps of the path. The full list with captions is in `catalogue.json`, and every figure is shown in `index.html`.
 ## النسخة الورقية (Word)
 
-[`word/كتاب_الكسوف_الكلي_2027.docx`](word/) هو الكتاب كاملًا بصيغة Word (نحو ٢٢٠ صفحة A4): الغلاف، والملاحظات، والمحتويات، والمقدمة، والفصول الأحد عشر والملحق بنصوصها وأشكالها الـ٢١٦ مع تعليقاتها، ثم الملاحق (جداول المواعيد، ومسرد المصطلحات، والمصادر). الاتجاه من اليمين إلى اليسار، والمقاس A4.
+[`word/كتاب_الكسوف_الكلي_2027.docx`](word/) هو الكتاب كاملًا بصيغة Word (نحو ٢٢٠ صفحة A4): الغلاف، والملاحظات، والمحتويات، والمقدمة، والفصول الأحد عشر والملحق بنصوصها وأشكالها الـ٢١٧ مع تعليقاتها، ثم الملاحق (جداول المواعيد، ومسرد المصطلحات، والمصادر). الاتجاه من اليمين إلى اليسار، والمقاس A4.
 
 يُبنى الملف كما يلي: يكتب `python book/word_build.py` كل شيء: يكتب النص، ويضغط الصور، ثم يولّد ملف Word عبر `make_docx.js`. عند فتح الملف أول مرة يطلب Word تحديث الحقول ليملأ جدول المحتويات؛ اختر «نعم».
