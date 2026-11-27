@@ -33,6 +33,11 @@ BLUE = ["#cde2fb", "#b7d3f6", "#9ec5f4", "#86b6ef", "#6da7ec", "#5598e7", "#3987
 ORANGE = ["#fdf1e4", "#fbe1c4", "#f8cf9f", "#f4ba78", "#efa351", "#e88a2c", "#d4711a", "#b55a12"]
 INK, INK2, MUTED = "#1f1f1d", "#4a4a46", "#8a8984"
 SEA, LAND, LAND_OTHER = "#e8eef3", "#fbfaf7", "#f1efea"
+# road-map style from open Natural Earth layers (roads, urban areas, rivers); set ROAD = False for the plain look
+ROAD = False         # set to True once the samples are approved
+if ROAD:
+    SEA, LAND, LAND_OTHER = "#aadaff", "#f4f1ea", "#ece8de"
+RM_URBAN, RM_MAJOR, RM_MAJOR_EDGE, RM_ROAD, RM_ROAD_EDGE = "#e3ded2", "#fdd17a", "#e3a33a", "#ffffff", "#cfc3ad"
 LIMIT = "#0d366b"
 CENTRAL = "#b3261e"
 
@@ -143,6 +148,23 @@ def setup_axes(ax, lon0, lon1, lat0, lat1, highlight=None, admin1_for=None, admi
     lakes = geo("lakes_region").cx[lon0:lon1, lat0:lat1]
     if len(lakes):
         lakes.plot(ax=ax, color=SEA, edgecolor="none", zorder=1.1)
+    if ROAD and max(lon1 - lon0, lat1 - lat0) < 40:
+        sl = (slice(lon0 - 2, lon1 + 2), slice(lat0 - 2, lat1 + 2))
+        for name, kw in (("urban_region", dict(color=RM_URBAN, edgecolor="none", zorder=1.15)),
+                         ("lakes10_region", dict(color=SEA, edgecolor="none", zorder=1.16)),
+                         ("rivers_region", dict(color="#7fb8e8", linewidth=1.3, zorder=4.3))):
+            try:
+                geo(name).cx[sl[0], sl[1]].plot(ax=ax, **kw)
+            except Exception:
+                pass
+        roads = geo("roads_region").cx[sl[0], sl[1]]
+        span = max(lon1 - lon0, lat1 - lat0)
+        kinds = (("Secondary Highway", "Road"), ("Major Highway",)) if span < 14 else ((), ("Major Highway",))
+        for types, edge, fill, w in ((kinds[0], RM_ROAD_EDGE, RM_ROAD, 0.9), (kinds[1], RM_MAJOR_EDGE, RM_MAJOR, 1.5)):
+            g = roads[roads["type"].isin(types)]
+            if len(g):
+                g.plot(ax=ax, color=edge, linewidth=w + 0.8, zorder=4.4, alpha=0.9)
+                g.plot(ax=ax, color=fill, linewidth=w, zorder=4.45, alpha=0.95)
     if admin1_for:
         a1 = geo("admin1_region")
         a1 = a1[a1.adm0_a3.isin(admin1_for)].cx[lon0:lon1, lat0:lat1]
@@ -154,7 +176,10 @@ def setup_axes(ax, lon0, lon1, lat0, lat1, highlight=None, admin1_for=None, admi
                     ax.text(p.x, p.y, I.admin_label(row.name_en or row["name"], row.get("name_ar")),
                             fontsize=6.5 if not AR else 7, color=MUTED,
                             ha="center", va="center", style="normal" if AR else "italic", zorder=6)
-    view.boundary.plot(ax=ax, color=INK2, linewidth=0.8, zorder=5)
+    if ROAD:
+        view.boundary.plot(ax=ax, color="#9c8fb0", linewidth=1.0, linestyle=(0, (4, 2)), zorder=5)
+    else:
+        view.boundary.plot(ax=ax, color=INK2, linewidth=0.8, zorder=5)
     ax.tick_params(labelsize=7.5)
     ax.set_xlabel("")
     ax.set_ylabel("")
@@ -167,7 +192,7 @@ def setup_axes(ax, lon0, lon1, lat0, lat1, highlight=None, admin1_for=None, admi
 
 
 def draw_field(ax, LON, LAT, r, dur_lines=True, obs_lines=True, obs_fill=True, label_size=7):
-    if obs_fill:
+    if obs_fill and not ROAD:          # road-map style: obscuration shown by labelled lines only
         ax.contourf(LON, LAT, np.where(r["duration_s"] > 0, np.nan, r["obscuration"]), levels=OBS_LEVELS, cmap=OBS_CMAP, norm=OBS_NORM,
                     alpha=0.55, zorder=2, extend="neither")
     if obs_lines:
@@ -176,11 +201,15 @@ def draw_field(ax, LON, LAT, r, dur_lines=True, obs_lines=True, obs_fill=True, l
         ax.clabel(cs, fmt=lambda v: I.pct(v * 100, 0), fontsize=label_size - 0.5, inline=True)
     d = np.where(r["duration_s"] > 0, r["duration_s"], np.nan)
     if np.isfinite(d).any():
-        ax.contourf(LON, LAT, d, levels=DUR_LEVELS, cmap=DUR_CMAP, norm=DUR_NORM, alpha=0.6, zorder=3.5)
+        if ROAD:                       # a light grey band, like printed path maps
+            ax.contourf(LON, LAT, d, levels=[0, 1e5], colors=["#4a5a78"], alpha=0.17, zorder=3.5)
+        else:
+            ax.contourf(LON, LAT, d, levels=DUR_LEVELS, cmap=DUR_CMAP, norm=DUR_NORM, alpha=0.6, zorder=3.5)
         if dur_lines:
             lv = [v for v in DUR_LEVELS[1:] if v < np.nanmax(d)]
             if lv:
-                cs = ax.contour(LON, LAT, d, levels=lv, colors=LIMIT, linewidths=0.45, zorder=4, alpha=0.8)
+                cs = ax.contour(LON, LAT, d, levels=lv, colors="#1f1f1d" if ROAD else LIMIT,
+                                linewidths=0.5 if ROAD else 0.45, zorder=4.5, alpha=0.8)
                 ax.clabel(cs, fmt=lambda v: I.fmt_dur(v), fontsize=label_size - 0.5)
 
 
@@ -189,7 +218,8 @@ def land_veil(ax):
     lon0, lon1 = ax.get_xlim()
     lat0, lat1 = ax.get_ylim()
     view = geo("countries_region").cx[lon0 - 1:lon1 + 1, lat0 - 1:lat1 + 1]
-    view.plot(ax=ax, color="white", alpha=0.28, edgecolor="none", zorder=4.5)
+    if not ROAD:          # in the road-map style the fills are lighter and roads must stay visible
+        view.plot(ax=ax, color="white", alpha=0.28, edgecolor="none", zorder=4.5)
     ax.set_xlabel("")
     ax.set_ylabel("")
 
@@ -236,6 +266,8 @@ def draw_cities(ax, cities, lon0, lon1, lat0, lat1, utc, fontsize=7.5, show_valu
 
 
 def add_colorbars(fig, ax, show_obs=True, show_dur=True):
+    if ROAD:                           # no colour fields to explain: the lines carry their own labels
+        return
     from matplotlib.patches import Rectangle
     from mpl_toolkits.axes_grid1.inset_locator import inset_axes
     if show_dur:

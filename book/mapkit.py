@@ -16,21 +16,52 @@ def geo(name):
 
 
 SEA, LAND, LAND_OTHER = "#e8eef3", "#fbfaf7", "#f1efea"
+# road-map style (in the manner of web road maps, from open Natural Earth data); STYLE = "plain" keeps the old look
+STYLE = "plain"      # set to "road" once the samples are approved
+RM_WATER, RM_LAND, RM_LAND_OTHER, RM_URBAN = "#aadaff", "#f4f1ea", "#ece8de", "#e3ded2"
+RM_MAJOR, RM_MAJOR_EDGE, RM_ROAD, RM_ROAD_EDGE = "#fdd17a", "#e3a33a", "#ffffff", "#cfc3ad"
+
+
+def road_layers(ax, lon0, lon1, lat0, lat1, towns=12):
+    """Urban areas, lakes, rivers, roads and (optionally) town names; towns are soft labels that give way to others."""
+    sl = (slice(lon0 - 2, lon1 + 2), slice(lat0 - 2, lat1 + 2))
+    geo("urban_region").cx[sl[0], sl[1]].plot(ax=ax, color=RM_URBAN, edgecolor="none", zorder=1.5)
+    geo("lakes10_region").cx[sl[0], sl[1]].plot(ax=ax, color=RM_WATER, edgecolor="none", zorder=1.6)
+    geo("rivers_region").cx[sl[0], sl[1]].plot(ax=ax, color="#7fb8e8", linewidth=1.3, zorder=4.3)
+    roads = geo("roads_region").cx[sl[0], sl[1]]
+    span = max(lon1 - lon0, lat1 - lat0)
+    kinds = (("Secondary Highway", "Road"), ("Major Highway",)) if span < 14 else ((), ("Major Highway",))
+    for types, edge, fill, w in ((kinds[0], RM_ROAD_EDGE, RM_ROAD, 0.9), (kinds[1], RM_MAJOR_EDGE, RM_MAJOR, 1.5)):
+        g = roads[roads["type"].isin(types)]
+        if len(g):
+            g.plot(ax=ax, color=edge, linewidth=w + 0.8, zorder=4.4, alpha=0.9)
+            g.plot(ax=ax, color=fill, linewidth=w, zorder=4.45, alpha=0.95)
+    if towns:
+        pl = geo("places_region").cx[lon0:lon1, lat0:lat1].sort_values("POP_MAX", ascending=False).head(towns)
+        for _, q in pl.iterrows():
+            if isinstance(q["NAME_AR"], str):
+                ax.plot(q.geometry.x, q.geometry.y, "o", ms=2.4, color="#6b6a65", zorder=4.6)
+                ax.annotate(q["NAME_AR"], (q.geometry.x, q.geometry.y), xytext=(3, 2), textcoords="offset points",
+                            fontsize=6.4, color="#5b5a55", zorder=4.7, gid="admin", path_effects=halo(2))
 OBS_LEVELS = np.array([1e-4, 0.2, 0.4, 0.6, 0.8, 0.9, 0.95, 0.99, 1.0])
 OBS_CMAP = ListedColormap(ORANGE)
 OBS_NORM = BoundaryNorm(OBS_LEVELS, OBS_CMAP.N)
 
 
-def base(ax, lon0, lon1, lat0, lat1, highlight=("EGY",), admin1=("EGY",), labels=False):
-    ax.set_facecolor(SEA)
+def base(ax, lon0, lon1, lat0, lat1, highlight=("EGY",), admin1=("EGY",), labels=False, towns=12):
+    road = STYLE == "road"
+    ax.set_facecolor(RM_WATER if road else SEA)
     ax.set_xlim(lon0, lon1)
     ax.set_ylim(lat0, lat1)
     ax.set_aspect(1 / np.cos(np.radians(0.5 * (lat0 + lat1))))
     big = (lon1 - lon0) > 40
     countries = geo("countries_world" if big else "countries_region")
     view = countries.cx[lon0 - 2:lon1 + 2, lat0 - 2:lat1 + 2]
-    view.plot(ax=ax, color=[LAND if (highlight and a in highlight) else LAND_OTHER for a in view.ADM0_A3],
+    land, other = (RM_LAND, RM_LAND_OTHER) if road else (LAND, LAND_OTHER)
+    view.plot(ax=ax, color=[land if (highlight and a in highlight) else other for a in view.ADM0_A3],
               edgecolor="none", zorder=1)
+    if road and not big:
+        road_layers(ax, lon0, lon1, lat0, lat1, towns=towns)
     if admin1 and not big:
         a1 = geo("admin1_region")
         a1 = a1[a1.adm0_a3.isin(admin1)].cx[lon0:lon1, lat0:lat1]
@@ -43,7 +74,10 @@ def base(ax, lon0, lon1, lat0, lat1, highlight=("EGY",), admin1=("EGY",), labels
                                  ha="center", va="center", zorder=6, gid="admin")
                     ax._admin_texts = getattr(ax, "_admin_texts", []) + [t_]
             declutter(ax)
-    view.boundary.plot(ax=ax, color=INK2, lw=0.7, zorder=5)
+    if road:
+        view.boundary.plot(ax=ax, color="#9c8fb0", lw=1.0, linestyle=(0, (4, 2)), zorder=5)
+    else:
+        view.boundary.plot(ax=ax, color=INK2, lw=0.7, zorder=5)
     ax.set_xlabel("")
     ax.set_ylabel("")
     dec = 1 if max(lon1 - lon0, lat1 - lat0) < 5 else 0
@@ -60,7 +94,8 @@ def field(ax, B, lon0, lon1, lat0, lat1, n=260, obs_lines=True, fill=True, dur=T
     r = C.local_circumstances(B, LAT.ravel(), LON.ravel())
     r = {k: (v.reshape(LON.shape) if np.ndim(v) else v) for k, v in r.items()}
     inside = (r["umbral_margin"] > 0) & r["sun_up"]
-    if fill:
+    road = STYLE == "road"
+    if fill and not road:              # road-map style: obscuration shown by labelled lines only
         ax.contourf(LON, LAT, np.where(inside, np.nan, r["obscuration"]), levels=OBS_LEVELS, cmap=OBS_CMAP,
                     norm=OBS_NORM, alpha=0.55, zorder=2)
     if obs_lines:
@@ -72,8 +107,12 @@ def field(ax, B, lon0, lon1, lat0, lat1, n=260, obs_lines=True, fill=True, dur=T
         lv = np.arange(0, np.nanmax(d) + 31, 30)
         from matplotlib.colors import LinearSegmentedColormap
         cm = LinearSegmentedColormap.from_list("dur", [BLUE[1], BLUE[5], BLUE[9]])
-        ax.contourf(LON, LAT, d, levels=lv, cmap=cm, alpha=0.75, zorder=3.5)
-        cs = ax.contour(LON, LAT, d, levels=lv[1::2], colors=BLUE[11], linewidths=0.4, alpha=0.6, zorder=3.6)
+        if road:                       # a light grey band, like printed path maps
+            ax.contourf(LON, LAT, d, levels=[0, 1e5], colors=["#4a5a78"], alpha=0.17, zorder=3.5)
+            cs = ax.contour(LON, LAT, d, levels=lv[1::2], colors="#1f1f1d", linewidths=0.5, alpha=0.8, zorder=4.5)
+        else:
+            ax.contourf(LON, LAT, d, levels=lv, cmap=cm, alpha=0.75, zorder=3.5)
+            cs = ax.contour(LON, LAT, d, levels=lv[1::2], colors=BLUE[11], linewidths=0.4, alpha=0.6, zorder=3.6)
         tag_clabels(ax.clabel(cs, fmt=lambda v: I.fmt_dur(v), fontsize=6.5))
     elif np.any(inside):
         ax.contourf(LON, LAT, inside.astype(float), levels=[0.5, 1.5], colors=["#f2b8a0"], alpha=0.7, zorder=3.5)
