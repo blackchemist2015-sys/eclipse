@@ -230,5 +230,21 @@
   "file": "figures/ch5/fig_5_29_camera_types.png",
   "caption": "مقارنة أنواع الكاميرات لتصوير الكسوف (مقتبسة بتصرف من Allan Hall, 2017).",
   "kind": "infographic"
+ },
+ {
+  "chapter": 5,
+  "number": "5-30",
+  "number_ar": "٣٠-٥",
+  "file": "figures/ch5/fig_5_30_pyramid_partial_eclipse.png",
+  "caption": "كسوف جزئي فوق قمة الهرم الأكبر بالجيزة (تصوير أسامة فتحي).",
+  "kind": "photo"
+ },
+ {
+  "chapter": 5,
+  "number": "5-31",
+  "number_ar": "٣١-٥",
+  "file": "figures/ch5/fig_5_31_camera_screen_filter.png",
+  "caption": "الشمس المكسوفة جزئيًا على شاشة الكاميرا مع مرشح شمسي أمام العدسة.",
+  "kind": "photo"
  }
 ]

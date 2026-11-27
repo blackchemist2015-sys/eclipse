@@ -166,5 +166,13 @@
   "file": "figures/ch4/fig_4_21_optics_rules.png",
   "caption": "قواعد استعمال المناظير والتلسكوبات لرصد الشمس.",
   "kind": "infographic"
+ },
+ {
+  "chapter": 4,
+  "number": "4-22",
+  "number_ar": "٢٢-٤",
+  "file": "figures/ch4/fig_4_22_cairo_public_viewing.png",
+  "caption": "رصد جماعي آمن لكسوف جزئي في القاهرة: نظارات معتمدة وتلسكوبات بمرشحات شمسية.",
+  "kind": "photo"
  }
 ]

@@ -1140,6 +1140,16 @@
   "src_number": "4-21"
  },
  {
+  "chapter": 4,
+  "number": "5-16",
+  "number_ar": "١٦-٥",
+  "file": "figures/ch4/fig_4_22_cairo_public_viewing.png",
+  "caption": "رصد جماعي آمن لكسوف جزئي في القاهرة: نظارات معتمدة وتلسكوبات بمرشحات شمسية.",
+  "kind": "photo",
+  "book_chapter": 5,
+  "src_number": "4-22"
+ },
+ {
   "chapter": 9,
   "number": "6-1",
   "number_ar": "١-٦",
@@ -1498,6 +1508,26 @@
   "kind": "infographic",
   "book_chapter": 7,
   "src_number": "5-28"
+ },
+ {
+  "chapter": 5,
+  "number": "7-19",
+  "number_ar": "١٩-٧",
+  "file": "figures/ch5/fig_5_30_pyramid_partial_eclipse.png",
+  "caption": "كسوف جزئي فوق قمة الهرم الأكبر بالجيزة (تصوير أسامة فتحي).",
+  "kind": "photo",
+  "book_chapter": 7,
+  "src_number": "5-30"
+ },
+ {
+  "chapter": 5,
+  "number": "7-20",
+  "number_ar": "٢٠-٧",
+  "file": "figures/ch5/fig_5_31_camera_screen_filter.png",
+  "caption": "الشمس المكسوفة جزئيًا على شاشة الكاميرا مع مرشح شمسي أمام العدسة.",
+  "kind": "photo",
+  "book_chapter": 7,
+  "src_number": "5-31"
  },
  {
   "chapter": 10,

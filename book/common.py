@@ -358,3 +358,28 @@ def mirror_y(ax):
     ax.yaxis.set_label_position("right")
     ax.spines["right"].set_visible(True)
     ax.spines["left"].set_visible(False)
+
+
+def photo_page(chapter, slug, title, subtitle, images, text, credit, caption, W=8.4, photo_h=5.2):
+    """A page of one to three photographs side by side on a dark background, with a short text and a credit line.
+
+    images: paths of the photos (shown at equal height, keeping their proportions)."""
+    import os
+    imgs = [plt.imread(p) for p in images]
+    ratios = [im.shape[1] / im.shape[0] for im in imgs]
+    gap = 0.15
+    usable = W * 0.93 - gap * (len(imgs) - 1)
+    ph = min(photo_h, usable / sum(ratios))
+    H = ph + 3.0
+    fig = page(W, H, NAVY)
+    header(fig, title, subtitle, color="white", sub_color="#c9d3e3")
+    total = sum(ph * r for r in ratios) + gap * (len(imgs) - 1)
+    x = (W - total) / 2
+    for im, r in zip(imgs, ratios):
+        ax = fig.add_axes([x / W, 1.95 / H, ph * r / W, ph / H])
+        ax.imshow(im)
+        ax.axis("off")
+        x += ph * r + gap
+    fig.text(0.965, 1.78 / H, wrap(text, 100), ha="right", va="top", fontsize=10, color="white", linespacing=1.3)
+    footer(fig, credit, color="#c9d3e3")
+    return save(fig, chapter, slug, caption, "photo")
