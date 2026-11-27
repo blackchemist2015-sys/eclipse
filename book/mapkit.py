@@ -17,17 +17,21 @@ def geo(name):
 
 SEA, LAND, LAND_OTHER = "#e8eef3", "#fbfaf7", "#f1efea"
 # road-map style (in the manner of web road maps, from open Natural Earth data); STYLE = "plain" keeps the old look
-STYLE = "plain"      # set to "road" once the samples are approved
+STYLE = "plain"      # set to "detail" once approved; "detail": original colours + roads and towns; "road": web road-map look; "plain": no roads
 RM_WATER, RM_LAND, RM_LAND_OTHER, RM_URBAN = "#aadaff", "#f4f1ea", "#ece8de", "#e3ded2"
 RM_MAJOR, RM_MAJOR_EDGE, RM_ROAD, RM_ROAD_EDGE = "#fdd17a", "#e3a33a", "#ffffff", "#cfc3ad"
 
 
-def road_layers(ax, lon0, lon1, lat0, lat1, towns=12):
+def road_layers(ax, lon0, lon1, lat0, lat1, towns=12, urban=True):
     """Urban areas, lakes, rivers, roads and (optionally) town names; towns are soft labels that give way to others."""
     sl = (slice(lon0 - 2, lon1 + 2), slice(lat0 - 2, lat1 + 2))
-    geo("urban_region").cx[sl[0], sl[1]].plot(ax=ax, color=RM_URBAN, edgecolor="none", zorder=1.5)
-    geo("lakes10_region").cx[sl[0], sl[1]].plot(ax=ax, color=RM_WATER, edgecolor="none", zorder=1.6)
-    geo("rivers_region").cx[sl[0], sl[1]].plot(ax=ax, color="#7fb8e8", linewidth=1.3, zorder=4.3)
+    detail = STYLE == "detail"
+    if urban:
+        geo("urban_region").cx[sl[0], sl[1]].plot(ax=ax, color="#e6e2da" if detail else RM_URBAN, edgecolor="none",
+                                                  zorder=1.5)
+    geo("lakes10_region").cx[sl[0], sl[1]].plot(ax=ax, color=SEA if detail else RM_WATER, edgecolor="none", zorder=1.6)
+    geo("rivers_region").cx[sl[0], sl[1]].plot(ax=ax, color="#5b9bd5" if detail else "#7fb8e8", linewidth=1.2,
+                                               zorder=4.3)
     roads = geo("roads_region").cx[sl[0], sl[1]]
     span = max(lon1 - lon0, lat1 - lat0)
     kinds = (("Secondary Highway", "Road"), ("Major Highway",)) if span < 14 else ((), ("Major Highway",))
@@ -60,7 +64,7 @@ def base(ax, lon0, lon1, lat0, lat1, highlight=("EGY",), admin1=("EGY",), labels
     land, other = (RM_LAND, RM_LAND_OTHER) if road else (LAND, LAND_OTHER)
     view.plot(ax=ax, color=[land if (highlight and a in highlight) else other for a in view.ADM0_A3],
               edgecolor="none", zorder=1)
-    if road and not big:
+    if (road or STYLE == "detail") and not big:
         road_layers(ax, lon0, lon1, lat0, lat1, towns=towns)
     if admin1 and not big:
         a1 = geo("admin1_region")

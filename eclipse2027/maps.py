@@ -34,7 +34,8 @@ ORANGE = ["#fdf1e4", "#fbe1c4", "#f8cf9f", "#f4ba78", "#efa351", "#e88a2c", "#d4
 INK, INK2, MUTED = "#1f1f1d", "#4a4a46", "#8a8984"
 SEA, LAND, LAND_OTHER = "#e8eef3", "#fbfaf7", "#f1efea"
 # road-map style from open Natural Earth layers (roads, urban areas, rivers); set ROAD = False for the plain look
-ROAD = False         # set to True once the samples are approved
+ROAD = False         # web road-map look (not used: the original colours were preferred)
+DETAIL = False       # set to True once approved; original colours, plus roads, urban areas, lakes and rivers from Natural Earth
 if ROAD:
     SEA, LAND, LAND_OTHER = "#aadaff", "#f4f1ea", "#ece8de"
 RM_URBAN, RM_MAJOR, RM_MAJOR_EDGE, RM_ROAD, RM_ROAD_EDGE = "#e3ded2", "#fdd17a", "#e3a33a", "#ffffff", "#cfc3ad"
@@ -148,11 +149,11 @@ def setup_axes(ax, lon0, lon1, lat0, lat1, highlight=None, admin1_for=None, admi
     lakes = geo("lakes_region").cx[lon0:lon1, lat0:lat1]
     if len(lakes):
         lakes.plot(ax=ax, color=SEA, edgecolor="none", zorder=1.1)
-    if ROAD and max(lon1 - lon0, lat1 - lat0) < 40:
+    if (ROAD or DETAIL) and max(lon1 - lon0, lat1 - lat0) < 40:
         sl = (slice(lon0 - 2, lon1 + 2), slice(lat0 - 2, lat1 + 2))
-        for name, kw in (("urban_region", dict(color=RM_URBAN, edgecolor="none", zorder=1.15)),
+        for name, kw in (("urban_region", dict(color="#e6e2da" if DETAIL else RM_URBAN, edgecolor="none", zorder=1.15)),
                          ("lakes10_region", dict(color=SEA, edgecolor="none", zorder=1.16)),
-                         ("rivers_region", dict(color="#7fb8e8", linewidth=1.3, zorder=4.3))):
+                         ("rivers_region", dict(color="#5b9bd5" if DETAIL else "#7fb8e8", linewidth=1.2, zorder=4.6))):
             try:
                 geo(name).cx[sl[0], sl[1]].plot(ax=ax, **kw)
             except Exception:
@@ -163,8 +164,8 @@ def setup_axes(ax, lon0, lon1, lat0, lat1, highlight=None, admin1_for=None, admi
         for types, edge, fill, w in ((kinds[0], RM_ROAD_EDGE, RM_ROAD, 0.9), (kinds[1], RM_MAJOR_EDGE, RM_MAJOR, 1.5)):
             g = roads[roads["type"].isin(types)]
             if len(g):
-                g.plot(ax=ax, color=edge, linewidth=w + 0.8, zorder=4.4, alpha=0.9)
-                g.plot(ax=ax, color=fill, linewidth=w, zorder=4.45, alpha=0.95)
+                g.plot(ax=ax, color=edge, linewidth=w + 0.8, zorder=4.6, alpha=0.9)
+                g.plot(ax=ax, color=fill, linewidth=w, zorder=4.65, alpha=0.95)
     if admin1_for:
         a1 = geo("admin1_region")
         a1 = a1[a1.adm0_a3.isin(admin1_for)].cx[lon0:lon1, lat0:lat1]
