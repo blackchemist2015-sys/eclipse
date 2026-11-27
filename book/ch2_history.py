@@ -5,7 +5,7 @@ import os
 import numpy as np
 
 import mapkit as MK
-from common import (A, BLUE, BODY, CARD, Circ, GREEN, INK, INK2, LINE, MUTED, NAVY, ORANGE, PAPER, RED, ROOT, SUN,
+from common import (asp, A, BLUE, BODY, CARD, Circ, GREEN, INK, INK2, LINE, MUTED, NAVY, ORANGE, PAPER, RED, ROOT, SUN,
                     SUN_DEEP, TITLE, arabic_ticks, arrow, canvas, card, corona, footer, halo, header, mirror_y,
                     moon_disk, number_badge, page, para, plt, save, style_axes, sun_disk, wrap, write_catalogue)
 from eclipse2027 import circumstances as C, engine as E, i18n as I
@@ -94,17 +94,28 @@ def fig_ibn_haytham_camera():
     fig = page(8.0, 5.6)
     ax = canvas(fig)
     header(fig, "ابن الهيثم وصورة الكسوف", "الضوء المار من ثقب صغير يرسم هلال الشمس المكسوفة مقلوبًا على الجدار")
-    sun = sun_disk(ax, 0.88, 0.50, 0.05)
-    moon_disk(ax, 0.86, 0.52, 0.05, color=PAPER, clip=sun)
+    # geometry: every ray goes straight through the pinhole, so the image is inverted and scaled by the distances
+    sx, sy, sr = 0.88, 0.50, 0.05            # the eclipsed Sun
+    hx, hy = 0.506, 0.47                     # pinhole
+    wx = 0.17                                # centre of the image on the wall
+    k = (hx - wx) / (sx - hx)                # magnification (image/object)
+    ix, iy, ir = wx, hy - k * (sy - hy), sr * k
+    sun = sun_disk(ax, sx, sy, sr)
+    mdx, mdy = -0.02, 0.02                   # where the Moon sits on the Sun
+    moon_disk(ax, sx + mdx, sy + mdy, sr, color=PAPER, clip=sun)
     ax.add_patch(plt.Rectangle((0.50, 0.15), 0.012, 0.62, fc=INK2, transform=ax.transAxes))
-    ax.add_patch(plt.Rectangle((0.50, 0.455), 0.012, 0.03, fc=PAPER, transform=ax.transAxes, zorder=3))
-    for dy in (+0.09, -0.09):
-        ax.plot([0.85, 0.15], [0.50 + dy * 0.9, 0.47 - dy * 2.4], color=SUN_DEEP, lw=0.8, alpha=0.7)
+    ax.add_patch(plt.Rectangle((0.50, hy - 0.015), 0.012, 0.03, fc=PAPER, transform=ax.transAxes, zorder=3))
+    vr = sr * asp(ax)                        # the disc's vertical radius in axes units (the page is not square)
+    for dy in (+vr, -vr):                    # rays from the top and bottom of the Sun to the bottom and top of the image
+        ty = iy - dy * k
+        ax.plot([sx, hx, wx], [sy + dy, hy, ty], color=SUN_DEEP, lw=0.9, alpha=0.8, zorder=2)
     ax.add_patch(plt.Rectangle((0.10, 0.15), 0.01, 0.62, fc="#d8d4ca", transform=ax.transAxes))
-    s2 = sun_disk(ax, 0.17, 0.47, 0.045, glow=False)
-    moon_disk(ax, 0.19, 0.45, 0.045, color=PAPER, clip=s2)
+    s2 = sun_disk(ax, ix, iy, ir, glow=False)
+    moon_disk(ax, ix - mdx * k, iy - mdy * k, ir, color=PAPER, clip=s2)          # inverted: the bite moves to the other side
+    ax.plot(hx + 0.006, hy, "o", ms=3, color=SUN_DEEP, zorder=4)
     ax.text(0.506, 0.795, "ثقب صغير", ha="center", fontsize=10)
     ax.text(0.17, 0.795, "صورة مقلوبة", ha="center", fontsize=10)
+    ax.text(0.53, hy + 0.04, "الأشعة تتقاطع\nعند الثقب", ha="left", fontsize=8.5, color=INK2)
     ax.text(0.88, 0.70, "الشمس المكسوفة", ha="center", fontsize=10)
     para(ax, 0.5, 0.115, "درس الحسن بن الهيثم (ت. نحو ١٠٤٠م) هذه الظاهرة في القاهرة، ووضع فيها رسالته «مقالة في صورة "
          "الكسوف»، وهي أصل فكرة «الحجرة المظلمة» (الكاميرا).", width=115, size=9.4, ha="center", linespacing=1.35)

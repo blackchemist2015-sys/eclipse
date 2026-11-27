@@ -464,89 +464,140 @@ def fig_phenomena_timeline():
 
 
 # ------------------------------------------------------------------ 11-14 illustrations
+def annotated_nasa_photo(key, slug, title, subtitle, notes, text, caption, crop=None, W=8.4):
+    """A NASA eclipse photograph with arrows naming what is seen (positions given on a 900-px-wide copy)."""
+    import json
+    import os
+    from common import ROOT
+    d = os.path.join(ROOT, "data", "nasa_images")
+    cr = json.load(open(os.path.join(d, "credits.json"), encoding="utf-8"))[key]
+    img = plt.imread(os.path.join(d, f"{key}.jpg"))
+    h, w = img.shape[:2]
+    k = w / 900.0
+    x0, x1, y0, y1 = (crop or (0, 900, 0, 900 * h / w))
+    x0, x1, y0, y1 = x0 * k, x1 * k, y0 * k, y1 * k
+    ph = W * 0.94 * (y1 - y0) / (x1 - x0)
+    H = ph + 2.9
+    fig = page(W, H, "#05080f")
+    header(fig, title, subtitle, color="white", sub_color="#c9d3e3")
+    ax = fig.add_axes([0.03, 1.75 / H, 0.94, ph / H])
+    ax.imshow(img, extent=(0, w, h, 0))
+    ax.set_xlim(x0, x1)
+    ax.set_ylim(y1, y0)
+    ax.axis("off")
+    for lab, (px, py), (tx, ty) in notes:
+        ax.annotate(lab, (px * k, py * k), xytext=(tx * k, ty * k), color="white", fontsize=10.5, fontweight="bold",
+                    ha="center", va="center", path_effects=halo(3, "#05080f"),
+                    arrowprops=dict(arrowstyle="-|>", color="#ffcf70", lw=1.3, mutation_scale=12, shrinkA=4, shrinkB=2))
+    fig.text(0.965, 1.6 / H, wrap(text, 100), ha="right", va="top", fontsize=10, color="white", linespacing=1.3)
+    when = cr.get("date", "")[:4]
+    footer(fig, f"الصورة: ناسا ({cr['photographer'].strip('()')}، {A(when)}) — {cr['nasa_id']}؛ الشرح من المؤلف.",
+           color="#c9d3e3")
+    save(fig, CH, slug, caption, "photo")
+
+
 def fig_diamond_ring():
-    fig = page(6.5, 5.0, "#05080f")
-    ax = canvas(fig)
-    header(fig, "الخاتم الماسي", "آخر وميض من قرص الشمس قبيل الكلية مباشرة", color="white", sub_color="#c9d3e3")
-    cx, cy, r = 0.5, 0.45, 0.17
-    corona(ax, cx, cy, r, seed=11, strength=0.8)
-    ax.add_patch(Circ(ax, (cx, cy), r * 1.01, fc="#05080f", ec="#ffe9b0", lw=1.8, zorder=4))
-    bx, by = cx + r * np.cos(np.radians(40)), cy + r * np.sin(np.radians(40))
-    for k, a in [(0.16, 0.08), (0.10, 0.16), (0.06, 0.35), (0.03, 0.8), (0.015, 1.0)]:
-        ax.add_patch(Circ(ax, (bx, by), k, fc="white", alpha=a, ec="none", zorder=5))
-    for ang in np.linspace(0, np.pi, 4, endpoint=False):
-        ax.plot([bx - 0.12 * np.cos(ang), bx + 0.12 * np.cos(ang)], [by - 0.12 * np.sin(ang), by + 0.12 * np.sin(ang)],
-                color="white", lw=0.8, alpha=0.6, zorder=5)
-    para(ax, 0.5, 0.16, "تحذير: الخاتم الماسي جزء من الشمس الساطعة؛ لا تنزع النظارة إلا بعد اختفائه تمامًا.",
-         width=70, size=9.6, color="#ffcf70", ha="center")
-    save(fig, CH, "diamond_ring", "رسم توضيحي لظاهرة الخاتم الماسي.")
+    annotated_nasa_photo(
+        "diamond_ring", "diamond_ring", "الخاتم الماسي", "آخر وميض من قرص الشمس قبيل الكلية — صورة حقيقية من كسوف ٢٠١٧",
+        [("«الماسة»: آخر جزء ساطع\nمن قرص الشمس", (360, 425), (190, 530)),
+         ("«الخاتم»: الهالة الداخلية\nحول حافة القمر", (585, 215), (760, 110)),
+         ("الكروموسفير الوردي", (517, 158), (690, 40)),
+         ("قرص القمر المظلم", (430, 290), (430, 290))],
+        "قبل الكلية بثوانٍ يبقى من قرص الشمس نقطة ساطعة واحدة، فتبدو مع حلقة الهالة الداخلية حول القمر كخاتم يعلوه فصّ ماس. "
+        "ويظهر الخاتم مرتين: قبيل التماس الثاني وبُعيد التماس الثالث. والماسة جزء من سطح الشمس الساطع نفسه، فلا تنزع النظارة "
+        "إلا بعد اختفائها تمامًا، وأعدها فور ظهورها من جديد.",
+        "الخاتم الماسي في صورة ناسا لكسوف ٢٠١٧ مع شرح أجزائه.", crop=(60, 840, 0, 610))
 
 
 def fig_bailys_beads():
-    fig = page(6.5, 5.0, "#05080f")
-    ax = canvas(fig)
-    header(fig, "حبات بيلي", "ضوء الشمس ينفذ عبر الوديان على حافة القمر", color="white", sub_color="#c9d3e3")
-    cx, cy, r = 0.5, 0.30, 0.42
-    th = np.linspace(np.radians(55), np.radians(125), 400)
-    ax.plot(cx + r * np.cos(th), cy + r * np.sin(th) + 0.006, color="#ffd27a", lw=3, alpha=0.6)
-    rng = np.random.default_rng(4)
-    prof = 0.004 * np.sin(th * 90) + 0.003 * np.sin(th * 37 + 1) + rng.normal(0, 0.0008, th.size)
-    ax.fill_between(cx + r * np.cos(th), cy - 0.3, cy + (r + prof) * np.sin(th), color="#05080f", zorder=3)
-    for a in np.radians([66, 74, 83, 90, 101, 112]):
-        x, y = cx + r * np.cos(a), cy + r * np.sin(a) + 0.008
-        for k, al in [(0.02, 0.2), (0.01, 0.6), (0.005, 1.0)]:
-            ax.add_patch(Circ(ax, (x, y), k, fc="white", alpha=al, zorder=4))
-    ax.text(0.5, 0.45, "حافة القمر الجبلية", ha="center", color="#8a96a8", fontsize=10, zorder=5)
-    ax.text(0.5, 0.12, "سُمّيت باسم الفلكي البريطاني فرانسيس بيلي الذي وصفها عام ١٨٣٦", ha="center",
-            color="#c9d3e3", fontsize=9)
-    save(fig, CH, "bailys_beads", "رسم توضيحي لحبات بيلي عند حافة القمر.")
+    annotated_nasa_photo(
+        "baily_beads", "bailys_beads", "حبات بيلي", "ضوء الشمس ينفذ من وديان حافة القمر — صورة حقيقية من كسوف ٢٠١٧",
+        [("حبات بيلي", (388, 387), (215, 470)),
+         ("الكروموسفير الوردي\nعلى حافة القمر", (455, 401), (620, 500)),
+         ("شواظ صغير", (520, 165), (690, 70)),
+         ("الهالة الداخلية", (330, 200), (170, 120))],
+        "حافة القمر ليست ملساء، بل جبال ووديان. وفي الثواني الأخيرة قبل الكلية ينفذ ضوء الشمس من خلال الوديان فقط، فيبدو "
+        "حباتٍ لامعة متفرقة كعقد من اللؤلؤ، ثم تنطفئ واحدة بعد الأخرى. وتعود الحبات بعد الكلية بترتيب معكوس. وقد سُمّيت باسم "
+        "الفلكي البريطاني فرانسيس بيلي الذي وصفها عام ١٨٣٦.",
+        "حبات بيلي في صورة ناسا لكسوف ٢٠١٧ مع شرح ما يظهر فيها.", crop=(90, 810, 20, 560))
 
 
 def fig_corona_anatomy():
-    fig = page(7.5, 6.0, "#05080f")
-    ax = canvas(fig)
-    header(fig, "تشريح الهالة الشمسية (الإكليل)", "لا تُرى بالعين المجردة إلا أثناء الكسوف الكلي",
-           color="white", sub_color="#c9d3e3")
-    cx, cy, r = 0.48, 0.44, 0.11
-    corona(ax, cx, cy, r, seed=21, n=34)
-    ax.add_patch(Circ(ax, (cx, cy), r, fc="#05080f", ec="#ff6f91", lw=2.5, zorder=4))
-    prominences(ax, cx, cy, r, seed=3)
-    notes = [((cx + r * 2.6, cy + 0.02), (0.84, 0.68), "الشرائط الإكليلية\n(تمتد ملايين الكيلومترات)"),
-             ((cx, cy + r * 1.5), (0.74, 0.80), "الريش القطبية"),
-             ((cx - r * 1.15, cy - r * 0.2), (0.10, 0.30), "الإكليل الداخلي\n(≈ ١–٢ مليون درجة)"),
-             ((cx + r * 0.95, cy - r * 0.35), (0.90, 0.20), "الكروموسفير والألسنة\n(وردية اللون)")]
-    for (x, y), (tx, ty), lab in notes:
-        ax.annotate(lab, (x, y), (tx, ty), color="white", fontsize=9.5, ha="center",
-                    arrowprops=dict(arrowstyle="-", color="#9aa6b8", lw=0.8))
-    save(fig, CH, "corona_anatomy", "أجزاء الهالة الشمسية التي تظهر أثناء الكلية.")
+    annotated_nasa_photo(
+        "corona", "corona_anatomy", "الهالة الشمسية (الإكليل)", "لا تُرى بالعين المجردة إلا أثناء الكلية — صورة حقيقية من كسوف ٢٠١٧",
+        [("الهالة الداخلية\n(≈ ١–٢ مليون درجة)", (610, 300), (790, 220)),
+         ("شريط إكليلي يمتد\nملايين الكيلومترات", (570, 130), (720, 40)),
+         ("شريط إكليلي", (290, 610), (140, 670)),
+         ("شواظ وردي صغير", (604, 358), (800, 420)),
+         ("قرص القمر يحجب\nالشمس تمامًا", (446, 362), (446, 362))],
+        "حين يغطي القمر قرص الشمس كله تظهر الهالة: الغلاف الخارجي للشمس، وحرارته تتجاوز مليون درجة مع أنه أبعد عن مصدر "
+        "الطاقة من السطح الذي لا تزيد حرارته على ٥٨٠٠ درجة — وهذا من أكبر ألغاز الشمس. وتتخذ الهالة شكل شرائط تتبع خطوط المجال "
+        "المغناطيسي للشمس، ويتغير شكلها مع دورة النشاط الشمسي. وعلى حافة القمر تظهر أحيانًا ألسنة وردية صغيرة من الكروموسفير.",
+        "الهالة الشمسية في صورة ناسا لكسوف ٢٠١٧ مع شرح أجزائها.", crop=(60, 840, 0, 714))
 
 
 def fig_sun_structure():
-    fig = page(8.6, 5.4, NAVY)
+    """Cut-away Sun: core, radiative and convective zones, photosphere, chromosphere and corona."""
+    fig = page(8.6, 6.0, NAVY)
     ax = canvas(fig)
-    header(fig, "بنية الشمس من اللب إلى الهالة", color="white")
-    axs = fig.add_axes([0.02, 0.04, 0.50, 0.50 * 8.6 / 5.4 * 0.95])
-    axs.set_xlim(-1, 1)
-    axs.set_ylim(-1, 1)
+    header(fig, "بنية الشمس من اللب إلى الهالة", "مقطع في الشمس: الطاقة تولد في اللب وتصعد إشعاعًا ثم حملًا حتى السطح",
+           color="white", sub_color="#c9d3e3")
+    axs = fig.add_axes([0.03, 0.06, 0.52, 0.52 * 8.6 / 6.0])
+    axs.set_xlim(-1.45, 1.45)
+    axs.set_ylim(-1.45, 1.45)
     axs.set_aspect("equal")
     axs.axis("off")
-    layers = [(0.98, "#ffe0a3", "الهالة (الإكليل)", "١–٣ ملايين كلفن"), (0.80, "#ff8fa3", "الكروموسفير", "≈ ٤٠٠٠–٢٠٠٠٠ كلفن"),
-              (0.76, SUN, "الفوتوسفير (السطح المرئي)", "≈ ٥٨٠٠ كلفن"), (0.70, "#f4a742", "منطقة الحمل", "≈ ٢ مليون كلفن"),
-              (0.48, "#ef7d2c", "منطقة الإشعاع", "≈ ٧ ملايين كلفن"), (0.20, "#d84f1e", "اللب (الاندماج النووي)", "≈ ١٥ مليون كلفن")]
-    for i, (r, c, name, temp) in enumerate(layers):
-        axs.add_patch(Wedge((0, 0), r, 30, 330, fc=c, ec=NAVY, lw=1, alpha=0.35 if i == 0 else 1))
-        yy = 0.80 - i * 0.11
-        rr = r - (0.09 if i == 0 else 0.03)
-        ang = np.radians(20 - i * 8)
-        x0, y0 = fig.transFigure.inverted().transform(axs.transData.transform((rr * np.cos(ang), rr * np.sin(ang))))
-        ax.plot([x0, 0.60], [y0, yy], color="#9aa6b8", lw=0.6)
-        ax.plot(x0, y0, "o", ms=3, color="white")
-        ax.text(0.95, yy, name, ha="right", va="center", color="white", fontsize=11, fontweight="bold")
-        ax.text(0.95, yy - 0.045, temp, ha="right", va="center", color="#c9d3e3", fontsize=9.2)
-    save(fig, CH, "sun_structure", "طبقات الشمس ودرجات حرارتها التقريبية.")
+    for rr, al in [(1.42, 0.05), (1.32, 0.07), (1.22, 0.10), (1.14, 0.14), (1.08, 0.20)]:       # corona glow
+        axs.add_patch(plt.Circle((0, 0), rr, fc="#f3efe2", ec="none", alpha=al))
+    cut0, cut1 = -32, 32                                    # the opened wedge, on the right
+    axs.add_patch(Wedge((0, 0), 1.045, cut1, 360 + cut0, fc="#ff5a7a", ec="none"))          # chromosphere
+    axs.add_patch(Wedge((0, 0), 1.0, cut1, 360 + cut0, fc="#ffb21e", ec="none"))            # photosphere
+    rng = np.random.default_rng(5)
+    for _ in range(520):                                     # granulation
+        a = np.radians(rng.uniform(cut1 + 2, 360 + cut0 - 2))
+        rr = np.sqrt(rng.uniform(0, 0.97 ** 2))
+        axs.add_patch(plt.Circle((rr * np.cos(a), rr * np.sin(a)), rng.uniform(0.018, 0.035), fc="#ffcf5a",
+                                 ec="none", alpha=0.5))
+    layers = [(1.0, "#f07f1f"), (0.70, "#ffb347"), (0.25, "#fff1b0")]
+    for rr, c in layers:
+        axs.add_patch(Wedge((0, 0), rr, cut0, cut1, fc=c, ec="#c9601a", lw=0.8))
+    for rr in np.linspace(0.76, 0.94, 3):                    # convection cells
+        for a in np.radians(np.linspace(cut0 + 6, cut1 - 6, 4)):
+            axs.add_patch(Arc((rr * np.cos(a), rr * np.sin(a)), 0.09, 0.09, angle=np.degrees(a), theta1=0, theta2=300,
+                              color="#a8470f", lw=0.9))
+    for k in range(3):                                       # photons zig-zagging out of the radiative zone
+        ang = np.radians(-18 + 18 * k)
+        rs = np.linspace(0.28, 0.66, 9)
+        jit = np.radians(np.where(np.arange(9) % 2, 4, -4))
+        axs.plot(rs * np.cos(ang + jit), rs * np.sin(ang + jit), color="#c9601a", lw=0.8)
+    pts = [("اللب: الاندماج النووي", "≈ ١٥ مليون كلفن — حتى ربع نصف القطر", 0.17, -28),
+           ("منطقة الإشعاع", "≈ ٧ ملايين إلى ٢ مليون كلفن", 0.50, -5),
+           ("منطقة الحمل", "خلايا غازية تصعد وتهبط — ≈ ٢ مليون كلفن", 0.86, 12),
+           ("الفوتوسفير: السطح المرئي", "≈ ٥٨٠٠ كلفن، وعليه البقع والحبيبات", 0.98, 52),
+           ("الكروموسفير (وردي اللون)", "≈ ٤٠٠٠–٢٠٠٠٠ كلفن — يُرى لحظة الكلية", 1.03, 75),
+           ("الهالة (الإكليل)", "١–٣ ملايين كلفن — تُرى أثناء الكلية", 1.25, 60)]
+    axs.set_zorder(1)                                        # leader lines and dots are drawn above the Sun
+    ax.set_zorder(2)
+    ax.patch.set_alpha(0)
+    inv = fig.transFigure.inverted()
+    xy = []
+    for name, temp, rr, ang in pts:
+        x, y = rr * np.cos(np.radians(ang)), rr * np.sin(np.radians(ang))
+        fx, fy = inv.transform(axs.transData.transform((x, y)))
+        xy.append((fy, fx, name, temp))
+    xy.sort(reverse=True)                                    # labels top-to-bottom in the order of their points
+    ys = np.linspace(0.78, 0.16, len(xy))
+    for (fy, fx, name, temp), ly in zip(xy, ys):
+        ax.plot([fx, 0.585, 0.61], [fy, ly, ly], color="#9aa6b8", lw=0.7)
+        ax.plot(fx, fy, "o", ms=4, color="white", mec=NAVY, zorder=5)
+        ax.text(0.965, ly + 0.012, name, ha="right", va="center", color="white", fontsize=11, fontweight="bold")
+        ax.text(0.965, ly - 0.032, temp, ha="right", va="center", color="#c9d3e3", fontsize=9)
+    footer(fig, "الأحجام النسبية للطبقات تقريبية؛ نصف قطر الشمس ≈ ٦٩٦ ألف كيلومتر. درجات الحرارة من نماذج الشمس القياسية.",
+           color="#c9d3e3")
+    save(fig, CH, "sun_structure", "مقطع في الشمس: طبقاتها من اللب إلى الهالة ودرجات حرارتها التقريبية.")
 
 
-from matplotlib.patches import Wedge  # noqa: E402
+from matplotlib.patches import Arc, Wedge  # noqa: E402
 
 
 # ------------------------------------------------------------------ shadow speed & umbra geometry (computed)
